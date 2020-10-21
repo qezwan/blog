@@ -1,0 +1,20 @@
+---
+- id: latestPosts
+  translation: "دوایین بابەتەکان"
+
+- id: blogHeading
+  translation: "بلۆگ"
+
+- id: pageNotFound
+  translation: "بەداخەوە، ئەم پەڕە بوونی نییە.."
+
+- id: visitHomePage
+  translation: "پەڕەی سەرەکی"
+
+- id: readingTime
+  translation:
+    one: "١ خولەک"
+    other: "{{ .Count }} خولەک"
+
+- id: backToPosts
+  translation: "بگەڕە بۆ بابەتەکان"
