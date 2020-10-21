@@ -7,15 +7,14 @@
                     {{ .Content }}
                 </div>
             {{ end }}
-            {{ $totalpostscount := len (where .Data.Pages "Section" "blog") }}
+            <!--{{ $totalpostscount := len (where .Data.Pages "Section" "blog") }}-->
+            {{ $totalpostscount := len (.Data.Pages) }}
             {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
             {{ if gt $latestpostscount 0 }}
-                <div class="page-heading">{{ i18n "latestPosts" }}</div>
+              <div class="page-heading">{{ i18n "latestPosts" }}</div>
                 <ul>
-                    {{ range (first $latestpostscount (where .Data.Pages.ByPublishDate.Reverse "Section" "blog")) }}
-                        {{ range .Pages }}
-                            {{ partial "li.html" . }}
-                        {{ end }}
+                    {{ range (first $latestpostscount ( .Data.Pages.ByPublishDate.Reverse )) }}
+                        {{ partial "li.html" . }}
                     {{ end }}
                     {{ if gt $totalpostscount $latestpostscount }}
                         {{ range where .Site.Menus.main "Identifier" "blog" }}
@@ -25,8 +24,8 @@
                         {{ end }}
                     {{ end }}
                 </ul>
+              </div>
             {{ end }}
-        </div>
     </div>
 </section>
 {{ partial "footer.html" . }}
