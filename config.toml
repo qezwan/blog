@@ -35,7 +35,7 @@ identifier             = "code"
 url                    = "/book/"
 
 [params]
-paginate               = 1
+
 include_rss            = true                          # include RSS <link> tag in <head> and show RSS icon
 latestpostscount       = 5                             # how many posts to display on the home page
 i18n_flags             = false                         # whether to display small country flags for available translations
