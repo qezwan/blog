@@ -12,7 +12,7 @@ pygmentsuseclasses  = true
 #disqusshortname     = "cocoaexamplesite" # Comment out to disable Disqus.
 pluralizelisttitles = false
 #googleAnalytics     = "UA-123-45"
-
+PostLimit = 5
 [permalinks]
 blog  = "blog/:slug/"
 
@@ -24,16 +24,21 @@ url                    = "/blog/"
 
 [[menu.main]]
 name                   = "دەربارە"
-weight                 = -110
+weight                 = -100
 identifier             = "about"
 url                    = "/about/"
 
 [[menu.main]]
 name                   = "کتێب"
-weight                 = -100
+weight                 = -110
 identifier             = "code"
 url                    = "/book/"
 
+[[menu.main]]
+name                   = "گنو/لینوکس"
+weight                 = -130
+identifier             = "gnulinux"
+url                    = "/gnulinux/"
 [params]
 
 include_rss            = true                          # include RSS <link> tag in <head> and show RSS icon

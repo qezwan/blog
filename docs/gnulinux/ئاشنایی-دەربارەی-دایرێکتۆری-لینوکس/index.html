@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="لەم بابەتە ئێمە ئاشنا دەبین لەگەڵ فایل سیستەمەکان هەروا بەرزترین ئاستی دەستپێگەیشتن لە دایریکتۆریەکانی لینوکس.this text is redلە ویندۆز ئێمە بوخچە(فۆلدێر)مان هەیە بەڵام لە لینوکس ئێمە داریکتۆریمان هەس.
+١- ROOT/
+ ئەم دارێکتۆرییە بەرزترین پلەی هەیە.واتە لە دەرەوەی ئەم دایرێکتۆترییە شتێکمان نییە. تەناها بەکارهێینەری ڕووت دەتوانێت دەستی بەم دایرێکتۆرییە بگەیینێت. تکایە ئاگادار بە کە داریکتۆریROOT/ بەکارهێنەری بنەڕەتییە و جیاوازە لەگەڵ / .  ٢- bin – User Binaries/
+ ئەم دایرێکتۆرییە پەیوەندی بە فەرمانەکانی بنەڕەتی لینوکسە و بەکارهێنەر بە شێوازی یەکتا دەتوانێت سەردانی بکات.">
+
+<meta property="og:title" content="ئاشنایی دەربارەی دایرێکتۆری لینوکس" />
+<meta property="og:description" content="لەم بابەتە ئێمە ئاشنا دەبین لەگەڵ فایل سیستەمەکان هەروا بەرزترین ئاستی دەستپێگەیشتن لە دایریکتۆریەکانی لینوکس.this text is redلە ویندۆز ئێمە بوخچە(فۆلدێر)مان هەیە بەڵام لە لینوکس ئێمە داریکتۆریمان هەس.
+١- ROOT/
+ ئەم دارێکتۆرییە بەرزترین پلەی هەیە.واتە لە دەرەوەی ئەم دایرێکتۆترییە شتێکمان نییە. تەناها بەکارهێینەری ڕووت دەتوانێت دەستی بەم دایرێکتۆرییە بگەیینێت. تکایە ئاگادار بە کە داریکتۆریROOT/ بەکارهێنەری بنەڕەتییە و جیاوازە لەگەڵ / .  ٢- bin – User Binaries/
+ ئەم دایرێکتۆرییە پەیوەندی بە فەرمانەکانی بنەڕەتی لینوکسە و بەکارهێنەر بە شێوازی یەکتا دەتوانێت سەردانی بکات." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D8%A6%D8%A7%D8%B4%D9%86%D8%A7%DB%8C%DB%8C-%D8%AF%DB%95%D8%B1%D8%A8%D8%A7%D8%B1%DB%95%DB%8C-%D8%AF%D8%A7%DB%8C%D8%B1%DB%8E%DA%A9%D8%AA%DB%86%D8%B1%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+<meta property="article:published_time" content="2015-05-22T08:35:45+00:00" />
+<meta property="article:modified_time" content="2015-05-22T08:35:45+00:00" />
+
+
+
+<title>
+
+
+     ئاشنایی دەربارەی دایرێکتۆری لینوکس 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D8%A6%D8%A7%D8%B4%D9%86%D8%A7%DB%8C%DB%8C-%D8%AF%DB%95%D8%B1%D8%A8%D8%A7%D8%B1%DB%95%DB%8C-%D8%AF%D8%A7%DB%8C%D8%B1%DB%8E%DA%A9%D8%AA%DB%86%D8%B1%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-23%2022%3a56%3a40.319808%20%2b0330%20%2b0330%20m%3d%2b0.216517501">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-23%2022%3a56%3a40.319808%20%2b0330%20%2b0330%20m%3d%2b0.216517501">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-23%2022%3a56%3a40.319808%20%2b0330%20%2b0330%20m%3d%2b0.216517501">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-23%2022%3a56%3a40.319808%20%2b0330%20%2b0330%20m%3d%2b0.216517501">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    ئاشنایی دەربارەی دایرێکتۆری لینوکس
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Fri May 22 2015 08:35:45 UTC'>May 22, 2015</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>585 وشە </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>لەم بابەتە ئێمە ئاشنا دەبین لەگەڵ فایل سیستەمەکان هەروا بەرزترین ئاستی دەستپێگەیشتن لە دایریکتۆریەکانی لینوکس.<!-- raw HTML omitted -->this text is red<!-- raw HTML omitted --></p>
+<p>لە ویندۆز ئێمە بوخچە(فۆلدێر)مان هەیە بەڵام لە لینوکس ئێمە داریکتۆریمان هەس.</p>
+<p><img src="https://qezwan.ir/gnulinux/images/00002.png" alt=""></p>
+<p><strong>١- ROOT/</strong></p>
+<ul>
+<li>ئەم دارێکتۆرییە بەرزترین پلەی هەیە.واتە لە دەرەوەی ئەم دایرێکتۆترییە شتێکمان نییە.</li>
+<li>تەناها بەکارهێینەری ڕووت دەتوانێت دەستی بەم دایرێکتۆرییە بگەیینێت.</li>
+<li>تکایە ئاگادار بە کە داریکتۆریROOT/ بەکارهێنەری بنەڕەتییە و جیاوازە لەگەڵ / .</li>
+</ul>
+<p><strong>٢- bin – User Binaries/</strong></p>
+<ul>
+<li>ئەم دایرێکتۆرییە پەیوەندی بە فەرمانەکانی بنەڕەتی لینوکسە و بەکارهێنەر بە شێوازی یەکتا دەتوانێت سەردانی بکات.</li>
+<li>فەرمانەکانی هەمو بەکارهێنەرێکی سیستەم لێرە جێگیر دەبێت.</li>
+<li>بۆ نمونە ئەم فەرمانانە : ps, ls, ping, grep, cp.</li>
+</ul>
+<p><strong>٣-sbin – System Binaries/</strong></p>
+<ul>
+<li>وەکو دایرێکتۆری ژمارە 2ە بەم جیاوازییە کە تەواوی فەرمانەکان لەم دایرێکتۆرییە پێیویستی بە super user ە.</li>
+<li>فەرمانەکان زۆرتر بۆ ئاگاداری سیستەم بەکار دین.</li>
+<li>بۆ نموونە ئەم فەرمانانە:iptables, reboot, fdisk, ifconfig, swapon</li>
+</ul>
+<p><strong>٤- etc – Configuration Files/</strong></p>
+<ul>
+<li>فایلەکانی پەیکەربەستنەوە یان کانفیگ وە زانیاری تەواوی بەکارهێنەران لەم دایریکتۆرییەن.</li>
+<li>کوژاندنەوە ، ڕۆشن کردنەوەی سکریپتەکان هەر وا داخستنی کاری بەکارهێنەر لەم دایرێکتۆرییەن.</li>
+<li>بۆ نموونە :etc/resolv.conf, /etc/logrotate.conf/</li>
+</ul>
+<p><strong>٥-dev – Device Files/</strong></p>
+<p>ئەو ئامێرانە کە لەلایەن لینوکس دەناسرێن لەم لایە جێگیر دەبن.وەکوو کارتی دەنگ و گرافیک و هارد دیسک و…</p>
+<p>بۆ نموونە : dev/tty1, /dev/usbmon0/</p>
+<p><strong>٦-proc – Process Information/</strong></p>
+<ul>
+<li>بریتییە لە زانیاریەکان لە بارەی پرۆسەی سیستەم. بۆ نموونە کۆی پانەتەکان لە دایرێکتۆرییک بە ناوی : proc/{pid}/ خۆی دەگونجێنێت کەپرۆسەیpid خولقاندووە.</li>
+</ul>
+<p><strong>٧- var – Variable Files/</strong></p>
+<ul>
+<li>ئەو فایلانە کە لە مەودای کارپێکردنی لینوکس دەگۆڕین یان ئەگەری گۆڕینیان هەیە لەم دایرێکتۆرییەن.</li>
+<li>بۆ وێنە فایلەکانی لاگی سیستەم(/var/log) ، پاکەتەکان و بنکەدراوەکان (/var/lib) ، فایلەکانی ئیمەیل یان ئادرەسی ئینتەرنێتی (/var/mail)،پەڕرەکانی چاپ (/var/spool)، فایلەکانی لۆک (/var/lock) ، فایلە کاتیەکان بۆ ڕیبووت (/var/tmp)،</li>
+</ul>
+<p><strong>٨-tmp – Temporary Files/</strong></p>
+<ul>
+<li>ئەو پەڕگانە یاخۆد فایلانە کە  لە لایەن سیستەم و بەکارهێنەر درووستکراوەن.</li>
+<li>بە بووت کردنی سیستەم ئەم فایلانەس دەسڕنەوە</li>
+</ul>
+<p><strong>٩-. usr – User Programs/</strong></p>
+<ul>
+<li>بریتییە لە کتێبخانەکان ، فایلی باینیری،دۆکیومێنتەکان،کۆدی سەرچاوە بۆ بەرنامەکان کە ئاستی دووهەمیان هەیە.</li>
+<li>/usr/bin/ : فایلە باینێریەکانی بەکارهێنەرە ، هیچ کات ئێوە فایلیکی باینیری لە مەسیری bin/پەیدا ناکەن مەگەر لە usr/bin/ . وەکوو :at, awk, cc, less, scp</li>
+<li>usr/sbin/ : بریتییە لە فایلە باینێریەکان بۆ بەرێوبەرانی سیستەم. تەواوی ئەم فایلانە لە ژێر ئەم مەسیرەن usr/sbin/ وەکوو : atd, cron, sshd, useradd, userdel</li>
+<li>usr/lib/ : بریتییە لە کتێبخانەیێک بۆ بەکارهێنەران کە لەم مەسیرەیە usr/bin/ و usr/sbin/</li>
+<li>usr/local/ : بریتییە لە بەرنامەکانی بەکارهێنەران کە لە سەرچاوە دادەمەزرێنن. بۆ نموونە : کاتیک ئێوە بەرنامەی apache دادەمەزرێنن دەچیتە ئەم مەسیرە usr/local/apache2/</li>
+</ul>
+<p><strong>١٠-home – Home Directories/</strong></p>
+<ul>
+<li>دایرێکتۆریێک بۆ فایلەکانی بەکارهێنەرانی لینوکس بێجگە لە بەکارهینەری ڕووت .هەر کاربەریک کە بە لینوکس زیاد دەکرێت لەم مەسیرە بۆخچەییکی بۆ دروست دەکرێت.</li>
+</ul>
+<p>بۆ نموونە :/home/john, /home/nikita</p>
+<p><strong>١١- boot – Boot Loader Files/</strong></p>
+<ul>
+<li>بریتییە بە فایلەکانی بووت.ئەو فایلانە کە لەکاتی بووتی سیستەم لینوکس کاری پێ هەیە.</li>
+<li>تەواوی فایلەکانی ناوەڕۆکKernel initrd, vmlinux, grub files لە مەسیری boot/ن.</li>
+<li>بۆ وێنە :initrd.img-2.6.32-24-generic , vmlinuz-2.6.32-24-generic</li>
+</ul>
+<p><strong>١٢- lib – System Libraries/</strong></p>
+<ul>
+<li>بریتییە لە کتێبخانەی ئەو فایلانە کە باینیری پاڵپشتی دەکەن لە ئەم مەسیرەن : bin/ وە sbin/ .</li>
+<li>فیلی کتێبخانەکان بەم شێوازن : ld* یا lib*.so.*</li>
+<li>بۆنموونە : ld-2.11.1.so, libncurses.so.5.7</li>
+</ul>
+<p>**١٣-opt – Optional add-on Applications/
+**</p>
+<ul>
+<li>opt کورتکراوەی Optional(ئارەزوومەندانە~ئارەزوومەندانەیە).</li>
+<li>بریتییە لە زیادکردنی نەرمەکالاکان لە درووتکەرەکانی خۆماڵییە.</li>
+<li>کاتیک کە ئەپێک دادەمزرێت دەچێتە ئەم مەسیرە /opt/ یان /opt/  .</li>
+</ul>
+<p><strong>١٤- mnt – Mount Directory/</strong></p>
+<ul>
+<li>ئەم دایرێکتۆرییە بۆ ئەوەیە کە فایل سیستەمێک لە لینوکس لە ناو ئەم مەسیرە جێگیر یان بیبەسینەوە (mount ).</li>
+</ul>
+<p><strong>١٥-media – Removable Media Devices/</strong></p>
+<ul>
+<li>ئامێرەکان وەکوو فلاش ،سی-دی یان هاردی دەرەکی کە تایبەتمەندی جودابوونەوەیان لە سیستەم هەیە لێرە دەبەسرێنەوە.</li>
+<li>بۆ نموونە : /media/cdrom بۆ CD-ROM
+، /media/floppy بۆ floppy drives ،</li>
+</ul>
+<p><strong>١٦-srv – Service Data/</strong></p>
+<ul>
+<li>بۆ خەزمەتگوزاری یان سرویسدانی تایبەتە.</li>
+<li>بۆ نموونە : /srv/cvs بریتییە لە خزمەتگوزارت زانیاریەکانی cvs.</li>
+</ul>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://qezwan.ir/blog">بگەڕە بۆ بابەتەکان</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

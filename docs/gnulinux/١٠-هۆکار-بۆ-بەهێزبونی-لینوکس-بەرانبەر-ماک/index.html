@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="ماکینتۆش لەبواری کارکردنی بەکارهێنەر بە روخساری گرافیکی زۆر بەهێزترە لە لینوکس. بەڵام ئەمە عەیبێک لە سەر لینوکس نییە و لە زۆر شوێن ماک ،قسەیێکی بۆ کردن لە بەرانبەر لینوکس نییە.ئەم هۆکارانە لە لایەن Jack Wallen نووسەری ماڵپەڕی techrepublic.com بە پێنووسەکەی ڕەقساوە کە لینووکسی لە redhat 4.2 دەستپێکردووە. (دەتوانن پرۆفایلەکەی لێرە ببینن ) با بزانین بۆ ‘جەک’ ئەم تەحەدای کردووە کە لینوکس لە ماک باشترە :
+١- لینوکس نرمە(flexible) گر ماکتان هەیە دەزانن کە ڕوخسارو گرافیکی جوانی بۆ دیزاین کراوە تاکو بەکارهێنەرەکەی ڕاحەت کاری پێبکات بەڵام نەرم نییە.">
+
+<meta property="og:title" content="١٠ هۆکار بۆ بەهێزبونی لینوکس بەرانبەر ماک" />
+<meta property="og:description" content="ماکینتۆش لەبواری کارکردنی بەکارهێنەر بە روخساری گرافیکی زۆر بەهێزترە لە لینوکس. بەڵام ئەمە عەیبێک لە سەر لینوکس نییە و لە زۆر شوێن ماک ،قسەیێکی بۆ کردن لە بەرانبەر لینوکس نییە.ئەم هۆکارانە لە لایەن Jack Wallen نووسەری ماڵپەڕی techrepublic.com بە پێنووسەکەی ڕەقساوە کە لینووکسی لە redhat 4.2 دەستپێکردووە. (دەتوانن پرۆفایلەکەی لێرە ببینن ) با بزانین بۆ ‘جەک’ ئەم تەحەدای کردووە کە لینوکس لە ماک باشترە :
+١- لینوکس نرمە(flexible) گر ماکتان هەیە دەزانن کە ڕوخسارو گرافیکی جوانی بۆ دیزاین کراوە تاکو بەکارهێنەرەکەی ڕاحەت کاری پێبکات بەڵام نەرم نییە." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D9%A1%D9%A0-%D9%87%DB%86%DA%A9%D8%A7%D8%B1-%D8%A8%DB%86-%D8%A8%DB%95%D9%87%DB%8E%D8%B2%D8%A8%D9%88%D9%86%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D8%A8%DB%95%D8%B1%D8%A7%D9%86%D8%A8%DB%95%D8%B1-%D9%85%D8%A7%DA%A9/" />
+<meta property="article:published_time" content="2015-03-19T05:35:45+00:00" />
+<meta property="article:modified_time" content="2015-03-19T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     ١٠ هۆکار بۆ بەهێزبونی لینوکس بەرانبەر ماک 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D9%A1%D9%A0-%D9%87%DB%86%DA%A9%D8%A7%D8%B1-%D8%A8%DB%86-%D8%A8%DB%95%D9%87%DB%8E%D8%B2%D8%A8%D9%88%D9%86%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D8%A8%DB%95%D8%B1%D8%A7%D9%86%D8%A8%DB%95%D8%B1-%D9%85%D8%A7%DA%A9/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-23%2022%3a56%3a40.3457926%20%2b0330%20%2b0330%20m%3d%2b0.242502101">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-23%2022%3a56%3a40.3457926%20%2b0330%20%2b0330%20m%3d%2b0.242502101">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-23%2022%3a56%3a40.3457926%20%2b0330%20%2b0330%20m%3d%2b0.242502101">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-23%2022%3a56%3a40.3457926%20%2b0330%20%2b0330%20m%3d%2b0.242502101">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    ١٠ هۆکار بۆ بەهێزبونی لینوکس بەرانبەر ماک
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Thu Mar 19 2015 05:35:45 UTC'>Mar 19, 2015</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>4 خولەک<div class="middot"></div>851 وشە </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>ماکینتۆش لەبواری کارکردنی بەکارهێنەر بە روخساری گرافیکی زۆر بەهێزترە لە لینوکس. بەڵام ئەمە عەیبێک لە سەر لینوکس نییە و لە زۆر شوێن ماک ،قسەیێکی بۆ کردن لە بەرانبەر لینوکس نییە.ئەم هۆکارانە لە لایەن Jack Wallen نووسەری ماڵپەڕی techrepublic.com بە پێنووسەکەی ڕەقساوە کە لینووکسی لە redhat 4.2 دەستپێکردووە. (دەتوانن پرۆفایلەکەی لێرە ببینن ) با بزانین بۆ ‘جەک’ ئەم تەحەدای کردووە کە لینوکس لە ماک باشترە :</p>
+<h5 id="١--لینوکس-نرمەflexible">١- لینوکس نرمە(flexible)</h5>
+<p>گر ماکتان هەیە دەزانن کە ڕوخسارو گرافیکی جوانی بۆ دیزاین کراوە تاکو بەکارهێنەرەکەی ڕاحەت کاری پێبکات بەڵام نەرم نییە. لەم ڕوانگە ماک زۆر لە ویندۆز دەچێت. ئێوە ئەو شتە کە هەرەکتانە وەریدەگرن و ناتوانن کاری زۆری پێبکەن.گەر ئێوە لە چوارچێوەی دێسکتۆپ ماندوبوون دەتوانن Dock جێ بە جی بکەن. دەتوانن چکۆڵەی بکەن یان Auto-hideی بکەن.ئێوە دەتوانن Third-party ڕووکار بە دێسکتۆپ زیاد بکەن.زۆر کردار کە لەسر دۆک دەیکەن کردارەکەی نەگەتیڤە هۆکارەکەی ئەمەیە کە دۆک بەشێکە لە ماک وەکو پەنجێرەی مردن لە ویندۆزی ٩٥.</p>
+<p>بەڵام لە لینوکس بە پێچەوانەی ماک ، شریتی ئەرکتان-taskbar – ناوێت بەڵام تەیبەتمەندییەکەتان دەوێت کێشەیێک نییە، هەر شریتێکی ئەرک یان پانێلیککە گەرەکتانە زیادی بکەن.لینوکس بە باشترین شێوە ڕیکخستنەکانی ئێوە وەردەگرێت.گەر لەوەش خۆشتان نایێت دەتوانن Desktop environmentتر دامەزرێنن.</p>
+<h5 id="٢-سەرچاوە-کراوە-">٢-سەرچاوە کراوە :</h5>
+<p>یەکێک لەو بابەتانە کە بەکارهێنەرانی ماک و لینوکس لە سەری دەمەتەقێ دەکەن لایسنیس یان موڵەتپێدانی نەرمەکالایە. ئەپڵ بۆ ناوەرۆکی خۆی (Darwin) لە BSD سوودی وەرگرت و لەسەر بنەمای Apple Public Source License کە رێکخراوەی نەرمەکالای سەرچاوەکراوەیە ( Free Software Foundation) قبوڵی بوو ،بڵاوی کردەوە یئنجا لەنێوی خاوەنیەتی و موڵکایەتی بۆ درووستکردنی ماک دانا. بە کورتە ئەپڵ OpenDarwin درووستکرد ئەمەش لە کاتیک بوو کە هاوکاری دوو لایەن لە بەین ئەپڵ و کۆمەڵگای سەرچاوە کراوە(Opensource ) بوونی هەبوو. ئەم پڕۆژە تا چوار شاڵ پێش ئەوە کە ئەپڵ خراپی بکات ئەنجام دەدرا. هۆکارەکەی دەگەراوە بۆ ئەوە کە ئەپڵ لە پرۆژەی Darwin شکەستی هێنا.</p>
+<p>لە ساڵی ٢٠٠٧ ، پرؤژەی PureDarwin لە سەر پرۆژەی Darwin چاڵاک بوو.PureDarwin پێسکەوتنی زۆری بەدەست هاورد بۆ وێنە بەرێوەبردنی پەنجێرەکانی لینوکسی (وەکو Enlightenment) ئەنجام دا.بەڵام ڕاستی و سەداقتی بۆ نەبوو لە هاوکاری لینوکس.</p>
+<h5 id="٣--هێڵی-فەرمان">٣- هێڵی فەرمان</h5>
+<p>هەرچەند زۆرتری بەکارهێنەرانی ماک چاوی لێدادەپۆسن (دەڵێن پێویست ناکات بە زانینی هێڵی فەرمان). بەڵام بەکارهێنەرانی پرۆفێشۆناڵ دەزانن کە کار کردن بە هێڵی فەرمان بۆ بەڕێوەبەرێک زۆر گرینگە. جوولەی هێڵی فەرمان لە ماک بە ئەندازەی لینوکس بە هێز نییە .ئەمەش دەگەرێتەوە بۆ ئەوە کە ئێوە هەر کارێکتان گەرەکە دەتوانن بە هێڵی فەرمانی لینوکس بیکەن بەڵام لە ماک نە ! تا ڕادەیێک تواناییتان هەس.</p>
+<p>پرسیار لێرەیە بۆ چە ماک گەرەکی نییە هێڵی فەرمانی coreutils دابەزێنێت بۆ بەکارهێنەران. coreutils پرۆژەیێکە بۆ کامپایل کردن بەڵام لە نێوە ماک نەگونجاوە…. بۆ دامەزراندن لە هێڵی فەرمان ، ئاسایشی سیستەم بە هێڵی فەرمان …هتد چی ؟</p>
+<h5 id="٤-پێداویستی-ڕەقەکالا-">٤-پێداویستی ڕەقەکالا :</h5>
+<p>ئەمن دوو کۆمپیوتری دامەزراوە بە ماکم لە ماڵۆ هەیە. یەکێکیان لە سەر iBook ی کۆنەکەم بە 800MHz و 512 MB ڕام.ئەم کۆمپیوترە کە ماکی لە سەر دامەزراوە بڕاستی خاوە. بەڵام بە Yellow Dog هەر بەو ڕەقەکالا بەراستی بەهێزەو خێرایە. ماکەکەی دیکە لە سەر G4 بەڕێکخەرێکی 1.2 و 1 GB ڕام کە ناتوانین بەراوەردی بکەم لە گەڵ سیستەمیکی دیکەم هەر بەو ڕەقەکالا کە سیستەمی کارپێکردنی ئوبونتوی ٨ی لە سەرە.با ڕەقەکالای پێویست بۆ ماک و ئوبونتو ببینین :</p>
+<p>ماک : ڕێکخەری 876 MHz یان خێراتر ، ڕامی ٥١٢ مێگابایت ، ٩ گیگ بۆشایی هارد .</p>
+<p>ئوبونتو : ڕیکخەری 700 MHz x86 . ڕامی ٣٨٤ مێگابایت ، ٨ گیگ بۆشایی هارد.</p>
+<p>هەرچەند ئوبونتو سیستەمێکی بەهێزە بۆ سەر ڕەقەکالای سووکەلە بەڵام ئوبونتو لای لینوکسێکی دیکە بەناوی مەندرایڤ (Mandriva) کەم دێنێت.بۆ ئەوە کە مەندڕایڤ ڕەقەکالاییکی فرە کەمی پێویستە .( ANY CPU و 256 MB ڕام).</p>
+<p>لەسەر ئوبونتو پێس ئەوە کە سیستەم bog down بکات ئەم بەرنامانەم ئیجرا کرد :</p>
+<p>Firefox, OpenOffice Writer, OpenOffice Calc, OpenOffice Impress, Scribus, Gimp, Amarok, GnuCash, Thunderbird, Basket, Audacity, Gqview, و aterm</p>
+<p>بەڵام لە ماک بە ڕەقەکالای بەرابەر لە گەڵ ئوبونتو تەنها ئەم چەند نەرمەکالا :</p>
+<p>OpenOffice, Firefox, Thunderbird, و iTunes</p>
+<h5 id="٥--ئاسایش-">٥- ئاسایش :</h5>
+<p>لە زۆرتری کێبەرکێکانی “Pwn 2 Own” هەم ماک و هەم ویندۆس هاک دەبوون. ئەمەش بە بەراوەرد لە ئازمونی ١٠ ساڵەم پێم دەڵێت کە ئەم حەزم بە هاک کردن و خستنە نێو مەترسی سیستەمی کارپێکردنی دێسکتۆپ و سێرڤێرەکەم نییە.هەرچەند ماک بەهێزە بەڵام ناگاتە جێگای لینوکس.ئێوە لە لینوکس ناوەرۆکێک بەکار دەبەن بەڵام بە ئەبزارەکانی ئاسایش وەکو iptables, fwbuilder و SELinux دەتوانن لایەیێکی ئاسایشی بەهێز بەخەنە سەر ناوەرۆکەکەتان.</p>
+<h5 id="٦--جێبەجێ-بون">٦- جێبەجێ بون</h5>
+<p>یەکێک لە بەهێزترین تایبەتمەندییەکانی لینوکس ئەوەیە کە زۆر بە ئاسانی لە ڕەقەکالایێک دەچێت سەر ڕەقەکالایێکی دیکە.بۆ وێنە لینوکس بە زیرەکی دەتوانێت لە سەر سیستەمێکی دیکە خۆی ڕێکبخات بێ ئەوە کە خێرایی دابەزێت.بۆ وێنە ئەمن هاردی لینوکسەکەم جودا کردو خستمە سەر سیستەمێکی دیکە .مێعماری هەر دوو سیستەم یەکێک بوو (واتە من لە x86 بردمە x86_64 )، بەڵام ماک لەسەر سیستەمێک کە کار دەکات قفڵە. هەروەها ئێوە لە لینوکس دەتوانن دایرێکتۆرییەکان لە سیستەمێک بگۆزنەوە سەر سیستەمێکی دیکە بۆ وێنە دایریکتۆری (home/).</p>
+<h5 id="٧--نرخ">٧- نرخ</h5>
+<p>لە ماک ئێوە سەرەڕای ئەوە کە دەبێت بۆ سیستەمی کارپێکردن ، کە لە ئێستا نرخەکەی ١٢٩ دوڵارە ،پارە بدەن. ڕەقەکالای ماکئش بڕاستی گڕانە، واتە بۆ ماک بووک دەبێ ٩٩٩ دوڵار بدەن تا بیکڕن. بەڵام لینوکس لە سەرەتاوۆ خۆڕاییە و تەنها پارەی ڕەقەکالاکەی دەدەن.ئێوە دەتوانن لە هەر نەرمەکالایێک سوود وەربگرن بی ئەوە کە پارەیێک بدەن. بەڵام لە ماک دەبێت پارەیێک بۆ نەرمەکالاش پاشکەوت بکەن.</p>
+<p>گر ئێوە بەنرخەکان سەرنج بدەن و هێزی کڕینتان کەم بێت ، لینوکس باشترین چارەیە بۆ گیرفانتان.</p>
+<p>٨- …. ماویەتی</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://qezwan.ir/blog">بگەڕە بۆ بابەتەکان</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,5 +1,4 @@
 <!-- HTTPS -->
-
 {{ if .Site.Params.forcehttps }}
 <script type="text/javascript">
     var baseURL = '{{ .Site.BaseURL }}';
@@ -31,7 +30,7 @@
     {{ end }}
 
 {{ else }}
-
+    
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/pygments.css">
     <link rel="stylesheet" href="/css/main.css">

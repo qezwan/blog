@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="فەرمانی ls یەکێک لە بنەڕەتی تری فەرمانەکانی لینوکسە کە لە کاتی کارکردن بە ترمیناڵ سوودی لێ دەگرین.ئەم فەرمانە زۆر جار لە نێو فەرمانەکانی دیکەی خۆی ڕوون دەکات و زۆر جار ئێمەی بەکارهینەر ئاگاداری سویج یان ئۆپشینەکانی دیکەی نین. کورتکراوەی listە .
+١- فەرمانی ls بە تەنهایی و بێ هیچ ئۆپشێنێک.
+کاتێکە فەرمانی ls بەتەنهایی بەکار دەبەین لیستێک لە فایلەکان ،دایرێکتۆرییەکان بە بێ جیاوازی لە فۆرماتەکەیان ڕوون دەکرێن ، کە لە کاتی ئاسایی ئێمە توانایی دیتنی زانیاری وردەکانیمان نییە.">
+
+<meta property="og:title" content="کێ لە سەر سیستەمەکەمە ؟ چی کردووە !" />
+<meta property="og:description" content="فەرمانی ls یەکێک لە بنەڕەتی تری فەرمانەکانی لینوکسە کە لە کاتی کارکردن بە ترمیناڵ سوودی لێ دەگرین.ئەم فەرمانە زۆر جار لە نێو فەرمانەکانی دیکەی خۆی ڕوون دەکات و زۆر جار ئێمەی بەکارهینەر ئاگاداری سویج یان ئۆپشینەکانی دیکەی نین. کورتکراوەی listە .
+١- فەرمانی ls بە تەنهایی و بێ هیچ ئۆپشێنێک.
+کاتێکە فەرمانی ls بەتەنهایی بەکار دەبەین لیستێک لە فایلەکان ،دایرێکتۆرییەکان بە بێ جیاوازی لە فۆرماتەکەیان ڕوون دەکرێن ، کە لە کاتی ئاسایی ئێمە توانایی دیتنی زانیاری وردەکانیمان نییە." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%DA%A9%DB%8E-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%B3%DB%8C%D8%B3%D8%AA%DB%95%D9%85%DB%95%DA%A9%DB%95%D9%85%DB%95-%DA%86%DB%8C-%DA%A9%D8%B1%D8%AF%D9%88%D9%88%DB%95-/" />
+<meta property="article:published_time" content="2015-11-17T08:35:45+00:00" />
+<meta property="article:modified_time" content="2015-11-17T08:35:45+00:00" />
+
+
+
+<title>
+
+
+     کێ لە سەر سیستەمەکەمە ؟ چی کردووە ! 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%DA%A9%DB%8E-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%B3%DB%8C%D8%B3%D8%AA%DB%95%D9%85%DB%95%DA%A9%DB%95%D9%85%DB%95-%DA%86%DB%8C-%DA%A9%D8%B1%D8%AF%D9%88%D9%88%DB%95-/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-23%2022%3a56%3a40.4514897%20%2b0330%20%2b0330%20m%3d%2b0.348199201">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-23%2022%3a56%3a40.4514897%20%2b0330%20%2b0330%20m%3d%2b0.348199201">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-23%2022%3a56%3a40.4514897%20%2b0330%20%2b0330%20m%3d%2b0.348199201">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-23%2022%3a56%3a40.4514897%20%2b0330%20%2b0330%20m%3d%2b0.348199201">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    کێ لە سەر سیستەمەکەمە ؟ چی کردووە !
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue Nov 17 2015 08:35:45 UTC'>Nov 17, 2015</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>7 خولەک<div class="middot"></div>1421 وشە </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>فەرمانی ls یەکێک لە بنەڕەتی تری فەرمانەکانی لینوکسە کە لە کاتی کارکردن بە ترمیناڵ سوودی لێ دەگرین.ئەم فەرمانە زۆر جار لە نێو فەرمانەکانی دیکەی خۆی ڕوون دەکات و زۆر جار ئێمەی بەکارهینەر ئاگاداری سویج یان ئۆپشینەکانی دیکەی نین. کورتکراوەی listە .</p>
+<p><strong>١- فەرمانی ls بە تەنهایی و بێ هیچ ئۆپشێنێک.</strong></p>
+<p>کاتێکە فەرمانی ls بەتەنهایی بەکار دەبەین لیستێک لە فایلەکان ،دایرێکتۆرییەکان بە بێ جیاوازی لە فۆرماتەکەیان ڕوون دەکرێن ، کە لە کاتی ئاسایی ئێمە توانایی دیتنی زانیاری وردەکانیمان نییە.بۆ وێنە :جۆری فایل یان پڕگە، قەبارە، کات و داتا ، ئاستی دەستپێگەیشتنی پڕگە و …هتد.</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls
+</span><span class="nb"></span><span class="n">Desktop</span>    <span class="n">Music</span>     <span class="n">README</span>	      <span class="n">Videos</span>  <span class="n">qezwan</span>
+<span class="n">Documents</span>  <span class="n">Pictures</span>  <span class="n">Templates</span>	      <span class="n">clock</span>   <span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">Downloads</span>  <span class="n">Public</span>    <span class="n">Untitled</span> <span class="n">Folder</span>  <span class="n">conky</span>   <span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+</code></pre></div><p><strong>٢-لیستی فایلەکان بە ئۆپشێنی l- :</strong>
+ls-l واتە (-l is character not one) فایل و دایرێکتۆری ،قەبارە،ئەندازە، گۆڕانکاری داتا و کات، ناوی فایل و دایرێکتۆری و ئاستی دەستپێگەیشتنیان (permission)نیشان دەدات.</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="n">-l</span>
+<span class="n">total</span> <span class="n">1272</span>
+<span class="n">drwxr-xr-x</span> <span class="n">4</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">00</span><span class="err">:</span><span class="n">35</span> <span class="n">Desktop</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">16</span> <span class="n">23</span><span class="err">:</span><span class="n">25</span> <span class="n">Documents</span>
+<span class="n">drwxr-xr-x</span> <span class="n">6</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span>  <span class="n">4</span> <span class="n">22</span><span class="err">:</span><span class="n">46</span> <span class="n">Downloads</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Oct</span> <span class="n">16</span> <span class="n">18</span><span class="err">:</span><span class="n">19</span> <span class="n">Music</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">12</span><span class="err">:</span><span class="n">03</span> <span class="n">Pictures</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Oct</span>  <span class="n">8</span> <span class="n">16</span><span class="err">:</span><span class="n">23</span> <span class="n">Public</span>
+<span class="n">-rwxrw-rw</span><span class="p">-</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span>    <span class="n">259</span> <span class="n">Aug</span> <span class="n">30</span>  <span class="n">2012</span> <span class="n">README</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">11</span><span class="err">:</span><span class="n">53</span> <span class="n">Templates</span>
+<span class="n">drwxrwxr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">11</span><span class="err">:</span><span class="n">52</span> <span class="n">Untitled</span> <span class="n">Folder</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">13</span><span class="err">:</span><span class="n">54</span> <span class="n">Videos</span>
+<span class="n">drwxrwxrwx</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">12</span><span class="err">:</span><span class="n">30</span> <span class="n">clock</span>
+<span class="n">drwxrwxr-x</span> <span class="n">4</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span>  <span class="n">5</span> <span class="n">06</span><span class="err">:</span><span class="n">51</span> <span class="n">conky</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span>    <span class="n">230</span> <span class="n">Nov</span>  <span class="n">4</span> <span class="n">19</span><span class="err">:</span><span class="n">23</span> <span class="n">qezwan</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">243821</span> <span class="n">Nov</span>  <span class="n">2</span> <span class="n">22</span><span class="err">:</span><span class="n">15</span> <span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">999947</span> <span class="n">Nov</span>  <span class="n">2</span> <span class="n">21</span><span class="err">:</span><span class="n">31</span> <span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+</code></pre></div><p><strong>٣- دیتنی فایلە شاردراوەکان :</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="n">-a</span>
+<span class="p">.</span>		      <span class="p">.</span><span class="n">gksu</span><span class="p">.</span><span class="n">lock</span>	    <span class="n">Documents</span>
+<span class="p">..</span>		      <span class="p">.</span><span class="n">gnome2</span>		    <span class="n">Downloads</span>
+<span class="p">.</span><span class="n">ICEauthority</span>	      <span class="p">.</span><span class="n">gnome2_private</span>	    <span class="n">Music</span>
+<span class="p">.</span><span class="n">Xauthority</span>	      <span class="p">.</span><span class="n">icons</span>		    <span class="n">Pictures</span>
+<span class="p">.</span><span class="n">bash_history</span>	      <span class="p">.</span><span class="n">kde</span>		    <span class="n">Public</span>
+<span class="p">.</span><span class="n">cache</span>		      <span class="p">.</span><span class="n">local</span>		    <span class="n">README</span>
+<span class="p">.</span><span class="n">clock_rings</span><span class="p">.</span><span class="n">lua</span>      <span class="p">.</span><span class="n">marks</span><span class="p">.</span><span class="n">lua</span>	    <span class="n">Templates</span>
+<span class="p">.</span><span class="n">config</span>		      <span class="p">.</span><span class="n">ssr</span>		    <span class="n">Untitled</span> <span class="n">Folder</span>
+<span class="p">.</span><span class="n">conky</span>		      <span class="p">.</span><span class="n">swt</span>		    <span class="n">Videos</span>
+<span class="p">.</span><span class="n">conky-google-now</span>     <span class="p">.</span><span class="n">themes</span>		    <span class="n">clock</span>
+<span class="p">.</span><span class="n">conkyrc-transparent</span>  <span class="p">.</span><span class="n">thumbnails</span>	    <span class="n">conky</span>
+<span class="p">.</span><span class="n">conkyrc_clock</span>	      <span class="p">.</span><span class="n">xsession-errors</span>	    <span class="n">qezwan</span>
+<span class="p">.</span><span class="n">dbus</span>		      <span class="p">.</span><span class="n">xsession-errors</span><span class="p">.</span><span class="n">old</span>  <span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="p">.</span><span class="n">fonts</span>		      <span class="p">.</span><span class="n">zekr</span>		    <span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="p">.</span><span class="n">gconf</span>		      <span class="n">Desktop</span>
+</code></pre></div><p><strong>٤-نیشاندانی ئەو فایلانە لە مرۆڤ توانایی خوێندنیانی هەیە:</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="n">-lh</span>
+<span class="n">total</span> <span class="n">1</span><span class="p">.</span><span class="n">3M</span>
+<span class="n">drwxr-xr-x</span> <span class="n">4</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">00</span><span class="err">:</span><span class="n">35</span> <span class="n">Desktop</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Nov</span> <span class="n">16</span> <span class="n">23</span><span class="err">:</span><span class="n">25</span> <span class="n">Documents</span>
+<span class="n">drwxr-xr-x</span> <span class="n">6</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Nov</span>  <span class="n">4</span> <span class="n">22</span><span class="err">:</span><span class="n">46</span> <span class="n">Downloads</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Oct</span> <span class="n">16</span> <span class="n">18</span><span class="err">:</span><span class="n">19</span> <span class="n">Music</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">12</span><span class="err">:</span><span class="n">03</span> <span class="n">Pictures</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Oct</span>  <span class="n">8</span> <span class="n">16</span><span class="err">:</span><span class="n">23</span> <span class="n">Public</span>
+<span class="n">-rwxrw-rw</span><span class="p">-</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span>  <span class="n">259</span> <span class="n">Aug</span> <span class="n">30</span>  <span class="n">2012</span> <span class="n">README</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">11</span><span class="err">:</span><span class="n">53</span> <span class="n">Templates</span>
+<span class="n">drwxrwxr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">11</span><span class="err">:</span><span class="n">52</span> <span class="n">Untitled</span> <span class="n">Folder</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">13</span><span class="err">:</span><span class="n">54</span> <span class="n">Videos</span>
+<span class="n">drwxrwxrwx</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">12</span><span class="err">:</span><span class="n">30</span> <span class="n">clock</span>
+<span class="n">drwxrwxr-x</span> <span class="n">4</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4</span><span class="p">.</span><span class="n">0K</span> <span class="n">Nov</span>  <span class="n">5</span> <span class="n">06</span><span class="err">:</span><span class="n">51</span> <span class="n">conky</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span>  <span class="n">230</span> <span class="n">Nov</span>  <span class="n">4</span> <span class="n">19</span><span class="err">:</span><span class="n">23</span> <span class="n">qezwan</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">239K</span> <span class="n">Nov</span>  <span class="n">2</span> <span class="n">22</span><span class="err">:</span><span class="n">15</span> <span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">977K</span> <span class="n">Nov</span>  <span class="n">2</span> <span class="n">21</span><span class="err">:</span><span class="n">31</span> <span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+</code></pre></div><p><strong>٥- لیستی فایل و دایرێکتۆری بە کلیلی ‘/’ تاکۆتایی</strong>
+سوود وەرگرتنی ئۆپشێنی F- لەگەڵ فەرمانی ls بۆ نیشاندانی دایرێکتۆری.</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="o">-F</span>
+<span class="n">Desktop</span><span class="p">/</span>    <span class="n">Pictures</span><span class="p">/</span>	<span class="n">Untitled</span> <span class="n">Folder</span><span class="p">/</span>  <span class="n">qezwan</span>
+<span class="n">Documents</span><span class="p">/</span>  <span class="n">Public</span><span class="p">/</span>	<span class="n">Videos</span><span class="p">/</span>		  <span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">Downloads</span><span class="p">/</span>  <span class="n">README</span><span class="p">*</span>	<span class="n">clock</span><span class="p">/</span>		  <span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="n">Music</span><span class="p">/</span>	    <span class="n">Templates</span><span class="p">/</span>	<span class="n">conky</span><span class="p">/</span>
+</code></pre></div><p><strong>٦- نیشاندانی فایل و دایرێکتۆری بە شێوازی پێچەوانە:</strong>
+بۆ ئەم مەبەستە سوود لە فەرمانیls -r دەگرین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="n">-r</span>
+<span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>					<span class="n">conky</span>	<span class="n">Untitled</span> <span class="n">Folder</span>  <span class="n">Public</span>    <span class="n">Downloads</span>
+<span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>	<span class="n">clock</span>	<span class="n">Templates</span>	 <span class="n">Pictures</span>  <span class="n">Documents</span>
+<span class="n">qezwan</span>						<span class="n">Videos</span>	<span class="n">README</span>		 <span class="n">Music</span>	   <span class="n">Desktop</span>
+</code></pre></div><p><strong>٧- نیشاندانی لیستێک لە ژێ-دایرێکتۆریەکان:</strong>
+ئۆپشینی R- لە گەڵ فەرمانی ls کە لیستێکی زۆرمان پێ دەدات کە لێرە کوترەیێکمان هاوردگە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="n">-R</span>
+<span class="p">.</span><span class="err">:</span>
+<span class="n">Desktop</span>    <span class="n">Music</span>     <span class="n">README</span>	      <span class="n">Videos</span>  <span class="n">qezwan</span>
+<span class="n">Documents</span>  <span class="n">Pictures</span>  <span class="n">Templates</span>	      <span class="n">clock</span>   <span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">Downloads</span>  <span class="n">Public</span>    <span class="n">Untitled</span> <span class="n">Folder</span>  <span class="n">conky</span>   <span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+ 
+<span class="p">./</span><span class="n">Desktop</span><span class="err">:</span>
+<span class="n">06</span> <span class="p">-</span> <span class="n">Don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">Ask</span> <span class="n">Me</span> <span class="n">Why</span><span class="p">.</span><span class="n">mp3</span>	      <span class="n">AliMerdan13</span><span class="p">.</span><span class="n">mp3</span>  <span class="n">Untitled</span> <span class="n">2</span><span class="p">.</span><span class="n">odt</span>
+<span class="n">2015</span><span class="p">-</span><span class="n">11</span><span class="p">-</span><span class="n">06_04</span><span class="p">.</span><span class="n">58</span><span class="p">.</span><span class="n">46</span><span class="p">.</span><span class="n">698796</span><span class="p">.</span><span class="n">chawg</span><span class="p">.</span><span class="n">ful</span>  <span class="n">New</span> <span class="n">Folder</span> <span class="p">(</span><span class="n">2</span><span class="p">)</span>   <span class="n">qezwan</span><span class="p">.</span><span class="n">odt</span>
+ 
+<span class="p">./</span><span class="n">Desktop</span><span class="p">/</span><span class="n">2015</span><span class="p">-</span><span class="n">11</span><span class="p">-</span><span class="n">06_04</span><span class="p">.</span><span class="n">58</span><span class="p">.</span><span class="n">46</span><span class="p">.</span><span class="n">698796</span><span class="p">.</span><span class="n">chawg</span><span class="p">.</span><span class="n">ful</span><span class="err">:</span>
+<span class="n">Gela</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">14</span><span class="p">.</span><span class="n">zip</span>  <span class="n">files</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>					 <span class="n">includes</span><span class="p">.</span><span class="n">list</span>
+<span class="n">Qezwan</span><span class="p">.</span><span class="n">odt</span>     <span class="n">flattr-icons-master</span><span class="p">.</span><span class="n">zip</span>				 <span class="n">packages</span>
+<span class="n">excludes</span>       <span class="n">format</span>						 <span class="n">qezwanlogo025</span><span class="p">.</span><span class="n">png</span>
+<span class="n">excludes</span><span class="p">.</span><span class="n">list</span>  <span class="n">gnome-exe-thumbnailer_0</span><span class="p">.</span><span class="n">7</span><span class="p">-</span><span class="n">0ubuntu1-lucid1</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>  <span class="n">zekr</span>
+ 
+<span class="p">./</span><span class="n">Desktop</span><span class="p">/</span><span class="n">2015</span><span class="p">-</span><span class="n">11</span><span class="p">-</span><span class="n">06_04</span><span class="p">.</span><span class="n">58</span><span class="p">.</span><span class="n">46</span><span class="p">.</span><span class="n">698796</span><span class="p">.</span><span class="n">chawg</span><span class="p">.</span><span class="n">ful</span><span class="p">/</span><span class="n">zekr</span><span class="err">:</span>
+<span class="n">build</span><span class="p">.</span><span class="n">xml</span>  <span class="n">dist</span>  <span class="n">doc</span>  <span class="n">lib</span>  <span class="n">readme</span><span class="p">.</span><span class="n">txt</span>  <span class="n">res</span>  <span class="n">zekr</span><span class="p">.</span><span class="n">sh</span>
+ 
+<span class="p">./</span><span class="n">Desktop</span><span class="p">/</span><span class="n">2015</span><span class="p">-</span><span class="n">11</span><span class="p">-</span><span class="n">06_04</span><span class="p">.</span><span class="n">58</span><span class="p">.</span><span class="n">46</span><span class="p">.</span><span class="n">698796</span><span class="p">.</span><span class="n">chawg</span><span class="p">.</span><span class="n">ful</span><span class="p">/</span><span class="n">zekr</span><span class="p">/</span><span class="n">dist</span><span class="err">:</span>
+<span class="n">zekr-src</span><span class="p">.</span><span class="n">jar</span>  <span class="n">zekr</span><span class="p">.</span><span class="n">jar</span>
+</code></pre></div><p><strong>٨- پێچەوانەکەرەوەی داواکانی دەرچوو:</strong>
+بە ئۆپشێنی ltr ئێمە ژمارەیێک لەلیستی دوایین دەستکاریکراوەکانی فایل و دایرێکتۆریمان بۆ ڕووندەبێتەوە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="n">-ltr</span>
+<span class="n">total</span> <span class="n">1272</span>
+<span class="n">-rwxrw-rw</span><span class="p">-</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span>    <span class="n">259</span> <span class="n">Aug</span> <span class="n">30</span>  <span class="n">2012</span> <span class="n">README</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Oct</span>  <span class="n">8</span> <span class="n">16</span><span class="err">:</span><span class="n">23</span> <span class="n">Public</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Oct</span> <span class="n">16</span> <span class="n">18</span><span class="err">:</span><span class="n">19</span> <span class="n">Music</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">999947</span> <span class="n">Nov</span>  <span class="n">2</span> <span class="n">21</span><span class="err">:</span><span class="n">31</span> <span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">243821</span> <span class="n">Nov</span>  <span class="n">2</span> <span class="n">22</span><span class="err">:</span><span class="n">15</span> <span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span>    <span class="n">230</span> <span class="n">Nov</span>  <span class="n">4</span> <span class="n">19</span><span class="err">:</span><span class="n">23</span> <span class="n">qezwan</span>
+<span class="n">drwxr-xr-x</span> <span class="n">6</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span>  <span class="n">4</span> <span class="n">22</span><span class="err">:</span><span class="n">46</span> <span class="n">Downloads</span>
+<span class="n">drwxrwxr-x</span> <span class="n">4</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span>  <span class="n">5</span> <span class="n">06</span><span class="err">:</span><span class="n">51</span> <span class="n">conky</span>
+<span class="n">drwxrwxr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">11</span><span class="err">:</span><span class="n">52</span> <span class="n">Untitled</span> <span class="n">Folder</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">11</span><span class="err">:</span><span class="n">53</span> <span class="n">Templates</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">12</span><span class="err">:</span><span class="n">03</span> <span class="n">Pictures</span>
+<span class="n">drwxrwxrwx</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">12</span><span class="err">:</span><span class="n">30</span> <span class="n">clock</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">13</span><span class="err">:</span><span class="n">54</span> <span class="n">Videos</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">16</span> <span class="n">23</span><span class="err">:</span><span class="n">25</span> <span class="n">Documents</span>
+<span class="n">drwxr-xr-x</span> <span class="n">4</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">00</span><span class="err">:</span><span class="n">35</span> <span class="n">Desktop</span>
+</code></pre></div><p><strong>٩-نیشاندان و رێکخستنی فایلەکان بە ئەندازەیان</strong>
+بە فەرمانی ls -lS ئێمە دەتوانین فایلەکان بە قەبارە و ئەندازەیان نیشانبدەین.زۆرترین سایز لە رێزبەندی هێڵی یەکەمە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="n">-lS</span>
+<span class="n">total</span> <span class="n">1272</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">999947</span> <span class="n">Nov</span>  <span class="n">2</span> <span class="n">21</span><span class="err">:</span><span class="n">31</span> <span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">243821</span> <span class="n">Nov</span>  <span class="n">2</span> <span class="n">22</span><span class="err">:</span><span class="n">15</span> <span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">drwxr-xr-x</span> <span class="n">4</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">00</span><span class="err">:</span><span class="n">35</span> <span class="n">Desktop</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">16</span> <span class="n">23</span><span class="err">:</span><span class="n">25</span> <span class="n">Documents</span>
+<span class="n">drwxr-xr-x</span> <span class="n">6</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span>  <span class="n">4</span> <span class="n">22</span><span class="err">:</span><span class="n">46</span> <span class="n">Downloads</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Oct</span> <span class="n">16</span> <span class="n">18</span><span class="err">:</span><span class="n">19</span> <span class="n">Music</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">12</span><span class="err">:</span><span class="n">03</span> <span class="n">Pictures</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Oct</span>  <span class="n">8</span> <span class="n">16</span><span class="err">:</span><span class="n">23</span> <span class="n">Public</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">11</span><span class="err">:</span><span class="n">53</span> <span class="n">Templates</span>
+<span class="n">drwxrwxr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">11</span><span class="err">:</span><span class="n">52</span> <span class="n">Untitled</span> <span class="n">Folder</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">13</span><span class="err">:</span><span class="n">54</span> <span class="n">Videos</span>
+<span class="n">drwxrwxrwx</span> <span class="n">3</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">12</span><span class="err">:</span><span class="n">30</span> <span class="n">clock</span>
+<span class="n">drwxrwxr-x</span> <span class="n">4</span> <span class="n">qezwan</span> <span class="n">qezwan</span>   <span class="n">4096</span> <span class="n">Nov</span>  <span class="n">5</span> <span class="n">06</span><span class="err">:</span><span class="n">51</span> <span class="n">conky</span>
+<span class="n">-rwxrw-rw</span><span class="p">-</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span>    <span class="n">259</span> <span class="n">Aug</span> <span class="n">30</span>  <span class="n">2012</span> <span class="n">README</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span>    <span class="n">230</span> <span class="n">Nov</span>  <span class="n">4</span> <span class="n">19</span><span class="err">:</span><span class="n">23</span> <span class="n">qezwan</span>
+</code></pre></div><p><strong>١٠-نیشاندانی ژماری Inode فایل و دایرێکتۆری</strong>
+بۆ ئەم مەبەستە لە فەرمانی سوود وەردگەرین کە بێجگە لە ناوی دایرێکتۆری و فایل ژماری Inode یشمان بۆ نیشان دەدات.</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="n">-i</span>
+ <span class="n">534887</span> <span class="n">Desktop</span>    <span class="n">1454132</span> <span class="n">Untitled</span> <span class="n">Folder</span>
+ <span class="n">534839</span> <span class="n">Documents</span>   <span class="n">534853</span> <span class="n">Videos</span>
+ <span class="n">534833</span> <span class="n">Downloads</span>   <span class="n">678729</span> <span class="n">clock</span>
+ <span class="n">534843</span> <span class="n">Music</span>	    <span class="n">678667</span> <span class="n">conky</span>
+ <span class="n">534851</span> <span class="n">Pictures</span>    <span class="n">540707</span> <span class="n">qezwan</span>
+ <span class="n">534837</span> <span class="n">Public</span>	    <span class="n">541409</span> <span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+ <span class="n">541669</span> <span class="n">README</span>	    <span class="n">541396</span> <span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+ <span class="n">534835</span> <span class="n">Templates</span>
+</code></pre></div><p><strong>١١- نیساندانی وشانی فەرمانی ls :</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="p">-</span><span class="n">-version</span>
+<span class="nb">ls </span><span class="p">(</span><span class="n">GNU</span> <span class="n">coreutils</span><span class="p">)</span> <span class="n">8</span><span class="p">.</span><span class="n">21</span>
+<span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">2013</span> <span class="n">Free</span> <span class="n">Software</span> <span class="n">Foundation</span><span class="p">,</span> <span class="n">Inc</span><span class="p">.</span>
+<span class="n">License</span> <span class="n">GPLv3</span><span class="p">+</span><span class="err">:</span> <span class="n">GNU</span> <span class="n">GPL</span> <span class="n">version</span> <span class="n">3</span> <span class="n">or</span> <span class="n">later</span> <span class="p">&lt;</span><span class="n">http</span><span class="err">:</span><span class="p">//</span><span class="n">gnu</span><span class="p">.</span><span class="n">org</span><span class="p">/</span><span class="n">licenses</span><span class="p">/</span><span class="n">gpl</span><span class="p">.</span><span class="n">html</span><span class="p">&gt;.</span>
+<span class="n">This</span> <span class="n">is</span> <span class="n">free</span> <span class="n">software</span><span class="err">:</span> <span class="n">you</span> <span class="n">are</span> <span class="n">free</span> <span class="n">to</span> <span class="n">change</span> <span class="n">and</span> <span class="n">redistribute</span> <span class="n">it</span><span class="p">.</span>
+<span class="n">There</span> <span class="n">is</span> <span class="n">NO</span> <span class="n">WARRANTY</span><span class="p">,</span> <span class="n">to</span> <span class="n">the</span> <span class="n">extent</span> <span class="n">permitted</span> <span class="n">by</span> <span class="n">law</span><span class="p">.</span>
+</code></pre></div><p><strong>١٢-نیشاندانی پەڕەی یارمەتیدەر:</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="p">-</span><span class="n">-help</span>
+<span class="n">Usage</span><span class="err">:</span> <span class="nb">ls </span><span class="no">[OPTION]... [FILE]</span><span class="p">...</span>
+<span class="n">List</span> <span class="n">information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">FILEs</span> <span class="p">(</span><span class="n">the</span> <span class="n">current</span> <span class="n">directory</span> <span class="n">by</span> <span class="k">default</span><span class="p">).</span>
+<span class="nb">Sort </span><span class="n">entries</span> <span class="n">alphabetically</span> <span class="k">if</span> <span class="n">none</span> <span class="n">of</span> <span class="n">-cftuvSUX</span> <span class="n">nor</span> <span class="p">-</span><span class="n">-sort</span> <span class="n">is</span> <span class="n">specified</span><span class="p">.</span>
+ 
+<span class="k">Mandatory</span> <span class="n">arguments</span> <span class="n">to</span> <span class="n">long</span> <span class="n">options</span> <span class="n">are</span> <span class="k">mandatory</span> <span class="k">for</span> <span class="n">short</span> <span class="n">options</span> <span class="n">too</span><span class="p">.</span>
+  <span class="n">-a</span><span class="p">,</span> <span class="p">-</span><span class="n">-all</span>                  <span class="k">do</span> <span class="n">not</span> <span class="n">ignore</span> <span class="n">entries</span> <span class="n">starting</span> <span class="n">with</span> <span class="p">.</span>
+  <span class="n">-A</span><span class="p">,</span> <span class="p">-</span><span class="n">-almost-all</span>           <span class="k">do</span> <span class="n">not</span> <span class="n">list</span> <span class="n">implied</span> <span class="p">.</span> <span class="n">and</span> <span class="p">..</span>
+      <span class="p">-</span><span class="n">-author</span>               <span class="n">with</span> <span class="n">-l</span><span class="p">,</span> <span class="n">print</span> <span class="n">the</span> <span class="n">author</span> <span class="n">of</span> <span class="n">each</span> <span class="n">file</span>
+  <span class="n">-b</span><span class="p">,</span> <span class="p">-</span><span class="n">-escape</span>               <span class="n">print</span> <span class="n">C-style</span> <span class="n">escapes</span> <span class="k">for</span> <span class="n">nongraphic</span> <span class="n">characters</span>
+      <span class="p">-</span><span class="n">-block-size</span><span class="p">=</span><span class="n">SIZE</span>      <span class="n">scale</span> <span class="n">sizes</span> <span class="n">by</span> <span class="n">SIZE</span> <span class="n">before</span> <span class="n">printing</span> <span class="n">them</span><span class="p">.</span>  <span class="n">E</span><span class="p">.</span><span class="n">g</span><span class="p">.,</span>
+                               <span class="s1">&#39;--block-size=M&#39;</span> <span class="n">prints</span> <span class="n">sizes</span> <span class="k">in</span> <span class="n">units</span> <span class="n">of</span>
+                               <span class="n">1</span><span class="p">,</span><span class="n">048</span><span class="p">,</span><span class="n">576</span> <span class="n">bytes</span><span class="p">.</span>  <span class="n">See</span> <span class="n">SIZE</span> <span class="n">format</span> <span class="n">below</span><span class="p">.</span>
+  <span class="n">-B</span><span class="p">,</span> <span class="p">-</span><span class="n">-ignore-backups</span>       <span class="k">do</span> <span class="n">not</span> <span class="n">list</span> <span class="n">implied</span> <span class="n">entries</span> <span class="n">ending</span> <span class="n">with</span> <span class="p">~</span>
+</code></pre></div><p><strong>١٣- لیستی فایلەکان لە نێو دایرێکتۆریێک:</strong>
+بە فەرمانی ls -l لیستی فایلەکان لە ژێر دایریکتۆری /tmp نیشان دەدات:</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span>  <span class="nb">ls </span><span class="n">-l</span> <span class="p">/</span><span class="n">tmp</span>
+<span class="n">total</span> <span class="n">20</span>
+<span class="n">drwxrwxrwt</span> <span class="n">2</span> <span class="n">root</span>   <span class="n">root</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">01</span><span class="err">:</span><span class="n">58</span> <span class="n">VMwareDnD</span>
+<span class="n">-rw</span><span class="p">-------</span> <span class="n">1</span> <span class="n">qezwan</span> <span class="n">qezwan</span>    <span class="n">0</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">02</span><span class="err">:</span><span class="n">02</span> <span class="n">config-err</span><span class="p">-</span><span class="n">6zJEPX</span>
+<span class="n">drwx</span><span class="p">------</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4096</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">02</span><span class="err">:</span><span class="n">02</span> <span class="n">ssh-vEOUgJY70cy8</span>
+<span class="n">drwx</span><span class="p">------</span> <span class="n">2</span> <span class="n">qezwan</span> <span class="n">qezwan</span> <span class="n">4096</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">02</span><span class="err">:</span><span class="n">02</span> <span class="n">vmware-qezwan</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">root</span>   <span class="n">root</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">02</span><span class="err">:</span><span class="n">07</span> <span class="n">vmware-root</span>
+<span class="n">drwx</span><span class="p">------</span> <span class="n">2</span> <span class="n">root</span>   <span class="n">root</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">02</span><span class="err">:</span><span class="n">07</span> <span class="n">vmware-root</span><span class="p">-</span><span class="n">600412174</span>
+</code></pre></div><p><strong>زانیاری دایرێکتۆری /tmp بە فەرمانی :</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="n">-ld</span> <span class="p">/</span><span class="n">tmp</span><span class="p">/</span>
+<span class="n">drwxrwxrwt</span> <span class="n">9</span> <span class="n">root</span> <span class="n">root</span> <span class="n">4096</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">02</span><span class="err">:</span><span class="n">54</span> <span class="p">/</span><span class="n">tmp</span><span class="p">/</span>
+</code></pre></div><p><strong>١٤-نیشاندانی فایلەکانی UID و GID :</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">qezwan</span><span class="nv">@linux</span><span class="err">:</span><span class="p">~$</span> <span class="nb">ls </span><span class="n">-n</span>
+<span class="n">total</span> <span class="n">1272</span>
+<span class="n">drwxr-xr-x</span> <span class="n">4</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">17</span> <span class="n">00</span><span class="err">:</span><span class="n">35</span> <span class="n">Desktop</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">16</span> <span class="n">23</span><span class="err">:</span><span class="n">25</span> <span class="n">Documents</span>
+<span class="n">drwxr-xr-x</span> <span class="n">6</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Nov</span>  <span class="n">4</span> <span class="n">22</span><span class="err">:</span><span class="n">46</span> <span class="n">Downloads</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Oct</span> <span class="n">16</span> <span class="n">18</span><span class="err">:</span><span class="n">19</span> <span class="n">Music</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">12</span><span class="err">:</span><span class="n">03</span> <span class="n">Pictures</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Oct</span>  <span class="n">8</span> <span class="n">16</span><span class="err">:</span><span class="n">23</span> <span class="n">Public</span>
+<span class="n">-rwxrw-rw</span><span class="p">-</span> <span class="n">1</span> <span class="n">1000</span> <span class="n">1000</span>    <span class="n">259</span> <span class="n">Aug</span> <span class="n">30</span>  <span class="n">2012</span> <span class="n">README</span>
+<span class="n">drwxr-xr-x</span> <span class="n">3</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">11</span><span class="err">:</span><span class="n">53</span> <span class="n">Templates</span>
+<span class="n">drwxrwxr-x</span> <span class="n">2</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">11</span><span class="err">:</span><span class="n">52</span> <span class="n">Untitled</span> <span class="n">Folder</span>
+<span class="n">drwxr-xr-x</span> <span class="n">2</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">13</span><span class="err">:</span><span class="n">54</span> <span class="n">Videos</span>
+<span class="n">drwxrwxrwx</span> <span class="n">3</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Nov</span> <span class="n">11</span> <span class="n">12</span><span class="err">:</span><span class="n">30</span> <span class="n">clock</span>
+<span class="n">drwxrwxr-x</span> <span class="n">4</span> <span class="n">1000</span> <span class="n">1000</span>   <span class="n">4096</span> <span class="n">Nov</span>  <span class="n">5</span> <span class="n">06</span><span class="err">:</span><span class="n">51</span> <span class="n">conky</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">1000</span> <span class="n">1000</span>    <span class="n">230</span> <span class="n">Nov</span>  <span class="n">4</span> <span class="n">19</span><span class="err">:</span><span class="n">23</span> <span class="n">qezwan</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">1000</span> <span class="n">1000</span> <span class="n">243821</span> <span class="n">Nov</span>  <span class="n">2</span> <span class="n">22</span><span class="err">:</span><span class="n">15</span> <span class="n">supertuxkart</span><span class="p">-</span><span class="n">0</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">1-linux-glibc2</span><span class="p">.</span><span class="n">7-i386</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">bz2</span>
+<span class="n">-rw-rw-r</span><span class="p">--</span> <span class="n">1</span> <span class="n">1000</span> <span class="n">1000</span> <span class="n">999947</span> <span class="n">Nov</span>  <span class="n">2</span> <span class="n">21</span><span class="err">:</span><span class="n">31</span> <span class="n">themes</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+</code></pre></div>
+                <br>
+                
+                  <div class="tags">
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://qezwan.ir/blog">بگەڕە بۆ بابەتەکان</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

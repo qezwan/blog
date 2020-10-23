@@ -680,7 +680,7 @@ section.main .content .markdown h6 {
 }
 section.main .content .markdown code,
 section.main .content .markdown pre {
-  font-family: Vazir,'Ubuntu Mono', 'Menlo', monospace;
+  font-family: 'Ubuntu Mono', 'Menlo', monospace;
   font-size: 1rem;
   background-color: #eff8ff;
   color: #000;
@@ -706,7 +706,7 @@ section.main .content .markdown pre code {
   /* enclosed by 3 backticks (```) */
   padding: 0;
   font-size: 1rem;    overflow: auto;
-    white-space: pre;
+    
 }
 section.main .content .markdown a code {
   color: #428bca !important;
@@ -739,7 +739,7 @@ section.main .content .markdown ul li {
   list-style-type: disc;
 }
 section.main .content .markdown ol li {
-  list-style-type: decimal;
+  list-style-type: decimal;    list-style: arabic-indic;
 }
 section.main .content .markdown li {
       list-style-position: outside;
@@ -806,4 +806,29 @@ section.main .content .markdown th {
 section.main .content .markdown tbody tr:nth-child(odd) td,
 section.main .content .markdown tbody tr:nth-child(odd) th {
   background-color: #f7f7f7;color: #000;
+}
+
+/*
+ * Dark Mode Toggle
+ * Copyright (c) 2015 instructure-react
+ * Forked from Dan Abramov's personal blog
+ * https://github.com/gaearon/overreacted.io/blob/master/src/components/Toggle.css
+ * MIT License
+**/
+pre {
+    display: block;
+    padding: 9.5px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #00adff;
+    border-top: 1px solid #00adff;
+    border-radius: 4px;
+    margin: 5px 15px 15px 15px;  
+    direction: ltr;
+    text-align: left;white-space: pre-wrap;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }

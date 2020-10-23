@@ -228,5 +228,16 @@ wttr.in ماڵپەڕێکە کە ڕاستە و خۆ پاش چوونە ژوورە�
 $ curl wttr.</description>
     </item>
     
+    <item>
+      <title>گۆڕینی ئەندازەی شاشە بە فەرمانی لینوکس</title>
+      <link>https://qezwan.ir/gnulinux/%DA%AF%DB%86%DA%95%DB%8C%D9%86%DB%8C-%D8%A6%DB%95%D9%86%D8%AF%D8%A7%D8%B2%DB%95%DB%8C-%D8%B4%D8%A7%D8%B4%DB%95-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
+      <pubDate>Thu, 12 Mar 2015 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/gnulinux/%DA%AF%DB%86%DA%95%DB%8C%D9%86%DB%8C-%D8%A6%DB%95%D9%86%D8%AF%D8%A7%D8%B2%DB%95%DB%8C-%D8%B4%D8%A7%D8%B4%DB%95-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
+      <description>بۆ گۆڕینی قەبارەی شاشە لە لینوکسی-ئێلێمێنتری ئێوە دەتوانن لە مەسیری خوارەوە ئەندازەی ڕوناکی شاسەی سیستەمەکەتان بگۆڕن.
+System Settings &amp;gt;Displayesبە فەرمانی xrandr ئێوە دەتوانن زانیاریێکی فرە لە سەر پیشانگەری ئەندازەی شاشە بزانن!
+qezwan@kurd.click:~$ xrandr Screen 0: minimum 1 x 1, current 832 x 759, maximum 8192 x 8192 Virtual1 connected primary 832x759+0+0 (normal left inverted right x axis y axis) 0mm x 0mm 832x759 60.0*+ 2560x1600 60.0 1920x1440 60.0 1856x1392 60.</description>
+    </item>
+    
   </channel>
 </rss>
