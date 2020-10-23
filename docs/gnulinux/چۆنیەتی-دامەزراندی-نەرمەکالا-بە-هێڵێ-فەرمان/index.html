@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی گەر لە هەر کاتێک لە لینوکس سود دەبینن ،بە خێرایی فێردەبن کە ڕێگای فرەمان هەس بۆ ئەنجامدانی ئیشەکان.ئەمە بریتییە لە دامەزراندنی نەرمەکالاکان لە رێگای هێڵێ فەرمان.من[ Patrick H. Mullins] نزیک ۲۵ ساڵ بەکارهێنەری لینوکس بووم بەڵام زۆرجار بۆ دامەزراندنی نەرمەکالاکان سەردانی هێڵێ فەرمانم کردووە و گەڕاومەتەوە سەری. باوترین شێواز بۆ دامەزراندنی نەرمەکالا سود وەرگرتن لە کانگاکانی نەرمەکالایە(ئەو شوێنە کە نەرمەکالا پاسکەوت دەبێت).تەواو نەرمەکالاکان لینوکس بە شیوەی پاکەتەکان بڵاو دەکرێنەوە کە شتێک لە پەڕگەکانی بەڕێوەبەری سیستەم نین.">
+
+<meta property="og:title" content="چۆنیەتی دامەزراندی نەرمەکالا بە هێڵێ فەرمان" />
+<meta property="og:description" content="پێشەکی گەر لە هەر کاتێک لە لینوکس سود دەبینن ،بە خێرایی فێردەبن کە ڕێگای فرەمان هەس بۆ ئەنجامدانی ئیشەکان.ئەمە بریتییە لە دامەزراندنی نەرمەکالاکان لە رێگای هێڵێ فەرمان.من[ Patrick H. Mullins] نزیک ۲۵ ساڵ بەکارهێنەری لینوکس بووم بەڵام زۆرجار بۆ دامەزراندنی نەرمەکالاکان سەردانی هێڵێ فەرمانم کردووە و گەڕاومەتەوە سەری. باوترین شێواز بۆ دامەزراندنی نەرمەکالا سود وەرگرتن لە کانگاکانی نەرمەکالایە(ئەو شوێنە کە نەرمەکالا پاسکەوت دەبێت).تەواو نەرمەکالاکان لینوکس بە شیوەی پاکەتەکان بڵاو دەکرێنەوە کە شتێک لە پەڕگەکانی بەڕێوەبەری سیستەم نین." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%DA%86%DB%86%D9%86%DB%8C%DB%95%D8%AA%DB%8C-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D8%A8%DB%95-%D9%87%DB%8E%DA%B5%DB%8E-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86/" />
+<meta property="article:published_time" content="2018-10-01T05:20:45+00:00" />
+<meta property="article:modified_time" content="2018-10-01T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     چۆنیەتی دامەزراندی نەرمەکالا بە هێڵێ فەرمان 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%DA%86%DB%86%D9%86%DB%8C%DB%95%D8%AA%DB%8C-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D8%A8%DB%95-%D9%87%DB%8E%DA%B5%DB%8E-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-24%2000%3a18%3a49.2163483%20%2b0330%20%2b0330%20m%3d%2b0.321800701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-24%2000%3a18%3a49.2163483%20%2b0330%20%2b0330%20m%3d%2b0.321800701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-24%2000%3a18%3a49.2163483%20%2b0330%20%2b0330%20m%3d%2b0.321800701">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-24%2000%3a18%3a49.2163483%20%2b0330%20%2b0330%20m%3d%2b0.321800701">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    چۆنیەتی دامەزراندی نەرمەکالا بە هێڵێ فەرمان
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Oct 1 2018 05:20:45 UTC'>Oct 1, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>531 وشە </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی"><strong>پێشەکی</strong></h5>
+<p>گەر لە هەر کاتێک لە لینوکس سود دەبینن ،بە خێرایی فێردەبن کە ڕێگای فرەمان هەس بۆ ئەنجامدانی ئیشەکان.ئەمە بریتییە لە دامەزراندنی نەرمەکالاکان لە رێگای هێڵێ فەرمان.من[ Patrick H. Mullins] نزیک ۲۵ ساڵ بەکارهێنەری لینوکس بووم بەڵام زۆرجار بۆ دامەزراندنی نەرمەکالاکان سەردانی هێڵێ فەرمانم کردووە و گەڕاومەتەوە سەری.
+باوترین شێواز بۆ دامەزراندنی نەرمەکالا سود وەرگرتن لە کانگاکانی نەرمەکالایە(ئەو شوێنە کە نەرمەکالا پاسکەوت دەبێت).تەواو نەرمەکالاکان لینوکس بە شیوەی پاکەتەکان بڵاو دەکرێنەوە کە شتێک لە پەڕگەکانی بەڕێوەبەری سیستەم نین.هەر دابەسکراوەیێکی لینوکس خاوەنی سیستەمی بەڕێوەبردنی پاکەتەکانە،بەڵام زۆربەیان یەکسان نین.</p>
+<h5 id="سیستەمی-بەڕێوەبردنی-پاکەتەکان-چییە-"><strong>سیستەمی بەڕێوەبردنی پاکەتەکان چییە ؟</strong></h5>
+<p>سیستەمی بەڕێوەبردنی پاکەتەکان، بە کۆی ئامرازەکان و شێوازەکانی پەڕگە کە بە یەکەوە بۆ دامەزراندن،بەڕۆژکردنەوە و سڕینەوەی نەرمەکالاکان لە لینوکس دەوترێت.دوو سیستەمی بەرچاوکراوی بەرێوەبردنی پاکەتەکان بریتین لە دێبیان(Debian) و رێدهەت(Red Hat). فێدۆرا(Fedora)،رێدهەت(Red Hat) و سێنت ئۆ ئێس( CentOS) بەگشتی سود لەسیستەمی rpm دەگرن(پەڕگەکانی rpm.)، لە کاتێک دا دێبیان(Debian)،ئوبونتو(Ubuntu) و مینت(Mint) سود لە سیستەمی dpkg دەگرن (پەڕگەکان deb.).جێنتوو(Gentoo) سوو لە سیستەمێک دەگرێت بە ناوی Portage وە ئاچ یان ئارک(Arch) سود لە tarballs دەگرێت(پەڕگەکانی tar.).تەنها جیاوازی ئەم سیستەمانە ئەوەیە کە چۆن پەڕگەکان دادەمەزرێنن و هەڵیدەگرن.</p>
+<p>ئیمکانی هەیە پێتان خۆش بێت کە بزانن چی لە نێو پەڕگەکانی rpm ، .deb. یا tar. هەیە. شایەت سەرسام بن کاتێک بزانن تەنها پەڕگەیێکی ئارشێڤی کۆنە وەک Zip. ی تێدایە، ئەوەش بریتییە لە کۆدی نەرمەکالا و فەرمانەکانی دامەزراندن و ڕیزکردنی پەڕگەکان(کە چ پەڕگەو نەرمەکالایێکی دیکەی پێویستە بۆ دامەزراندن)، ئەو شوینە کە پەڕگەی پەیکەرسازییەکەی دەبێ بوونی هەبێ،کوێیە.ئەو نەرمەکالا کە دەبێ تەواو ئەم فەرمانانە بخوێنێت و جێبەجێی بکات پێ دەڵێن بەڕێوەبەری پاکەت( package manager).</p>
+<h5 id="دێبیانdebianئوبونتوubuntu-و-مینتmint-و--هتد"><strong>دێبیان(Debian)،ئوبونتو(Ubuntu) و مینت(Mint) و … هتد.</strong></h5>
+<p>دێبیان(Debian)،ئوبونتو(Ubuntu) و مینت(Mint) و دابەسکراوەکانی دیکە کە لەسەر دێبیان لەدایک بوون سوود لە پەڕگەکانی deb. و dpkg واتە سیستەمی بەڕێوەبردنی پاکەتی دێبیان دەگرن.لێرە دوو ڕێگا بۆ دامەزراندنی نەرمەکالا لە سەر سیستەم هەیە.</p>
+<p>سود گرتن لە نەرمەکالای <code>apt </code> بۆ دامەزراندنی نەرمەکالا لە کانگاکان</p>
+<p>سودگرتن لە نەرمەکالای <code>dpkg</code> بۆ دامەزراندن نەرمەکالاکان بە پەڕگەی <code>deb.</code> با نمونویێک بهێنینەوە :
+دامەزراندن لە ڕێگای apt زۆر سادەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">app_name</span>
+</code></pre></div><p>سڕینەوەی نەرمەکالا بە فەرمانی apt زۆر زۆر ئاسانە</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">remove</span> <span class="n">app_name</span>
+</code></pre></div><p>بۆ بەڕۆژکردنی نەرمەکالا،دەبێ سەرەتا کانگای نەرمەکالا بەڕۆژ بکەنەوە</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+</code></pre></div><p>پاش تەواو بوونی فەرمانەکەی سەرەوە دەبێ ئێستا نەمرەکالا بەڕۆژ بکەنەوە</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">upgrade</span>
+</code></pre></div><p>گەر تەنها دەتانەوێت یەک نەرمەکالا یان نەرمەکالایێکی تایبەت بەڕۆژ بکەنەوە ،فەرمون ؛</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span> <span class="n">app_name</span>
+</code></pre></div><p>لە کۆتایی گەر نەرمەکالا لە کانگاکان بوونی نەبوو ،کێشەمان نییە دەتوانن لە ڕێگای پەڕگەی deb. دایمەزرێنن بەم جۆرە(ڕێگای دووەم)</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">dpkg</span> <span class="n">-i</span> <span class="n">app_name</span><span class="p">.</span><span class="n">deb</span>
+</code></pre></div><h5 id="فێدۆراfedoraرێدهەتred-hat-و-سێنت-ئۆ-ئێس-centos"><strong>فێدۆرا(Fedora)،رێدهەت(Red Hat) و سێنت ئۆ ئێس( CentOS)</strong></h5>
+<p>رێدهەت بە شیوازی سەرەکی لە چەندین سیستەمی بەڕێوەبردنی بوخچە پشتیوانی دەکا.هەرچەند ئەم سیستەمانە لە دەست واژەی خۆیان سوود دەگرن بەڵام لەگەڵ دێبیان هاوشێوەن.بۆ نمونە ئێمە لە yum وە dnf بۆ دامەزراندنی ئەپەکان(نەرمەکالاکان) سوود دەگرین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">app_name</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">dnf</span> <span class="n">install</span> <span class="n">app_name</span>
+</code></pre></div><p>بوخچەی ئەپێک یان نەرمەکالایێک بە فۆرماتی<code>rpm.</code>بەم شێوازە دادەمەزرێ :</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">rpm</span> <span class="n">-i</span> <span class="n">app_name</span><span class="p">.</span><span class="n">rpm</span>
+</code></pre></div><p>بۆ سڕینەوەی <code>rpm. </code>دەتوانین بەم جۆرە کردار بکەین</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">yum</span> <span class="n">remove</span> <span class="n">app_name</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">dnf</span> <span class="n">remove</span> <span class="n">app_name</span>
+</code></pre></div><p>بەرۆژ کردنەوەی ئەپەکان زۆر سادەترە بەم شێوازەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">yum</span> <span class="n">update</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">$</span> <span class="n">sudo</span> <span class="n">dnf</span> <span class="n">upgrade</span> <span class="p">-</span><span class="n">-refresh</span>
+</code></pre></div><p>لەم فێرکارییە دیتان کە دامەزراندن،سڕینەوە ، ەڕۆژکردن و بەرزکردنەوەی ئەپ یان نەرمەکالاکان یا بوخچەکانی گنو/لینوکسی لە هێڵێ فەرمان چەندەسادەیە.لە ڕاستیشدا ئێوە دەتوانن بە یارمەی بەڕێوەبردنی پاکەتەکان بە شێوازی گرافیکی خێراتر ببنەوە.</p>
+<p>سەرچاوە: <a href="https://opensource.com/article/18/8/how-install-software-linux-command-line">opensource</a></p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://qezwan.ir/blog">بگەڕە بۆ بابەتەکان</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی نانۆ(Nano) دەستکاریکەرێکی دەقی ترمیناڵە، دەتوانین بڵێین لە زۆربەی دابەشکراوەکانی لینوکس دامەزراوە، هۆکار سادەبوونیەتی کە لە لایەن بەکارهێنەرانی نوێی لینوکس بژاردە دەکرێت. ئەمەش بەراوەرد دەکرێت لەگەڵ دەستکاریکەرەکانی دیکەی هێڵێ فەرمان وەک vi/vim وە emacs .جوانکاری فرەی تێدا کراوە لە ڕەنگی کۆدەکان،گەڕان بۆ وشە و کۆد و …هتد.
+دامەزراندنی دەستکاریکەری نانۆ لە لینوکس گەر بە هەر هۆکارێک نانۆ لە سەر دابەشکراوەکەت بوونی نییە، دەتوانن بە هێڵی فەرمانەکەی خوارەوە چالاکی بکەی، پەیرەوی بکە لەم فەرمانەی خوارەوە:">
+
+<meta property="og:title" content="دەستکاریکەری دەقی نانۆ لە لینوکس" />
+<meta property="og:description" content="پێشەکی نانۆ(Nano) دەستکاریکەرێکی دەقی ترمیناڵە، دەتوانین بڵێین لە زۆربەی دابەشکراوەکانی لینوکس دامەزراوە، هۆکار سادەبوونیەتی کە لە لایەن بەکارهێنەرانی نوێی لینوکس بژاردە دەکرێت. ئەمەش بەراوەرد دەکرێت لەگەڵ دەستکاریکەرەکانی دیکەی هێڵێ فەرمان وەک vi/vim وە emacs .جوانکاری فرەی تێدا کراوە لە ڕەنگی کۆدەکان،گەڕان بۆ وشە و کۆد و …هتد.
+دامەزراندنی دەستکاریکەری نانۆ لە لینوکس گەر بە هەر هۆکارێک نانۆ لە سەر دابەشکراوەکەت بوونی نییە، دەتوانن بە هێڵی فەرمانەکەی خوارەوە چالاکی بکەی، پەیرەوی بکە لەم فەرمانەی خوارەوە:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D8%AF%DB%95%D8%B3%D8%AA%DA%A9%D8%A7%D8%B1%DB%8C%DA%A9%DB%95%D8%B1%DB%8C-%D8%AF%DB%95%D9%82%DB%8C-%D9%86%D8%A7%D9%86%DB%86-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+<meta property="article:published_time" content="2018-10-05T05:20:45+00:00" />
+<meta property="article:modified_time" content="2018-10-05T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     دەستکاریکەری دەقی نانۆ لە لینوکس 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D8%AF%DB%95%D8%B3%D8%AA%DA%A9%D8%A7%D8%B1%DB%8C%DA%A9%DB%95%D8%B1%DB%8C-%D8%AF%DB%95%D9%82%DB%8C-%D9%86%D8%A7%D9%86%DB%86-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-24%2000%3a18%3a49.1963602%20%2b0330%20%2b0330%20m%3d%2b0.301812601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-24%2000%3a18%3a49.1963602%20%2b0330%20%2b0330%20m%3d%2b0.301812601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-24%2000%3a18%3a49.1963602%20%2b0330%20%2b0330%20m%3d%2b0.301812601">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-24%2000%3a18%3a49.1963602%20%2b0330%20%2b0330%20m%3d%2b0.301812601">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دەستکاریکەری دەقی نانۆ لە لینوکس
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Fri Oct 5 2018 05:20:45 UTC'>Oct 5, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>5 خولەک<div class="middot"></div>881 وشە </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p><strong>پێشەکی</strong>
+نانۆ(<strong>Nano</strong>) دەستکاریکەرێکی دەقی ترمیناڵە، دەتوانین بڵێین لە زۆربەی دابەشکراوەکانی لینوکس دامەزراوە، هۆکار سادەبوونیەتی کە لە لایەن بەکارهێنەرانی نوێی لینوکس بژاردە دەکرێت. ئەمەش بەراوەرد دەکرێت لەگەڵ دەستکاریکەرەکانی دیکەی هێڵێ فەرمان وەک vi/vim وە emacs .جوانکاری فرەی تێدا کراوە لە ڕەنگی کۆدەکان،گەڕان بۆ وشە و کۆد و …هتد.</p>
+<p><strong>دامەزراندنی دەستکاریکەری نانۆ لە لینوکس</strong>
+گەر بە هەر هۆکارێک نانۆ لە سەر دابەشکراوەکەت بوونی نییە، دەتوانن بە هێڵی فەرمانەکەی خوارەوە چالاکی بکەی، پەیرەوی بکە لەم فەرمانەی خوارەوە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># apt install nano [بۆ دێبیان/ئوبونتو]</span>
+<span class="c1"># yum install nano [بۆ فێدۆرا/سێنت ئۆئێس]</span>
+</code></pre></div><p><strong>قەدبڕەکان یان کورتەکلیلەکانی نانۆ</strong>
+نانۆ سوود لە تێکئاڵاندنی کلیلەکان دەکات بۆ کرداری جیاواز، وەک پەیداکردنی دەق لە نێو پەڕگەیێک.ئەم تێکئاڵاندنە زۆر ئاڵۆز نین بە پێچەوانە، زۆر سادە و بە چەند بار ئیشکردن لە ناو نەرمەکالای نانۆ بە باشی فێری دەبن.
+تەنها شتێک کە ئێوە دەبێ بیزانن لە بارەی کورتەکلیلەکان یان قەدبڕەکان ئەوەیە لە ناو نانۆ بەم جۆرە پێتان نیشان دەدرێ بەم نیشانە واتە <code>^ </code>وە کلیلێک بو نمونە :<code>W^</code>کە لە سەر تەختە کلیلەکەتان ئێوە ئەم دوو کلیلە تێکڵاو دەکەن بە هاوکاتی: کلیلی<code>Ctrl </code>لەگەڵ کلیلێک بۆ نموونە (Ctrl+W).</p>
+<p>لەخوارەوە پێرستێک لە سەر بژاردەکان هەن کاتێک ئێوە بۆ یەکەم بار نانۆ دەکەنەوە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">G یارمەتی
+^O چوونەدەرەوە لە نووسین
+^W لەکوێ
+^K قرتاندنی دەق
+^J ڕیزکردن
+^C Cur Pos
+M-U گەڕانەوە
+^X چوونەدەرەوە بە یەکسەری
+^R خوێندنەوەی پەڕگە
+^<span class="se">\ </span> خستنه‌شوێنی خۆی
+^U نەبڕینی دەق
+^T ڕێنووس
+^_ بڕۆ بۆ سەرەتای هێڵ
+M-E هەڵگەڕاندنەوە
+</code></pre></div><p>ئێوە پێویست نییە تەواو ئەم کورتە کلیلانە لە بیربکەن بەڵکوو لە هەر کات پێویستان بە بیرکەوتنەوە کرد تەنها دوکمەی<code> G^</code>لێبدەن یان دوکمەی <code>F1 </code>ئاگادار بن کە زۆر قەدبڕ تەنها یەک کلیلە.
+بۆ نمونو لێدانی دوکمە F1 پەڕەی یارمەتی دێنە و دوکمەی F2 دەێتەودەرەوە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">GNU nano 2.5.3                New Buffer                                        
+
+Main nano <span class="nb">help</span> text
+The notation <span class="k">for</span> shortcuts is as follows: Control-key sequences are
+ notated with a caret <span class="o">(</span>^<span class="o">)</span> symbol and can be entered either by using the
+ Control <span class="o">(</span>Ctrl<span class="o">)</span> key or pressing the Escape <span class="o">(</span>Esc<span class="o">)</span> key twice.  Escape-key
+ sequences are notated with the Meta <span class="o">(</span>M-<span class="o">)</span> symbol and can be entered using
+ either the Esc, Alt, or Meta key depending on your keyboard setup.  Also,
+ pressing Esc twice and <span class="k">then</span> typing a three-digit decimal number from <span class="m">000</span>
+ to <span class="m">255</span> will enter the character with the corresponding value.  The
+ following keystrokes are available in the main editor window.
+ Alternative keys are shown in parentheses:
+
+^G    <span class="o">(</span>F1<span class="o">)</span>      Display this <span class="nb">help</span> text
+^X    <span class="o">(</span>F2<span class="o">)</span>      Close the current file buffer / Exit from nano
+^O    <span class="o">(</span>F3<span class="o">)</span>      Write the current file to disk
+^R    <span class="o">(</span>F5<span class="o">)</span>      Insert another file into the current one
+
+...قەدبڕی دیکە 
+
+^X Exit             ^P Prev Line        ^Y Prev Page        M-<span class="se">\ </span>First Line
+^L Refresh          ^N Next Line        ^V Next Page        M-/ Last Line
+</code></pre></div><p><strong>دروستکردنی پەڕگەی نوێ لە نانۆ</strong>
+دروستکردنی فایل یان پەڕگەیێکی دیکە لە نانۆ فرە سادە و ساکارە.سەرەتا نانۆ دەکەینەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ nano
+</code></pre></div><p>ئێستا گەر پەڕگە پاشکەوت دەکەن، نانۆ پرسیارێکتان لێدەکا کە ناوێکی بۆ دابین بکەن بۆ پاشکەوتکردن.بۆ نمونە من کۆدێکم نووسیوە CTR+O لێدەدەم و بە ناوی yaparax.php (لەخوارەوەی ئەم پەڕگە)، پاشکەوتی دەکەم.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">GNU nano 2.5.3                New Buffer                              Modified  
+
+Change the default CSS settings to see the effect
+
+
+
+File Name to Write: yaparax.php                                                   
+^G Get Help     M-D DOS Format  M-A Append      M-B Backup File
+^C Cancel       M-M Mac Format  M-P Prepend     ^T To Files
+</code></pre></div><p><strong>کردنەوەی فایل لە نانۆ</strong>
+لە ترمیناڵ ناوی نانۆ دەنووسین ئینجا مەسیری پەڕگە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ nano ~/yaparax.txt
+</code></pre></div><p>لە فایلەکەی سەرەوە گەر پەڕگەی “yaparax.txt” بوونی نەبێ نانۆ پێشنیاری درووستکرنی دەدا.
+جاری وا هەیە کە دەبێ پەڕگەکە بەکەنەوە، ئینجا بۆ ئەو هێڵە برۆن کە گەرەکتانە نانۆ ئەم تواناییەتان پێدەدا.بەم شێوازە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ nano +line,columns file
+</code></pre></div><p>بۆ نمونە من گەرەکمە بۆ هێڵێ ۳ و ۲ لە نێو پەڕگەی نانۆ برۆم:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ nano +3,2 ~/.yaparax.txt
+</code></pre></div><p><strong>دەستکاری پەڕگە لە نانۆ</strong>
+بۆ ئەوە دەستکاری هێڵێک بکەن دەتوانن بە کلیلەکانی تیر یان پەیکان (arrow keys)بچنە سەر هێڵەکە یان ئەو وشە کە گەرەکتانە، ئینجا دەستکاری بکەن.
+<strong>گەڕان</strong></p>
+<p>گەڕان بۆ کۆد و دەق و نووسراوە لە نێو نانۆ زۆر ئاسانە، تەنها لە پەڕگەی نانۆ دوکمەکانی<code>W^</code>لێبدەن، ئینجا ئەو وشە بنووسن کە بۆی دەگەڕن.</p>
+<p><img src="https://qezwan.ir/gnulinux/images/00003.png" alt=""></p>
+<p>کاتێک دوکمەکانی Ctrl+w لێدەدەن چەند مێنیۆی دیکە لە خوارەوە دەر دەکەون، دوکمە گرینگەکانی بەم جۆرەن:</p>
+<ul>
+<li>گەڕان بە ڕیزبەندی (M-R (Alt + R لێبدەن و وشەکە بنووسن.</li>
+<li>ڕۆیشتن بۆ هێڵێک کە گەرەکتانە کرتە لەسەر T^ واتە (Ctrl+T)</li>
+<li>جێگۆڕین یان ڕیپڵەیس کردنی وشەیێک بە لێدانی کرتە لە سەر R^ واتە (Ctrl+r)</li>
+<li>ڕۆیشتن بۆ سەرەتای هێڵ بە لێدانی کرتە لەسەر y^ واتە (Ctrl+y)</li>
+<li>ڕۆیشتن بۆ کۆتایی هێڵ کرتە لە سەر V^ واتە (Ctrl+V)</li>
+</ul>
+<p><strong>ڕونووس،قرتاندن و لکاندن(Past/Copy/Cut)</strong>
+ڕووخساری نانۆ بۆ کارپێکردن زۆر سادەیە، بەڵام دەتوانن سەرەتا ئەو وشە یان ڕەستە نیشانە بکەن بە مشکەکە.گەر دوکمەی Ctrl بگرن و بە کلیلی تیرەکان یان پەیکانەکان بڕۆن وشە بە وشە دەڕاو لە سەر هێڵەکان.( ^ + Ctrl).</p>
+<ul>
+<li>بۆ رونووسکردن Alt+^</li>
+<li>بۆ قرتاندن (Ctrl +K).</li>
+<li>بۆ لکاندن دوکمەکانی (Ctrl + O) لێبدەن.</li>
+</ul>
+<p><strong>پاشکەوتکردن</strong>
+بۆ پاشکەوتکردنی گۆڕانکاریەکان دەبێ هاوکات دۆکمەکانی (O (Ctrl + O^ لێبدن.گەر یەکەم بارتان بێ کە پەڕگە پاشکەوت دەکەن ،پرسیارێکتان لێدەکا بۆ نووسینی ناوی پەڕگە.ئینجا پاشکەوتی دەکا و نانۆ دوبارە پەڕگە دەکاتەوە بۆ بەردەوامی لە دەستکاری.بەڵآم بۆ چوونەدەرە هاوکات دوکمەکانی Ctrl +x) ^X) لێبدەن،بە تەواوی لە نانۆ دەچێتە دەرەوە.</p>
+<p><strong>بۆ پشتگیری لە پەڕگە</strong>
+زۆر کات بۆ ئەوە کە پەڕگەی فەرمی هەروا بمێنێتەوە دەتوانن بەکاپێکی لێبگرن کە پاش دەستکاری دەق پێویست بوو بگەڕێنەوە سەری.بۆ ئەم کارە دەتوانن لەگەڵ وشەی نانۆ پیتی<code>B-</code>بنووسن ئینجا گەر پێتان خۆشە لە شوێنێکی دیکە پشتیوانتان بێ پیتی<code>C-</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ nano -BC ~/backups myfile.txt
+</code></pre></div><p>لە فەرمانەکەی سەرەوە ئێمە لە بوخچەی backups پەڕگەی myfile.txt لە مەسیری ماڵەوە(Home)پاشکەوت دەکەین.</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://qezwan.ir/blog">بگەڕە بۆ بابەتەکان</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

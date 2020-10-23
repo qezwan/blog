@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی : پێچەوانەی باوڕی جەماوەر،توانایی دامەزراندنی دابەشکراوەکانی گنو/لینوکس لە سەر ماک هەیە.هەر چەند کە قۆناغەکان زۆر سادەش نییە، بەڵام بە پشتیوانی لینوکس لە ڕەقەکالاکانی ماک، ئەم کارە زۆر سادەتر بووە.
+تەنها دابەشکراوەکانی ئەسڵی لینوکس لە ماک پشتیوانی دەکەن.گەر ئێوە لە ئەندێشەی ئەوەن کە ماک ئۆ ئێس(macOS) بگۆڕن بە لینۆکس، هەوڵ بدەن بە سیستەمێک وەک ئوبونتو(Ubuntu)،فێدۆرا(Fedora)،ئۆپن سوسە(OpenSUSE) یان دێبیان(Debian) ئەم کارە ئەنجام بدەن.گەر حەزتان لەم سیستەمانە نییە لە دابەشکراوەکانی ئوبونتو وەک ئێلێمێنتری ئۆ ئێس(Elementary OS) یان لینۆکس مینت(Linux Mint) سود بگرن.">
+
+<meta property="og:title" content="دامەزراندنی گنو/لینۆکس لەسەر ماک" />
+<meta property="og:description" content="پێشەکی : پێچەوانەی باوڕی جەماوەر،توانایی دامەزراندنی دابەشکراوەکانی گنو/لینوکس لە سەر ماک هەیە.هەر چەند کە قۆناغەکان زۆر سادەش نییە، بەڵام بە پشتیوانی لینوکس لە ڕەقەکالاکانی ماک، ئەم کارە زۆر سادەتر بووە.
+تەنها دابەشکراوەکانی ئەسڵی لینوکس لە ماک پشتیوانی دەکەن.گەر ئێوە لە ئەندێشەی ئەوەن کە ماک ئۆ ئێس(macOS) بگۆڕن بە لینۆکس، هەوڵ بدەن بە سیستەمێک وەک ئوبونتو(Ubuntu)،فێدۆرا(Fedora)،ئۆپن سوسە(OpenSUSE) یان دێبیان(Debian) ئەم کارە ئەنجام بدەن.گەر حەزتان لەم سیستەمانە نییە لە دابەشکراوەکانی ئوبونتو وەک ئێلێمێنتری ئۆ ئێس(Elementary OS) یان لینۆکس مینت(Linux Mint) سود بگرن." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%DB%86%DA%A9%D8%B3-%D9%84%DB%95%D8%B3%DB%95%D8%B1-%D9%85%D8%A7%DA%A9/" />
+<meta property="article:published_time" content="2018-10-25T05:20:45+00:00" />
+<meta property="article:modified_time" content="2018-10-25T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی گنو/لینۆکس لەسەر ماک 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%DB%86%DA%A9%D8%B3-%D9%84%DB%95%D8%B3%DB%95%D8%B1-%D9%85%D8%A7%DA%A9/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-24%2000%3a18%3a49.1773715%20%2b0330%20%2b0330%20m%3d%2b0.282823901">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-24%2000%3a18%3a49.1773715%20%2b0330%20%2b0330%20m%3d%2b0.282823901">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-24%2000%3a18%3a49.1773715%20%2b0330%20%2b0330%20m%3d%2b0.282823901">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-24%2000%3a18%3a49.1773715%20%2b0330%20%2b0330%20m%3d%2b0.282823901">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی گنو/لینۆکس لەسەر ماک
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Thu Oct 25 2018 05:20:45 UTC'>Oct 25, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>5 خولەک<div class="middot"></div>931 وشە </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی-">پێشەکی :</h5>
+<p>پێچەوانەی باوڕی جەماوەر،توانایی دامەزراندنی دابەشکراوەکانی گنو/لینوکس لە سەر ماک هەیە.هەر چەند کە قۆناغەکان زۆر سادەش نییە، بەڵام بە پشتیوانی لینوکس لە ڕەقەکالاکانی ماک، ئەم کارە زۆر سادەتر بووە.</p>
+<p>تەنها دابەشکراوەکانی ئەسڵی لینوکس لە ماک پشتیوانی دەکەن.گەر ئێوە لە ئەندێشەی ئەوەن کە ماک ئۆ ئێس(macOS) بگۆڕن بە لینۆکس، هەوڵ بدەن بە سیستەمێک وەک ئوبونتو(Ubuntu)،فێدۆرا(Fedora)،ئۆپن سوسە(OpenSUSE) یان دێبیان(Debian) ئەم کارە ئەنجام بدەن.گەر حەزتان لەم سیستەمانە نییە لە دابەشکراوەکانی ئوبونتو وەک ئێلێمێنتری ئۆ ئێس(Elementary OS) یان لینۆکس مینت(Linux Mint) سود بگرن.(بۆ کار کردن بە ئوبونتو سەردانی <a href="http://chawg.org/wiki/Ubuntu">چاوگ</a> بکە)</p>
+<p>هۆکاری گۆڕانکارەکانی ماک بۆ لینۆکس بۆ مانەوە لە سەر دابەشکراوەکانیان ئەوەیە کە :</p>
+<p>ئەم لینوکسانە زۆرینەیان زۆر بە باشی لە ڕەقەکالای ماک پاڵپشتی دەکەن و ئەمەش لە دابەشکراوەکانی دیکەیان زۆر بە هێز نییە.تا ئەمڕۆ گنو/لینوکسی ئوبونتو باشترین هاوئاهەنگی لەگەڵ ڕەقەکالای ماک ئەنجام داوە.هەر بۆیە لەم بابەتە ئێمە لە سەر دامەزراندنی ئوبونتو لە سەر ماک دەدوێین و دابەشکراوەکانی دیکە کەمێ مەترسی لە سەری هەیە .[تاقیکردنەوەیان لە ئەستۆی خۆتە !]</p>
+<h5 id="توانایی-خستنهڕێ-usb">توانایی خستنه‌ڕێ USB</h5>
+<p>گرینگ ترین ئیش بۆ دامەزراندنی لینوکس لە سەر هەر کۆمپیوتر، ئامادەکردنی بیرگەیێکی فلاشە، واتە درایڤێک بە توانایی بووت(bootable USB drive).ئەم کارە بۆ بەرهەمە نوێیەکانی ئەپڵ زۆر گرنگ تر لە پێشتر بووە. هۆکار ئەوەیە کە سیستەمی نوێی ماک درایڤی دی ڤی دی نییە.لە سەرەتای ئیشەکە بە یارمەتی “Disk Utility” لە نێو ماک، درایڤی USB خۆتان پەیدا بکەن ئینجا بیسڕنەوە.لە بیرتان نەچێت کە ئەم کارە بە دڵنیاییەوە ئەنجام بدەن.هۆکاریش ئەوەیە گەر بە باشی USBیەکەتان نەسڕنەوە ئیمکانی هەیە ماک نەیناسێ.پاش ئەوە دڵنیا بوی لە چۆڵ بوونی USB دەچین بۆ قۆناغی دیکە.</p>
+<p>کرتە لەسەر وێنەکان گەورەیان دەکاتەوە.دوایین وشانی نەرمەکالای <a href="https://etcher.io/">Etcher</a> (نەرمەکالایێک کە درایڤێکی بە توانایی بووتکردن دروستدەکا)،تایبەت بە سیستەمی کارپێکردنی ماک دادەگرین.پەڕگەی (DMG (Apple Disk Image لە سەر سیستەم Mount دەکەین، ئینجا نەرمەکالای Etcher دادەمزەزرێنین.کاتێک قۆناغەکانی دامەزراندن تەواو دەبێ.فلاشێک بە کۆمپیوترەکەمان دەلکێنین ئینجا دوایین وشانی لینوکس ئوبونتو دادەگرین.کاتێک داگرتنی ئوبونتو تەواو بوو بگەڕێنەوە نێو نەرمەکالای Etcher ئینجا Select Image هەڵبژێرن.
+لە نێو کۆمپیوترەکەی ماکی خۆتان بە شوێن پەڕگەی ISO لینوکس ئوبونتو بگەڕێن.هەڵیبژێرن تا لەلایەن نەرمەکالای Etcher جێبەجێ بکرێ.بێلن پەڕگەی ISO لینوکس بە تەواوی بار بکرێت.کاتێک کار تەواو بوو لە نەرمەکالای Etcher، وشەی Flash هەڵبژێرن تاکوو “bootable USB” ئێوە ئامادە بێ.(زۆر سادەیە ،وێنە جولەی سەرەوە چاو لێ بکە)</p>
+<h5 id="پارتیشێن-کردن">پارتیشێن کردن</h5>
+<p>بە هۆی بوونی پەڕگەی (APf (Apple File System، سیستەمی کارپێکردنی ماک ناتوانێت وەک هەمیشە لینوکسی ئوبونتو بە شێوازی هەمیشەیی بەناسێنێت و بووتی بکا.بە پێچەوانەی هەمیشە دەبێ ئەم بارەش فلاش مێمۆریێک بە توانایی بووت ئامادە بکەن ئەم بارەش دەبێ کارەکان بە شێوازی دەستی ئەنجام بدەن.
+Disk Utility لە سەر سیستەمی ماکەکەتان جێبەجێ بکەن، ئینجا View هەڵبژێرن.ئێستا دەبێ لە سەر ڕەستەی Show All Devices کرتە بکەن تا تەواوی هاردەکەتان(پەپکە) لە سەر ماک نیشان بدرێ.دیسان لە سەر هارد درایڤی خۆتان کرتە بکەن.ئینجا دوگمەی Partition لێبدەن تا مێنیۆی Apple File System Space Sharing دەربکەوێ.لەم مێنیۆ، وشەیPartition هەڵبژێرن تا ڕێگا بە پۆلێن کردنی هارد درایڤی لاپتۆپی ماک بدرێ.</p>
+<p><img src="https://qezwan.ir/gnulinux/images/00004-1.jpg" alt=""></p>
+<p>لە بەشی پارتیشێن کردن لە سەر دوکمەی زیادکردن (+) کرتە بکەن، تا پارتیشێنێکی نوێ دروست بکرێ.کەمینە بۆشایی پارتیشێنی نوێ دەبێ ١٦ گیگابایت بێ.دڵنیا بە کە فۆرماتی پارتیشێن لە سەر (MS-DOS (FAT ببێت. نگەرانی فۆرماتی ئەم بەشە مەبن. بۆ ئەوەکە لە دوایی دەتوانین فۆرمات بگۆڕین.</p>
+<p><img src="https://qezwan.ir/gnulinux/images/00004-2.jpg" alt=""></p>
+<p>پاش دروستکردنی پارتیشێن لە سەر لینوکس ئوبونتو.دیسان دوگمەی (+) لێبدەن و پارتیشێنێکی نوی بە فۆرماتی (MS-DOS (FAT دروستبکەن.لەم بارە وشەی SWAP بە عینوانی ناوەکەی هەڵبژێرن وە بۆشاییەکەی بەرابەر بە ڕام(RAM)ی کۆمپوترەکەی خۆتان هەڵبژێرن.</p>
+<p><img src="https://qezwan.ir/gnulinux/images/00004-3.jpg" alt=""></p>
+<p>پاش ئەوە کە تەواو ڕێکخستنەکان تەواو بوون.لە Disk Utility لە سەر دوگمەی Apply کرتەیێک بکەن تا گۆڕانکارییەکان ئەنجام ببێت.ئێستا فلاش درایڤ کە ئامادەتان کرد و ئوبونتوەکەتان خستە سەری بلکێنن بە لاپتۆپ و سیستەم ریستارت بکەنەوە. پاش ئەوە کە سیستەمی ماک دێتە سەر دوکمەی option لێبدەن.لێدانی دوکمەی ئۆپشێن ڕێگاتان پێ دەدا کە درایڤی دروستکراوە هەڵبژێرن.ناوی ئەم درایڤە EFI Bootـە.</p>
+<h5 id="دامەزراندنی-لینوکس-لە-سەر-سیستەمی-ماک">دامەزراندنی لینوکس لە سەر سیستەمی ماک</h5>
+<p>رێکخستنەکانی پارتیشێن لە سیستەمی ماک دژوارترین ئیشێک بوو کە ئەنجامتان دا.پاش ئەمانە تەنها کار ئەوەیە کە قۆناغە سادەکان، دامەزراندنی ئوبونتو بە کۆتایی بگەیێنن.لە پەڕەی بەخێرهاتن لە سەر دوگمەی Install کرتە بکەن، ئینجا قۆناغەکانی خوارەوە جێبەجێ بکەن.</p>
+<p><img src="https://qezwan.ir/gnulinux/images/00004-4.jpg" alt=""></p>
+<h6 id="قۆناغی-یەکەم">قۆناغی یەکەم</h6>
+<p>هەڵبژاردەی “Normal Installation” لە پەنجێرەی “setup” هەڵبژێرن.دڵنیا بن کە چوارچێوەی “install third party” بۆ درایڤە گرینگەکانی سیستەمی کارپێکردنەکەتان نیشانکراوە.(وەک درایڤی وای فای،فۆرماتەکانی دەنگ و کۆدێکەکان).</p>
+<p><img src="https://qezwan.ir/gnulinux/images/00004-5.jpg" alt=""></p>
+<h6 id="قۆناغی-دووهەم">قۆناغی دووهەم:</h6>
+<p>ڕێگا بدەن کە سیستەمی کارپێکردنی ئوبونتو لە سەر ماک دامەزرێ.پاش تەواو بوونی ئەم قۆناغە ڕەستەی
+something else هەڵبژێرن.</p>
+<h6 id="قۆناغی-سێهەم-">قۆناغی سێهەم :</h6>
+<p>هەڵبژاردنی ڕەستەی ” something else” ڕێگا دەدا بە ئێوە تا مێنیۆی پارتیشێن لە ئوبونتو ببینن.لەم مێنیۆیە بە کرتە لەسەر پارتیشێن ئوبونتو Fat32 بیکەن بە ڕەنگی ڕەش.لەبیرت بێ کە سیستەمی کارپێکردنی ئوبونتو بۆ قەبارەی پارتیشێن سود لە مێگابایت بە جیاتی گیگابایت دەگرێت.کاتێک هەڵبژاردەی ئوبونتو FAT نیشاندارت کرد، لە سەر دوگمەی change کرتە بکەن تا مێنیۆی پارتیشێن بکرێتەوە. مێنیۆی بەرانبەرەکەی Use as لە سەر فۆرماتی Ext4 دابنن.ئینجا چوارچێوەی ستونی format چالاک بکەن.لە بەشی Mount point کاراکتێری ( / )بنووسن یان هەڵیبژێرن واتە ئەم پارتیشێنە بۆ ڕووتە(بەڕێوەبەرە).</p>
+<h6 id="قۆناغی-چوارەم-">قۆناغی چوارەم :</h6>
+<p>ئێستا دەبێ دووهەمین پارتیشێنی پەیدا بکەین.لە قۆناغی پارتیشی نکردن ناوەکەی بە SWAP هەڵدەبژێرین.بە بارێک کرتە لەسەری ئەم هەڵبژاردە تۆخ بکەنەوە ئینجا لە سەر دوگمەی change کرتە بکەن.لە ژێر مێنیۆی Use as بۆ ڕەستەی swap area بگەڕێن. پاشان ئەوە هەڵبژێرن و لەسەر OK کرتە بکەن.</p>
+<h6 id="قۆناغی-پێنجم">قۆناغی پێنجم</h6>
+<p>بڕۆنە خوارەوەی پەڕەی پارتیشین کردن و هەڵبژاردەی Device for boot loader لە سەر پارتیشێنی ئەسڵی ئوبونتو رێک بخەن.گەر دڵنیا نیت کە ناوی پارتیشێنی ئەسڵی ئوبونتو چییە، ئاوڕێک لە مێنیۆی پارتیشین بدەن و ناوێک لە بەرانبەری کاراکتێری سلەش( / ) هەیە لە هەڵبژاردەی boot loaderبینووسن یان هەڵیبژێرن.</p>
+<h6 id="قۆناغی-شەشەم">قۆناغی شەشەم</h6>
+<p>ئێستا پاش ئەوە پارتیشینەکانتان بۆ ئوبونتو دابین کرد ،لە سەر دوگمەی “Install Now” کرتەیێک بکەن.تا پرۆسەی دامەزراندنی ئوبونتو دەست پێ بکا.پاشان کاتی ژینگەی خۆت هەڵبژێرە و ناوی بەکارهێنەر و وشەی نهێنی(تێپەڕ وشە)، بۆی دابین بکە…</p>
+<p><img src="https://qezwan.ir/gnulinux/images/00004-6.jpg" alt=""></p>
+<h6 id="قۆناغی-حەوت-">قۆناغی حەوت :</h6>
+<p>سیستەمی کارپێکردنی ماک نوێ بکەرەوە(سەرلەنوێ کردن)،ئێستا سیستەمی کارگێڕی ئوبونتو دێتە سەر.لەبیرتان بێ هەر کات دڵتان بۆ ڕووکاری ماک تەنگ بوو، ڕووخساری ئوبونتو بگۆرن بە ڕووکارێکی ماک.</p>
+<p>سەرچاوە : <a href="https://www.addictivetips.com/ubuntu-linux-tips/install-linux-on-macos/">addictivetips</a></p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://qezwan.ir/blog">بگەڕە بۆ بابەتەکان</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
