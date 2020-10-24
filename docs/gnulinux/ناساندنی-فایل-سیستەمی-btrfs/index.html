@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="فایل سیستم (Filesystem)بە شێوازێک بۆ پاشکەوتکردنی زانیاریەکان و گەڕانەوەیان دەڵێن.کاتێک ئێوە فایلیکی دەق دەنووسن ئەمە فایل سیستەمە کە ڕێتان پێدەدات لە کوێ و چۆن پاشکەوتی بکەن. Btrfs کورتکراوەی B-tree Filesystem کە فایل سیستەمێکی بە موڵەتدانی GPL .کە لە لایەن کۆمپانیاکانی لینوکس فاندیشن،ئینتێل،فۆجیستۆ،رێدهات،فەیسبووک، ئۆراکڵ،سووزە و … هتد گەشەی سەندووە.
+ئەم فایل سیستەمە هاردەکان بە قەبارەی 16 ئێگزا بایت و فایل بە ئەندازەی 8 ئێگزابایت پاڵپشتی دەکات. بۆ ناو لێنان فایلەکان لە سەر ئەم فایل سیستەمە بێجگەلە ‘/’ و NULL هەر ناوێک دەتوانیت بنووسرێت.">
+
+<meta property="og:title" content="ناساندنی فایل سیستەمی Btrfs" />
+<meta property="og:description" content="فایل سیستم (Filesystem)بە شێوازێک بۆ پاشکەوتکردنی زانیاریەکان و گەڕانەوەیان دەڵێن.کاتێک ئێوە فایلیکی دەق دەنووسن ئەمە فایل سیستەمە کە ڕێتان پێدەدات لە کوێ و چۆن پاشکەوتی بکەن. Btrfs کورتکراوەی B-tree Filesystem کە فایل سیستەمێکی بە موڵەتدانی GPL .کە لە لایەن کۆمپانیاکانی لینوکس فاندیشن،ئینتێل،فۆجیستۆ،رێدهات،فەیسبووک، ئۆراکڵ،سووزە و … هتد گەشەی سەندووە.
+ئەم فایل سیستەمە هاردەکان بە قەبارەی 16 ئێگزا بایت و فایل بە ئەندازەی 8 ئێگزابایت پاڵپشتی دەکات. بۆ ناو لێنان فایلەکان لە سەر ئەم فایل سیستەمە بێجگەلە ‘/’ و NULL هەر ناوێک دەتوانیت بنووسرێت." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D9%86%D8%A7%D8%B3%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%81%D8%A7%DB%8C%D9%84-%D8%B3%DB%8C%D8%B3%D8%AA%DB%95%D9%85%DB%8C-btrfs/" />
+<meta property="article:published_time" content="2017-02-27T05:20:45+00:00" />
+<meta property="article:modified_time" content="2017-02-27T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     ناساندنی فایل سیستەمی Btrfs 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D9%86%D8%A7%D8%B3%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%81%D8%A7%DB%8C%D9%84-%D8%B3%DB%8C%D8%B3%D8%AA%DB%95%D9%85%DB%8C-btrfs/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2001%3a19%3a28.7767296%20%2b0330%20%2b0330%20m%3d%2b0.431443801">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2001%3a19%3a28.7767296%20%2b0330%20%2b0330%20m%3d%2b0.431443801">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2001%3a19%3a28.7767296%20%2b0330%20%2b0330%20m%3d%2b0.431443801">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2001%3a19%3a28.7767296%20%2b0330%20%2b0330%20m%3d%2b0.431443801">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    ناساندنی فایل سیستەمی Btrfs
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Feb 27 2017 05:20:45 UTC'>Feb 27, 2017</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>7 خولەک<div class="middot"></div>1296 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p><img src="https://qezwan.ir/gnulinux/images/00008.png" alt=""></p>
+<p>فایل سیستم (Filesystem)بە شێوازێک بۆ پاشکەوتکردنی زانیاریەکان و گەڕانەوەیان دەڵێن.کاتێک ئێوە فایلیکی دەق دەنووسن ئەمە فایل سیستەمە کە ڕێتان پێدەدات لە کوێ و چۆن پاشکەوتی بکەن.
+Btrfs کورتکراوەی B-tree Filesystem کە فایل سیستەمێکی بە موڵەتدانی GPL .کە لە لایەن کۆمپانیاکانی  لینوکس فاندیشن،ئینتێل،فۆجیستۆ،رێدهات،فەیسبووک، ئۆراکڵ،سووزە و … هتد گەشەی سەندووە.</p>
+<p>ئەم فایل سیستەمە هاردەکان بە قەبارەی 16 ئێگزا بایت و فایل بە ئەندازەی 8 ئێگزابایت پاڵپشتی دەکات. بۆ ناو لێنان فایلەکان لە سەر ئەم فایل سیستەمە بێجگەلە ‘/’ و NULL  هەر ناوێک دەتوانیت بنووسرێت.</p>
+<h5 id="تایبەتمەندیەکانی-btrfs-">تایبەتمەندیەکانی Btrfs :</h5>
+<ul>
+<li>یەکخستنی پارچەبەندبووەکانی دیسک بە شێوازی سەرهێڵ(Defragmention).</li>
+<li>گۆڕینی ئەندازەی پارتیشێنەکان بە شێوازی سەر هێڵ(Volume).</li>
+<li>سڕینەوە یان زیادکردنی هارد بە شێوازی سەر هێڵ.</li>
+<li>چاودێری فایل سیستەم بە شێوازی دەرهێڵ(Fsck).</li>
+<li>چاودێری فایل سیستەمەکان و چارەسەری کێشەکان بە شێوازی سەر هێڵ(Data Scrubbing).</li>
+<li>پالپشتی لە RAID0 , RAID1, RAID10.</li>
+<li>پاڵپشتی لە Subvolumeەکان.</li>
+<li>پساندن (Transparent Compression).</li>
+<li>چاودێری Checksum لە سەر داتاکان و Metadata.</li>
+</ul>
+<p>Btrfs لەسەر زۆربەی دابەشکراوەکان بە شێوازی پێشگریمان دادەمەزریت بەڵام بۆ سوود وەرگرتن، دەبێت ئامێرەکانی پێویست لەسەر دابەشکراوەکەتان دامەزرێنن.</p>
+<h5 id="بۆ-دابەشکراوەکانی-دێبیان">بۆ دابەشکراوەکانی دێبیان:</h5>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt install btrfs-tools
+</code></pre></div><p>بۆ دابەشکراوەکانی رێدهات.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum install btrfs-progs
+</code></pre></div><p><code>خاڵ :</code> تایبەتمەندیێکی بەهێزی Btrfs ئەوەیە کە ئێوە دەتوانن فایل سیستەم لە سەر هاردێکی چۆڵ و خام کە هێشتا پارتیشێن نەکراوە درووستبکەن. ئیتر پێویستان بە ئامرازی fdisk بۆ پارتیشین نییە.
+بۆ وێنە بۆ درووستکردنی فایل سیستەمی Btrfs لە سەر سێ دیسکی sdb, sdc, sdd فەرمانەکەی خوارەوە بنووسن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mkfs.btrfs /dev/sdb /dev/sdc /dev/sdd
+</code></pre></div><p>پاش فەرمانەکەی سەرەوە ئەم دەرەنجامەتان هەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Btrfs v3.17
+See http://btrfs.wiki.kernel.org <span class="k">for</span> more information.
+
+Turning ON incompat feature <span class="s1">&#39;extref&#39;</span>: increased hardlink limit per file to <span class="m">65536</span>
+adding device /dev/sdc id <span class="m">2</span>
+adding device /dev/sdd id <span class="m">3</span>
+fs created label <span class="o">(</span>null<span class="o">)</span> on /dev/sdb
+	nodesize <span class="m">16384</span> leafsize <span class="m">16384</span> sectorsize <span class="m">4096</span> size 24.00GiB
+</code></pre></div><p><code>خاڵ :</code>گەر فەرمانی mkfs.btrfs بۆ چەند هارد بەکار بهێنین بە شێوازی پێشگریمان (RAID0 (Stripe بۆ پاشکەوتکردنی زانیاری و Mirror) RAID1) بۆ پاشکەوتکردنی Metadata چالاک دەبێت.سوودی ئەمە ئەوەیە گەر یەکێک لە هاردەکان دوچاری کێشە بن دەتوانین بە فەرمانی Metadata زانیاریەکان بگەرێنینەوە.
+گەر پێت خۆشە کە btrfs تەنها لەسەر دیسکێک دروستبێت یان گەرەکتان نییە کە Data و Metadata بەشێوازی RAID پاسکەوت بێت لە ئۆپشین یان سویچی m- سوود بگرن وەک فەرمانەکەی خوارەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mkfs.btrfs -m single /dev/sdb
+</code></pre></div><p>گەر پێتان خۆشە ئەم کارە بۆ چەند دیسک بەکارببەن لە فەرمانەکەی خوارەوە سوود بگرن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mkfs.btrfs -m raid0 /dev/sdb /dev/sdc /dev/sdd
+لە نمونەی سەرەوە بۆ پاسکەوتکردنی Metadata لە <span class="o">(</span>RAID0 <span class="o">(</span>Stripe بەجێگەی RAID1 <span class="o">(</span>پێشگریمان<span class="o">)</span> سوود دەگرین.
+هەروا دەتوانین جۆری پاشکەوتکردن Data و Metadata بە حەزی خۆمان بناسێنین. بۆ وێنە:
+mkfs.btrfs -m raid0 -d raid1 /dev/sdb /dev/sdc /dev/sdd
+</code></pre></div><p>لە فەرمانەکەی سەرەوە جۆری سویچەکانی m- و d- شێوازی پاشکەوتکردن دەناسێنن.
+<code>خاڵ :</code>دەتوانین لە RAID10 بۆ پاشکەوتکردنی Data و Metadata سوودبگرین،بەڵام دەبێ هۆشیار بین کە بۆ سوود وەرگرتن لە RAID10 ژمارەی دیسکەکان لانی کەمدەبێت ۴ دیسک بێت.</p>
+<p>بۆ زانیاری ئەو فایل سیستەمە کە درووستتکردووە دەبێتئەم فەرمانە بەکار بێنیت :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs filesystem show /dev/sdb
+</code></pre></div><p>لە فەرمانەکەی سەرەوە ئێمە بۆ نیشاندانی تواناییەکانی RAID در Btrfs لە ۳ دیسک سوودمان بینیوە.بۆ نیشاندانی زانیاری هیچ جیاوازی نییە کە کام دیسک لەم فەرمانە دابنین بۆ ئەوە کە هەر ۳دیسک پەیوەندیان بە یەک فایل سیستەم هەیە لە رووکارێکی Pool .
+دەرەنجامی فەرمانەکەی سەرەوە بەم شێوازەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Label: none  uuid: f36e0a56-bcea-4637-a1e4-c9788574d84a
+	Total devices <span class="m">3</span> FS bytes used 112.00KiB
+	devid    <span class="m">1</span> size 8.00GiB used 1.82GiB path /dev/sdb
+	devid    <span class="m">2</span> size 8.00GiB used 827.19MiB path /dev/sdc
+	devid    <span class="m">3</span> size 8.00GiB used 1.81GiB path /dev/sdd
+
+Btrfs v3.17
+</code></pre></div><p>پاش ئەوە فایل سیستەمان درووستکرد دەتوانین بە فەرمانی خوارەوە Mount بکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount /dev/sdb /mnt
+</code></pre></div><p>بۆ دیتنی قەبارە مەسرەفکراوەو قەبارەی چۆڵی فایل سیستەم لەم فەرمانە سوود دەگرین :</p>
+<blockquote>
+<p>btrfs filesystem df /mnt</p>
+</blockquote>
+<p>ئەمەش دەرەنجامی فەرمانەکەی سەرەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Data, RAID0: <span class="nv">total</span><span class="o">=</span>2.40GiB, <span class="nv">used</span><span class="o">=</span>832.00KiB
+Data, single: <span class="nv">total</span><span class="o">=</span>8.00MiB, <span class="nv">used</span><span class="o">=</span>0.00B
+System, RAID1: <span class="nv">total</span><span class="o">=</span>8.00MiB, <span class="nv">used</span><span class="o">=</span>16.00KiB
+System, single: <span class="nv">total</span><span class="o">=</span>4.00MiB, <span class="nv">used</span><span class="o">=</span>0.00B
+Metadata, RAID1: <span class="nv">total</span><span class="o">=</span>1.00GiB, <span class="nv">used</span><span class="o">=</span>112.00KiB
+Metadata, single: <span class="nv">total</span><span class="o">=</span>8.00MiB, <span class="nv">used</span><span class="o">=</span>0.00B
+GlobalReserve, single: <span class="nv">total</span><span class="o">=</span>16.00MiB, <span class="nv">used</span><span class="o">=</span>0.00B
+</code></pre></div><p>یەکێک لە تواناییەکانی فایل سیستەمی Btrfs پساندانی زانیاریەکانە.بە شێوازە کە زانیاریەکان کاتێک لە سەر دیسک پاسکەوت دەبەن قەبارەیان کەم دەبێت واتە پساندانیان لەسەر ئەنجام دەبێت.ئەمەش دەبێتە هۆکاریک بۆ زۆر بوونی قەبارەی دیسک.دوو شێواز بۆ پساندان لە فایل سیستەمی Btrfs بریتییە لە zlib و lzo .
+<code>خاڵ : </code>Btrfs بە شێوازی پێشگریمان بە شێوەی zlib پساندان ئەنجام دەدات.
+بۆ چالاک کردن ئەم تواناییە دەبێت وەک فەرمانی خوارەوە دیسکەکە Mount بکەن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount -o <span class="nv">compress</span><span class="o">=</span>lzo /dev/sdb /mnt
+</code></pre></div><p>یا</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount -o <span class="nv">compress</span><span class="o">=</span>zlib /dev/sdb /mnt
+</code></pre></div><p>یا</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount -o compress /dev/sdb /mnt
+</code></pre></div><p>لە یەکەم فەرمان بە شێوازی lzo وە دووهەم فەرمان بە شێوازی zlib وە لە فەرمانی کۆتایی بە شێوازی پێشگریمان خۆی پساندن دەکات.
+<code>خاڵ :</code> کاتیک ئێوە پەساندن لەسەر دیسکێک بە شێوازی Mount دەکەن لەمەوبەر فایلەکان قەبارەیان کەم دەبێتوە.</p>
+<p>یەکێک لە تایبەتمەندیەکانی Btrfs کەم کردنەوەی قەبارەیVolume بە شێوازی دەرهێڵە.بۆ وینە لە فەرمانی خوارەوە ئەندازەی 2 گیگابایت لە بۆشایی فایل سیستەمەی mnt/ کەم دەکەینەوە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs filesystem resize -2g /mnt
+</code></pre></div><p>لەفەرمانەکەی خوارەوەی 500 مێگ بە فایل سیستەمی mnt/ زیاد دەکەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs filesystem resize +500m /mnt
+</code></pre></div><p>بۆ زیادکردنی دیسکێکی نوێ بە فایل سیستەمەکەمان وەک فەرمانی خوارەوە کردار دەکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs device add /dev/sde /mnt
+</code></pre></div><p>فەرمانەکەی خوارەوە بۆ نیشاندانی بارودۆخی فایل سیستەمەکەمانە :</p>
+<blockquote>
+<p>btrfs filesystem show /dev/sdb</p>
+</blockquote>
+<p>دەرئەنجامەکە بەم شێوازە بوو :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Label: none  uuid: f36e0a56-bcea-4637-a1e4-c9788574d84a
+	Total devices <span class="m">4</span> FS bytes used 960.00KiB
+	devid    <span class="m">1</span> size 8.00GiB used 1.82GiB path /dev/sdb
+	devid    <span class="m">2</span> size 8.00GiB used 827.19MiB path /dev/sdc
+	devid    <span class="m">3</span> size 8.00GiB used 1.81GiB path /dev/sdd
+	devid    <span class="m">4</span> size 8.00GiB used 0.00B path /dev/sde
+
+Btrfs v3.17
+</code></pre></div><p>هەروا کە دەبینین دیسکی sde بە فایل سیستەمەکەمان زیادکرا،بەڵام لە بۆشایی دیسکەکە سوود نابینرێت بۆ ئەوە کە بتوانین ئەم بۆشاییەی دیسکەکەمان کە زیادمان کردووە بەکەڵک بێت، لەم فەرمانە سوود دەگرین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs filesystem balance /mnt
+</code></pre></div><p>ئەمانجی فەرمانەکەی سەرەوە بەم شێوازەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Done, had to relocate <span class="m">6</span> out of <span class="m">6</span> chunks
+</code></pre></div><p>بۆ سڕینەوەی دیسکێک لە فایل سیستەملە فەرمانەکەی خوارەوە سوود دەگرین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs device delete /dev/sdc /mnt
+</code></pre></div><p>گەر هەرەکتانە RAID Level لە ئەو دیسکە کە درووستان کردووە بیگۆرن لەفەرمانەکەی خوارەوە سوود بگرن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs balance start -dconvert<span class="o">=</span>raid1 -mconvert<span class="o">=</span>raid1 /mnt
+</code></pre></div><p>یەکێک لە تواناییەکانی قەشەنگی btrfs واتایێکە بە ناوی Subvolume. لە btrfs دەتوانین لە هەر فایل سیستەم Subvolumeـەکان درووستبکەین و ئینجا لە Subvolumeـەکان Snapshot بگرین.یان بەشێوازی سەربەخۆ لە فایل سیستەمی فەرمی Mount بکەین.
+بۆدرووستکردنیSubvolume لە فەرمانی خوارەوە سوود دەبینین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs subvolume create /mnt/sv1
+</code></pre></div><p>لە فەرمانی سەرەوە Subvolume ، بە ناوی sv1 لە فایل سیستەمی mnt/ درووستکرا.
+بۆ نیشاندانی دۆخی Subvolumeـەکان لە فایل سیستەمی mnt/ فەرمانەکەی خوارەوە دەنووسین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs subvolume list /mnt
+</code></pre></div><p>ئامانجی ئەم فەرمانە بەم شیوازەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">ID <span class="m">272</span> gen <span class="m">136</span> top level <span class="m">5</span> path sv1
+</code></pre></div><p>هەروا کە چاوی لێدەکەن Subvolume دانەیێک ID تایبەت بەخۆی هەیە کەئاماژە بە Subvolume دەکات.
+هەروا دەتوانین Subvolume لە نێو Subvolume تر درووستبکەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs subvolume create /mnt/sv1/sv2
+</code></pre></div><p>بۆ Mount کردنی دانەیێک Subvolume بە شێوازی خوارەوە کردار دەکەین:
+سەرەتا فایل سیستەمی فەرمی کە Mount بووە Unmount ـی بکەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">umount /mnt
+</code></pre></div><p>ئینجا بە فەرمانەکەی خوارەوە Subvolume ID بە شێوازی Mount دەریدێنین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount -o <span class="nv">subvolid</span><span class="o">=</span><span class="m">272</span> /dev/sdb /mnt
+</code></pre></div><p>لە فەرمانەکەی سەرەوە Subvolume ،ID ـەکەی ئێمە بەرابەری 266 ـەیە.هەروا دەتوانین بە جێگای سوودگرتن لە ID لە ناوی Subvolume ئیستفادە بکەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount -o <span class="nv">subvol</span><span class="o">=</span>sv1 /dev/sdb /mnt
+</code></pre></div><p>خاڵ : ID پەیوەند بە Volume ریشە یان ڕەگ 0 ـە.
+بۆ گۆڕینی Default Volume لە کاتی Mount دەتوانین بەم فەرمانە کردار بکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs subvolume set-default <span class="m">266</span> /mnt
+</code></pre></div><p>لەمەودا Mount کردنی فایل سیستەم، بە جیاتیVolume ریشە Subvolume دیاری کراوە و بە شێوازی پێشگریمان Mount دەبێت.
+بۆ سڕینەوەی Subvolume فەرمانی خوارەوە دەنووسین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs subvolume delete /mnt/sv1
+</code></pre></div><p>لە فەرمانەکەی سەرەوە Subvolume بە ناوی sv1 دەسڕێتەوە.
+یەکیکی دیکە لە توانایەکانی btrfs ئیمکانی Snapshot لە Subvolume ـەکان بە شێوازی سەرهێڵە. لەلایەن Snapshot ـەکان دەتوانین Data ـکانی پاشکەوتکراوە لە Subvolume ـەکان پاڵپشتی بگرین تا لە کاتی پێویست Data کان بگەڕێنینەوە بۆ دۆخی سەرەتایی.
+بۆگرتی Snapshot فەرمانی خوارەوە دەنووسین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs subvolume snapshot /mnt/sv1 /mnt/sv1_snapshot
+</code></pre></div><p>لە فەرمانەکەی سەرەوە Snapshot بە ناوی sv1_snapshot لە sv1 گیرا.
+ئێستا دەتوانین Snapshot لە کاتی پێویست ڕاستەو خۆ Mount بکەین و زانیاریەکان وا پاشکەوتمان کردووە سوودیان لێ بگرین.</p>
+<blockquote>
+<p>mount -o subvol=sv1_snapshot /dev/sdb /mnt</p>
+</blockquote>
+<p>بۆ یەکخستنی پارچەبەندبووەکانی دیسک (Defragment) بە فەرمانەکەی خوارەوە کردار دەکەین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs filesystem defrag /mnt
+</code></pre></div><p>هەروا دەتوانین ب فەرمانەکەی خوارەوە یەکخستنی پارچەبەندبووەکانی دیسک بە شێوازی خۆکارMount بکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount -o autodefrag /dev/sdb /mnt
+</code></pre></div><p>سەرچاوە: <a href="https://www.howtoforge.com/a-beginners-guide-to-btrfs">howtoforge</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

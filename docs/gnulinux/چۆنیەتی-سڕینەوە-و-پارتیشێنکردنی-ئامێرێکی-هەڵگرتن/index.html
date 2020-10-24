@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="بەرێوەبردنی ئامێرەکانی هەڵگرتن(Managing storage devices)، ئێستا چ هاردێک،SSDs، PCIe یان فلاشێک بێت،هەمیشە کارێکی دژوارە. کارێک یان فەرمانێکی چکۆلە دەتوانێت هۆکارێک بێت بۆ سڕینەوە(Format)ـی زانیاریەکانتان.لەم نووسراوە من لە بارەی ئامێرەکانی پاشکەوت یان هەڵگرتن بۆ بەکارهێنەرانی مامناوەندی و سەرەتایی لینوکس قسە دەکەم.
+زۆر نەرمەکالامان هەیە کە بە شێوازی گرافیکی دەتوانن ئاسان کاری بدەن لە بەرێوەبردنی ئامێری هەڵگرتنەکەتان بۆ وێنە نەرمەکالای Disks tool زۆر بەهێز خۆی نواندووە.بەڵام زۆر جار کە نەتوانم هەڵەکانی ئامێری هەڵگرتنەکان چارە سەر بکەم دێم فۆرماتیان دەکەم.">
+
+<meta property="og:title" content="چۆنیەتی سڕینەوە و پارتیشێنکردنی ئامێرێکی هەڵگرتن" />
+<meta property="og:description" content="بەرێوەبردنی ئامێرەکانی هەڵگرتن(Managing storage devices)، ئێستا چ هاردێک،SSDs، PCIe یان فلاشێک بێت،هەمیشە کارێکی دژوارە. کارێک یان فەرمانێکی چکۆلە دەتوانێت هۆکارێک بێت بۆ سڕینەوە(Format)ـی زانیاریەکانتان.لەم نووسراوە من لە بارەی ئامێرەکانی پاشکەوت یان هەڵگرتن بۆ بەکارهێنەرانی مامناوەندی و سەرەتایی لینوکس قسە دەکەم.
+زۆر نەرمەکالامان هەیە کە بە شێوازی گرافیکی دەتوانن ئاسان کاری بدەن لە بەرێوەبردنی ئامێری هەڵگرتنەکەتان بۆ وێنە نەرمەکالای Disks tool زۆر بەهێز خۆی نواندووە.بەڵام زۆر جار کە نەتوانم هەڵەکانی ئامێری هەڵگرتنەکان چارە سەر بکەم دێم فۆرماتیان دەکەم." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%DA%86%DB%86%D9%86%DB%8C%DB%95%D8%AA%DB%8C-%D8%B3%DA%95%DB%8C%D9%86%DB%95%D9%88%DB%95-%D9%88-%D9%BE%D8%A7%D8%B1%D8%AA%DB%8C%D8%B4%DB%8E%D9%86%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%A6%D8%A7%D9%85%DB%8E%D8%B1%DB%8E%DA%A9%DB%8C-%D9%87%DB%95%DA%B5%DA%AF%D8%B1%D8%AA%D9%86/" />
+<meta property="article:published_time" content="2016-03-12T05:20:45+00:00" />
+<meta property="article:modified_time" content="2016-03-12T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     چۆنیەتی سڕینەوە و پارتیشێنکردنی ئامێرێکی هەڵگرتن 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%DA%86%DB%86%D9%86%DB%8C%DB%95%D8%AA%DB%8C-%D8%B3%DA%95%DB%8C%D9%86%DB%95%D9%88%DB%95-%D9%88-%D9%BE%D8%A7%D8%B1%D8%AA%DB%8C%D8%B4%DB%8E%D9%86%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%A6%D8%A7%D9%85%DB%8E%D8%B1%DB%8E%DA%A9%DB%8C-%D9%87%DB%95%DA%B5%DA%AF%D8%B1%D8%AA%D9%86/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2001%3a19%3a28.7827258%20%2b0330%20%2b0330%20m%3d%2b0.437440001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2001%3a19%3a28.7827258%20%2b0330%20%2b0330%20m%3d%2b0.437440001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2001%3a19%3a28.7827258%20%2b0330%20%2b0330%20m%3d%2b0.437440001">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2001%3a19%3a28.7827258%20%2b0330%20%2b0330%20m%3d%2b0.437440001">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    چۆنیەتی سڕینەوە و پارتیشێنکردنی ئامێرێکی هەڵگرتن
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sat Mar 12 2016 05:20:45 UTC'>Mar 12, 2016</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>١ خولەک<div class="middot"></div>162 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>بەرێوەبردنی ئامێرەکانی هەڵگرتن(Managing storage devices)، ئێستا چ هاردێک،SSDs، PCIe یان فلاشێک بێت،هەمیشە کارێکی دژوارە. کارێک یان فەرمانێکی چکۆلە دەتوانێت هۆکارێک بێت بۆ سڕینەوە(Format)ـی زانیاریەکانتان.لەم نووسراوە من لە بارەی ئامێرەکانی پاشکەوت یان هەڵگرتن بۆ بەکارهێنەرانی مامناوەندی و سەرەتایی لینوکس قسە دەکەم.</p>
+<p>زۆر نەرمەکالامان هەیە کە بە شێوازی گرافیکی دەتوانن ئاسان کاری بدەن لە بەرێوەبردنی ئامێری هەڵگرتنەکەتان بۆ وێنە نەرمەکالای Disks tool زۆر بەهێز خۆی نواندووە.بەڵام زۆر جار کە نەتوانم هەڵەکانی ئامێری هەڵگرتنەکان چارە سەر بکەم دێم فۆرماتیان دەکەم.لێرە من پێمخۆشە لە هێڵی فەرمان لە ترمیناڵ، هارد یان ئامێری هەڵگرتنەکەم بەرێوە ببەم،هۆکاریش دەگەرێتەوە بۆ بەهێز بوون ، سادە بوون و دڵنیا بوون لە ئێشەکەم.</p>
+<p><strong>چۆنیەتی پەیداکردنی ئامێری هەڵگرتن بە کۆمپیوترەکەمان</strong></p>
+<p>بە فەرمانی  <code>lsblk</code> ئێمە زۆر بە ئاسانی دەتوانین ئەو ئامێرانە کە لکاوەن بە کۆمپیوترەکەمان پەیدا  یان پێرستیان بکەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">qezwan@eos:~$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    <span class="m">0</span> 931.5G  <span class="m">0</span> disk
+├─sda1   8:1    <span class="m">0</span>     1K  <span class="m">0</span> part
+├─sda2   8:2    <span class="m">0</span>  96.4G  <span class="m">0</span> part
+├─sda3   8:3    <span class="m">0</span> 454.2G  <span class="m">0</span> part
+%9
+                            
+                        
+</code></pre></div><p>سەرچاوە :<a href="https://www.linux.com/learn/intro-to-linux/2017/3/how-format-storage-devices-linux">linux</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
