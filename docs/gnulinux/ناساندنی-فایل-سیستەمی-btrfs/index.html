@@ -45,11 +45,11 @@
 
 
     
-    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2001%3a19%3a28.7767296%20%2b0330%20%2b0330%20m%3d%2b0.431443801">
-    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2001%3a19%3a28.7767296%20%2b0330%20%2b0330%20m%3d%2b0.431443801">
-    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2001%3a19%3a28.7767296%20%2b0330%20%2b0330%20m%3d%2b0.431443801">
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2001%3a26%3a42.5698249%20%2b0330%20%2b0330%20m%3d%2b0.433036701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2001%3a26%3a42.5698249%20%2b0330%20%2b0330%20m%3d%2b0.433036701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2001%3a26%3a42.5698249%20%2b0330%20%2b0330%20m%3d%2b0.433036701">
     
-        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2001%3a19%3a28.7767296%20%2b0330%20%2b0330%20m%3d%2b0.431443801">
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2001%3a26%3a42.5698249%20%2b0330%20%2b0330%20m%3d%2b0.433036701">
     
 
 
@@ -176,7 +176,7 @@
                     <div class="date" title='Mon Feb 27 2017 05:20:45 UTC'>Feb 27, 2017</div>
                     
                     
-		     <div class="reading-time"><div class="middot"></div>7 خولەک<div class="middot"></div>1296 وشە <div class="middot"></div>
+		     <div class="reading-time"><div class="middot"></div>7 خولەک<div class="middot"></div>1297 وشە <div class="middot"></div>
                  
                     <strong>تــاگ:</strong>
                   
@@ -245,8 +245,8 @@ Btrfs v3.17
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount /dev/sdb /mnt
 </code></pre></div><p>بۆ دیتنی قەبارە مەسرەفکراوەو قەبارەی چۆڵی فایل سیستەم لەم فەرمانە سوود دەگرین :</p>
 <blockquote>
-<p>btrfs filesystem df /mnt</p>
-</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs filesystem df /mnt
+</code></pre></div></blockquote>
 <p>ئەمەش دەرەنجامی فەرمانەکەی سەرەوە :</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Data, RAID0: <span class="nv">total</span><span class="o">=</span>2.40GiB, <span class="nv">used</span><span class="o">=</span>832.00KiB
 Data, single: <span class="nv">total</span><span class="o">=</span>8.00MiB, <span class="nv">used</span><span class="o">=</span>0.00B
@@ -273,8 +273,8 @@ GlobalReserve, single: <span class="nv">total</span><span class="o">=</span>16.0
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs device add /dev/sde /mnt
 </code></pre></div><p>فەرمانەکەی خوارەوە بۆ نیشاندانی بارودۆخی فایل سیستەمەکەمانە :</p>
 <blockquote>
-<p>btrfs filesystem show /dev/sdb</p>
-</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs filesystem show /dev/sdb
+</code></pre></div></blockquote>
 <p>دەرئەنجامەکە بەم شێوازە بوو :</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Label: none  uuid: f36e0a56-bcea-4637-a1e4-c9788574d84a
 	Total devices <span class="m">4</span> FS bytes used 960.00KiB
@@ -323,8 +323,8 @@ Btrfs v3.17
 </code></pre></div><p>لە فەرمانەکەی سەرەوە Snapshot بە ناوی sv1_snapshot لە sv1 گیرا.
 ئێستا دەتوانین Snapshot لە کاتی پێویست ڕاستەو خۆ Mount بکەین و زانیاریەکان وا پاشکەوتمان کردووە سوودیان لێ بگرین.</p>
 <blockquote>
-<p>mount -o subvol=sv1_snapshot /dev/sdb /mnt</p>
-</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">&gt; mount -o <span class="nv">subvol</span><span class="o">=</span>sv1_snapshot /dev/sdb /mnt
+</code></pre></div></blockquote>
 <p>بۆ یەکخستنی پارچەبەندبووەکانی دیسک (Defragment) بە فەرمانەکەی خوارەوە کردار دەکەین:</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">btrfs filesystem defrag /mnt
 </code></pre></div><p>هەروا دەتوانین ب فەرمانەکەی خوارەوە یەکخستنی پارچەبەندبووەکانی دیسک بە شێوازی خۆکارMount بکەین :</p>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="کاتێک کە بە تازەیی لە سیستەمی کارپێکردنی ویندۆز سێرڤێر هاتمە سەر گنو/لینوکسی دێبیان، بۆ ئەو بەرنامانە کە لە سەر PHPـیەکەم دادەمەزرێت.من پێویستم بە دامەزراندنی چەند نەرمەکالایێک بوو بە فەرمانی wget،بەڵام ئەم هێڵە نیشاندەدرا:
+bash: wget: command not found لە ڕاستی ئەم هەڵەچۆن درووست دەبێت ؟ گنو Wget، ئامێرێکی ئازاد و خۆڕاییە بۆ داگرتنی فایلەکان لە نێو ماڵپەرەکان کە لەم دەرگانە HTTP, HTTPS وە FTP پاڵپشتی دەکات.هەر وا لە پرۆکسی HTTPـیش پشتیوانی دەکات.">
+
+<meta property="og:title" content="چۆنیەتی دامەزراندنی wget لە سەر لینوکسی دێبیان" />
+<meta property="og:description" content="کاتێک کە بە تازەیی لە سیستەمی کارپێکردنی ویندۆز سێرڤێر هاتمە سەر گنو/لینوکسی دێبیان، بۆ ئەو بەرنامانە کە لە سەر PHPـیەکەم دادەمەزرێت.من پێویستم بە دامەزراندنی چەند نەرمەکالایێک بوو بە فەرمانی wget،بەڵام ئەم هێڵە نیشاندەدرا:
+bash: wget: command not found لە ڕاستی ئەم هەڵەچۆن درووست دەبێت ؟ گنو Wget، ئامێرێکی ئازاد و خۆڕاییە بۆ داگرتنی فایلەکان لە نێو ماڵپەرەکان کە لەم دەرگانە HTTP, HTTPS وە FTP پاڵپشتی دەکات.هەر وا لە پرۆکسی HTTPـیش پشتیوانی دەکات." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%DA%86%DB%86%D9%86%DB%8C%DB%95%D8%AA%DB%8C-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-wget-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/" />
+<meta property="article:published_time" content="2017-02-20T05:20:45+00:00" />
+<meta property="article:modified_time" content="2017-02-20T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     چۆنیەتی دامەزراندنی wget لە سەر لینوکسی دێبیان 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%DA%86%DB%86%D9%86%DB%8C%DB%95%D8%AA%DB%8C-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-wget-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2001%3a26%3a42.5728243%20%2b0330%20%2b0330%20m%3d%2b0.436036101">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2001%3a26%3a42.5728243%20%2b0330%20%2b0330%20m%3d%2b0.436036101">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2001%3a26%3a42.5728243%20%2b0330%20%2b0330%20m%3d%2b0.436036101">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2001%3a26%3a42.5728243%20%2b0330%20%2b0330%20m%3d%2b0.436036101">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    چۆنیەتی دامەزراندنی wget لە سەر لینوکسی دێبیان
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Feb 20 2017 05:20:45 UTC'>Feb 20, 2017</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>2 خولەک<div class="middot"></div>353 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>کاتێک کە بە تازەیی لە سیستەمی کارپێکردنی ویندۆز سێرڤێر هاتمە سەر گنو/لینوکسی دێبیان، بۆ ئەو بەرنامانە کە لە سەر PHPـیەکەم دادەمەزرێت.من پێویستم بە دامەزراندنی چەند نەرمەکالایێک بوو بە فەرمانی wget،بەڵام ئەم هێڵە نیشاندەدرا:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">bash: wget: <span class="nb">command</span> not found
+</code></pre></div><h5 id="لە-ڕاستی-ئەم-هەڵەچۆن-درووست-دەبێت-">لە ڕاستی ئەم هەڵەچۆن درووست دەبێت ؟</h5>
+<p>گنو Wget، ئامێرێکی ئازاد و خۆڕاییە بۆ داگرتنی فایلەکان لە نێو ماڵپەرەکان کە لەم دەرگانە HTTP, HTTPS وە FTP پاڵپشتی دەکات.هەر وا لە پرۆکسی HTTPـیش پشتیوانی دەکات.لەم بابەتە فێر دەبینن کە چۆن بە یارمەتی نەرمەکالی wget فایلێک لە وێب دابگرین و دایمەزرێنین.</p>
+<h5 id="دامەزراندنی-wget-لە-سەر-لینوکسێکی-دێبیان-">دامەزراندنی wget لە سەر لینوکسێکی دێبیان :</h5>
+<p>سەرەتا پێویستت بە فەرمانی apt-get / apt بۆ دامەزراندی پاکەتەکان لە سەر Wgetـە.ئێوە دەتوانن بە فەرمانی apt-cache بگەڕێن بۆ پاکەتەکان بەم شێوازە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="o">{</span>apt-cache search <span class="o">{</span>package 
+$ apt-cache search wget 
+$ apt-cache search wget <span class="p">|</span> grep wget 
+$ apt search wget 
+</code></pre></div><h5 id="بۆ-وێنە-ئەم-ئامانجەی-هەیە">بۆ وێنە ئەم ئامانجەی هەیە:</h5>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">qezwan@eos:~$ apt-cache search wget
+devscripts - scripts to make the life of a Debian Package maintainer easier
+wget - retrieves files from the web
+abcde - A Better CD Encoder
+apt-mirror - APT sources mirroring tool
+axel - light <span class="nb">command</span> line download accelerator
+filetea - Web-based file sharing system
+getdata - management of external databases
+libcupt4-1-downloadmethod-wget - flexible package manager -- wget download method
+ow-shell - shell utilities to talk to an 1-Wire owserver
+puf - Parallel URL fetcher
+pwget - downloader utility which resembles wget <span class="o">(</span>implemented in Perl<span class="o">)</span>
+python-wget - pure Python download utility <span class="k">for</span> Python <span class="m">2</span>
+python3-wget - pure Python download utility <span class="k">for</span> Python <span class="m">3</span>
+snarf - command-line URL grabber
+texlive-latex-extra - TeX Live: LaTeX additional packages
+wput - tiny wget-like ftp-client <span class="k">for</span> uploading files
+</code></pre></div><p>هەڤاڵان لە سێهەمین هێڵ (لە سەرەوە)ئێوە دەبینن کە پاکەتی Wget ئامادەیە بۆ دامەزراندن.ئێستا ئێوە دەتوانن پاکەتیwget دامەزرینن بەم فەرمانانە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install <span class="o">{</span>package-name-here<span class="o">}</span>
+</code></pre></div><p>یان بەم فەرمانەی لە ئاستی بەرێوەبەر واتە sudo :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> <span class="c1"># apt-get install {package-name-here} </span>
+</code></pre></div><p>بۆ وێنە ئێوە دەتوانن wget بەم دوو فەرمانە دامەزرێنن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt install wget 
+</code></pre></div><p>یان</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install wget 
+</code></pre></div><h5 id="ئێستا-چۆن-بە-نەرمەکالای-wget-فایلێک-دابگرین-">ئێستا چۆن بە نەرمەکالای wget، فایلێک دابگرین :</h5>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">wget http://url/file
+wget ftp://domain/file.tar.gz
+</code></pre></div><p>هیوادارم بەسوود بێت و ئاشنا ببن بە چۆنیەتی داگرتنی فایل لە ترمیناڵ.</p>
+<p>سەرچاوە : <a href="https://www.cyberciti.biz/faq/how-to-install-wget-togetrid-of-error-bash-wget-command-not-found/">cyberciti</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

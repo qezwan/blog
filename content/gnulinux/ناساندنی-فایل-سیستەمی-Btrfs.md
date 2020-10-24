@@ -104,7 +104,9 @@ mount /dev/sdb /mnt
 
 بۆ دیتنی قەبارە مەسرەفکراوەو قەبارەی چۆڵی فایل سیستەم لەم فەرمانە سوود دەگرین :
 
+> ```shell
 > btrfs filesystem df /mnt
+> ```
 
 ئەمەش دەرەنجامی فەرمانەکەی سەرەوە :
 
@@ -161,7 +163,9 @@ btrfs device add /dev/sde /mnt
 
 فەرمانەکەی خوارەوە بۆ نیشاندانی بارودۆخی فایل سیستەمەکەمانە :
 
+> ```shell
 > btrfs filesystem show /dev/sdb
+> ```
 
 دەرئەنجامەکە بەم شێوازە بوو :
 
@@ -271,7 +275,11 @@ btrfs subvolume snapshot /mnt/sv1 /mnt/sv1_snapshot
 لە فەرمانەکەی سەرەوە Snapshot بە ناوی sv1_snapshot لە sv1 گیرا.
 ئێستا دەتوانین Snapshot لە کاتی پێویست ڕاستەو خۆ Mount بکەین و زانیاریەکان وا پاشکەوتمان کردووە سوودیان لێ بگرین.
 
-> mount -o subvol=sv1_snapshot /dev/sdb /mnt
+> ```shell
+> > mount -o subvol=sv1_snapshot /dev/sdb /mnt
+> ```
+
+
 
 بۆ یەکخستنی پارچەبەندبووەکانی دیسک (Defragment) بە فەرمانەکەی خوارەوە کردار دەکەین:
 
