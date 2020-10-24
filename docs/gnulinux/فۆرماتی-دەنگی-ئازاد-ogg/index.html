@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی: OGG فۆرماتێکی سەرچاوەکراوە و ئازادە کە بۆ streaming و پەستانی (compressed)پەڕگەکانی دەنگ و فیلم بەکاردێت.بەدڵنیاییەوە فۆرماتی MP3 یتان بیستووە، OGG Vorbis فۆرماتێکی سەرچاوەکراوەیە کە جێگرێکی باش بۆ MP3 یە.زۆربەی پلەیەرەکان توانایی بڵاوکردنی OGGیان هەیە .
+ئەم فۆرماتە بە سێ شێواز پەستانی پەڕگەکان دەکات واتە سێ (Codec)ی هەیە :
+١- سیستەمی Vorbis بۆ پەستانی پەرگە ی دەنگەکان.
+٢- سیستەمی Speex بۆ پەستانی دەنگی مرۆڤەکان.(١)
+٣- سیستەمی Theora بۆ پەستانی پەڕگە ڤیدیۆکان.">
+
+<meta property="og:title" content="فۆرماتی دەنگی ئازاد OGG" />
+<meta property="og:description" content="پێشەکی: OGG فۆرماتێکی سەرچاوەکراوە و ئازادە کە بۆ streaming و پەستانی (compressed)پەڕگەکانی دەنگ و فیلم بەکاردێت.بەدڵنیاییەوە فۆرماتی MP3 یتان بیستووە، OGG Vorbis فۆرماتێکی سەرچاوەکراوەیە کە جێگرێکی باش بۆ MP3 یە.زۆربەی پلەیەرەکان توانایی بڵاوکردنی OGGیان هەیە .
+ئەم فۆرماتە بە سێ شێواز پەستانی پەڕگەکان دەکات واتە سێ (Codec)ی هەیە :
+١- سیستەمی Vorbis بۆ پەستانی پەرگە ی دەنگەکان.
+٢- سیستەمی Speex بۆ پەستانی دەنگی مرۆڤەکان.(١)
+٣- سیستەمی Theora بۆ پەستانی پەڕگە ڤیدیۆکان." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D9%81%DB%86%D8%B1%D9%85%D8%A7%D8%AA%DB%8C-%D8%AF%DB%95%D9%86%DA%AF%DB%8C-%D8%A6%D8%A7%D8%B2%D8%A7%D8%AF-ogg/" />
+<meta property="article:published_time" content="2014-08-09T05:20:45+00:00" />
+<meta property="article:modified_time" content="2014-08-09T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     فۆرماتی دەنگی ئازاد OGG 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D9%81%DB%86%D8%B1%D9%85%D8%A7%D8%AA%DB%8C-%D8%AF%DB%95%D9%86%DA%AF%DB%8C-%D8%A6%D8%A7%D8%B2%D8%A7%D8%AF-ogg/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2000%3a56%3a30.273585%20%2b0330%20%2b0330%20m%3d%2b0.394998701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2000%3a56%3a30.273585%20%2b0330%20%2b0330%20m%3d%2b0.394998701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2000%3a56%3a30.273585%20%2b0330%20%2b0330%20m%3d%2b0.394998701">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2000%3a56%3a30.273585%20%2b0330%20%2b0330%20m%3d%2b0.394998701">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    فۆرماتی دەنگی ئازاد OGG
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sat Aug 9 2014 05:20:45 UTC'>Aug 9, 2014</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>544 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی:</h5>
+<p>OGG فۆرماتێکی سەرچاوەکراوە و ئازادە کە بۆ streaming و پەستانی (compressed)پەڕگەکانی دەنگ و فیلم بەکاردێت.بەدڵنیاییەوە فۆرماتی MP3 یتان بیستووە، OGG Vorbis فۆرماتێکی سەرچاوەکراوەیە کە جێگرێکی باش بۆ MP3 یە.زۆربەی پلەیەرەکان توانایی بڵاوکردنی OGGیان هەیە .</p>
+<p>ئەم فۆرماتە بە سێ شێواز پەستانی پەڕگەکان دەکات واتە سێ (Codec)ی هەیە :</p>
+<p>١- سیستەمی Vorbis بۆ پەستانی پەرگە ی دەنگەکان.</p>
+<p>٢- سیستەمی Speex بۆ پەستانی دەنگی مرۆڤەکان.<a href="http://www.speex.org/">(١)</a></p>
+<p>٣- سیستەمی Theora بۆ پەستانی پەڕگە ڤیدیۆکان<a href="http://www.theora.org/">.(٢)</a></p>
+<p>لەم بابەتە لە سەر OGG Vorbis (لەژمارەی ١ ) قسە دەکەین. لە گنو/لینوکس، لەگشت دابەشکراوەکان پاڵپشتی لەم شێوە دەنگە دەکریت .زانیاری فرەتر لۆ ئەم فۆرماتە لێرە ببینە <a href="http://www.vorbis.com/">(٣)</a></p>
+<h5 id="بەرژەوەندییەکانی-سوود-وەرگرتن-لە-ogg-vorbis-">بەرژەوەندییەکانی سوود وەرگرتن لە OGG Vorbis ؟</h5>
+<p>گەر ئاگاداری تایبەتمەندیەکانی ئەم فۆرماتە (OGG Vorbis) بن ،ئێوە بە تەواوی فۆرماتی MP3 بەلا دەنێن.بۆ هۆگری لە نەرمەواڵەی سەرچاوەکراوە وە هەروەها ئازادی و سوودەکانی سەرچاوەکراوە ، بێجگە لەم بابەتە ئەم خاڵانەی دیکەی بەدی دەکرێت :</p>
+<p>OGG Vorbis توانایی ئەوە هەیە کە پەڕگەکان فرەتر لە MP3 بەستان بکات.ئەمەش بۆ ئەو ماڵپەڕانە کە پانایی باندی کەمیان هەیەو لە کاری موسیقان بەسەرفەیە.
+شرۆڤە نووسین لە سەر پەڕگەکانی موسیقا یەکێک لە هەرە سوودەکانی ئەم فۆرمەتە کراوەیە.
+گر هەرەکتان بێت پەرگەکانی موسیقاکەتان بە شێوازی MP3 بەفرۆش بگەیێنن دەبێت بەشێک لە سوودەکەتان بدەن بە Fraunhofer (خاوەنی فۆرماتی MP3) .بەڵام بە فۆرماتی OGG Vorbis تەواوی داهاتەکەتان بۆ خۆتانە.
+گر ئێوە گەشەپێدەری نەرمەکالا بن دەتوانن لێ هیچ هەزینەیێک و Licence ێک لە فۆرماتی OGG Vorbis سوود وەربگرن.زۆر یەک لە بەرهەمهینەرانی یاری کۆمپیوتەر وەک EA Games، Epic Games و PopCap Gamesڕووخساریان بەلای ئەم فۆرماتە چەرخاندووە.
+کواڵێتی دەنگی OGG Vorbis بەرانبەر لەگەڵ MP3 زۆر باشترە. نمونەیێک لێرە ببینن.<a href="http://www.xiph.org/ogg/vorbis/listen.html">(٤)</a>
+لە ڕێگای خزمەتگوزاری Streaming بە ناوی Icecast دەتوانن پەرگەکانی MP3 بە شێوەی زیندوو لە سەر تۆڕ بڵاو بکەنەوە.(٥)</p>
+<h5 id="مۆڵەتی-ogg-vorbis-">مۆڵەتی OGG Vorbis :</h5>
+<p>زۆربەی ئامێرەکانی گۆڕینی فۆرمات بە OGG Vorbis لە سەر ڕێپێدان و لایسنێسی <a href="http://chawg.org/wiki/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">GNU/GPL</a> بڵاو دەبنەوە. کتێبخانەکانی Vorbis لە ژێر ڕێپێدانی BSD ئیشدەکەن.</p>
+<h5 id="گۆڕانی-فۆڕماتی-mp3-به-ogg-چۆنە-">گۆڕانی فۆڕماتی MP3 به OGG چۆنە :</h5>
+<p>ئامێری زۆرمان هەیە بۆ گۆڕێنی فۆرماتی MP3 به OGG ئێوە دەتوانن لیستێک لە ئامێرەکان لێرە ببینن[(٦)](<a href="http://freshmeat.net/search/?q=convert">http://freshmeat.net/search/?q=convert</a> ogg mp3). هەروەها بێجگە لە فۆرماتیMP3 ئێوە دەتوانن فۆرماتەکانی دیکەش بکەن بە فۆرماتی OGG .یەکیک لەو ئامێرانە mp32ogg یە کە لەدابەسکراوەکانی دیبیان دەتوانن لە ڕێگای فەرمانی خوارەوە دایمەزرێنن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install mp32ogg
+</code></pre></div><p>سوود وەرگرتن لەم ئامێرە زۆر سادەیە بەم جۆڕەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ mp32ogg <span class="o">[</span>Files...<span class="o">]</span> <span class="o">[</span>Directories...<span class="o">]</span>
+</code></pre></div><p>تەنها خاڵی لاوازی ئەوەیە کە ئەم نەرمەکالا ناتوانێت ئەو پەرگانە کە لە نێویان بۆشایێکی بەتاڵ (space) هەیە بیگۆڕێت. ئەمەش بە سکریپتێک درووست دەبێت.فەرمانەکەی خوارەوە دەخەینە نێو پەڕگەیێک و بە ناوێک وەکوو rmspace لە مەسیری usr/bin/ پاشکەوتی دەکەین( ڕیپێدانی بکەن بە ئیجرا).</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/bin/bash</span>
+find . -type f -name <span class="s2">&#34;* *&#34;</span> -print <span class="p">|</span>
+<span class="k">while</span> <span class="nb">read</span> name<span class="p">;</span> <span class="k">do</span>
+<span class="nv">na</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$name</span> <span class="p">|</span> tr <span class="s1">&#39; &#39;</span> <span class="s1">&#39;_&#39;</span><span class="k">)</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$name</span> !<span class="o">=</span> <span class="nv">$na</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+mv <span class="s2">&#34;</span><span class="nv">$name</span><span class="s2">&#34;</span> <span class="nv">$na</span>
+<span class="k">fi</span>
+<span class="k">done</span>
+</code></pre></div><p>بەمجۆڕە دەیخەینە نێو مەسیرەکەمان :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># cp rmspace /usr/bin/</span>
+<span class="c1"># chmod +x /usr/bin/rmspace</span>
+</code></pre></div><h5 id="ناوی-ogg-لە-چی-گێراوە-">ناوی OGG لە چی گێراوە ؟</h5>
+<p>ناوی کابرایێکە بە ناوی Nanny OGG کە لە ڕۆمانەکانی Discworld نووسراوەی Terry Pratchett گێراوە.<a href="http://en.wikipedia.org/wiki/Nanny_Ogg">(٧)</a></p>
+<h5 id="پلەیەرەکانی-فۆرماتی-ogg-">پلەیەرەکانی فۆرماتی OGG :</h5>
+<p>زۆربەی ئەو نەرمەکالانە کە بۆ بڵآوکردنی دەنگ و موسیقا کە لە گنو / لینوکس درووستکراوەن، پاڵپشتی لەم فۆرماتە دەکەن.هەروەها زۆربەی بڵاوکەرە بازرگانیەکانیش دەتوانن ئەم فۆرماتە بخوێنن.لیستێک لەم نەرمەکالانە لێرە ببینە.<a href="http://www.vorbis.com/download.psp">(٨)</a></p>
+<h5 id="ڕەقەکالای-بڵاوکەر-ogg-">ڕەقەکالای بڵاوکەر OGG :</h5>
+<p>کۆمپانیای ئەپڵ لەم فۆرماتە پشتیوانی ناکات . لۆ ؟ نازانم ! هەروا چاوەڕوانی مایکرۆسۆفتیش نەبن باشترە.بەڵام سیستەمەکانی سەرچاوەکراوەی دیکە وەکو ئامێرەکانی ئەندرۆید بە ئاسمانەوە دەیخوێنن و خۆی بۆ دەڕەقسێنن.</p>
+<p>سەرچاوە :<a href="https://en.wikipedia.org/wiki/Ogg">ویکی پێدیا</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

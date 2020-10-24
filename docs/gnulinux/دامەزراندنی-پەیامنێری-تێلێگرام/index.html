@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی : بۆ دامەزراندنی تێلێگرام(Telegram) لە سەر لینوکس، ڕێگای جیاواز لەبەردەستە.لەم بابەتە ئێمە تەواوی ئەم ڕێگانە بۆ دامەزراندنی ئەم پەیامنێرە بەهێزە ئەنجام دەدەین.ئەم بابەتە فێرکاری لە سەر دامەزراندنی تێلێگرام لەسەر Ubuntu ،Fedora، Debian وە Arch دەکا هەر وا چۆنیەتی دامەزراندن لە ڕێگای پاکەتەکانی Snap و Flatpak.بۆ زانیاریتان ئەم پەیامنێرە یەکێک لە یەکەمین پەیامنێرە سەرچاوەکراوەکان و ئازادە کە ئاسایش و پاراستنی زۆر لەسەرەوەیە.هەروا دەتوانن تەنها پەیامیی دەنگی پێ بگرن لەگەڵ هاوڕێکانتان،دەتوانن گرووپ و کاناڵی لەسەر درووست بکەن و فایلێک بە قەبارەی ۱ گیگابایت بۆ هاوڕێکانتان ڕوانە بکەن.">
+
+<meta property="og:title" content="دامەزراندنی پەیامنێری تێلێگرام" />
+<meta property="og:description" content="پێشەکی : بۆ دامەزراندنی تێلێگرام(Telegram) لە سەر لینوکس، ڕێگای جیاواز لەبەردەستە.لەم بابەتە ئێمە تەواوی ئەم ڕێگانە بۆ دامەزراندنی ئەم پەیامنێرە بەهێزە ئەنجام دەدەین.ئەم بابەتە فێرکاری لە سەر دامەزراندنی تێلێگرام لەسەر Ubuntu ،Fedora، Debian وە Arch دەکا هەر وا چۆنیەتی دامەزراندن لە ڕێگای پاکەتەکانی Snap و Flatpak.بۆ زانیاریتان ئەم پەیامنێرە یەکێک لە یەکەمین پەیامنێرە سەرچاوەکراوەکان و ئازادە کە ئاسایش و پاراستنی زۆر لەسەرەوەیە.هەروا دەتوانن تەنها پەیامیی دەنگی پێ بگرن لەگەڵ هاوڕێکانتان،دەتوانن گرووپ و کاناڵی لەسەر درووست بکەن و فایلێک بە قەبارەی ۱ گیگابایت بۆ هاوڕێکانتان ڕوانە بکەن." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%DB%95%DB%8C%D8%A7%D9%85%D9%86%DB%8E%D8%B1%DB%8C-%D8%AA%DB%8E%D9%84%DB%8E%DA%AF%D8%B1%D8%A7%D9%85/" />
+<meta property="article:published_time" content="2018-08-21T05:20:45+00:00" />
+<meta property="article:modified_time" content="2018-08-21T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی پەیامنێری تێلێگرام 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%DB%95%DB%8C%D8%A7%D9%85%D9%86%DB%8E%D8%B1%DB%8C-%D8%AA%DB%8E%D9%84%DB%8E%DA%AF%D8%B1%D8%A7%D9%85/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2000%3a56%3a30.2266139%20%2b0330%20%2b0330%20m%3d%2b0.348027601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2000%3a56%3a30.2266139%20%2b0330%20%2b0330%20m%3d%2b0.348027601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2000%3a56%3a30.2266139%20%2b0330%20%2b0330%20m%3d%2b0.348027601">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2000%3a56%3a30.2266139%20%2b0330%20%2b0330%20m%3d%2b0.348027601">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی پەیامنێری تێلێگرام
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue Aug 21 2018 05:20:45 UTC'>Aug 21, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>4 خولەک<div class="middot"></div>711 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی-">پێشەکی :</h5>
+<p>بۆ دامەزراندنی تێلێگرام(Telegram) لە سەر لینوکس، ڕێگای جیاواز لەبەردەستە.لەم بابەتە ئێمە تەواوی ئەم ڕێگانە بۆ دامەزراندنی ئەم پەیامنێرە بەهێزە ئەنجام دەدەین.ئەم بابەتە فێرکاری لە سەر دامەزراندنی تێلێگرام لەسەر Ubuntu ،Fedora، Debian وە Arch دەکا هەر وا چۆنیەتی دامەزراندن لە ڕێگای پاکەتەکانی Snap و Flatpak.بۆ زانیاریتان ئەم پەیامنێرە یەکێک لە یەکەمین پەیامنێرە سەرچاوەکراوەکان و ئازادە کە ئاسایش و پاراستنی زۆر لەسەرەوەیە.هەروا دەتوانن تەنها پەیامیی دەنگی پێ بگرن لەگەڵ هاوڕێکانتان،دەتوانن گرووپ و کاناڵی لەسەر درووست بکەن و فایلێک بە قەبارەی ۱ گیگابایت بۆ هاوڕێکانتان ڕوانە بکەن.
+گەر کێشەیێکتان بوو لەم بابەتە بۆ دامەزراندن، خەفەت مەخۆن! دەتوانن بە شێوازی <a href="https://web.telegram.org/">وێب سوود لە تێلێگرام </a>بگرن.</p>
+<h5 id="دامەزراندن-لەسەر-ئوبونتو">دامەزراندن لەسەر ئوبونتو</h5>
+<p>پەیامنێری تێلێگرام وشانێکی فەرمی نییە بۆ ئەوە کە گەشەپێدەران پێیان وا باشە کە تەنها بە شێوازی باینێری و گشتی بڵاوی بکەنەوە.هەر وا گنو/لینوکسی ئوبونتو بە هیچ شێوازێک ئەم ئەپەی لە پاکەت نەخستووە.لەم ڕوانگە کە،سەرچاوەی نەرمەکالاکانی سەرەتایی نییە،ئەو بەکارهێنەرانە کە گەرەکیانە Telegram وەک هەر نەرمەکالایێکی دیکە لە ئوبونتو دامەزرێنن، دەبێ سەرەتا یەک PPA بە سیستەمەکی خۆیان زیاد بکەن.
+بۆ زیادکردنی PPA،سەرەتا ترمیناڵ بکەنەوە وە فەرمانەکەی خوارەوەی لێ بنووسن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo add-apt-repository ppa:atareao/telegram
+</code></pre></div><p>لە فەرمانەکەی سەرەوە فەرمانی “add-apt-repository” سەرچاوەکەی تێلێگرام بە ئوبونتو زیاد دەکا.لێرە ئێمە دەبێ ئوبونتو بەڕۆژ بکەینەوە دەتوانین لێرە پاکەتی تێلێگرام ببینین(Telegram PPA).بەڕۆژکردنەوەی تێلێگرام بەم فەرمانە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt update
+</code></pre></div><p>پاش بەڕۆژ بوونی ئوبونتو بە فەرمانی apt دوایین وشانی پاکەتی تێلێگرام لە سەر سیستەمەکەمان دادەمەزرێنین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install telegram
+</code></pre></div><h5 id="بۆ-سڕینەوەی-تێلێگرام-">بۆ سڕینەوەی تێلێگرام :</h5>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt remove telegram
+</code></pre></div><h6 id="دێبیان">دێبیان:</h6>
+<p>بەداخەوە پەیداکردنی پاکەتێکی خۆماڵی Deb هەر فرە دژوارە بۆ ئەوە کە دێبیان لە پاکەتەکانی PPA ئوبونتو پاڵپشتی ناکا.بەڵام دێبیان سید(Debian Sid) دەتوانێ بە فەرمانێکی سادە ئەم ئیشە جێبەجێ بکا.هەر چەند لەم بارە وشانی نوێی دێبیان زۆر شانسی نییە.
+تێلێگرام بۆ دێبیان سید(Debian Sid):</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install telegram-desktop
+</code></pre></div><p>سڕینەوە لە دێبیان سید بەم فەرمانە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get remove telegram-desktop
+</code></pre></div><h6 id="تێلێگرام-لە-وشانی-دیکەی-دێبیان">تێلێگرام لە وشانی دیکەی دێبیان:</h6>
+<p>دوایین وشانی باینێری سید بۆ دامەزراندنی تێلێگرام ئیش ناکا ، چونکە ڕیزبەندی پاکەتەکان بە باشی ناکا لەم نەرمەکالا.بەڵام دیسان چارەتان هەیە ئێوە دەتوانن لە پاکەتەکانی Snap ، Flatpak وە Generic binary بۆ دامەزراندنی سوود بگرن.</p>
+<h6 id="ئاچ-لینوکس">ئاچ لینوکس:</h6>
+<p>تێلێگرام لە سەرچاوەی نەرمەکالای ئاچ بوونی نییە.بەڵام ئەمە کێشەیێک نییە چونکە چەندین وشانی فەرمی تێلێگرام لە AUR دانراوە. بڕوانن ئەم بەستەرانە :پاکەتەکانی [telegram-desktop-bin](<a href="https://redirect.viglink.com/?format=go&amp;jsonp=vglnk_153488017939640&amp;key=375566b60d6830a5cce1fcbb1ebbab5d&amp;libId=jl417pi20102gais000DAc5m88uq0&amp;loc=https%3A%2F%2Fwww.addictivetips.com%2Fubuntu-linux-tips%2Finstall-telegram-on-linux%2F&amp;v=1&amp;out=https%3A%2F%2Faur.archlinux.org%2Fpackages%2Ftelegram-desktop-bin%2F&amp;ref=https%3A%2F%2Fwww.addictivetips.com%2Fubuntu-linux-tips%2Finstall-zoiper-on-linux%2F&amp;title=How">https://redirect.viglink.com/?format=go&amp;jsonp=vglnk_153488017939640&amp;key=375566b60d6830a5cce1fcbb1ebbab5d&amp;libId=jl417pi20102gais000DAc5m88uq0&amp;loc=https%3A%2F%2Fwww.addictivetips.com%2Fubuntu-linux-tips%2Finstall-telegram-on-linux%2F&amp;v=1&amp;out=https%3A%2F%2Faur.archlinux.org%2Fpackages%2Ftelegram-desktop-bin%2F&amp;ref=https%3A%2F%2Fwww.addictivetips.com%2Fubuntu-linux-tips%2Finstall-zoiper-on-linux%2F&amp;title=How</a> To Install Telegram On Linux&amp;txt=telegram-desktop-bin) وە [telegram-desktop-git](<a href="https://redirect.viglink.com/?format=go&amp;jsonp=vglnk_153488027313341&amp;key=375566b60d6830a5cce1fcbb1ebbab5d&amp;libId=jl417pi20102gais000DAc5m88uq0&amp;loc=https%3A%2F%2Fwww.addictivetips.com%2Fubuntu-linux-tips%2Finstall-telegram-on-linux%2F&amp;v=1&amp;out=https%3A%2F%2Faur.archlinux.org%2Fpackages%2Ftelegram-desktop-git%2F&amp;ref=https%3A%2F%2Fwww.addictivetips.com%2Fubuntu-linux-tips%2Finstall-zoiper-on-linux%2F&amp;title=How">https://redirect.viglink.com/?format=go&amp;jsonp=vglnk_153488027313341&amp;key=375566b60d6830a5cce1fcbb1ebbab5d&amp;libId=jl417pi20102gais000DAc5m88uq0&amp;loc=https%3A%2F%2Fwww.addictivetips.com%2Fubuntu-linux-tips%2Finstall-telegram-on-linux%2F&amp;v=1&amp;out=https%3A%2F%2Faur.archlinux.org%2Fpackages%2Ftelegram-desktop-git%2F&amp;ref=https%3A%2F%2Fwww.addictivetips.com%2Fubuntu-linux-tips%2Finstall-zoiper-on-linux%2F&amp;title=How</a> To Install Telegram On Linux&amp;txt=telegram-desktop-git) .</p>
+<p>ئەم بەستەرانە وەک یەک نیین. کەسانێک کە گەرەکیان پاکەتی telegram-desktop-git دامەزرێنن دەبێ کاتی زۆرتری بۆ ترخان و کامپایلی بکەن.
+بە پێچەوانە کەسانێک کە وشانی telegram-desktop-bin دادەمەزرێنن وشانێکی تەواو لەو نەرمەکالا لە ماڵپەڕەکەی تێلێگرام بە شێوازی فەرمی لەبەردەستە کە بە خێرایی دادەمەزرێ. لەم فێرکارییە ئێمە پاکەتی Telegram Bin ناوەندی سەرنجمانە.
+دامەزراندن، سەرەتا سوود دەگرین لە ئامێری پاکەتی Pacman تا پاکەتی گیت دامەزرێنین،ئەمەش نیازە بۆ هاوئاهەنگی لەگەڵ AUR .</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo pacman -S git
+</code></pre></div><p>ئینجا لە ئامرازی Git بۆ داگرتنی پەڕەکانی Telegram PKGBUILD لە سەر کۆمپیوترەکەمان سوود دەگرین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">git clone https://aur.archlinux.org/telegram-desktop-bin.git
+</code></pre></div><p>بە فەرمانی دەچینە نێو بوخچە(folder)ـی نوێی Telegram Bin</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> telegram-desktop-bin
+</code></pre></div><p>ئیشبکە بە makepkg.ئەم فەرمانە بە ئاچ دەڵێ کە پاکەتێکی خۆماڵی درووست، هەروا تەواو پێداویستیەکانی بەدی بێنێ.لەبیرتان بێ سوود وەرگرتن لە سویچی<code>si-</code>شایەت تەواو پێداویستیەکانی ڕیز نەکا و داینەمەزرێنێ.گەر ئەم ڕووداوە ڕووی دا بگەڕێنەوە بۆ پەڕەی AUR تێلێگرام و لەم فەرمانە سوود بگرن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-X.noarch.rpm -y
+</code></pre></div><p>ئینجا بە یارمەتی پاکەتی DNF تێلێگرام دامەزرێنن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo dnf install telegram-desktop
+</code></pre></div><p>سڕینەوەی پاکەتی تێلێگرام لە فێدۆرا بە فەرمانی DNF بەم جۆرە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo dnf remove telegram-desktop
+</code></pre></div><h5 id="چۆنیەتی-دامەزراندن-بە-پاکەتی-snap">چۆنیەتی دامەزراندن بە پاکەتی Snap</h5>
+<p>گەر لە لینوکس سوود دەگرن و پاکەتی فەرمی تێلگرامی تێدا نییە ؟
+زیز مەبن، گەر سیستەمی وەگڕ خەرەکەتان پاڵپشتی لە فۆرماتی پاکەتی Snap دەکا، ئێوە دەتوانن تێلێگرام بە ئاسانی دامەزرێنن.ترمیناڵ بکەنەوە و دوایین وشانی تێلێگرامی تێدا دامەزرێنن ئەڵبەت بە یارمەتی ئامێری snap</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo snap install telegram-desktop
+</code></pre></div><p>بۆ سڕینەوەی تێلێگرام لە ڕێگای پاکەتی snap لەم فەرمانە سوود بگرن</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo snap remove telegram-desktop
+</code></pre></div><h5 id="چۆنیەتی-دامەزراندن-بە-پاکەتی-flatpak">چۆنیەتی دامەزراندن بە پاکەتی Flatpak</h5>
+<p>ڕێگایێکی دیکەی بەهێز بۆ دامەزراندنی تێلێگرام لە سەر گنو/لینوکس نەرمەکالای Flatpakـە.ترمیناڵ‌بکەنەوە ئینجا فەرمانەکەی خوارەوەی تێدا بنووسن.
+<code>خاڵ : </code>کاتی دامەزراندن بە ئامێری Flatpak دڵنیا بە کە “yes” ـت بۆ زیادکردنی کانگای Flathub هەڵبژاردووە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo flatpak install --from https://flathub.org/repo/appstream/org.telegram.desktop.flatpakref
+</code></pre></div><p>بۆ سڕینەوە تێلێگرام بە Flathub ئەم فەرمانە لە ترمیناڵ‌بنووسە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo flatpak uninstall org.telegram.desktop
+</code></pre></div><h5 id="دامەزراندن-لە-ڕێگای-باینێریbinary">دامەزراندن لە ڕێگای باینێری(Binary)</h5>
+<p>گەر کۆمپیوترەکەت پاڵپشتی لە Snaps وە Flatpaks ناکا.تێلێگرام دەتوانن لە ڕێگای فایلێکی باینێری دابگرن.سەرەتا بچن بۆ ماڵپەڕی فەرمی تێلێگرام.ئینجا لینوکس هەڵبژێرن و دایبەزێنن.فایلێک کە داتانگرتووە بە پاشگەڕی tar.xzـە. بیکەنەوە دەبێ بوخچەی tsetup هەبێ.ئینجا بیبەن بۆ مەسیری <code>/home/username/</code>.بوخچەکە بکەنەوە ئینجا دووکرتە لە سەر پەڕگەی “Telegram” بکەن.</p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

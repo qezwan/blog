@@ -85,6 +85,15 @@
     </item>
     
     <item>
+      <title>دامەزراندنی پەیامنێری تێلێگرام</title>
+      <link>https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%DB%95%DB%8C%D8%A7%D9%85%D9%86%DB%8E%D8%B1%DB%8C-%D8%AA%DB%8E%D9%84%DB%8E%DA%AF%D8%B1%D8%A7%D9%85/</link>
+      <pubDate>Tue, 21 Aug 2018 05:20:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%DB%95%DB%8C%D8%A7%D9%85%D9%86%DB%8E%D8%B1%DB%8C-%D8%AA%DB%8E%D9%84%DB%8E%DA%AF%D8%B1%D8%A7%D9%85/</guid>
+      <description>پێشەکی : بۆ دامەزراندنی تێلێگرام(Telegram) لە سەر لینوکس، ڕێگای جیاواز لەبەردەستە.لەم بابەتە ئێمە تەواوی ئەم ڕێگانە بۆ دامەزراندنی ئەم پەیامنێرە بەهێزە ئەنجام دەدەین.ئەم بابەتە فێرکاری لە سەر دامەزراندنی تێلێگرام لەسەر Ubuntu ،Fedora، Debian وە Arch دەکا هەر وا چۆنیەتی دامەزراندن لە ڕێگای پاکەتەکانی Snap و Flatpak.بۆ زانیاریتان ئەم پەیامنێرە یەکێک لە یەکەمین پەیامنێرە سەرچاوەکراوەکان و ئازادە کە ئاسایش و پاراستنی زۆر لەسەرەوەیە.هەروا دەتوانن تەنها پەیامیی دەنگی پێ بگرن لەگەڵ هاوڕێکانتان،دەتوانن گرووپ و کاناڵی لەسەر درووست بکەن و فایلێک بە قەبارەی ۱ گیگابایت بۆ هاوڕێکانتان ڕوانە بکەن.</description>
+    </item>
+    
+    <item>
       <title>کێ لە سەر سیستەمەکەمە ؟ چی کردووە !</title>
       <link>https://qezwan.ir/gnulinux/%DA%A9%DB%8E-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%B3%DB%8C%D8%B3%D8%AA%DB%95%D9%85%DB%95%DA%A9%DB%95%D9%85%DB%95-%DA%86%DB%8C-%DA%A9%D8%B1%D8%AF%D9%88%D9%88%DB%95-/</link>
       <pubDate>Tue, 17 Nov 2015 08:35:45 +0000</pubDate>
@@ -168,6 +177,19 @@
       <description>بۆ گۆڕینی قەبارەی شاشە لە لینوکسی-ئێلێمێنتری ئێوە دەتوانن لە مەسیری خوارەوە ئەندازەی ڕوناکی شاسەی سیستەمەکەتان بگۆڕن.
 System Settings &amp;gt;Displayesبە فەرمانی xrandr ئێوە دەتوانن زانیاریێکی فرە لە سەر پیشانگەری ئەندازەی شاشە بزانن!
 qezwan@kurd.click:~$ xrandr Screen 0: minimum 1 x 1, current 832 x 759, maximum 8192 x 8192 Virtual1 connected primary 832x759+0+0 (normal left inverted right x axis y axis) 0mm x 0mm 832x759 60.0*+ 2560x1600 60.0 1920x1440 60.0 1856x1392 60.</description>
+    </item>
+    
+    <item>
+      <title>فۆرماتی دەنگی ئازاد OGG</title>
+      <link>https://qezwan.ir/gnulinux/%D9%81%DB%86%D8%B1%D9%85%D8%A7%D8%AA%DB%8C-%D8%AF%DB%95%D9%86%DA%AF%DB%8C-%D8%A6%D8%A7%D8%B2%D8%A7%D8%AF-ogg/</link>
+      <pubDate>Sat, 09 Aug 2014 05:20:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/gnulinux/%D9%81%DB%86%D8%B1%D9%85%D8%A7%D8%AA%DB%8C-%D8%AF%DB%95%D9%86%DA%AF%DB%8C-%D8%A6%D8%A7%D8%B2%D8%A7%D8%AF-ogg/</guid>
+      <description>پێشەکی: OGG فۆرماتێکی سەرچاوەکراوە و ئازادە کە بۆ streaming و پەستانی (compressed)پەڕگەکانی دەنگ و فیلم بەکاردێت.بەدڵنیاییەوە فۆرماتی MP3 یتان بیستووە، OGG Vorbis فۆرماتێکی سەرچاوەکراوەیە کە جێگرێکی باش بۆ MP3 یە.زۆربەی پلەیەرەکان توانایی بڵاوکردنی OGGیان هەیە .
+ئەم فۆرماتە بە سێ شێواز پەستانی پەڕگەکان دەکات واتە سێ (Codec)ی هەیە :
+١- سیستەمی Vorbis بۆ پەستانی پەرگە ی دەنگەکان.
+٢- سیستەمی Speex بۆ پەستانی دەنگی مرۆڤەکان.(١)
+٣- سیستەمی Theora بۆ پەستانی پەڕگە ڤیدیۆکان.</description>
     </item>
     
   </channel>
