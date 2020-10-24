@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی وادەردەکەوێت دامەزرێنەری نەرمەکالا لە جیهانی گنو/لینوکسی شتێکی نوێیە.گەشەپێدەرانی ئوبونتو لە سەر سنەپەکان(snaps).ئەپ ئیمەیچ( App Image)و Deis وZeroInstall چالاک بوون.هەرچەندە کە باسێکی نوێ لەسەر دامەزراندنی نەرمەکالا لە ڕێگای FlatPak، بە تازەیی لە نێو پەرەپێدەران دروست بووە. بەڵام بۆ ماوەیێکی زۆر کۆمەڵگای سەرچاوەکراوە و گنو/لینوکس بە گشتی،بە نیاز ڕێگایێک بوون کە بتوانرێت نەرمەکالا لە سەر تەواو دابەشکراوەکانی گنو/لینوکس بە سادەترین شێوە دامەزرێنن .لە ساڵی ۲۰۱۷ چەندین پڕۆژەی نەرمەکالا بۆ ئەم مەبەستە لەگەڵ یەکتر دا کێبەرکێیان دەکرد.">
+
+<meta property="og:title" content="دامەزراندنی نەرمەکالا بە FlatPak لە گنو/لینوکس" />
+<meta property="og:description" content="پێشەکی وادەردەکەوێت دامەزرێنەری نەرمەکالا لە جیهانی گنو/لینوکسی شتێکی نوێیە.گەشەپێدەرانی ئوبونتو لە سەر سنەپەکان(snaps).ئەپ ئیمەیچ( App Image)و Deis وZeroInstall چالاک بوون.هەرچەندە کە باسێکی نوێ لەسەر دامەزراندنی نەرمەکالا لە ڕێگای FlatPak، بە تازەیی لە نێو پەرەپێدەران دروست بووە. بەڵام بۆ ماوەیێکی زۆر کۆمەڵگای سەرچاوەکراوە و گنو/لینوکس بە گشتی،بە نیاز ڕێگایێک بوون کە بتوانرێت نەرمەکالا لە سەر تەواو دابەشکراوەکانی گنو/لینوکس بە سادەترین شێوە دامەزرێنن .لە ساڵی ۲۰۱۷ چەندین پڕۆژەی نەرمەکالا بۆ ئەم مەبەستە لەگەڵ یەکتر دا کێبەرکێیان دەکرد." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D8%A8%DB%95-flatpak-%D9%84%DB%95-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+<meta property="article:published_time" content="2018-09-13T05:20:45+00:00" />
+<meta property="article:modified_time" content="2018-09-13T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی نەرمەکالا بە FlatPak لە گنو/لینوکس 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D8%A8%DB%95-flatpak-%D9%84%DB%95-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2000%3a04%3a05.755312%20%2b0330%20%2b0330%20m%3d%2b0.300431301">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2000%3a04%3a05.755312%20%2b0330%20%2b0330%20m%3d%2b0.300431301">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2000%3a04%3a05.755312%20%2b0330%20%2b0330%20m%3d%2b0.300431301">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2000%3a04%3a05.755312%20%2b0330%20%2b0330%20m%3d%2b0.300431301">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی نەرمەکالا بە FlatPak لە گنو/لینوکس
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Thu Sep 13 2018 05:20:45 UTC'>Sep 13, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>4 خولەک<div class="middot"></div>743 وشە </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p><strong>پێشەکی</strong>
+وادەردەکەوێت دامەزرێنەری نەرمەکالا لە جیهانی گنو/لینوکسی شتێکی نوێیە.گەشەپێدەرانی ئوبونتو لە سەر سنەپەکان(snaps).ئەپ ئیمەیچ( App Image)و Deis وZeroInstall چالاک بوون.هەرچەندە کە باسێکی نوێ لەسەر دامەزراندنی نەرمەکالا لە ڕێگای FlatPak، بە تازەیی لە نێو پەرەپێدەران دروست بووە. بەڵام بۆ ماوەیێکی زۆر کۆمەڵگای سەرچاوەکراوە و گنو/لینوکس بە گشتی،بە نیاز ڕێگایێک بوون کە بتوانرێت نەرمەکالا لە سەر تەواو دابەشکراوەکانی گنو/لینوکس بە سادەترین شێوە دامەزرێنن .لە ساڵی ۲۰۱۷ چەندین پڕۆژەی نەرمەکالا بۆ ئەم مەبەستە لەگەڵ یەکتر دا کێبەرکێیان دەکرد.Flatpak شتێکی جیاواز نەبوو لەم گۆڕەپانە.ئەمەش ئامرازێکی گەشەپێدراو لە لایەن پرۆژەی ڕومێزی خۆڕاییە کە بەڵێنی داوە کە سادەترین ڕێگا بۆ دامەزراندنی نەرمەکالا بە شێوازێکی گشتی بۆ تەواو دابەشکراوەکانی گنو/لینوکسی دروست بکا.
+لەم بابەتە فێر دەبین چۆن کار بە تەکنۆلۆژی نوێی FlatPak لە سەر دابەشکراوە جیاوازەکانی گنو/لینوکسی بکەین.</p>
+<p>دامەزراندنی فڵەت پەک(FlatPak)
+پەرەپێدەرانی فڵەت پەک بە دژواری و هەوڵێکی فرە لە سەر دابەشکراوەکانی گنو/لینوکس ئیشدەکەن کە هەموو شتێک، بۆ جێبەجێکردنی نەرمەکالاکان بە ئاسانی تێپەڕ ببێت.ترمیناڵ بکەنەوە ئینجا بە پێی سیستەمی کارپێکردنەکەتان فەرمانەکەی خوارەوە بنووسن :
+<strong>ئاچ لینوکس</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo pacman -S flatpak
+</code></pre></div><h6 id="فێدۆرا">فێدۆرا</h6>
+<pre><code>sudo dnf install flatpak
+</code></pre><h6 id="ئۆپێن-سووسەسووزە">ئۆپێن سووسە(سووزە)</h6>
+<pre><code>sudo zypper install flatpak
+</code></pre><h6 id="mageiaمازیا-وشەی-یونانیواتەسێحر-و-جادوو">Mageia[مازیا وشەی یونانی(واتە:سێحر و جادوو)]</h6>
+<pre><code>sudo urpmi flatpak
+</code></pre><h6 id="یا-بەیارمەتی-dnf">یا بەیارمەتی DNF</h6>
+<pre><code>sudo dnf install flatpak
+</code></pre><h6 id="ئوبونتو-ubuntu-1604-lts-">ئوبونتو Ubuntu 16.04 LTS :</h6>
+<pre><code>sudo add-apt-repository ppa:alexlarsson/flatpak
+sudo apt update sudo apt install flatpak
+</code></pre><p>+Ubuntu 17.04</p>
+<pre><code>sudo apt install flatpak
+</code></pre><h6 id="دێبیان">دێبیان</h6>
+<pre><code>sudo apt-get install flatpak
+</code></pre><h6 id="جێنتوdʒɛntuː-jen-too">جێنتو(/dʒɛntuː/ JEN-too)</h6>
+<p>سەرەتا، بە ئاستی ڕووت بچنە نێو شێڵ<code>sudo -s or su</code>
+ئینجا پەڕگەیێکی پەیکەرسازی(configuration) درووست بکەن بەم جۆرە :</p>
+<pre><code>nano -w /etc/portage/repos.conf/flatpak-overlay.conf
+</code></pre><h5 id="ئێستا-ئەم-کۆدانەی-تێخزێنن-">ئێستا ئەم کۆدانەی تێخزێنن :</h5>
+<pre><code>[flatpak-overlay]
+priority = 50
+location = /usr/local/portage/flatpak-overlay
+sync-type = git
+sync-uri = git://github.com/fosero/flatpak-overlay.git
+</code></pre><p>auto-sync = Yes
+بە یارمەتی کلیلەکانی<code>Ctrl + O</code>پەڕگەی کانفیگ پاشکەوت بکەن.
+ئێستا برۆن بۆ دامەزراندنی</p>
+<pre><code>emerge --sync
+</code></pre><h5 id="سوود-وەرگرتن-لە-فڵەت-پەک"><strong>سوود وەرگرتن لە فڵەت پەک</strong></h5>
+<p>فڵەت پەک تەکنۆلۆژیێکە کە لەسەر بەشی دەسەڵاتی ناوەند(decentralize) خۆی پاراستووە.بە پێچەوانەی ڕێگەچارەکانی”ئەپە جیهانیەکان” وەک سنەپەکان،هیچ فرۆشگایێک تاک و تەنها بوونی نییە.بەڵکوو فرە بوونی فرۆشگاکان لەم تەکنۆلۆژییە بوونیان هەیە.هەرئەمەش ڕێدەدا بە بەکارهێنەران و گەشەپێدەران کە سەندووقی خۆیاندرووست بکەن و لە سەر ڕاژەی فەرمی باری بکەن.بەڵام ئیمکانی هەیە کە بەکارهێنەران لە ڕاژەی خۆیان سوود بگرن و لە شێوازی فەرمی لادەن.
+ئێوە پەرەپێدەرن؟ زانیاری فەرمی بخەنە قەراغێک و فێربن چۆن <a href="http://docs.flatpak.org/en/latest/getting-started.html">فلەت پەکی خۆتان</a> دروستبکەن.</p>
+<h5 id="دامەزراندنی-فڵەت-پەک-لە-کانگاrepository"><strong>دامەزراندنی فڵەت-پەک لە کانگا(repository)</strong></h5>
+<p>بۆ دامەزراندنی نەرمەکالاکانی فڵەت پەک(Flatpak) لە سەر کۆمپیوتری لینوکسیتان،ترمیناڵ بکەنەوە.پاشان، فەرمانەکەی خوارەوە بنووسن بۆ دەستپێگەیشتن بە ئاستی بەڕێوەبەری گشتی.</p>
+<pre><code>sudo -s
+</code></pre><p>بۆ وێنە ئێمە بە نمونەکەی خوارەوە نەرمەکالای Spotify بە هێڵێ فەرمان دادەمەزرێنین.ئەم هێڵە بۆ ئەوەیە خزمەتگوزاری فڵەت پەک لە ڕێگای دوور چاودێری بکەین :</p>
+<pre><code>flatpak install --from https://s3.amazonaws.com/alexlarsson/spotify-repo/spotify.flatpakref
+</code></pre><p>ئێستا بۆ دامەزراندنی سپۆتیفای(Spotify) ئەم هێڵە دەنووسین :</p>
+<pre><code>flatpak run com.spotify.Client
+</code></pre><p>کاتێک ئەم پرۆسە تەواو بوو ،واتە قۆناغی دامەزراندن بە فەرمانەکەی سەرەوە چاو لە مێنیۆی ئەپلیکەیشێن بکەن و بە شوێن وێنۆچکەی spotify بگەڕێن.</p>
+<h5 id="دامەزراندنی-فڵەت-ئەپێک-لە-یەک-پەڕگە"><strong>دامەزراندنی فڵەت ئەپێک لە یەک پەڕگە</strong></h5>
+<p>بە شادمانییەوە، هێڵی فەرمان تەنها ڕێگا بۆ دامەزراندنی نەرمەکالاکان لە Flatpak نییە. داگرتنی پەڕگەی فڵەت پەک واتە<code>flatpakref. </code>لەم تەکنۆلۆژییە ڕێپێدراوە و دامەزراندنی بێ هیچ هێڵێ فەرمانێک ئەنجام دەبێ.
+سەرەتا، دڵنیا بن لە دامەزراندنی gnome-softwar لە سەر سیستەمەکەتان.(گەر چی لە زۆر بەی دابەشکراوەکان دامەزراوە.) پاشان، داگرتنی دانەیێک لە پەڕگەکانی <code>flatpakref. </code>لە <a href="http://flatpak.org/apps.html">پەڕەی ئەپەکانە</a>.بۆ وێنە من گیمپ دادەگرم</p>
+<p><img src="https://qezwan.ir/gnulinux/images/00005.jpg" alt=""></p>
+<p>کاتێک پەڕگەی گیمپ لە سەر کۆمپیوترەکەت پاشکەوت کرا، دەچین بۆ شوێنی داگرتن ئینجا،لەسەر ئەپەکە کرتەی ڕاست دەکەین و ئەم ڕەستە هەڵدەبژێرین “Open With Software Install”، پەنجێرەی Gnome Software دەکرێتەوە، ئینجا وردەزانیاری لەسەر دامەزراندنی ئەپ دەردەکەوێ.کرتەیێک لە سەر دوکمەی دامەزراندن دەکەین و وشەی نهێنی پێدەدەین و چاوەڕوان دەبین کاتێک نەرمەکالا دامەزرا پەنجێرەیێکی ئاگاداری دەکرێتەوە. ئەنجام بوو! ئێستا لە مێنیۆی ئەپەکان بە شوێن گیمپ دەگەڕین.</p>
+<h5 id="بەڕۆژکردنەوەی-فڵەت-پەکەکان"><strong>بەڕۆژکردنەوەی فڵەت پەکەکان</strong></h5>
+<p>بەڕۆژکردنەەوە ! وەک دامەزراندن بە دوو قۆناغ ئەنجام دەبێ.یەکەم قۆناغ لە ڕێگای ترمیناڵه کە پێرستێک لە سەر ئەو ئەپانە کە دامەزراوەن نیشان دەدەین بە فەرمانەکەی خوارەوە :</p>
+<pre><code>flatpak list
+</code></pre><p>قۆناغی دووەم،فڵەت پەکێک لە پێرستەکە هەڵدەبژێرین ئینجا بە ڕەستەکەی خوارەوەی زیادی دەکەین :
+<code>flatpak update </code>
+ئێستا ئەو ئەپە کە گەرەکمان بوو بە تەنهایی بەڕۆژی بکەینەوە بەڕۆژ کرا. گەر گەرەکمانە تەواو ئەپەکانی فڵەت بەڕۆژ بکەینەوە تەنها دەنووسین <code>flatpak update</code></p>
+<h5 id="سڕینەوەی-فڵەت-پەکەکان"><strong>سڕینەوەی فڵەت پەکەکان</strong></h5>
+<p>سەرەتا بۆ ئەو ئەپە کە گەرەکمانە بیسڕینەوە پێرێستێک دەگرین بەم فەرمانە</p>
+<pre><code>flatpak list
+</code></pre><p>ئینجا ناوی ئەپەکە کە گەرەکمانە بیسڕینەوە لە شوێن (appnamehere)لە فەرمانەکەی خوارەوە
+دەینووسین :</p>
+<pre><code>sudo flatpak uninstall appnamehere
+</code></pre><p>بە جیاتی ئەمەش دەتوانن Gnome Software بکەنەوە ئینجا دوکمەی “uninstall” لێبدەن.</p>
+<h5 id="دامەزراندنی-فڵەت-پەکێک-لەسەر-گنولینوکسی-ئێلێمێنتری-بۆ-نمونە"><strong>دامەزراندنی فڵەت پەکێک لەسەر گنو/لینوکسی ئێلێمێنتری بۆ نمونە</strong></h5>
+<p>سەرەتا ترمیناڵ‌ دەکەینەوە و فڵەت پەکێک دادەمەزرێنین بەم جۆرە :(گەر <a href="https://flatpak.org/setup/">دابەشکراوەیێکی دیکەتان</a> هەیە هەڵیبژێرن )</p>
+<pre><code>sudo apt install software-properties-common --no-install-recommends
+sudo add-apt-repository ppa:alexlarsson/flatpak
+sudo apt update
+sudo apt install flatpak
+</code></pre><p>ئەینجا کانگاکەی بە سیستەم دەناسێنین :</p>
+<pre><code>$ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+</code></pre><p>ئێستا گیمپ دادەمەزرێنین :</p>
+<pre><code>flatpak install flathub org.gimp.GIMP
+</code></pre><p>بۆ جێبەجیکردنی گیمپ بەم فەرمانە :</p>
+<pre><code>flatpak run org.gimp.GIMP
+</code></pre><p>سەرچاوە :<a href="http://docs.flatpak.org/en/latest/index.html">docs.flatpak</a></p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://qezwan.ir/blog">بگەڕە بۆ بابەتەکان</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

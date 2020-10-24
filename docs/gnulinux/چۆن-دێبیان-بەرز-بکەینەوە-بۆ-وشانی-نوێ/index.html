@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی: زۆر جار دێبیان بەرز ناکرێتەوە.زۆرکات،وشاندنی دابەشکراوەیێک لە دێبیان بە مەودای ساڵێک زۆرتر، دەخایەنێت.لەو کاتەوە کە وشانی نوێ دەگمەنن.زۆر یەک لە بەکارهێنەران نازانن چۆن وشانی دێبیان بەرزبکەنەوە بۆ وشانی نوێی. بەرزکردنەوەی دێبیان تا ڕادەیێک پرۆسەیێکی خێراو بێ زەحمەتە.هەر چەند وەک دابەشکراوەکانی دیکەی گنو/لینۆکس ئیشەکە یەکسان نییە.پێش ئەوە کە ئێوە دێبیانەکەتان بەرزبکەنەوە دەبێ دەربارەی ناویکۆدەکان(codenames) شاخەکان (branches) زانیاریتان بێت.
+لق و چڵ و کۆدناوەکانی دێبیان هەر وشانێک لە سیستەمی وەگڕخەر بە کۆدناوێک و ناوی شاخەیێکی بڵاودەکرێتەوە.">
+
+<meta property="og:title" content="چۆن دێبیان بەرز بکەینەوە بۆ وشانی نوێ" />
+<meta property="og:description" content="پێشەکی: زۆر جار دێبیان بەرز ناکرێتەوە.زۆرکات،وشاندنی دابەشکراوەیێک لە دێبیان بە مەودای ساڵێک زۆرتر، دەخایەنێت.لەو کاتەوە کە وشانی نوێ دەگمەنن.زۆر یەک لە بەکارهێنەران نازانن چۆن وشانی دێبیان بەرزبکەنەوە بۆ وشانی نوێی. بەرزکردنەوەی دێبیان تا ڕادەیێک پرۆسەیێکی خێراو بێ زەحمەتە.هەر چەند وەک دابەشکراوەکانی دیکەی گنو/لینۆکس ئیشەکە یەکسان نییە.پێش ئەوە کە ئێوە دێبیانەکەتان بەرزبکەنەوە دەبێ دەربارەی ناویکۆدەکان(codenames) شاخەکان (branches) زانیاریتان بێت.
+لق و چڵ و کۆدناوەکانی دێبیان هەر وشانێک لە سیستەمی وەگڕخەر بە کۆدناوێک و ناوی شاخەیێکی بڵاودەکرێتەوە." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%DA%86%DB%86%D9%86-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D8%A8%DB%95%D8%B1%D8%B2-%D8%A8%DA%A9%DB%95%DB%8C%D9%86%DB%95%D9%88%DB%95-%D8%A8%DB%86-%D9%88%D8%B4%D8%A7%D9%86%DB%8C-%D9%86%D9%88%DB%8E/" />
+<meta property="article:published_time" content="2018-09-10T05:20:45+00:00" />
+<meta property="article:modified_time" content="2018-09-10T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     چۆن دێبیان بەرز بکەینەوە بۆ وشانی نوێ 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%DA%86%DB%86%D9%86-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D8%A8%DB%95%D8%B1%D8%B2-%D8%A8%DA%A9%DB%95%DB%8C%D9%86%DB%95%D9%88%DB%95-%D8%A8%DB%86-%D9%88%D8%B4%D8%A7%D9%86%DB%8C-%D9%86%D9%88%DB%8E/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2000%3a04%3a05.8092791%20%2b0330%20%2b0330%20m%3d%2b0.354398401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2000%3a04%3a05.8092791%20%2b0330%20%2b0330%20m%3d%2b0.354398401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2000%3a04%3a05.8092791%20%2b0330%20%2b0330%20m%3d%2b0.354398401">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2000%3a04%3a05.8092791%20%2b0330%20%2b0330%20m%3d%2b0.354398401">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    چۆن دێبیان بەرز بکەینەوە بۆ وشانی نوێ
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Sep 10 2018 05:20:45 UTC'>Sep 10, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>4 خولەک<div class="middot"></div>680 وشە </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی"><strong>پێشەکی:</strong></h5>
+<p>زۆر جار دێبیان بەرز ناکرێتەوە.زۆرکات،وشاندنی دابەشکراوەیێک لە دێبیان بە مەودای ساڵێک زۆرتر، دەخایەنێت.لەو کاتەوە کە وشانی نوێ دەگمەنن.زۆر یەک لە بەکارهێنەران نازانن چۆن وشانی دێبیان بەرزبکەنەوە بۆ وشانی نوێی.
+بەرزکردنەوەی دێبیان تا ڕادەیێک پرۆسەیێکی خێراو بێ زەحمەتە.هەر چەند وەک دابەشکراوەکانی دیکەی گنو/لینۆکس ئیشەکە یەکسان نییە.پێش ئەوە کە ئێوە دێبیانەکەتان بەرزبکەنەوە دەبێ دەربارەی ناویکۆدەکان(codenames) شاخەکان (branches) زانیاریتان بێت.</p>
+<h5 id="لق-و-چڵ-و-کۆدناوەکانی-دێبیان"><strong>لق و چڵ و کۆدناوەکانی دێبیان</strong></h5>
+<p>هەر وشانێک لە سیستەمی وەگڕخەر بە کۆدناوێک و ناوی شاخەیێکی بڵاودەکرێتەوە.کۆدناو ناوێکی تایبەتە کە پەرەپێدەرانی دێبیان بۆ ناساندنی هەر وشانێک لە سیستەمی کارپێکردن دابینی دەکەن.ئەم کۆدناوانە لە پلانە گەورەکان زۆر گرینگ نییە،بەڵکو ناوی چڵ یان لق زۆرتر گرنگە.
+ئێستا دەرچوونی وشانی نوێی چڵ چییە ؟لەم شیوازە گەشەپێدەرانی دێبیان بە بەکارهێنەرانی خۆیان دەڵێن کە چ جۆر بەڕۆژبوونەوەیێک دادەگرن و چەنێ ئەم وشانەی سیستەمی وەگڕخەرەیان پایەدارە.لە دێبیان نزیکەی چوار جڵ وشێندراوی جیاواز بوونی هەیە.ئەم چڵانە بریتین لە تاگی جێگیر و قایم(Stable) تاقیکردنەوە(Testing)،ناجێگیر(unstable) و ئەزموونی(Experimental).بە ئاسانی دەتوانین بزانین مانای ئەم چڵ و لقانە چییە،بێ ئەوە کە خۆمانی پێ سەرقاڵ بکەین،هەر وا کە خۆیان شرۆفەی لۆ دەکەن.
+کاتێک دێبیان بۆ وشانێکی دیکە بەرز دەکەنەوە دەبێ کۆدناوەکان و چڵ و لقەکان لە پەڕگەی سەرچاوەی کۆدەکان بگۆڕن.ئەنجامی ئەم کارە بە سیستەم ڕێگا دەدا کە وشانی کۆنە بۆ نوێ بگۆڕێت.بەهەرحاڵ، تکایە ئاگادار بە! کە زۆر جار ئەم گۆڕانکارییە زۆر لە سەر چڵ و لقەکان کاریگەریی نییە بۆ ئەوە کە هێشتا وشانی نوێ بوونی نییە.
+بۆ وێنە دێبیان ۱۰ (Debian 10) خەریکە خۆی بە وشانی جێگیر و قایم(Stable) دەگۆڕێ.بەڵام هێشتا وشانی ۹ی جێگیر لە بەردستە ،ئەمەش تەواو نییە بۆ جێگیر کردنی وشانی نوێ و تازە.بەڵام ئەو کەسانە کە پێیان خۆشە دێبیان بەرۆژ کەنەوە دەبێ لە وشانی جێگیر بچن بۆ وشانی “Buster”.</p>
+<h5 id="گۆڕینی-سەرچاوەکان-دێبیان"><strong>گۆڕینی سەرچاوەکان دێبیان</strong></h5>
+<p>لە دێبیان، باشترین هاورێ، سەرچاوەکانی aptە.سەرچاوەکانی apt ڕێگەدەدا کە ئێوە هەر نەمرەکالایێکتان کە گەرەکە زۆر بە ئاسانی و خێرایی دایمەزرێنن.پاش بەرزکردنەوە ئێوە پێویستان بەم سەرچاوانەیە کە چەند گۆڕانکاری ئەنجام بدەن،بە خوشحاڵییەوە ئەمەش زۆر دژوار نییە.
+لە ساڵی ۲۰۱۸،کۆمەڵگای گەشەپێدەرانی دێبیان لە دێبیانی ۱۰ پێشبینیان کردووە کە دوایین وشان ،وشانی “جێگیر”ە.کۆدناو بۆئەم وشانە “Buster”ە.ئەم کۆدناوەش لەم فێرکاری بۆ بەرزکردنەوە،ئیشی لەسەر دەکەین.گەر ئێوە ئەم بابەتە بخوێنن لە داهاتوو دەتوانن لە سەر “Buster” ئیشبکەن.
+سەرچاوەکانی دێبیان دەتوانن لە نێو ترمیناڵ زۆر بە ئاسانی بگۆڕیێن.بۆ ئەوە کە ئەمانە پەڕگەیێکی دەقن.بۆ گۆڕێن،ترمیناڵ بکەنەوە، ئاستی خۆتان بەرز بکەن بۆ بەکارهێنەری ڕووت یان ڕەگ بە فەرمانی<code>su</code>بەم جۆرە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">su - 
+</code></pre></div><p>ئیستا کە لە جێگای بەڕێوەبەرن بە فەرمانی su ، دەتوانن هەر شوێنێکی سیستەم بێ کەم و کوڕی و سنوورێک دەستکاری بکەن.پەڕگەکانی سەرچاوەی سیستەم بە دەستکاریکەری Nano دەگۆڕین.بەم شێوازە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nano /etc/apt/sources.list
+</code></pre></div><p>لە پەڕگەی سەرچاوەکانی دێبیان، ئێوە دەیان کانگای نەرمەکالا دەبینن.ئەم کانگانە دابینی دەکەن چۆن دێبیان بە شێوازێکی ڕیزبەندی بەڕۆژ دەکرینەوە وە دادەمەزرێنن.بۆ بەرزکردنەوە تەواوی وشانی “قایم” بکەن بە “Buster”.
+ئێستا تەواو کانگاکانی نەرمەکالا، لە ئاستی قایم جێگیر کراوەن بە “buster”،ئێستا هەر سەرچاوەی نەرمەکالای بەشی سێهەم(third-party) لە نەرمەکالاکان بسڕنەوە،لە کاتێک دا ئیمکانی هەیە سڕینەوەی بەستەرەکان بێزارکەر بێ بۆ ئیشی ئێوە.ئەمەش بیرۆکەیێکی باشە چونکە ئێوە هێشتا نازانن کە وشانی نوێ پاڵپشتیان لێدەکا.هەرچەندە ئەم سەرچاوەی نەرمەکالانەی بەشی سێهەم لە داهاتوو دەتوانێ بە سەرچاوەکانی دێبیان زیاد بکرێنەوە.
+لە فایلی سەرچاوە کلیلەکانی <code>Ctrl + O </code>لێبدەن بۆ پاشکەوتکردنی گۆڕانکاریەکان ئینجا<code>Ctrl + X</code>بۆ هاتنەدەرەوە ،ئێستا دەبێ بەڕۆژی بکەنەوە.
+ئاگادار بە : دەتوانن وشانی دێبیان جێگیر بکەن بۆ ناجێگیر،لە وشانی تاقیکردنەوە بکەن بە ئازموونی.بە جیاتی ئەوە هەموو شتێک بکەن بە “buster” هەوڵ بدەن کە چڵەکان بکەن بە ئەو جۆرە کە خۆتان حەزتان لێیەتی و لەم فێرکارییە سوود بگرن</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt-get update
+</code></pre></div><p>پاش ئەم بەڕۆژکردنەوە دێبیان تەواو نەرمەکالاکان لە جێگیر دەکا بە “buster”. جێگیرکردنی نەرمەکالا یەکەمین هەنگاو بۆ بەرۆژکردنی کۆتاییە.بیرۆکەی باش ئەوەیە کە تەواو پەڕگەکان و پاکەتەکان بسڕنەوە بە فەرمانی autoremove ئەمەش بۆ خاوێنکارییە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt-get autoremove
+
+apt-get autoclean
+</code></pre></div><p>بە فەرمانەکانی autoclean وە autoremove ئێوە ئەو پاکەتانە کە هەتیون لە سەر سیستەمەکەتان دەیسڕنەوە(پاکەتی هەتیو ئەو پاکەتانن کە هیچ مەبەستێکیان لە سەر سیستەم نییە واتە بێ کڵکن و ئەم وشە دەستواژەیە)هەر وا شکرۆکەکانی سیستەم.
+بەرزبوونەوەی دێبیان بە دوو فەرمانی جیاواز ئەنجام دەبێ، واتە “Upgrade” وە “dist-upgrade”. بە فەرمانی “upgrade”، تەواو نەرمەکالاکانی سەر سیستەمەکەتان نوێ دەکاتەوە.بە فەرمانی “dist-upgrade”وشانی ئێستای دێبیانی ئێوە دەگۆڕی بۆ سەر “Buster” .</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt-get upgrade -y
+
+apt-get dist-upgrade
+</code></pre></div><p>فەرمانی “dist-upgrade” کەمێ کاتی گەرەکە بەڵام پاش ئەنجام دان و تەواو بوون سیستەمی ئێوە بە تەواوی بەرز دەبێتەوە.پاش تەواو بوونی فەرمانەکانی سەرەوە بۆ بەرزکردنەوە سیستەمەکەتان دوبارە وەگڕبخەن.</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://qezwan.ir/blog">بگەڕە بۆ بابەتەکان</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی : لە لینوکس، ڕێگای زۆرمان هەیە بۆ دامەزراندنی نەرمەکالاکان.بۆ وێنە، پاکەتەکانی دێبیان(deb.)، لە ڕێدهەت پاکەتەکان RPM ،لە ئاچ کانگاکانی بەکارهێنەران( repository)،لە جێنتۆ Portage tree، بە شێوازی AppImages ،بە یارمەتی پەڕگەی گوشاردەی tar.gz و ئەم پێرستە بەردەوامە … هتد.بە هەر حاڵ،بەشێک لە ڕێگاکانی دامەزراندن کێشەی خۆیان هەیە،بۆ وێنە:کاتی پەرەپێدان بە نەرمەکالای پێشکەوتوو بۆ لینوکس،بڵاو کردنی لە هەر دابەشکراوەیێکی لینوکس فرە دژوارە.کۆمەڵاگای بەکارهێنەرانی ئوبونتو بڵێنیان دا بۆ حەلی ئەم کێشەیە.ڕێگەچارەی ئەوان:بە یارمەتی پاکەتەکانی سنەپە(Snap).">
+
+<meta property="og:title" content="دامەزراندنی نەرمەکالا بە پاکەتەکانی Snap" />
+<meta property="og:description" content="پێشەکی : لە لینوکس، ڕێگای زۆرمان هەیە بۆ دامەزراندنی نەرمەکالاکان.بۆ وێنە، پاکەتەکانی دێبیان(deb.)، لە ڕێدهەت پاکەتەکان RPM ،لە ئاچ کانگاکانی بەکارهێنەران( repository)،لە جێنتۆ Portage tree، بە شێوازی AppImages ،بە یارمەتی پەڕگەی گوشاردەی tar.gz و ئەم پێرستە بەردەوامە … هتد.بە هەر حاڵ،بەشێک لە ڕێگاکانی دامەزراندن کێشەی خۆیان هەیە،بۆ وێنە:کاتی پەرەپێدان بە نەرمەکالای پێشکەوتوو بۆ لینوکس،بڵاو کردنی لە هەر دابەشکراوەیێکی لینوکس فرە دژوارە.کۆمەڵاگای بەکارهێنەرانی ئوبونتو بڵێنیان دا بۆ حەلی ئەم کێشەیە.ڕێگەچارەی ئەوان:بە یارمەتی پاکەتەکانی سنەپە(Snap)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D8%A8%DB%95-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-snap/" />
+<meta property="article:published_time" content="2018-09-13T05:20:45+00:00" />
+<meta property="article:modified_time" content="2018-09-13T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی نەرمەکالا بە پاکەتەکانی Snap 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D8%A8%DB%95-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-snap/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2000%3a04%3a05.7683037%20%2b0330%20%2b0330%20m%3d%2b0.313423001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2000%3a04%3a05.7683037%20%2b0330%20%2b0330%20m%3d%2b0.313423001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2000%3a04%3a05.7683037%20%2b0330%20%2b0330%20m%3d%2b0.313423001">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2000%3a04%3a05.7683037%20%2b0330%20%2b0330%20m%3d%2b0.313423001">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی نەرمەکالا بە پاکەتەکانی Snap
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Thu Sep 13 2018 05:20:45 UTC'>Sep 13, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>4 خولەک<div class="middot"></div>750 وشە </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی-"><strong>پێشەکی :</strong></h5>
+<p>لە لینوکس، ڕێگای زۆرمان هەیە بۆ دامەزراندنی نەرمەکالاکان.بۆ وێنە، پاکەتەکانی دێبیان(deb.)، لە ڕێدهەت پاکەتەکان RPM ،لە ئاچ کانگاکانی بەکارهێنەران( repository)،لە جێنتۆ Portage tree، بە شێوازی AppImages ،بە یارمەتی پەڕگەی گوشاردەی tar.gz و ئەم پێرستە بەردەوامە … هتد.بە هەر حاڵ،بەشێک لە ڕێگاکانی دامەزراندن کێشەی خۆیان هەیە،بۆ وێنە:کاتی پەرەپێدان بە نەرمەکالای پێشکەوتوو بۆ لینوکس،بڵاو کردنی لە هەر دابەشکراوەیێکی لینوکس فرە دژوارە.کۆمەڵاگای بەکارهێنەرانی ئوبونتو بڵێنیان دا بۆ حەلی ئەم کێشەیە.ڕێگەچارەی ئەوان:بە یارمەتی پاکەتەکانی سنەپە(Snap).لێرە چاوێک بە پێداویستیەکان و چۆنیەتی دامەزراندنی نەرمەکالا لە سناپ دەخشێنین.</p>
+<h5 id="بۆ-چی-پاکەتەکانی-سنەپ-گەشەیان-سەند"><strong>بۆ چی پاکەتەکانی سنەپ، گەشەیان سەند:</strong></h5>
+<p>زۆرجار، گەشەپێدەران پاکەتکردن بۆ ئەو پرۆگرامەکانی خۆیان بە جۆرێکی تایبەت دەخولقێنن،ئەمەش دڵساردکرەوەیە بۆئەوە کە کاتێکی زۆری دەوێ بۆ دامەزراندنی ئەم پاکەتانە،لە ئاکام، زۆر یەک لە پرۆگرامەکان لە سەر گنو/لینوکس ئیش ناکەن.هەر بۆ ئەم هۆکارە زۆر یەک لە گەشەپێدەرانی ئوبونتو ،پەرەیان دا بە سنەپ.سنەپێک، شتێکە کە لە فرۆشگای سنەپ دامەزراوە، لە نێو “سنەپ”، ئەو پێداویستیانە بۆ دامەزراندن و جێبەجێکردنی پرۆگرام، پێشتر ئامادەکراوە.
+ئەمە بەو مانایەیە کە هەر شتێک کە نەرمەکالا نیازیەتی(کتێبخانەکان،پەڕگەکانی وێنە،پەڕگەکانی باینەری،پەڕگەکانی دەنگ و بەرنامە) بۆ خۆی و بۆ جیبەجیکردنی سەربەخۆ بێ سیستەمی وەگڕخەری ،تێیدایە .سنەپ بڕیار دەدا کە چۆن پرۆگرام جێبەجێبکرێ جا ئێستا سیستەمەکە کۆنە بێ یان نوێ.
+ئەم تواناییە کە سەربەخۆیە، هۆکارێکە بۆ ئەوە کە سنەپ لە سەر تەواو دابەشکراوەکانی گنو/لینوکس ئیش بکا و دامەزرێت.ئەمەش دەمانبا بۆ لای “دامەزراندنێکی جیهانی”،کە هەر گەشەپێدەرێک چ گەورەو چ بچکۆلە بتوانێت فرۆشگای سنەپی خۆی دروست بکا.</p>
+<h5 id="دامەزراندن-و-وەگڕخستنی-پاکەتەکانی-سنەپsnap"><strong>دامەزراندن و وەگڕخستنی پاکەتەکانی سنەپ(Snap)</strong></h5>
+<p>Snapd تەکنۆلۆژیێکە بۆ یارمەتی دانی بەڕێوەبردنی پاکەتەکانی سنەپ(Snap)لە سەر لینوکس،ئەو کۆمپانیا کە لە پشتی سنەپە، هەوڵدەدا کە بە ئاسانی و خێرایی نەرمەکالاکان لە سەر دابەشکراوەکانی گنو/لینوکس دامەزرێنێ.لێرەفێر دەبین چۆن نەرمەکالاکان بە یارمەتی پاکەتەکانی سنەپ دامەزرێنین،
+<code>خاڵ </code>: بەکارهێنەرانی ئوبونتو و دابەشکراوەکانی سەر بنەمای ئوبونتو، پێویستیان بە دامەزراندنی Snapd نییە.</p>
+<h6 id="دێبیان-">دێبیان :</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install snapd
+</code></pre></div><h6 id="فێدۆرا">فێدۆرا:</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo dnf install snapd
+sudo systemctl <span class="nb">enable</span> --now snapd.socket
+</code></pre></div><h6 id="ئارچ-لینوکس">ئارچ لینوکس</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo pacman -S snapd
+sudo systemctl <span class="nb">enable</span> --now snapd.socket
+</code></pre></div><h6 id="ئۆپێن-سووسە">ئۆپێن سووسە</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo zypper addrepo http://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_42.2/ snappy
+sudo zypper install snapd
+sudo systemctl <span class="nb">enable</span> --now snapd.socket
+</code></pre></div><h6 id="جێنتۆ">جێنتۆ</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo -s
+nano -w /etc/portage/repos.conf/gentoo-snappy.conf
+</code></pre></div><p>ئەمە ڕونووس بکە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>gentoo-snappy<span class="o">]</span>
+ 
+<span class="c1"># An unofficial overlay that supports the installation of the &#34;Snappy&#34; backbone.</span>
+<span class="c1"># Maintainer: Clayton &#34;kefnab&#34; Dobbs (clayton.dobbs@gosecur.us)</span>
+<span class="c1"># Upstream Maintainer: Zygmunt &#34;zyga&#34; Krynicki (me@zygoon.pl)</span>
+ 
+<span class="nv">location</span> <span class="o">=</span> /usr/local/portage/gentoo-snappy
+sync-type <span class="o">=</span> git
+sync-uri <span class="o">=</span> https://github.com/zyga/gentoo-snappy.git
+<span class="nv">priority</span> <span class="o">=</span> <span class="m">50</span>
+auto-sync <span class="o">=</span> yes
+</code></pre></div><p>کانفیگەکە پاشکەوت بکە بە لێدانی هاوکاتی دوکمەکانی<code> ctrl + O</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">emaint sync --repo gentoo-snappy
+</code></pre></div><h5 id="چۆنیەتی-سودگرتن-لە-پاکەتەکانی-سنەپ"><strong>چۆنیەتی سودگرتن لە پاکەتەکانی سنەپ:</strong></h5>
+<p>هەر وا کە پێشتر باسمان کرد، پاکەتەکانی سنەپ لە نێو “فرۆشگای سنەپ” لە لایەن ئوبونتو و کۆنۆنیکاڵ پاڵپشتی دەکرێن.هەموو کەسێک دەتوانێ سنەپێک بە خۆڕایی بخاتە سەری.بۆ ئەو کەسانە کە بە شوێن بڵاوکردن و دەستکاری سنەپەکانی خۆیانن سەردانێکی ماڵپەڕی <a href="https://docs.snapcraft.io/build-snaps/publish">Snapcraft.io </a>بکەن.ئەم ماڵپەڕە زانیاریێکی زۆری بە وردترین ڕێنماییەکان، بۆ دەستکاری و خولقاندنی سنەپ لە خۆ گرتووە.هەر وا پێتان دەڵێ لەکوێ دەستپێبکەن.
+لەترمیناڵ بۆ گەڕان بە شوێن نەرمەکالاکان،ئەم فەرمانە بنووسن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">snap find programname
+</code></pre></div><p>بۆ وێنە : من بەشوێن نەرمەکالای دەستکاریکەری وێنە (GIMP) دەگەرێم،بەم جۆرە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">snap find GIMP
+</code></pre></div><h5 id="ئاکام-">ئاکام :</h5>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">qezwan@kurdistan:~$ snap find GIMP
+Name  Version  Publisher     Notes  Summary
+gimp  2.10.6   snapcrafters  -      GNU Image Manipulation Program
+</code></pre></div><p>لە ئاکام ئەو وشانە پایدارە لە نەرمەکالای گیمپ چاپ دەکرێ.دەتوانێ چەندین وشانی پایداری تێدا بێ بەڵام هەمیشە ئەوە بزانە کە نەرمەکالاکان بەڕۆژکراونەتەوە.ئێستا لەو زانیارییە کە چاپکراوە بە فەرمانی گەڕان(وەک فەرمانەکەی سەرەوە) دەبێ بەم جۆرە نەرمەکالا دامەزرێنی، بۆ وێنە من گیمپ لە پاکەتەکانی سنەپ بەم جۆرە دادەمەزرێنم :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> sudo snap install gimp
+</code></pre></div><p><code>شرۆڤە : </code>
+لە کاتی جێبەجێکردنی فەرمانی دامەزراندنی نەرمەکالا لە سەر پاکەتەکانی سنەپ،سەرەتا سنەپ، نەرمەکالا لە فرۆشگا دادەگرێ،ئینجا نەرمەکالا دادەمەزرێنێ،پاشان سندووقی سنەپ بۆ دەستپێگەیشتنی بەکارهێنەر ئامادە دەبێ.بۆ ئەوە بزانین کە ئایا سنەپ ماونت (mounte) بووە لەم فەرمانە <code>lsblk </code>سوود دەگرین.ئەمەش زانیاریێکە کە بزانین ماونتی نەرمەکالا بە چ تایبەتمەندیێک لە سەر ڕەقەکالا و ئامێرەکانی دیکەیە.من سێ یاریم لە نێو فرۆشگای سنەپ، لە سەر سیستەمی ئیلێمینتری دامەزراندووە و زانیاریەکانی ئاوەهایە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">qezwan@kurdistan:~$ snap list
+Name         Version   Rev   Tracking  Publisher     Notes
+core         16-2.35   <span class="m">5328</span>  stable    canonical✓    core
+minecraft    2.1.1349  <span class="m">15</span>    stable    snapcrafters  -
+ohmygiraffe  1.1.0a    <span class="m">3</span>     stable    popey       
+</code></pre></div><p>بۆ سرینەوەی نەرمەکالا لە سەر پاکەتەکانی سنەپ بەم جۆرە فەرمان دەنووسین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo snap remove gimp
+</code></pre></div><p>گەر ناوی نەرمەکالاکەت لە نێو پاکەتەکانی سنەپ لەیاد چووە بە فەرمانی پێرست(list) پەیدای بکەرەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">snap list
+</code></pre></div><p>دەتوانی بە فەرمانی<code>snap --help</code>زانیاری فرەتر لە سەر سویچەکانی فەرمانی سنەپ وەربگری.</p>
+<h5 id="بەڕۆژکردنەوەی-نەرمەکالاکانی-دامەزراوەی-سنەپ"><strong>بەڕۆژکردنەوەی نەرمەکالاکانی دامەزراوەی سنەپ</strong></h5>
+<p>هەر وەک تەواو نەرمەکالاکان سنەپیش بە ڕۆژ دەبێتەوە. بەرێوەبەری snap هەر سندووقچەیێک لە سەر سیستەم بەڕێوە دەبا.بۆیە پاکەتەکانی سنەپ بە شێوەی فەرمانی ئاسایی بەڕۆژکردن، بەڕۆژ نابنەوە.بۆ بەڕۆژکردنی تەواو پاکەتەکان کە لەسەر سیستەم دامەزراوە کانۆنیکاڵ سوود لە فەرمانی refresh دەگرێ.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo snap refresh
+</code></pre></div><p>دەرەنجامی بەم جۆرەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">qezwan@kurdistan:~$ sudo snap refresh
+<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> qezwan:       
+All snaps up to date.
+</code></pre></div><p>سەرچاوە : <a href="https://www.addictivetips.com/ubuntu-linux-tips/how-to-use-and-install-snap-packages-on-linux/">addictivetips</a></p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://qezwan.ir/blog">بگەڕە بۆ بابەتەکان</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
