@@ -180,6 +180,17 @@ qezwan@kurd.click:~$ xrandr Screen 0: minimum 1 x 1, current 832 x 759, maximum 
     </item>
     
     <item>
+      <title>جێبەجێکردنی سادەی نەرمەکالا لە دابەشکراوەکان</title>
+      <link>https://qezwan.ir/gnulinux/%D8%AC%DB%8E%D8%A8%DB%95%D8%AC%DB%8E%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%B3%D8%A7%D8%AF%DB%95%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D9%84%DB%95-%D8%AF%D8%A7%D8%A8%DB%95%D8%B4%DA%A9%D8%B1%D8%A7%D9%88%DB%95%DA%A9%D8%A7%D9%86/</link>
+      <pubDate>Mon, 22 Sep 2014 05:20:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/gnulinux/%D8%AC%DB%8E%D8%A8%DB%95%D8%AC%DB%8E%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%B3%D8%A7%D8%AF%DB%95%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D9%84%DB%95-%D8%AF%D8%A7%D8%A8%DB%95%D8%B4%DA%A9%D8%B1%D8%A7%D9%88%DB%95%DA%A9%D8%A7%D9%86/</guid>
+      <description>بە یارمەتی AppImage، نەرمەکالاکان بێ هیچ دامەزراندنێک و تەنها بە یەک کرتە نەرمەکالا لە دابەشکراوەکانی گنو/لینوکس چالاک دەکەن.سەرەتا بۆ کەڵک وەرگرتن لەم تواناییە دەبێ یەک شت بزانیت کە:
+ یەک نەرمەکالا = یەک فایل(پەرگە)
+ شیوازێک کە گەشەپێدەران خولقاندییانە ئەویە کە تەنها فایلی Appimageـی ئەو نەرمەکالا لە هەر دابەشکراوەیێک دادەگرن و دوو کرتەی لەسەر دەکەن، تەواو.چۆنیەتی ئیشکردنی AppImage بەم شێوەیە کە تەواو کتێبخانەکان و پەڕگە پێویستیەکان کە نەرمەکالایێک نیازی پێیەتی کە ئیش بکا لە فایلێک کۆیان کردووەتەوە،ئیتر بە شێوازی پەڕگەیێکی هەڵگیراو (Portable)دەتوانن لە هەر دابەشکراوەیێکی گنو/لینوکس سوودی لێ ببینن.</description>
+    </item>
+    
+    <item>
       <title>فۆرماتی دەنگی ئازاد OGG</title>
       <link>https://qezwan.ir/gnulinux/%D9%81%DB%86%D8%B1%D9%85%D8%A7%D8%AA%DB%8C-%D8%AF%DB%95%D9%86%DA%AF%DB%8C-%D8%A6%D8%A7%D8%B2%D8%A7%D8%AF-ogg/</link>
       <pubDate>Sat, 09 Aug 2014 05:20:45 +0000</pubDate>

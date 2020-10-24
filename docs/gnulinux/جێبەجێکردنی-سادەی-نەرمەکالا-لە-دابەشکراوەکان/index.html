@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="بە یارمەتی AppImage، نەرمەکالاکان بێ هیچ دامەزراندنێک و تەنها بە یەک کرتە نەرمەکالا لە دابەشکراوەکانی گنو/لینوکس چالاک دەکەن.سەرەتا بۆ کەڵک وەرگرتن لەم تواناییە دەبێ یەک شت بزانیت کە:
+ یەک نەرمەکالا = یەک فایل(پەرگە)
+ شیوازێک کە گەشەپێدەران خولقاندییانە ئەویە کە تەنها فایلی Appimageـی ئەو نەرمەکالا لە هەر دابەشکراوەیێک دادەگرن و دوو کرتەی لەسەر دەکەن، تەواو.چۆنیەتی ئیشکردنی AppImage بەم شێوەیە کە تەواو کتێبخانەکان و پەڕگە پێویستیەکان کە نەرمەکالایێک نیازی پێیەتی کە ئیش بکا لە فایلێک کۆیان کردووەتەوە،ئیتر بە شێوازی پەڕگەیێکی هەڵگیراو (Portable)دەتوانن لە هەر دابەشکراوەیێکی گنو/لینوکس سوودی لێ ببینن.">
+
+<meta property="og:title" content="جێبەجێکردنی سادەی نەرمەکالا لە دابەشکراوەکان" />
+<meta property="og:description" content="بە یارمەتی AppImage، نەرمەکالاکان بێ هیچ دامەزراندنێک و تەنها بە یەک کرتە نەرمەکالا لە دابەشکراوەکانی گنو/لینوکس چالاک دەکەن.سەرەتا بۆ کەڵک وەرگرتن لەم تواناییە دەبێ یەک شت بزانیت کە:
+ یەک نەرمەکالا = یەک فایل(پەرگە)
+ شیوازێک کە گەشەپێدەران خولقاندییانە ئەویە کە تەنها فایلی Appimageـی ئەو نەرمەکالا لە هەر دابەشکراوەیێک دادەگرن و دوو کرتەی لەسەر دەکەن، تەواو.چۆنیەتی ئیشکردنی AppImage بەم شێوەیە کە تەواو کتێبخانەکان و پەڕگە پێویستیەکان کە نەرمەکالایێک نیازی پێیەتی کە ئیش بکا لە فایلێک کۆیان کردووەتەوە،ئیتر بە شێوازی پەڕگەیێکی هەڵگیراو (Portable)دەتوانن لە هەر دابەشکراوەیێکی گنو/لینوکس سوودی لێ ببینن." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D8%AC%DB%8E%D8%A8%DB%95%D8%AC%DB%8E%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%B3%D8%A7%D8%AF%DB%95%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D9%84%DB%95-%D8%AF%D8%A7%D8%A8%DB%95%D8%B4%DA%A9%D8%B1%D8%A7%D9%88%DB%95%DA%A9%D8%A7%D9%86/" />
+<meta property="article:published_time" content="2014-09-22T05:20:45+00:00" />
+<meta property="article:modified_time" content="2014-09-22T05:20:45+00:00" />
+
+
+
+<title>
+
+
+     جێبەجێکردنی سادەی نەرمەکالا لە دابەشکراوەکان 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D8%AC%DB%8E%D8%A8%DB%95%D8%AC%DB%8E%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%B3%D8%A7%D8%AF%DB%95%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D9%84%DB%95-%D8%AF%D8%A7%D8%A8%DB%95%D8%B4%DA%A9%D8%B1%D8%A7%D9%88%DB%95%DA%A9%D8%A7%D9%86/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2001%3a04%3a33.5023075%20%2b0330%20%2b0330%20m%3d%2b0.308240001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2001%3a04%3a33.5023075%20%2b0330%20%2b0330%20m%3d%2b0.308240001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2001%3a04%3a33.5023075%20%2b0330%20%2b0330%20m%3d%2b0.308240001">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2001%3a04%3a33.5023075%20%2b0330%20%2b0330%20m%3d%2b0.308240001">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    جێبەجێکردنی سادەی نەرمەکالا لە دابەشکراوەکان
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Sep 22 2014 05:20:45 UTC'>Sep 22, 2014</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>2 خولەک<div class="middot"></div>244 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>بە یارمەتی AppImage، نەرمەکالاکان بێ هیچ دامەزراندنێک و تەنها بە یەک کرتە نەرمەکالا لە دابەشکراوەکانی گنو/لینوکس چالاک دەکەن.سەرەتا بۆ کەڵک وەرگرتن لەم تواناییە دەبێ یەک شت بزانیت کە:</p>
+<blockquote>
+<p>یەک نەرمەکالا = یەک فایل(پەرگە)</p>
+</blockquote>
+<p>شیوازێک کە گەشەپێدەران خولقاندییانە ئەویە کە تەنها فایلی Appimageـی ئەو نەرمەکالا لە هەر دابەشکراوەیێک دادەگرن و دوو کرتەی لەسەر دەکەن، تەواو.چۆنیەتی ئیشکردنی AppImage بەم شێوەیە کە تەواو کتێبخانەکان و پەڕگە پێویستیەکان کە نەرمەکالایێک نیازی پێیەتی کە ئیش بکا لە فایلێک کۆیان کردووەتەوە،ئیتر بە شێوازی پەڕگەیێکی هەڵگیراو (Portable)دەتوانن لە هەر دابەشکراوەیێکی گنو/لینوکس سوودی لێ ببینن. بۆ جێبەجێکردنیش پێویستان بە هیچ پەڕگەیێک لە سیستەمی کارپێکردن نییە هەر بۆیە دەتوانن بە هەڵگیرایش سوودی لێبگرن.</p>
+<h5 id="سوودەکانی-کەڵک-وەرگرتن-لە-appimage-">سوودەکانی کەڵک وەرگرتن لە AppImage :</h5>
+<p>۱- ئەو نەرمەکالانە کە بە شێوازی AppImage دەرهاتوون، پێویستیان بە دامەزراندن نییە.</p>
+<p>۲- بۆ جێبەجێکردنی نەرمەکالاکان پێویست بە ڕێپێدانی ڕووت نییە.</p>
+<p>۳- بۆ جێبەجێکردن پێویستمان بە هیچ ڕێکخستنێک لە سیستەمی کارگێڕی نییە.</p>
+<p>۴- نەرمەکالاکان پێویستیان بە هیچ پەڕگەیێک لە سیستەمی دانراوە نییە.</p>
+<p>۵- نەرمەکالایێک کە داتانگرتووە لە سەر تەواو دابەشکراوەکان گنو/لینوکس ئیشدەکا.</p>
+<p>۶- نەمەکالاکان توانایی هەڵگرتنیان هەیە،دەتوانن ڕوونووسێکی لێبدەن بە هاوڕێکانتان.</p>
+<p>۷- گەر گەشەپێدەرن دەتوانن بە خێرایی ئەو نەرمەکالانە کە نووسیوتانە بە شێوازی appimage دەربێنن و بیدەن بە بەکارهێنەران.</p>
+<p>۸ -…</p>
+<p>ئێوە دەتوانن بچنە <a href="https://bintray.com/probono/AppImages">ماڵپەڕی فەرمی</a> و لە خشتی گەڕان نەرمەکالای خۆتان پەیدا بکەن و کرتەی لەسەر بکەن بۆ داگرتن.</p>
+<p>هەروا لە سەر <a href="https://appimage.github.io/apps/">گیتهابیش</a> دەتوانن ئەم نەرمەکالانە کە بە شێوازی پەرگەی<strong>AppImage</strong> دەرهاتوون دایان بگرن.کە نزیکەی 475 نەرمەکالای تێدایە.
+من AppImageـی لیبرەئۆفیسم داگرت وە بەم شێوازە چالاکم کرد بێ ئەوە کە دایمەزرێنم.</p>
+<p>سەرچاوە : <a href="https://appimage.org/">appimage</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
