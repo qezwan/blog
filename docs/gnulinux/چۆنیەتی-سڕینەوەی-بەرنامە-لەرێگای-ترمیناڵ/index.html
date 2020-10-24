@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="هاورێیان دەبێ سەرەتا بزانین کە لەسەر سیستەمی لینوکسەکەمان چ برنامەیێک دەسڕینەوە، بۆ وینە لەم بابەتە من پرۆگرامی گیمپ( GIMP ) دسڕمەوە.بۆ ئەم مەبەستە دەبێت ئەم فەرمانە بنوسین
+dpkg --list بگەرێن بە شوێن ئەو بەرنامە کە گەرکتانە بیسڕنەوە
+بۆ سڕینەوە لە فەرمانی “apt-get” سوود وەردەگرین .بەڵام بۆ سڕینەوەی تەواو کانفیگەکانی پرۆگرامەکە لە سویچی”purge–” سوود وەردەگرین .واتە بەم شێوازە ، من گەرەکمە نەرمەکالای گیمپ بە تەواو پەیکەربەندیەکانی بسڕمەوە
+sudo apt-get --purge remove gimp پاشان داوای وشەی نهێنی بەرێوەبەر دەکات و سڕینەوە دەستپێدەکات.">
+
+<meta property="og:title" content="چۆنیەتی سڕینەوەی بەرنامە لەرێگای ترمیناڵ" />
+<meta property="og:description" content="هاورێیان دەبێ سەرەتا بزانین کە لەسەر سیستەمی لینوکسەکەمان چ برنامەیێک دەسڕینەوە، بۆ وینە لەم بابەتە من پرۆگرامی گیمپ( GIMP ) دسڕمەوە.بۆ ئەم مەبەستە دەبێت ئەم فەرمانە بنوسین
+dpkg --list بگەرێن بە شوێن ئەو بەرنامە کە گەرکتانە بیسڕنەوە
+بۆ سڕینەوە لە فەرمانی “apt-get” سوود وەردەگرین .بەڵام بۆ سڕینەوەی تەواو کانفیگەکانی پرۆگرامەکە لە سویچی”purge–” سوود وەردەگرین .واتە بەم شێوازە ، من گەرەکمە نەرمەکالای گیمپ بە تەواو پەیکەربەندیەکانی بسڕمەوە
+sudo apt-get --purge remove gimp پاشان داوای وشەی نهێنی بەرێوەبەر دەکات و سڕینەوە دەستپێدەکات." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%DA%86%DB%86%D9%86%DB%8C%DB%95%D8%AA%DB%8C-%D8%B3%DA%95%DB%8C%D9%86%DB%95%D9%88%DB%95%DB%8C-%D8%A8%DB%95%D8%B1%D9%86%D8%A7%D9%85%DB%95-%D9%84%DB%95%D8%B1%DB%8E%DA%AF%D8%A7%DB%8C-%D8%AA%D8%B1%D9%85%DB%8C%D9%86%D8%A7%DA%B5/" />
+<meta property="article:published_time" content="2016-04-19T08:40:45+00:00" />
+<meta property="article:modified_time" content="2016-04-19T08:40:45+00:00" />
+
+
+
+<title>
+
+
+     چۆنیەتی سڕینەوەی بەرنامە لەرێگای ترمیناڵ 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%DA%86%DB%86%D9%86%DB%8C%DB%95%D8%AA%DB%8C-%D8%B3%DA%95%DB%8C%D9%86%DB%95%D9%88%DB%95%DB%8C-%D8%A8%DB%95%D8%B1%D9%86%D8%A7%D9%85%DB%95-%D9%84%DB%95%D8%B1%DB%8E%DA%AF%D8%A7%DB%8C-%D8%AA%D8%B1%D9%85%DB%8C%D9%86%D8%A7%DA%B5/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2001%3a45%3a13.2746884%20%2b0330%20%2b0330%20m%3d%2b0.497802401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2001%3a45%3a13.2746884%20%2b0330%20%2b0330%20m%3d%2b0.497802401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2001%3a45%3a13.2746884%20%2b0330%20%2b0330%20m%3d%2b0.497802401">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2001%3a45%3a13.2746884%20%2b0330%20%2b0330%20m%3d%2b0.497802401">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    چۆنیەتی سڕینەوەی بەرنامە لەرێگای ترمیناڵ
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue Apr 19 2016 08:40:45 UTC'>Apr 19, 2016</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>١ خولەک<div class="middot"></div>191 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>هاورێیان دەبێ سەرەتا بزانین کە لەسەر سیستەمی لینوکسەکەمان چ برنامەیێک دەسڕینەوە، بۆ وینە لەم بابەتە من پرۆگرامی گیمپ( GIMP )  دسڕمەوە.بۆ ئەم مەبەستە دەبێت ئەم فەرمانە بنوسین</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">dpkg --list
+</code></pre></div><p>بگەرێن بە شوێن ئەو بەرنامە کە گەرکتانە بیسڕنەوە</p>
+<p>بۆ سڕینەوە لە فەرمانی “apt-get” سوود وەردەگرین .بەڵام بۆ سڕینەوەی تەواو کانفیگەکانی پرۆگرامەکە لە سویچی”purge–” سوود وەردەگرین .واتە بەم شێوازە ، من گەرەکمە نەرمەکالای گیمپ بە تەواو پەیکەربەندیەکانی بسڕمەوە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get --purge remove gimp
+</code></pre></div><p>پاشان داوای وشەی نهێنی بەرێوەبەر دەکات و سڕینەوە دەستپێدەکات.</p>
+<p>خاڵ : جار واهەیە بۆ بەرنامەکان پرسیاری سڕینەوەت لێدەکات کە دەبێت پیتی “y” بنوسیت ئینجا دوکمەی”Enter” لێبدەی.پاشان دەبێت وشەی”exit” پاش تەواوبوون بنووسیت و دوکمەی “Enter” فشار بدەی.</p>
+<p>هاورێم بۆ ئەوە کە کانفیگی بەرنامەیێک نەسڕیتەوە دەبێت فەرمانی “purge- -” نەنووسیت.کە بەم جۆرەی لێدێت.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get remove gimp
+</code></pre></div><p>بۆ سڕینەوەی فایلی وابەستە بە نەرمەکالای سڕاوە بە فەرمانەکانی سەرەوە بە شێوازی خۆکارانە، دەتوانن لەم فەرمان کەڵک وەر بگرن</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get autoremove
+</code></pre></div><p>واتە گەر گەرکتانە پرۆگرامی گیمپ بسڕنەوە ئینجا فایلی وابەستەکانیش پاک بکەنەوە دەتوانن سڕینەوە بەم جۆرە بنووسن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get  purge –auto-remove gimp
+</code></pre></div><p>گەر بۆشایتان کەمە دەتوانن بەفەرمانەکەی خوارەوەش فایلە ئارشیڤەکانی بەرنامەش بسڕنەوە واتە ئەو فایلانە کە داتانگرتووە بۆ دامەزراندن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get clean
+</code></pre></div><p>سەرچاوە :<a href="http://www.howtogeek.com/229699/how-to-uninstall-software-using-the-command-line-in-linux/">howtogeek</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
