@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="ترمیناڵ لە سادەترین شێوەدا بریتییە لەو پەنجەرەیەی کە تێیدا فەرمان بە سیستەم دەکەیت بۆ کردارێکی دیاریکراو ئەمیش هەڵدەستێت بەجێ بەجێکردن/ناردنی فەرمانەکە بۆ شوێنی مەبەست وەکو ناردن بۆ ناوک (kernel) و دواتریش گێڕاندنەوەی ئەنجام/وەڵام بۆ بەکارهێنەر (واتە ئەرکی input و output دەبینێت لە نێوان بەکارهێنەر و سیستەم). بۆ نمونە لە ڕێگای ترمیناڵەوە دەتوانین بگەین بە بوخچە و پەڕگەکان و کرداری دەستکاریکردن/سڕینەوە/ناونانەوە ئەنجام بدەین هەروەها گۆڕینی دەسەڵات لە شێوەی بەکارهێنەر بۆ گرووپ یاخود ڕووت… تاد.">
+
+<meta property="og:title" content="پوختە باسێک لەبارەی ترمیناڵ" />
+<meta property="og:description" content="ترمیناڵ لە سادەترین شێوەدا بریتییە لەو پەنجەرەیەی کە تێیدا فەرمان بە سیستەم دەکەیت بۆ کردارێکی دیاریکراو ئەمیش هەڵدەستێت بەجێ بەجێکردن/ناردنی فەرمانەکە بۆ شوێنی مەبەست وەکو ناردن بۆ ناوک (kernel) و دواتریش گێڕاندنەوەی ئەنجام/وەڵام بۆ بەکارهێنەر (واتە ئەرکی input و output دەبینێت لە نێوان بەکارهێنەر و سیستەم). بۆ نمونە لە ڕێگای ترمیناڵەوە دەتوانین بگەین بە بوخچە و پەڕگەکان و کرداری دەستکاریکردن/سڕینەوە/ناونانەوە ئەنجام بدەین هەروەها گۆڕینی دەسەڵات لە شێوەی بەکارهێنەر بۆ گرووپ یاخود ڕووت… تاد." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D9%BE%D9%88%D8%AE%D8%AA%DB%95-%D8%A8%D8%A7%D8%B3%DB%8E%DA%A9-%D9%84%DB%95%D8%A8%D8%A7%D8%B1%DB%95%DB%8C-%D8%AA%D8%B1%D9%85%DB%8C%D9%86%D8%A7%DA%B5/" />
+<meta property="article:published_time" content="2016-09-14T08:40:45+00:00" />
+<meta property="article:modified_time" content="2016-09-14T08:40:45+00:00" />
+
+
+
+<title>
+
+
+     پوختە باسێک لەبارەی ترمیناڵ 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D9%BE%D9%88%D8%AE%D8%AA%DB%95-%D8%A8%D8%A7%D8%B3%DB%8E%DA%A9-%D9%84%DB%95%D8%A8%D8%A7%D8%B1%DB%95%DB%8C-%D8%AA%D8%B1%D9%85%DB%8C%D9%86%D8%A7%DA%B5/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2001%3a53%3a57.2394589%20%2b0330%20%2b0330%20m%3d%2b0.469170101">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2001%3a53%3a57.2394589%20%2b0330%20%2b0330%20m%3d%2b0.469170101">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2001%3a53%3a57.2394589%20%2b0330%20%2b0330%20m%3d%2b0.469170101">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2001%3a53%3a57.2394589%20%2b0330%20%2b0330%20m%3d%2b0.469170101">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    پوختە باسێک لەبارەی ترمیناڵ
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Wed Sep 14 2016 08:40:45 UTC'>Sep 14, 2016</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>2 خولەک<div class="middot"></div>288 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">گنو/لینوکس</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>ترمیناڵ لە سادەترین شێوەدا بریتییە لەو پەنجەرەیەی کە تێیدا فەرمان بە سیستەم دەکەیت بۆ کردارێکی دیاریکراو ئەمیش هەڵدەستێت بەجێ بەجێکردن/ناردنی فەرمانەکە بۆ شوێنی مەبەست وەکو ناردن بۆ ناوک (kernel) و دواتریش گێڕاندنەوەی ئەنجام/وەڵام بۆ بەکارهێنەر (واتە ئەرکی input و output دەبینێت لە نێوان بەکارهێنەر و سیستەم). بۆ نمونە لە ڕێگای ترمیناڵەوە دەتوانین بگەین بە بوخچە و پەڕگەکان و کرداری دەستکاریکردن/سڕینەوە/ناونانەوە ئەنجام بدەین هەروەها گۆڕینی دەسەڵات لە شێوەی بەکارهێنەر بۆ گرووپ یاخود ڕووت… تاد.</p>
+<p>console، shell، terminal لەوانەیە بەچەندین شێواز ئەم پەنجەرەیە ناسرابێت کە دەکرێت هەر هەموویان بۆ یەک مەبەست بەکاربهێنرێن، هەرچەندە جیاوازییەکی زۆر هەیە لەنێوانیان، بەڵام گرنگ ئەوەیە کە بەکارهێنەر چۆن بەشێوەیەکی تەندروست هامشۆ لەگەڵ گەوهەری ئامڕازەکان بکات نەک ناوەکانیان.</p>
+<p><strong>بەراوردێک نێوان Terminal و Shell و Console</strong></p>
+<p><strong>terminal:</strong> هەڵدەستێت بە خستنەگەڕی shell (چ گرافیکی یاخود نووسین بێت – GUI or CLI). ترمیناڵ بەپێی ژینگەکان (environment) ناوی جیاوازیان بۆ داناوە، وەک (Gnome Terminal: سەر بە دەستەی پرۆگرامسازانی Gnomeـە،Konsole: سەربە دەستەی پرۆگرامسازانی KDE یـە، هەروەها چەندان جۆری تر هەن وەکو lxterm و xterm و eterm و wterm و mlterm … کە بەپێی ژینگەکان ناوەکانیان دانراوە).</p>
+<p><strong>shell:</strong> بریتییە لە بەیەک گەیشتنی بەکارهێنەر و ناوک (kernel) واتە ئەو فەرمانانەی لەلایەن بەکارهێنەرەوە تێدەکرێت و هەڵدەستێت بەوەرگێڕانیان و ڕەوانەی ناوک دەکات، پاشان ئەنجامەکە وەردەگێڕێت بۆ ئەو زمانەی کە بەکارهێنەر لێی تێدەگات. شێڵ زۆر جۆری هەیە وەک (bsh و ksh و csh و tcsh و bash)، بەربڵاوترین شێڵ لە نێوان سیستەمەکانی یونیکس و لینوکس بریتییە لە sh (کە لەهەموو دابەشکراوەکانی لینوکسدا بوونی هەیە). کە بەناوبانگترینی بریتییە لە bash ئەمیش لە کورتکراوەی (Bourne Again SHell) دا هاتووە، Bourne داهێنەری (bash)ـە.</p>
+<p><strong>console:</strong> یەکێکە لە جۆرەکانی ترمیناڵ کە لەسەر سیستەم کار دەکات لە ژینگەی نووسین (CLI) لە ئاستی خستنەکاری 1-3. خۆی لە سەرجەم ئاستەکانی کارکردن بەردەستە، چونکە سەرجەم دابەشکراوەکان بەشێوەیەکی پێشینە بە 7 کۆنسۆل تێدەپەڕێت (لەسەرجەم ئاستەکانی کاکرکردن).</p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
