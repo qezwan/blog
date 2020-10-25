@@ -6,7 +6,16 @@
     <description>Recent content in ڕاژە on Qezwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 14 Oct 2018 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Oct 2018 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>دامەزراندنی درووپاڵ لە سەر ڕاژەی ئوبونتو</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AF%D8%B1%D9%88%D9%88%D9%BE%D8%A7%DA%B5-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%DA%95%D8%A7%DA%98%DB%95%DB%8C-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/</link>
+      <pubDate>Tue, 16 Oct 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AF%D8%B1%D9%88%D9%88%D9%BE%D8%A7%DA%B5-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%DA%95%D8%A7%DA%98%DB%95%DB%8C-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/</guid>
+      <description>پێشەکی : لەم بابەتە فێر دەبین کە دوایین وشانی درووپاڵ لە سەر ڕاژەی ئوبونتوی ۱۸.۰۴ بە یارمەتی خزمەتگوزاریەکانی وێبی Nginx ،MariaDB وە PHP 7.2 دامەزرێنین.درووپاڵ سیستەمێکی بەڕێوەبردنی ناوەڕۆکە. کە ئێوە دەتوانن بۆ هەر ماڵپەڕێک سوودی لێبگرن. بارکردن و داوای بۆ لای ڕاژەخوازەکان زۆر لە سەرە، تەنانەت بە بەراوەرد لەگەڵ وۆردپرێس و جووملاش.لە قۆناغەکانی خوارەوە فێر دەبین کە چۆن درووپاڵ(درۆپاڵ) دامەزرێنین. کاتێک کە ئێوە درۆپاڵ بە شێوازی پاکەت لە گیتهاب دادەگرن زۆر بە ئاسانی دەتوانن بەڕۆژ و بەرزی بکەنەوە بۆ وشانی سەرتر.</description>
+    </item>
+    
     <item>
       <title>ئاسایشی Apache2 بە دامەزراندنی Let’s Encrypt لە سەر ئوبونتو</title>
       <link>https://qezwan.ir/server/%D8%A6%D8%A7%D8%B3%D8%A7%DB%8C%D8%B4%DB%8C-apache2-%D8%A8%DB%95-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-lets-encrypt-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/</link>
