@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی : چۆن ئاسایشی ڕاژەی وێبی Apache2 بە دامەزراندنی بەڵگەنامەی TLS/SSL بپارێزین؟ ئەم کارە بە چەندین ڕێگا ئەنجام دەدرێ.هەرچەندە کە تەواو بەڵگەنامەکان، یەک ئامانجیان هەیە، ئەویش ئاسایشی زانیاریەکان لە نێو تۆڕە.لەم فێرکارییە کورتە بە ئێوە نیشاندەدرێ کە بێ هیچ پارەیێک ئاسایشی Apache2 بپارێزن و بەهێزی بکەن. ئێمە سود لە بەڵگەنامەی Let’s Encrypt دەگرین کە پارێزگاری دەکا لە ڕاژە وێبی ئاپاچی بە بڕوانامەیێکی خۆڕایی و ڕاستەقینە.
+قۆناغی یەک :دامەزراندنی پشتپێبەستەکانی ڕاژە پێش ئەوە کە Let’s Encrypt دامەزرێنن ئێوە دەبێ پشتپێبەستەکانی ڕاژەی ئوبونتو دامەزرێنن.">
+
+<meta property="og:title" content="ئاسایشی Apache2 بە دامەزراندنی Let’s Encrypt لە سەر ئوبونتو" />
+<meta property="og:description" content="پێشەکی : چۆن ئاسایشی ڕاژەی وێبی Apache2 بە دامەزراندنی بەڵگەنامەی TLS/SSL بپارێزین؟ ئەم کارە بە چەندین ڕێگا ئەنجام دەدرێ.هەرچەندە کە تەواو بەڵگەنامەکان، یەک ئامانجیان هەیە، ئەویش ئاسایشی زانیاریەکان لە نێو تۆڕە.لەم فێرکارییە کورتە بە ئێوە نیشاندەدرێ کە بێ هیچ پارەیێک ئاسایشی Apache2 بپارێزن و بەهێزی بکەن. ئێمە سود لە بەڵگەنامەی Let’s Encrypt دەگرین کە پارێزگاری دەکا لە ڕاژە وێبی ئاپاچی بە بڕوانامەیێکی خۆڕایی و ڕاستەقینە.
+قۆناغی یەک :دامەزراندنی پشتپێبەستەکانی ڕاژە پێش ئەوە کە Let’s Encrypt دامەزرێنن ئێوە دەبێ پشتپێبەستەکانی ڕاژەی ئوبونتو دامەزرێنن." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%A6%D8%A7%D8%B3%D8%A7%DB%8C%D8%B4%DB%8C-apache2-%D8%A8%DB%95-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-lets-encrypt-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/" />
+<meta property="article:published_time" content="2018-10-14T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-10-14T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     ئاسایشی Apache2 بە دامەزراندنی Let’s Encrypt لە سەر ئوبونتو 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%A6%D8%A7%D8%B3%D8%A7%DB%8C%D8%B4%DB%8C-apache2-%D8%A8%DB%95-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-lets-encrypt-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-26%2000%3a59%3a24.1084137%20%2b0330%20%2b0330%20m%3d%2b1.088658701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-26%2000%3a59%3a24.1084137%20%2b0330%20%2b0330%20m%3d%2b1.088658701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-26%2000%3a59%3a24.1084137%20%2b0330%20%2b0330%20m%3d%2b1.088658701">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-26%2000%3a59%3a24.1084137%20%2b0330%20%2b0330%20m%3d%2b1.088658701">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    ئاسایشی Apache2 بە دامەزراندنی Let’s Encrypt لە سەر ئوبونتو
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sun Oct 14 2018 05:35:45 UTC'>Oct 14, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>2 خولەک<div class="middot"></div>389 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی-"><strong>پێشەکی :</strong></h5>
+<p>چۆن ئاسایشی ڕاژەی وێبی Apache2 بە دامەزراندنی بەڵگەنامەی TLS/SSL بپارێزین؟ ئەم کارە بە چەندین ڕێگا ئەنجام دەدرێ.هەرچەندە کە تەواو بەڵگەنامەکان، یەک ئامانجیان هەیە، ئەویش ئاسایشی زانیاریەکان لە نێو تۆڕە.لەم فێرکارییە کورتە بە ئێوە نیشاندەدرێ کە بێ هیچ پارەیێک ئاسایشی Apache2 بپارێزن و بەهێزی بکەن.
+ئێمە سود لە بەڵگەنامەی <a href="https://letsencrypt.org/">Let’s Encrypt </a>دەگرین کە پارێزگاری دەکا لە ڕاژە وێبی ئاپاچی بە بڕوانامەیێکی خۆڕایی و ڕاستەقینە.</p>
+<h5 id="قۆناغی-یەک-دامەزراندنی-پشتپێبەستەکانی-ڕاژە"><strong>قۆناغی یەک :دامەزراندنی پشتپێبەستەکانی ڕاژە</strong></h5>
+<p>پێش ئەوە کە Let’s Encrypt دامەزرێنن ئێوە دەبێ پشتپێبەستەکانی ڕاژەی ئوبونتو دامەزرێنن.بۆ ئەمە دەبێ ڕاژە بەڕۆژ بکەنەوە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get update
+</code></pre></div><p>بۆ دامەزراندی پاکەتەکان “Let’s Encrypt”، پێویستمان بە داگرتن و دامەزراندنی گیت(git)ە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install git
+</code></pre></div><h5 id="قۆناغی-دووەم--دامەزراندنی-ڕاژە-خوازی-lets-encrypt"><strong>قۆناغی دووەم : دامەزراندنی ڕاژە خوازی Let’s Encrypt</strong></h5>
+<p>لەم قۆناغە ئێمە دەبێ ڕاژەخوازی لێتس ئینکریپت(Let’s Encrypt) لە گانگای گیت دابگرین.بەڵام ئەم داگرتنە دەبێ لە بوخچەی opt/ بێت. ئەم شوێنە بۆ داگرتن گونجاوە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
+</code></pre></div><p>بڕۆنە نێو بوخچەی “Let’s Encrypt” پەیکەرسازی دەستپێ بکەن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /opt/letsencrypt
+</code></pre></div><h5 id="قۆناغی-سێهەم-دامەزراندنی-بڕوانامەی-ssl-نوێ-بۆ-ماڵپەڕەکەت"><strong>قۆناغی سێهەم :دامەزراندنی بڕوانامەی SSL نوێ بۆ ماڵپەڕەکەت</strong></h5>
+<p>لەم قۆناغە بەڵگەنامەی SSL بۆ ماڵپەرەکەمان درووستدەکەین.بۆ دروستکردنی بڕوانامەی نوێ فەرمانەکەی خوارەوە جێبەجێ دەکەین.ئەم ئاسایشەو بەڵگە نامە تەنها بۆ ماڵپەڕی <strong>example.com</strong> ئەنجام دەبێ.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">./letsencrypt-auto --apache -d example.com
+</code></pre></div><p>هەرچەند کە لە ئەمرۆکە، ناونیشانی ماڵپەڕ بە دوو جۆری <strong>example.com</strong> وە <strong><a href="http://www.example.com">www.example.com</a></strong> دەردەکەوێ ئێمەش بۆ ئەم دوو جۆرە بە فەرمانەکەی خوارەوە بەڵگەنامە جێبەجێ دەکەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">./letsencrypt-auto --apache -d example.com -d www.example.com
+</code></pre></div><p>گەر کێشەیێک لە بڕوانامە بۆ ئەم جۆرە دۆمەینە بوو <strong><a href="http://www.example.com">www.example.com</a></strong> بچنە نێو پەڕگەی پەیکەرسازی Apache2 و ئینجا ناونیشانی <a href="http://www.example.com">www.example.com</a> پێ زیاد بکەن.شێوازەکە بەم جۆرەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/apache2/sites-enabled/000-default.conf
+</code></pre></div><p>هێڵەکەی خوارەوە زیاد بکەن،هەر وا دڵنیا بن کە CNAME لە ڕاژەی DNSەکەتان ناسراوە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">ServerName   example.com
+ ServerAlias  www.example.com
+</code></pre></div><p>گۆڕانکاریەکانتان پاشکەوت بکەن،دڵنیا بن کە دەستکاریەکانتان سەرکەوتوو بووث.هیوادارم سەرکەوتوو ببن. دەبێ شێوازی ناونیشانی ماڵپەڕەکەتان بۆ بەڵگەنامەی SSLبگۆڕن.ئێستا ماڵپەڕەکەی ئێوە بەڵگەنامەیێکی ئاسایشی هەیە.
+ئەڵبەت هەر سێ مانگ دەبێ ئەم بڕوانامە یا بەڵگەنامە شارژبکەنەوە.ئەم کارەش زۆر سادەیە.بە فەرمانەکەی خوارەوە ئێمە بەڵگەنامەی SSL بۆ سێ مانگی دیکە شارژ دەکەینەوە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /opt/letsencrypt
+ ./letsencrypt-auto renew
+</code></pre></div><p>گەر ئێوە گەرکتانە ئەم کارە هەموو سێ مانگ دووپات بکەنەوە دەبێ بە شوێن کردارێکی پەیکەرسازی لە سەر cron job بگەڕێن، کە بە شێوازی خۆکارانە ئەم کارەتان هەر سێ مانگ بۆ ئەنجام بدا.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo crontab -e
+</code></pre></div><p>ئەتوانن یەکێک لەم سێ دەستکاریکەرە هەڵبژێرن :</p>
+<ol>
+<li>/bin/ed/</li>
+<li>bin/nano/ —-&raquo; سادەترە(پێشنیارە)</li>
+<li>usr/bin/vim.tiny/</li>
+</ol>
+<p>ئینجا ئەم هێڵەی پێ زیاد بکەن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="m">00</span> <span class="m">0</span> * * <span class="m">0</span> /opt/letsencrypt/letsencrypt-auto renew &gt;&gt; /var/log/le-renew.log
+</code></pre></div><p>ئێستا شارژی بڕوانامەی SSL بە شێوازی خۆکارانەیە.
+بە هیوای سەرکەوتن.</p>
+<p>سەرچاوە: <a href="https://websiteforstudents.com/how-to-use-lets-encrypt-to-secure-apache2-on-ubuntu/">websiteforstudents</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

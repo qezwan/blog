@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی TinyCP پانێلێکی چاودێری سووکەلە بۆ لینوکسە بە قەبارەی ۶ر۱ مێگابایتە.کە بەم قەبارەکەمەی جێگای سەرسووڕمانە، توانایێکی فراوان بۆ بەڕێوەبردنی ڕاژە دەخاتە بەردەست.ئەم تواناییانە بریتین لە :
+ بەڕێوەبردنی دۆمەین(Domain Management) دروستکردنی بۆکسی مەیل(Mailboxes) بەڕێوەبردنی بنکەدراوەکان(Databases) بەڕێوەبردنی دەرگای گواستنەوەی فایل(FTP) بەڕێوەبردنی ئامێری هاوبەشی پەڕگە(Samba) دیواری ئاگر(Firewall) ڕایه‌ڵه‌ی خۆییی خەیاڵی(VPN) بەڕێوەبردنی گیت(GIT) SVN  لەم کاتە کە ئەم بابەتە دەنووسم، TinyCP تەنها بۆ (Debian/Ubuntu) وشێندراوە، لە داهاتوو پاڵپشتی (CentOS)یش دەکا.پاش ئەوە دەستبکەن بە دامەزراندن دەبێ لە ماڵپەڕی فەرمی خۆتان تۆمار بکەن و بە یارمەتی ناسنامەی هەژمارەکەتان (account ID) داگرتن دەست پێبکەن.">
+
+<meta property="og:title" content="بەڕێوەبردنی ڕاژەی لینوکس بە پانێلی سوکەلەی TinyCP" />
+<meta property="og:description" content="پێشەکی TinyCP پانێلێکی چاودێری سووکەلە بۆ لینوکسە بە قەبارەی ۶ر۱ مێگابایتە.کە بەم قەبارەکەمەی جێگای سەرسووڕمانە، توانایێکی فراوان بۆ بەڕێوەبردنی ڕاژە دەخاتە بەردەست.ئەم تواناییانە بریتین لە :
+ بەڕێوەبردنی دۆمەین(Domain Management) دروستکردنی بۆکسی مەیل(Mailboxes) بەڕێوەبردنی بنکەدراوەکان(Databases) بەڕێوەبردنی دەرگای گواستنەوەی فایل(FTP) بەڕێوەبردنی ئامێری هاوبەشی پەڕگە(Samba) دیواری ئاگر(Firewall) ڕایه‌ڵه‌ی خۆییی خەیاڵی(VPN) بەڕێوەبردنی گیت(GIT) SVN  لەم کاتە کە ئەم بابەتە دەنووسم، TinyCP تەنها بۆ (Debian/Ubuntu) وشێندراوە، لە داهاتوو پاڵپشتی (CentOS)یش دەکا.پاش ئەوە دەستبکەن بە دامەزراندن دەبێ لە ماڵپەڕی فەرمی خۆتان تۆمار بکەن و بە یارمەتی ناسنامەی هەژمارەکەتان (account ID) داگرتن دەست پێبکەن." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%A8%DB%95%DA%95%DB%8E%D9%88%DB%95%D8%A8%D8%B1%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D8%A8%DB%95-%D9%BE%D8%A7%D9%86%DB%8E%D9%84%DB%8C-%D8%B3%D9%88%DA%A9%DB%95%D9%84%DB%95%DB%8C-tinycp/" />
+<meta property="article:published_time" content="2018-10-08T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-10-08T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     بەڕێوەبردنی ڕاژەی لینوکس بە پانێلی سوکەلەی TinyCP 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%A8%DB%95%DA%95%DB%8E%D9%88%DB%95%D8%A8%D8%B1%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D8%A8%DB%95-%D9%BE%D8%A7%D9%86%DB%8E%D9%84%DB%8C-%D8%B3%D9%88%DA%A9%DB%95%D9%84%DB%95%DB%8C-tinycp/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-26%2000%3a59%3a24.184366%20%2b0330%20%2b0330%20m%3d%2b1.164611001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-26%2000%3a59%3a24.184366%20%2b0330%20%2b0330%20m%3d%2b1.164611001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-26%2000%3a59%3a24.184366%20%2b0330%20%2b0330%20m%3d%2b1.164611001">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-26%2000%3a59%3a24.184366%20%2b0330%20%2b0330%20m%3d%2b1.164611001">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    بەڕێوەبردنی ڕاژەی لینوکس بە پانێلی سوکەلەی TinyCP
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Oct 8 2018 05:35:45 UTC'>Oct 8, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>4 خولەک<div class="middot"></div>786 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی</h5>
+<p><a href="https://tinycp.com/">TinyCP</a> پانێلێکی چاودێری سووکەلە بۆ لینوکسە بە قەبارەی ۶ر۱ مێگابایتە.کە بەم قەبارەکەمەی جێگای سەرسووڕمانە، توانایێکی فراوان بۆ بەڕێوەبردنی ڕاژە دەخاتە بەردەست.ئەم تواناییانە بریتین لە :</p>
+<ol>
+<li>بەڕێوەبردنی دۆمەین(Domain Management)</li>
+<li>دروستکردنی بۆکسی مەیل(Mailboxes)</li>
+<li>بەڕێوەبردنی بنکەدراوەکان(Databases)</li>
+<li>بەڕێوەبردنی دەرگای گواستنەوەی فایل(FTP)</li>
+<li>بەڕێوەبردنی ئامێری هاوبەشی پەڕگە(Samba)</li>
+<li>دیواری ئاگر(Firewall)</li>
+<li>ڕایه‌ڵه‌ی خۆییی خەیاڵی(VPN)</li>
+<li>بەڕێوەبردنی گیت(GIT)</li>
+<li>SVN</li>
+</ol>
+<p>لەم کاتە کە ئەم بابەتە دەنووسم، TinyCP تەنها بۆ (Debian/Ubuntu) وشێندراوە، لە داهاتوو پاڵپشتی (CentOS)یش دەکا.پاش ئەوە دەستبکەن بە دامەزراندن دەبێ لە ماڵپەڕی فەرمی خۆتان تۆمار بکەن و بە یارمەتی ناسنامەی هەژمارەکەتان (account ID) داگرتن دەست پێبکەن.
+بۆ وەرگرتنی سەرەتا سەردانی <a href="https://tinycp.com/page/show/download">ئەم پەڕە </a>بکەن و TinyCP دابگرن.ئەم کارە لە چەن چرکە جێبەجێ دەکرێت.
+<code>خاڵ </code>: لە دوایین دەقی بڵاوکراوە لە لایەن ئەم گرووپە گوتراوە، کە تا ساڵی ۲۰۱۹، پاڵپشتی ئەم پرۆژە بە خۆڕاییە، بەڵام بۆ زیندوو هەڵگرتنی پەرۆژەکەمان، ناچارین کە پارەیێکی کەم بۆ شارژی هەر IPیێک وەربگرین. ئەم پارە مانگانە ۱ دولار و ساڵانە ۱۰ دولارە.
+بۆ فێرکاری لەم بابەتە ئێمە لە ئوبونتوی ۱۶.۰۴ لە سەر خزمەتگوزاری ڕاژەی خەیاڵی(VPS) بە ئای-پی ” 10.0.2.15 “، سودمان گرتووە.</p>
+<h5 id="دامەزراندنی-tinycp-لە-سەر-دێبیانئوبونتو">دامەزراندنی TinyCP لە سەر دێبیان/ئوبونتو</h5>
+<p>سەرەتا دەچینە ئەم دایرێکتۆرییە یان مەسیرە لە لینوکس، /usr/local/src/ .ئینجا پەڕگەی دامەزراندن “tinycp-install.sh” دادەگرین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># cd /usr/local/src/ </span>
+<span class="c1"># wget http://tinycp.com/download/tinycp-install.sh</span>
+</code></pre></div><p>دەستپێگەیشتن پەڕگەی دامەزراندن بۆ جێبەجێکاری ئامادە دەکەین دەچین بۆ دامەزراندن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># chmod +x tinycp-install.sh</span>
+<span class="c1"># ./tinycp-install.sh</span>
+</code></pre></div><p>قۆناغەکانی دامەزراندن زۆر خێراییە واتە کەمتر لە دوو خولەکی پێدەچێ،کاتێک دامەزراندن تەواو بوو، چەن زانیاری دەردەکەوێت کە بریتییە لە ناوی بەکارهێنەر، وشەی نهێنی بۆ چوونەژووروە و ناونیشانی پانێڵ :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">URL: http://10.0.2.15:8080
+LOGIN: admin
+PASSWORD: 20WERZ4D
+</code></pre></div><p><code>خاڵ </code>پێش ئەوە بچنە نێو پانێلی TinyCP ئێوە پێویستە بە گڕی بخەن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># /etc/init.d/tinycp start</span>
+</code></pre></div><p>پاش ئەوە چوونە نێو ئەو ناونیشانە ئێوە پەڕەیێکی وا دەبینن :</p>
+<p><img src="https://qezwan.ir/server/images/15.jpg" alt=""></p>
+<p>کاتێک چوونەژوور بۆ یەکەم بار دەبێ ناونیشانی نامەی ئێلێکترۆنیکی (email) و کلیلی مۆڵەدانەکە(license key) بەڕۆژ بکەنەوە:</p>
+<p><img src="https://qezwan.ir/server/images/15-1.png" alt=""></p>
+<p>ئێستا دەبێ بڕۆنە بەشی ماژۆڵ(مۆدووڵ-مۆجوول- module)، لێرە ئێوە دەتوانن ئەو زیادکراوانە کە پێویستانە لەسەر ڕاژەکەتان دایمەزرێنن، وەک MySQL, PostgreSQL, Samba, FTP server, Email server, ClamAV, Cron, Apache web server کە بە پێی پێداویستی دەتوانن چالاک و ناچالاکی بکەن. پەڕەی ماژووڵ لە گۆشەی سەرەوە لە قەراغی ڕاست بە ئایکۆنی شەشپاڵو، لەبەردەستە.</p>
+<p><img src="https://qezwan.ir/server/images/15-2.png" alt=""></p>
+<h5 id="دامەزراندنی-mysqlmariadb">دامەزراندنی MySQL/MariaDB</h5>
+<p>بابڕۆین ڕاژەی MySQL دامەزرێنین بەم جۆرە کە، زۆر بە سادەیی لە سەر دوگمەی “install” لە گۆشەی خشتی MySQL کرتە دەکین،ئینجا پەنجەرەیێک دەکرێتەوە کە ئایا دڵنیای لە دامەزراندن و لەسەر دوگمەی install کرتە دەکین.</p>
+<p><img src="https://qezwan.ir/server/images/15-3.png" alt=""></p>
+<p>یەک یان دوو خولەک چاوەڕوان بن کە دامەزراندن تەواو دەبێ .دەرەنجام بەم شێوازەیە :</p>
+<p><img src="https://qezwan.ir/server/images/15-4.png" alt=""></p>
+<p>کرتە لە دوگمەی “Finished” بکەن ئینجا لەسەر دوگمەی “Prepare” بکەن تا برۆن بۆ “MySQL” . ئەم پەڕانە پەیکەرسازی ڕاژە دروستدەکەن.بنکەدراوە لە مێنیۆی لاتەنیشتی چەپ دەتوانن بەڕێوەیببەن.بەشی بنکەدراوە ڕێتان پێدەدا بۆ :</p>
+<ol>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<p>ئەم قۆناغانە فرە سادە و ساکارن، پێویستیان بە شرۆڤەی زیادە نییە.</p>
+<h5 id="دامەزراندنی-ڕاژەی-وێبی-apache">دامەزراندنی ڕاژەی وێبی Apache</h5>
+<p>ئێستا ڕاژەکاری وێبی ئاپاچی دەتوانین دامەزرێنین.لە خوارەوەی پەڕە پەئدای بکەن، ئینجا زۆر بەئاسانی لە سەر دوگمەی “install” کرتە بکەن.پاش چەند خولەکی کەم دادەمەزرێ.</p>
+<p><img src="https://qezwan.ir/server/images/15-5.png" alt=""></p>
+<p>پاش تەواو بوون لە سەر دوگمەی “Finished” کرتە بکەن و بڕۆن لە خشتی ئاپاچی وەک وێنەی خوارەوە لەسەر دوگمەی “Prepare”(ئامادەکردن) کرتە بکەن.</p>
+<p><img src="https://qezwan.ir/server/images/15-6.png" alt=""></p>
+<p>گەر پێتان خۆشە زۆرتر دەستکاری ڕێکخستنەکان بکەن دەتوانن لە لاتەنیشتی چەپ لەسەر (Configuration) کرتە بکەن و ئەو خزمەتگوزاریانە چالاک و ناچالاک بکەن. بۆ وێنە ئێوە دەتوانن خزمەتگوزاری فرەتر لە سەر ڕاژەکاری وێبی ئاپاچی دامەزرینن. سەرەتا بچنە خشتی “Apache modules” ئینجا یەکێک لە ماژووڵەکان -ماجووڵ-زیادکراوە-پێوەکراوە- هەڵبژێرن و لە سەر دوگمەی “install” کرتە بکەن.لە چوارەگۆشەی هەر ماژووڵێک دەتوانن وەردەکاریەکانی مۆدووڵ چالاک و ناچالاک بکەن بە نیشانەکردنی چوارگۆشە چکۆلەکان.</p>
+<p><img src="https://qezwan.ir/server/images/15-7.png" alt=""></p>
+<h5 id="دامەزراندنی-یەکەمین-دۆمەین-domain">دامەزراندنی یەکەمین دۆمەین (Domain)</h5>
+<p>سەرەتا لە لاتەنیشت چەپ بڕۆنە نێو مینیۆی “WEB”، ئینجا کرتە لە سەر “New Domain” بکەن، ئینجا ئەو دۆمەینە کە پێتانخۆشە بیلکێنن بە ئای پی ڕاژەکەتان، بینووسن،ئینجا کرتە لەسەر خشتی خوارەوە بکەن بۆ لکاندنی ئایپی ڕاژەکەت بەو دۆمەینە وا پێشتر لە خشتی سەرەوە نووسیوتە.</p>
+<p><img src="https://qezwan.ir/server/images/15-8.png" alt=""></p>
+<p>پاش ئەوە دۆمەینەکەتان دروستکرد،ئێوە دەگەڕێنەوە بۆ پەڕەی پەیکەرسازی دۆمەینەکان و لێرە چەندین تایبەتی زیاد بووە کە بریتییە لە :</p>
+<ol>
+<li>بەشی ئەسڵی (section) :زانیاری دۆمەین و شوێنەکەی و گوڕین و گواستنەوەی www نیشان دەدا.</li>
+<li>ژێر دۆمەینەکان(Subdomains) : بەشی دروستکردنی ژێر دۆمەین بۆ دۆمەینی دایک یان ئەسڵیمان بۆ نیشان دەدا.</li>
+<li>نازناوەکان(Aliases) : بەشی دروستکردنی ناز ناوی دۆمەینمان پێ نیشان دەدا.</li>
+<li>گوێگرتن(Listen) : ئەو ئای پی یانە کە لە دەرگاکانی راژە ڕێگایان پێدراوە نیشان دەدا.</li>
+<li>ئاپاچی و لاگەکان(Apache, error logs, access logs):یەکەم سەرخشت بۆ بینین vhost،دووهەم سەرخشت بۆ دیتنی گوزارشگرتنی ڕاژە،سێهەم بۆ دەستپێگەیشتنەکانی گوزارشەکان.</li>
+</ol>
+<p><img src="https://qezwan.ir/server/images/15-9.png" alt=""></p>
+<p>لەسەرەوە دوو سەرخشت ماوە بەناوەکانی</p>
+<ul>
+<li>PHP – بۆ پەیکەرسازی وشانی PHP و زیادکردنی زیادکراوەکان و … هتد.</li>
+<li>Applications – بۆ دامەزراندنی ئەپ یان نەرمەکالا لەسەر دۆمەین, کە بریتیە لە وۆردپرێس و سیستەمی بەڕێوەبردنی ناوەڕۆک و ….</li>
+</ul>
+<h5 id="کورتەیێک-لە-داشبۆرد">کورتەیێک لە داشبۆرد</h5>
+<p>داشبۆردی TinyCP، زانیاریێکی فرەمان بۆ دەخاتە بەردەست لە ڕاژەکەمان.کە بریتین لە :</p>
+<ol>
+<li>زانیاری سیستەمی کارپێکردنی ڕاژەکەمان</li>
+<li>زانیاری لە مەسرەفی ڕەقەکالای ڕاژە</li>
+<li>زانیاری لە سەر ناونیشانی ئای پی</li>
+<li>زانیاری لەسەر کاتی و چالاکی بارکردنی سیستەم</li>
+<li>زانیاری لەسەر پرۆسەکانی لوتکە</li>
+<li>بۆشایی پەپکەڕەقە یان هاردەکەمان.</li>
+<li>ڕاژەخوازەکانی تۆڕ</li>
+</ol>
+<p><img src="https://qezwan.ir/server/images/15-10.png" alt=""></p>
+<p>ئەم پەنێلە یان تەختەی زانیاریە تەنها زانیاری ڕاژە نیشان دەدا و ناتوانن کردارێکی لەسەر بکەن وەک کوژاندنەوە یان کوشتنی پرۆسەیێک .</p>
+<p>سەرچاوە : <a href="https://tinycp.com/">tinycp</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

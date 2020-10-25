@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی : وۆردپرێس یەکێکە لە سیستەمەکانی بەڕێوەبردنی ناوەڕۆک(دەق). کە بە ئینگلیزی دەکاتە “content management system”،سەرچاوەکراوەیە و خۆڕایی. سەرەتا بۆ بەڕێوەبردنی ناوەڕۆکی بلۆگ لە ۲۰۰۳ دەستی بە وشاندن کرد، بەڵام کەم کەم گرووپی گەشەپێدەران، تایبەتمەندی فرەیان بە زیادکراوەکان (Plugins)بۆ دابین کرد.وەک دروستکردنی فرۆشگا،ماڵپەڕی هەواڵنێری،ماڵپەڕی خزمەتگوزاری بلۆگ،تۆڕیکۆمەڵایەتی،مەکۆ،سیستەمی زانکۆ،سیستەمی داگرتنی پەڕەگەکان و … هتد.ڕووکاری زۆری تێدایە کە دەتوانن بەڵاش دەستان بکەوێت و بەنرخێکی کەم تایبەتی بکەنەوە بۆ مەبەستەکەتان.ئەم سکریپتە لەسەر بنەمای PHP نووسراوە و بنکەدراوەکەی لە MySQL هاوئاهەنگ بووە.">
+
+<meta property="og:title" content="دامەزراندنی وۆردپرێس لە سەر سێرڤێری ئوبونتو" />
+<meta property="og:description" content="پێشەکی : وۆردپرێس یەکێکە لە سیستەمەکانی بەڕێوەبردنی ناوەڕۆک(دەق). کە بە ئینگلیزی دەکاتە “content management system”،سەرچاوەکراوەیە و خۆڕایی. سەرەتا بۆ بەڕێوەبردنی ناوەڕۆکی بلۆگ لە ۲۰۰۳ دەستی بە وشاندن کرد، بەڵام کەم کەم گرووپی گەشەپێدەران، تایبەتمەندی فرەیان بە زیادکراوەکان (Plugins)بۆ دابین کرد.وەک دروستکردنی فرۆشگا،ماڵپەڕی هەواڵنێری،ماڵپەڕی خزمەتگوزاری بلۆگ،تۆڕیکۆمەڵایەتی،مەکۆ،سیستەمی زانکۆ،سیستەمی داگرتنی پەڕەگەکان و … هتد.ڕووکاری زۆری تێدایە کە دەتوانن بەڵاش دەستان بکەوێت و بەنرخێکی کەم تایبەتی بکەنەوە بۆ مەبەستەکەتان.ئەم سکریپتە لەسەر بنەمای PHP نووسراوە و بنکەدراوەکەی لە MySQL هاوئاهەنگ بووە." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%88%DB%86%D8%B1%D8%AF%D9%BE%D8%B1%DB%8E%D8%B3-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%B3%DB%8E%D8%B1%DA%A4%DB%8E%D8%B1%DB%8C-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/" />
+<meta property="article:published_time" content="2018-10-08T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-10-08T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی وۆردپرێس لە سەر سێرڤێری ئوبونتو 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%88%DB%86%D8%B1%D8%AF%D9%BE%D8%B1%DB%8E%D8%B3-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%B3%DB%8E%D8%B1%DA%A4%DB%8E%D8%B1%DB%8C-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-26%2000%3a59%3a24.2793072%20%2b0330%20%2b0330%20m%3d%2b1.259552201">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-26%2000%3a59%3a24.2793072%20%2b0330%20%2b0330%20m%3d%2b1.259552201">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-26%2000%3a59%3a24.2793072%20%2b0330%20%2b0330%20m%3d%2b1.259552201">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-26%2000%3a59%3a24.2793072%20%2b0330%20%2b0330%20m%3d%2b1.259552201">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی وۆردپرێس لە سەر سێرڤێری ئوبونتو
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Oct 8 2018 05:35:45 UTC'>Oct 8, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>5 خولەک<div class="middot"></div>1065 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی-"><strong>پێشەکی :</strong></h5>
+<p>وۆردپرێس یەکێکە لە سیستەمەکانی بەڕێوەبردنی ناوەڕۆک(دەق). کە بە ئینگلیزی دەکاتە “content management system”،سەرچاوەکراوەیە و خۆڕایی. سەرەتا بۆ بەڕێوەبردنی ناوەڕۆکی بلۆگ لە ۲۰۰۳ دەستی بە وشاندن کرد، بەڵام کەم کەم گرووپی گەشەپێدەران، تایبەتمەندی فرەیان بە زیادکراوەکان (Plugins)بۆ دابین کرد.وەک دروستکردنی فرۆشگا،ماڵپەڕی هەواڵنێری،ماڵپەڕی خزمەتگوزاری بلۆگ،تۆڕیکۆمەڵایەتی،مەکۆ،سیستەمی زانکۆ،سیستەمی داگرتنی پەڕەگەکان و … هتد.ڕووکاری زۆری تێدایە کە دەتوانن بەڵاش دەستان بکەوێت و بەنرخێکی کەم تایبەتی بکەنەوە بۆ مەبەستەکەتان.ئەم سکریپتە لەسەر بنەمای PHP نووسراوە و بنکەدراوەکەی لە MySQL هاوئاهەنگ بووە.</p>
+<p>خۆشبختانە ئەم سیستەمە لە لایەن کۆمەڵێک خۆبەخشەوە وەرگێڕاوەتە سەر <a href="https://ku.wordpress.org/">زمانی کوردی</a>.[گەر بەزمانی کوردیش داینەگری لە بەشی بەڕێوەبەری وۆردپرێس مێنیۆی ڕێکخستنەکان دەتوانی زمانی کوردی بۆ هەڵبژێریت و لەسەر دوکمەی پاشکەوت کرتە بکەی،پەڕگەی زمانی کوردی لەسەر وۆردپرێس دادەگیرێت و دەگۆڕیت بۆ زمانە کوردی]ئەم سیستەمە بە بەراوەرد لەگەڵ <a href="https://www.drupal.org/">درۆپاڵ</a>،(درووپاڵ)<a href="https://www.joomla.org/">جوملا</a>(ژوملا) گۆشەی <a href="https://www.cmscritic.com/wordpress-joomla-and-drupal-are-not-the-best-cms/">تایبەت و لاوازی </a>دەبێ…کە لەم باسە ناگونجێ .بەڵام ئەوەی کە جێگای سەرنجە ژمارەیێکی زۆر بەکارهێنەر و ماڵپەڕە، کە لە جیهان چێژیان لێگرتووە.
+بەهەرحاڵ لەم وانە فێر دەبین کە چۆن وۆردپرێس لەسەر ڕاژە(سێرڤێری) ئوبونتو بە خزمەتگوزاریکانی Apache2 ،MariaDB وە PHP دامەزرێنین.دەی با دەستپێکەین.</p>
+<h5 id="قۆناغی-۱-ئامادەکردن-و-بەرۆژکردنی-ڕاژەی-ئوبونتو"><strong>قۆناغی ۱ :ئامادەکردن و بەرۆژکردنی ڕاژەی ئوبونتو</strong></h5>
+<p>زۆر باشە کە پێش ئەوە پاکەتێک لەسەر ڕاژەی ئوبونتو دامەزرێنین،سەرەتا بەڕۆژی بکەینەوە.ئێوە بەەرمانەکەی خوارەوە ئەم کارە ئەنجام بدەن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt update <span class="o">&amp;&amp;</span> sudo apt dist-upgrade <span class="o">&amp;&amp;</span> sudo apt autoremove
+</code></pre></div><p>پاش بەڕۆژکردنەوەی ئوبونتو ،دەبێ بۆ دامەزراندنی وۆردپرێس چەند پێداویستی لەسەر ڕاژە دامەزرێنین.</p>
+<h5 id="قۆناغی-۲--دامەزراندنی-ڕاژە-وێبی-ئاپاچیapache2-web-server"><strong>قۆناغی ۲ : دامەزراندنی ڕاژە وێبی ئاپاچی(Apache2 Web Server)</strong></h5>
+<p>ڕاژە وێبی ئاپاچی لە ئێستا دا بەرچاوکراوەترین ڕاژەیە بۆ دامەزراندنی وۆردپرێس،بۆ دامەزراندنی ئاپاچی۲(Apache2) فەرمانەکەی خوارەوە جێبەجێبکەن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install apache2
+</code></pre></div><p>پاش دامەزراندنی ئاپاچی بە فەرمانەکەی خوارەوە خشتەەکانی پێرست ناچالاک دەکەین(بۆ ئاسایش):</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo sed -i <span class="s2">&#34;s/Options Indexes FollowSymLinks/Options FollowSymLinks/&#34;</span> /etc/apache2/apache2.conf
+</code></pre></div><p>بەفەرمانەکەی خوارەوە ئێمە دەتوانین لە هەر کاتێک ئاپاچی ڕاوێستێنین(stop)، دابگرسێنین(start) و توانابکەین(enable):</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl stop apache2.service
+sudo systemctl start apache2.service
+sudo systemctl <span class="nb">enable</span> apache2.service
+</code></pre></div><h5 id="قۆناغی-۳--دامەزراندنی-ڕاژە-بنکەدراوەی-ماریاmariadb"><strong>قۆناغی ۳ : دامەزراندنی ڕاژە بنکەدراوەی ماریا(MARIADB)</strong></h5>
+<p>بنکە دراوەی ماریا دی بی (MARIADB) زۆر بە خێرایی لە نێو کۆمەڵگای سەرچاوەکراوە و لینوکس دا MySQLی لادا.ماریا دی بی بنکەدراوەی سەرەکی زۆر یەک لە دابەشکراوەکانی لینوکسە.. ئینجا وۆردپرێس پێویستی بە بنکەدراوەیێک هەیە.بە فەرمانەکەی خوارەوە بنکەدراوەی ماریا دی بی دادەمەزرێنن ؛</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install mariadb-server mariadb-client
+</code></pre></div><p>پاش دامەزراندنی ماریا دی بی بە فەرمانەکەی خوارەوە ئێمە دەتوانین لە کاتی بووتکردنی(boot) ڕاژە.بنکەدراوە ڕاوێستێنین(stop)، دابگرسێنین(start) و توانابکەین(enable)، بەم شێوازە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl stop mariadb.service
+sudo systemctl start mariadb.service
+sudo systemctl <span class="nb">enable</span> mariadb.service
+</code></pre></div><p>ئێستا بە فەرمانەکەی خوارەوە ئاسایشی ماریا دی بی بەهێز دەکەی و بەکارهێنەرێکی ڕەگ یان رووتی بۆ دروستدەکەین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo mysql_secure_installation
+</code></pre></div><p>پاشان کە ماریا دی بی چالاک بوو لە کاتی پەیکەرسازی ئاسایش دەبێ بەم پرسیارانە وڵام بدەنەوە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-tex" data-lang="tex">Enter current password for root (enter for none): Just press **Enter**
+Set root password? [Y/n]: **Y**
+New password: **Enter password**
+Re-enter new password: **Repeat password**
+Remove anonymous users? [Y/n]: **Y**
+Disallow root login remotely? [Y/n]: **Y**
+Remove test database and access to it? [Y/n]: **Y**
+Reload privilege tables now? [Y/n]: **Y**
+</code></pre></div><h5 id="قۆناغی-چوار-دامەزرادی-php-و-ماژووڵمۆدولەکان"><strong>قۆناغی چوار: دامەزرادی PHP و ماژووڵ(مۆدول)ەکان</strong></h5>
+<p>پاش ئەوە کە ئاپاچی وماریا دیبی تان دامەزراند، دەبێ دامەزراندی PHP و ئەو ماژۆڵانە(زیادکراوەکانی) بە فەرمانەکەی خوارەوە دەستپێبکەن.لەم فەرمانە پێرستێک لە باشترین مۆدوڵەکانی php بوونی هەیە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install php libapache2-mod-php php-common php-mbstring php-xmlrpc php-soap php-gd php-xml php-intl php-mysql php-cli php-mcrypt php-ldap php-zip php-curl
+</code></pre></div><p>دوای دامەزراندنی php ئێوە پەیکەرسازی پەڕگەی php.ini جێبەجێ بکەن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> sudo nano /etc/php/7.X/apache2/php.ini
+</code></pre></div><p>پیتی (X)دەتوانێ بە پێ سیستەمەکەت لە نێوان ۱ یان ۰ بێت .
+ئێستا کێشان(scroll)بێنە خوارەوە و وەک ئەم نووسراوە ڕێکخستنەکان ئەنجام بدە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">post_max_size</span> <span class="o">=</span> 20M
+<span class="nv">memory_limit</span> <span class="o">=</span> 256M
+<span class="nv">max_execution_time</span> <span class="o">=</span> <span class="m">300</span>
+<span class="nv">max_input_vars</span> <span class="o">=</span> <span class="m">10000</span>
+<span class="nv">upload_max_filesize</span> <span class="o">=</span> 64M
+</code></pre></div><h5 id="قۆناغی-پێنج--دروستکردنی-بنکەدراوە-بۆ-وۆردپرێس"><strong>قۆناغی پێنج : دروستکردنی بنکەدراوە بۆ وۆردپرێس</strong></h5>
+<p>لەم قۆناغە تەواو پێداویستیەکانی وۆردپرێس جێ بە جێ دەبێ.واتە ئێستا وۆردپرێس ئامادەی دامەزراندنە.سەرەتا بنکەدراوەیێک دروستدەکەین،وۆردپرێس لەم بنکە دراوە بۆ پاشکەوتکردنی زانیاریەکان سوود دەگرێت.
+لە فەرمانەکەی خوارەوە ئێوە دەچنە نێو بنکەدراوەکە کە لە قۆناغەکانی سەرەوە دامەزرا.هەروەها کە وشەی نهێنیشتان بۆ دروستکرد.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo mysql -u root -p
+</code></pre></div><p>ئێستا من بنکەدراوەیێک بەناوی WP_database بە فەرمانەکەی خوارەوە دروستدەکەم؛هەرچەند کە ناوەکی دەتوانێ بە خواستی ئێوە بێ</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">CREATE DATABASE WP_database<span class="p">;</span>
+</code></pre></div><p>ئێستا ئێمە ناوی بەکارهێنەر و وشەی نهێنی بۆ بنکەدراوەکەمان دابین دەکەین.دیسان ناوی بەکارهێنەر وشەی نهێنی دەتوانێ بە خواست خۆتان بێ</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">CREATE USER <span class="s1">&#39;wp_user&#39;</span>@<span class="s1">&#39;localhost&#39;</span> IDENTIFIED BY <span class="s1">&#39;type_password_here&#39;</span><span class="p">;</span>
+</code></pre></div><p>ئێستا دەبێ بەم بەکارهێنەرە تەواوی ئاستی دەستکاری بۆ بنکەدراوە دابین بکەین واتە بتوانێ خشتێک یان بنکەدراوە بسڕێتەوە،بیگۆڕێ ،دەستکاری بکا و … .</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">GRANT ALL ON WP_database.* TO <span class="s1">&#39;wp_user&#39;</span>@<span class="s1">&#39;localhost&#39;</span> IDENTIFIED BY <span class="s1">&#39;type_password_here&#39;</span> WITH GRANT OPTION<span class="p">;</span>
+</code></pre></div><p>لە کۆتایی گۆڕانکاریەکانتان پاشکەوت بکەن بەم فەرمانە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">FLUSH PRIVILEGES<span class="p">;</span>
+EXIT<span class="p">;</span>
+</code></pre></div><h5 id="قۆناغی-شەش--سازدانی-ماڵپەڕی-نوێی-وۆردپرێس"><strong>قۆناغی شەش : سازدانی ماڵپەڕی نوێی وۆردپرێس</strong></h5>
+<p>لەم قۆناغە کاتی ئەوە هاتە کە پەڕگەی سازدان(configuration) لە سەر ڕاژە بۆ وۆردپرێس دروست بکەین.ئێمە ناوی ئەم پەڕگە دەنینwordpress.conf</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/apache2/sites-available/wordpress.conf
+</code></pre></div><p>ئێستا ئەم دەقەی خوارەوەی تێدا دەلکێنن(paste)، ئاگادار بە! بە جیاتی دۆمەینی example.com دەبێ ناوی ماڵپەری خۆتان بنووسن.(من تۆخم کردووە لەبیرت نەچێ :))</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">     ServerAdmin admin@example.com
+     DocumentRoot /var/www/html/wordpress/
+     ServerName example.com
+     ServerAlias www.example.com
+
+     
+        Options +FollowSymlinks
+        AllowOverride All
+        Require all granted
+     
+
+     ErrorLog <span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/error.log
+     CustomLog <span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/access.log combined
+</code></pre></div><p>پەڕگە پاشکەوت بکەو بێنەدەرەوە.</p>
+<h5 id="قۆناغی-حەوت--دەرگای-وۆردپرێس-ماژۆڵمۆدول-توانا-دەکەین"><strong>قۆناغی حەوت : دەرگای وۆردپرێس ماژۆڵ(مۆدول) توانا دەکەین</strong></h5>
+<p>پاش سازدانی ڕاژەی خەیاڵی لەسەرەوە دەبێ بەفەرمانەکەی خوارەوە چالاکی بکەین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo a2ensite wordpress.conf
+sudo a2enmod rewrite
+</code></pre></div><h5 id="قۆناغی-هەشت--داگرتنی-دوایین-وشانی-وۆردپرێس"><strong>قۆناغی هەشت : داگرتنی دوایین وشانی وۆردپرێس</strong></h5>
+<p>ئێستا سەردانی ماڵپەڕی فەرمی وۆردپرێس دەکەین، دایدەگرین بەڕیزبەندی فەرمانەکانی خوارەوە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /tmp <span class="o">&amp;&amp;</span> wget https://wordpress.org/latest.tar.gz
+tar -zxvf latest.tar.gz
+sudo mv wordpress /var/www/html/wordpress
+</code></pre></div><p>بە فەرمانەکەی خوارەوە دەبێ مۆلەتدانەکانی بوخچەکان لە سەر ڕاژە بەشی ڕووت دابین بکەین.بە ڕیزبەندی فەرمانەکان جێ بە جێ بکە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo chown -R www-data:www-data /var/www/html/wordpress/
+sudo chmod -R <span class="m">755</span> /var/www/html/wordpress/
+</code></pre></div><h5 id="قۆناغی-نۆ--سازدانی-وۆردپرێس"><strong>قۆناغی نۆ : سازدانی وۆردپرێس</strong></h5>
+<p>بە فەرمانەکەی خوارەوە ئێمە پەڕگە یان فایلی سازدانی وۆردپرێس(wp-config.php) دروستدەکەین.پێشگریمان ئەم پەڕگەیە لە وۆردپرێس هەیە بەڵام ئێمە ناوەکەی دەگۆڕین</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo mv /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php
+</code></pre></div><p>ئێستا بە فەرمانەکەی خوارەوە ئەو پەڕگەی سازدانە کە لەسەرەوە دروستمان کردووە دەیکەینەوە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /var/www/html/wordpress/wp-config.php
+</code></pre></div><p>لە نێو پەڕگەی سازدان ئەو وشانە کە تۆخ کراوە بە زانیاری بنکەدراوە کە لە سەرەوە دروستتکردووە بیگۆڕە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database <span class="k">for</span> WordPress */
+define<span class="o">(</span><span class="s1">&#39;DB_NAME&#39;</span>, <span class="s1">&#39;WP_database&#39;</span><span class="o">)</span><span class="p">;</span>
+
+/** MySQL database username */
+define<span class="o">(</span><span class="s1">&#39;DB_USER&#39;</span>, <span class="s1">&#39;wp_user&#39;</span><span class="o">)</span><span class="p">;</span>
+
+/** MySQL database password */
+define<span class="o">(</span><span class="s1">&#39;DB_PASSWORD&#39;</span>, <span class="s1">&#39;new_password_here&#39;</span><span class="o">)</span><span class="p">;</span>
+
+/** MySQL hostname */
+define<span class="o">(</span><span class="s1">&#39;DB_HOST&#39;</span>, <span class="s1">&#39;localhost&#39;</span><span class="o">)</span><span class="p">;</span>
+
+/** Database Charset to use in creating database tables. */
+define<span class="o">(</span><span class="s1">&#39;DB_CHARSET&#39;</span>, <span class="s1">&#39;utf8&#39;</span><span class="o">)</span><span class="p">;</span>
+
+/** The Database Collate type. Don<span class="s1">&#39;t change this if in doubt. */
+</span><span class="s1">define(&#39;</span>DB_COLLATE<span class="s1">&#39;, &#39;</span><span class="err">&#39;</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div><p>پاش گۆڕانی زانیاریەکان،پاشکەوتی بکەن.
+ئێستا تەواو پەیکەرسازیەکانت ئەنجام دا واتە سازدان تەواو بووە، دەبێ ئاپاچی لەنوێ بەگڕ بخەیتەوە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl reload apache2.service
+</code></pre></div><p>ئێستا ئای پی ڕاژە یان دۆمەینەکەت لە شریتی ناونیشانی وێبگەڕەکەت بنووسە.تا دەچی بۆ دامەزراندنی وۆردپرێس.
+بۆ نمونە :http://example.com
+گەر هەموو شتێک بە باشی ئەنجام درابێ تۆ پاش نووسینی ئای پی یان ناونیشانی ماڵپەڕەکەت ئەم پەڕە دەبینی.ئینجا بەئاسانی دەڕۆی بۆ تەواوکردنی قۆناغەکانی دامەزراندنی وۆردپرێس.لەکۆتایی دەتوانی لە بەشی ڕێکخستن زمانی کوردی بۆ هەڵبژێری و دادەمەزرێ لەسەر وۆردپرێسەکەت.</p>
+<p><img src="https://qezwan.ir/server/images/16.png" alt=""></p>
+<p>سەرچاوە: <a href="https://websiteforstudents.com/how-to-install-wordpress-on-ubuntu-servers/">websiteforstudents</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
