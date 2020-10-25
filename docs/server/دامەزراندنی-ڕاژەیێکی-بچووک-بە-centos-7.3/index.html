@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی: لەم فێرکارییە بە دامەزراندنی ڕاژەیێک بە کەمترین ئیمکانات ، ئاشنا دەبین. دابەشکراوەیێک کە ئەم ڕاژەمان لەسەری رێکخستووە CentOS 7.3ـە.ئەم فێرکارییە هەنگاوێکە بۆ قۆناغەکانی داهاتوو لە دامەزراندنی راژە یان سێرڤێرێکی تەواو کە SAMBA, LAMP وە LEMP لەسەر دامەزراوە.
+پێداویستی : بۆ دامەزراندنی ڕاژەی CentOS 7.3 نیازمان بە فایلی ئەم سیستەمی کارپێکردنەوە .بۆ ئەم مەبەستە پێشنیار دەکەین کە سوود لە فایلی ISO بگرن.کاتێک کە ئەم فایلەتان داگرت دەتوانن لەسەر فلاش یان DVD بیسووتینن بەو مەرجە کە توانایی بووتی بێت.">
+
+<meta property="og:title" content="دامەزراندنی ڕاژەیێکی بچووک بە CentOS 7.3" />
+<meta property="og:description" content="پێشەکی: لەم فێرکارییە بە دامەزراندنی ڕاژەیێک بە کەمترین ئیمکانات ، ئاشنا دەبین. دابەشکراوەیێک کە ئەم ڕاژەمان لەسەری رێکخستووە CentOS 7.3ـە.ئەم فێرکارییە هەنگاوێکە بۆ قۆناغەکانی داهاتوو لە دامەزراندنی راژە یان سێرڤێرێکی تەواو کە SAMBA, LAMP وە LEMP لەسەر دامەزراوە.
+پێداویستی : بۆ دامەزراندنی ڕاژەی CentOS 7.3 نیازمان بە فایلی ئەم سیستەمی کارپێکردنەوە .بۆ ئەم مەبەستە پێشنیار دەکەین کە سوود لە فایلی ISO بگرن.کاتێک کە ئەم فایلەتان داگرت دەتوانن لەسەر فلاش یان DVD بیسووتینن بەو مەرجە کە توانایی بووتی بێت." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C%DB%8E%DA%A9%DB%8C-%D8%A8%DA%86%D9%88%D9%88%DA%A9-%D8%A8%DB%95-centos-7.3/" />
+<meta property="article:published_time" content="2017-02-24T05:35:45+00:00" />
+<meta property="article:modified_time" content="2017-02-24T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی ڕاژەیێکی بچووک بە CentOS 7.3 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C%DB%8E%DA%A9%DB%8C-%D8%A8%DA%86%D9%88%D9%88%DA%A9-%D8%A8%DB%95-centos-7.3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2020%3a53%3a02.0639227%20%2b0330%20%2b0330%20m%3d%2b0.715081501">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2020%3a53%3a02.0639227%20%2b0330%20%2b0330%20m%3d%2b0.715081501">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2020%3a53%3a02.0639227%20%2b0330%20%2b0330%20m%3d%2b0.715081501">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2020%3a53%3a02.0639227%20%2b0330%20%2b0330%20m%3d%2b0.715081501">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی ڕاژەیێکی بچووک بە CentOS 7.3
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Fri Feb 24 2017 05:35:45 UTC'>Feb 24, 2017</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>5 خولەک<div class="middot"></div>1034 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی:</h5>
+<p>لەم فێرکارییە بە دامەزراندنی ڕاژەیێک بە کەمترین ئیمکانات ، ئاشنا دەبین. دابەشکراوەیێک کە ئەم ڕاژەمان لەسەری رێکخستووە CentOS 7.3ـە.ئەم فێرکارییە هەنگاوێکە بۆ قۆناغەکانی داهاتوو لە دامەزراندنی راژە یان سێرڤێرێکی تەواو کە SAMBA, LAMP وە LEMP لەسەر دامەزراوە.</p>
+<h5 id="پێداویستی-">پێداویستی :</h5>
+<p>بۆ دامەزراندنی ڕاژەی CentOS 7.3 نیازمان بە فایلی ئەم سیستەمی کارپێکردنەوە .بۆ ئەم مەبەستە پێشنیار دەکەین کە سوود لە فایلی ISO بگرن.کاتێک کە ئەم فایلەتان داگرت دەتوانن لەسەر فلاش یان DVD بیسووتینن بەو مەرجە کە توانایی بووتی بێت. سەرەتا فایلیISO دادەگرین لەم بەستەرە .</p>
+<p>ئێمە لێرە لە سەر ماشینێکی خەیاڵی قۆناغەکانی دامەزراندن ئەنجام دەدەین ،هیچ جیاوازی لەگەڵ کۆمپیوترێکی ڕاستەقینە بۆ دامەزراندنی ئەم سێرڤێرەنییە.</p>
+<p><strong>خاڵ :</strong></p>
+<p>وشانی سێرڤێر لەم فێرکارییە CentOS 7.3ـیە، هەروا من لەم ئای پی ئادرێسە 192.168.1.100 وە ناوی ڕاژەی server1.example.com ،بۆ ئەم فێرکارییە سوود دەگرم.ئێوە دەتوانن بە حەزی خۆتان و بەڕجاوگرتنی ستانداردەکان ئەم ناوانە بگۆڕن.</p>
+<h5 id="دامەزراندن">دامەزراندن</h5>
+<p>فایلی CentOS 7.3 کە لەسەر DVD یان فلاش سووتانتانە بووتی(Boot) بکەن. ئینجا ڕەستەی Install CentOS 7 هەڵبژێرن(وەک وێنەی خوارەوە).</p>
+<p><img src="https://qezwan.ir/server/images/02-1.png" alt=""></p>
+<p>پاش هەڵبژاردن دوکمەی ENTER لێبدەن.</p>
+<p><img src="https://qezwan.ir/server/images/02-2.png" alt=""></p>
+<p>ئێستا زمانی ئینگلیزی هەڵبژێرن یان هەر زمانێک کە پێتان خۆشە ،لێرە پێشنیار زمانی ئینگلیزی وەڵاتی ئەمریکایە واتەEnglish United States . ئینجا لەسەر دوکمەی Continue کرتە بکە.</p>
+<p><img src="https://qezwan.ir/server/images/02-3.png" alt=""></p>
+<p>ئازیزان پەڕەیێک وەک وێنەی خوارەوە دەردەکەوێت کە دەبێت ریکخستنەکانی خۆماڵی وەک DATE &amp; TIME وە KEYBOARD دیاربکەین.</p>
+<p><img src="https://qezwan.ir/server/images/02-4.png" alt=""></p>
+<p>من لەسەردێری LOCALIZATION(بەخۆماڵیکردن) سەرەتا کات و بەروار رێکدەخەم.بۆ ئەم مەبەستە لەسەر DATE &amp; TIME کرتەیێک دەکەم و کاتی شوێنەکەم هەڵدەبژێرم.</p>
+<p><img src="https://qezwan.ir/server/images/02-5.png" alt=""></p>
+<p>من لێرە Europe وەک مەنتەقە و شاریش Berlin بەڵدەبژێرم (کات بەم شوێنە خۆی بۆ سێرڤێرەکەم رێکدەخات).ئینجا لەسەر دوکمەی Done کرتە دەکەم.</p>
+<p>پاش ریکخستنی کات/برواری شوینی سیرڤێر، ئێمە دەبێت زمانی تەختەکلیلەکەمان(KEYBOARD) هەڵبژێرین</p>
+<p><img src="https://qezwan.ir/server/images/02-6.png" alt=""></p>
+<p>لێرە زمانی ئینگیزی بە شێوازی پێشگریمان هەر هەڵمانژارد بەڵام دەبێ زمانی کوردیشی پێ زیاد بکەین بۆ ئەم کارە لەسەر وێنۆچکەی + کرتە دەکەین .</p>
+<p><img src="https://qezwan.ir/server/images/02-7.png" alt=""></p>
+<p>لێرە لیستێک لەو تەختەکلیلانە کە بوونیان هەیە بۆ نووسین بە زمانە جیاوازەکان دەردەکەون کە منGerman هەڵدەبژێرم. ئینجا لەسەر دوکمەی Add کرتە دەکەم.</p>
+<p><img src="https://qezwan.ir/server/images/02-8.png" alt=""></p>
+<p>لەم پەنجێرە کارێکی دیکەمان دەمێنێت کە دەبێت لە بەشی LAYOUT SWITCHING OPTIONS لەسەر دوکمەی Optionsکرتەیێک بکەین بۆ ئەوە شێوازی گۆڕینی تەختەکلیل دیاری بکەین.</p>
+<p><img src="https://qezwan.ir/server/images/02-9.png" alt=""></p>
+<p>هەڵبەژاردە یان کورتەکلیلی زۆرمان هەس بۆ گۆڕینی زمانی تەختەکلیلەکان بەڵام من Alt+Ctrl هەڵدەبژێرم و ئینجا لەسەر دوکمەی Done کرتە دەکەم.</p>
+<p><img src="https://qezwan.ir/server/images/02-10.png" alt=""></p>
+<p>ئێستا لەسەر دۆکمەیDone کرتە دەکەم تا دەچمە پەڕەی سەرەتایی.</p>
+<p><img src="https://qezwan.ir/server/images/02-11.png" alt=""></p>
+<p>ئیستا بەشی LANGUAGE SUPPORT ماوە کە زمانێکی دیکەی پێ زیاد بکەم.کوردە حەیاتەکە بەداخەوە هەر هیچی لێبەرنایێت تەنانەت وۆردپرێس و درۆپاڵی پاش 15 ساڵ هێشتا بە ناقسی کردوە بە کوردی جا چ بگەیێ بەم سیستەمی کارپێکردنە.بەهەر حاڵ گەر پێت خۆشە سێرڤێرەکەت بە زمانێکی دیکە بێت ئەوە باشە لەم بەشە وەک تەختە کلیلەکەت زمانێکی دیکەی بۆ هەڵبژێریت با سیستەمەکەت بێتە سەر ئەو زمانە.</p>
+<p><img src="https://qezwan.ir/server/images/02-12.png" alt=""></p>
+<p>بە شێوازی پێسگریان زمانی ئینگلیزی هەڵبژێردراوە بەڵام من زمانی Deutsch German پێ زیاد دەکم بەم جۆرە:</p>
+<p><img src="https://qezwan.ir/server/images/02-13.png" alt=""></p>
+<p>ئێستا لە پەڕەی کانفیگ بچنە بەشی SOFTWARE &gt; INSTALLATION SOURCE</p>
+<p><img src="https://qezwan.ir/server/images/02-14.png" alt=""></p>
+<p>لەم بەشەسەرچاوەی دامەزراندنەکە دیار دەکەن.واتە بە شێوازی پێشگریمان “Auto-detected installation media” هەڵبژێردراوە ،گەر ەنابەت سەرچاوەییک دیکەت هەیە وەک ڕایەڵە یان تۆڕ ئەتوانی ئەم ڕەستە “On the network” هەڵبژێریت و گەر پێویستیبە پراکسی بوو بۆی رێکبخە لە بەشیProxy Setup . هەر با پێشگریمان بمێنێت ئینجا لەسەر دوکمەی Done کرتە بکە.</p>
+<p><img src="https://qezwan.ir/server/images/02-15.png" alt=""></p>
+<p>لە بەشی SOFTWARE SELECTION بە شێوازی پێشگریمان لەسەر Minimal Installسازکراوە.</p>
+<p><img src="https://qezwan.ir/server/images/02-16.png" alt=""></p>
+<p>لێرە ئێوە دەتوانن پاکەتی خزمەتگوزاری فرەتر لەسەر ئەم سێرڤەرە زیاد بکەن بەڵام چونکە ئێمە بە شێوازی ڕاژەی بچووک خەریکین دامەزراندن دەکەین ئەم خزمەتگوزارییانە لەبەردەست نییە خۆمان دەتوانین لە دوایی دامەزراندن زیادی بکەین.بەڵام بە شێوازی داگرتنی فایل بە تواوی لە ستونی ڕاست خزمەتگوزاریەکانی دیکە بۆ هەڵبژاردن دەردەکەون.بس ئێمە لەم دامەزراندنە پێویستمان بە (Minimal Install(Basic Functionality هەیە و لەسەر دوکمەی Done کرتە بکە.</p>
+<p><img src="https://qezwan.ir/server/images/02-17.png" alt=""></p>
+<p>دەچینە پەڕەی سەرەتا وە ئێمە دەچینی بەشی SYSTEM و INSTALLATION DESTINATION هەڵدەبژێرین.</p>
+<p><img src="https://qezwan.ir/server/images/02-18.png" alt=""></p>
+<p>لێرە دەتوانیت هاردەکەت پارتیشێن بکەی کە من پێم باشە هەروا بمێنێتەوە.ئەمە شتیکی سەلیقەییە.لەسەر دوکمەی Done کرتە بکە.</p>
+<p><img src="https://qezwan.ir/server/images/02-19.png" alt=""></p>
+<p>ئێستا دەبێت لە بەشی NETWORK &amp; HOSTNAME ڕایەڵەکەمان کانفیگ بکەین.</p>
+<p><img src="https://qezwan.ir/server/images/02-20.png" alt=""></p>
+<p>ناوی هاستەکەی من server1.example.com و بە شێوازی ئێتێرنێت(ethernet) سوود لە پەیوەندی تۆڕ دەگرم بۆ رێکخستنی لەسەر دوکمەی Configure کرتە دەکەم.</p>
+<p><img src="https://qezwan.ir/server/images/02-21.png" alt=""></p>
+<p>لە سەرخشتی IPv4 ریکخستنەکان ئەنجام دەدەم گەر لە IPv6 سوود دەبینن دەتوانن لەو سەرخشتە دەستکاری بکەن.</p>
+<p><img src="https://qezwan.ir/server/images/02-22.png" alt=""></p>
+<p>لە سەر خشتی IPv4 ئێوە Manual هەڵبژێرن.</p>
+<p><img src="https://qezwan.ir/server/images/02-23.png" alt=""></p>
+<p>پاشان دەبێ زانیاریەکانی IP, Netmask وە Gateway پێبدەن. من لە IPبە 192.168.1.100 وە Netmaskبە 255.255.255.0، Gateway بە 192.168.1.1 ریکدەخەم. هەروا DNS serversـیش بەم ئادرەسەیە 8.8.8.8 8.8.4.4 ئینجا پاش تەواو بوون لەسەر دوکمەی Save کرتە بکەن.</p>
+<p><img src="https://qezwan.ir/server/images/02-24.png" alt=""></p>
+<p><strong>خاڵ :</strong> گەر لە IPv6 سوود نابینن دەبێ لەو سەرخشتە لەبەشی Methode هەڵبژاردەی ignoreهەڵبژێرن.هەروا گەر لە IPv6 سوود دەگرن دەبێ بۆ IPv4ئەم کارە بکەن.</p>
+<p><img src="https://qezwan.ir/server/images/02-25.png" alt=""></p>
+<p>ئێستا وەک وێنەی خوارەوە جۆری پەیوەندیەکەت ON بکە واتە چالاکی بکە. ئینجا لەسەر دوکمەی Done کرتە بکە.</p>
+<p><img src="https://qezwan.ir/server/images/02-26.png" alt=""></p>
+<p>ئێستا لە پەڕەی سەرەتاوە لەسەر دوکمەی Begin Installation کرتە بکە.</p>
+<p><img src="https://qezwan.ir/server/images/02-27.png" alt=""></p>
+<p>ئێستا ئێوە شریتێکی شین دەبینن کەلە خوارەوە کە خەریکە پرۆسەی دامەزراندن نیشاندەدا.لێرە ئێمە دووکار دەبێ بکەین.یەکەم بۆ بەڕێوەبەری گشتی(ROOT) وشەی نهێنی دابین بکەین و ناوی بەکارهێنەرێکیش(USER CREATION ) تۆمار بکەین.سەرەتا بەڕێوبەری گشتی واتە ڕووت :</p>
+<p><img src="https://qezwan.ir/server/images/02-28.png" alt=""></p>
+<p>وشەی نهێنیێکی بەهێز هەڵبژێرەو لە سەر دوکمەی Done کرتە بکە.</p>
+<p><img src="https://qezwan.ir/server/images/02-29.png" alt=""></p>
+<p>ئێستا بەکارهێنەرێکی نوێ تۆمار دەکەین واتە USER CREATION:</p>
+<p><img src="https://qezwan.ir/server/images/02-30.png" alt=""></p>
+<p>من بەکارهێنەرێک کە بەڕێوەبەر نیە تۆمار دەکەم, ناوی تەواوی من “Howtoforge” وە ناوی بەکارهێنەرەکەم “howtoforge”, ئێستا وشەیێکی نهینی بەهێزیشی بۆ دابین دەکەم و لە سەر دوکمەی Done کرتە دەکم. تاکوو دامەزراندن قۆناغەکانی تەواو بێت.</p>
+<p><img src="https://qezwan.ir/server/images/02-31.png" alt=""></p>
+<p>پاش تەواو بوونی دامەزراندن داوای ریستارتت لێدەکات.</p>
+<p><img src="https://qezwan.ir/server/images/02-32.png" alt=""></p>
+<p>پاش ریستارت بوونەوە داوای ناوی بەکارهێنەر و وشەی نهێنیت لێدەکات.</p>
+<p><img src="https://qezwan.ir/server/images/02-33.png" alt=""></p>
+<p>یەکەم بار بۆ چوونەژوورەوە :</p>
+<p>کاتێک بە عینوانی بەکارهێنەری root دەچنە ژوور دەبێت چەند کار بە باشی ئەنجام بدەن.</p>
+<p><img src="https://qezwan.ir/server/images/02-34.png" alt=""></p>
+<p>یەکەمیان دەبێ سیستەمەکەمان بەڕۆژ بکەینەوە بەم فەرمانە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum update
+</code></pre></div><p>گەر پەیامێکی نیشان دا پیتی “y” لێبدە بۆ بەردەوام بوونی پرۆسەی بەڕۆژبوون واتە update .</p>
+<p>ئەم فەرمانەش بۆ دامەزراندنی دوو دەستکاریکەری دەقە، واتە nano وە vim</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum install nano vim
+</code></pre></div><p>پەیکەربەستنی ڕایەڵە :
+لە CentOS 7.3 minimal فەرمانی ifconfig بە شێوەی پێشگریمان ئیجرا نابێت دەبێ خۆمان دایمەزرێنین بەم جۆرە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum install net-tools
+</code></pre></div><p>گەر گەرەکتە رێکخستەنەکانی ڕایەڵە ببینیت یان دەستیان تێوەردەی بەم مەسیرە بڕۆ بەم فەرمانە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nano /etc/sysconfig/network-scripts/ifcfg-ens33
+</code></pre></div><p>ئێستا ئەو شتە دەبینن کە لە قۆناغی دامەزراندنی IPـیەکان پێشتر رێکخرا، بەم جۆرە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;Ethernet&#34;</span>
+<span class="nv">BOOTPROTO</span><span class="o">=</span><span class="s2">&#34;none&#34;</span>
+<span class="nv">DEFROUTE</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV4_FAILURE_FATAL</span><span class="o">=</span><span class="s2">&#34;no&#34;</span>
+<span class="nv">IPV6INIT</span><span class="o">=</span><span class="s2">&#34;no&#34;</span>
+<span class="nv">IPV6_AUTOCONF</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_DEFROUTE</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_PEERDNS</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_PEERROUTES</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_FAILURE_FATAL</span><span class="o">=</span><span class="s2">&#34;no&#34;</span>
+<span class="nv">IPV6_ADDR_GEN_MODE</span><span class="o">=</span><span class="s2">&#34;stable-privacy&#34;</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">&#34;ens33&#34;</span>
+<span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;233f2c1b-877c-4b28-b17d-1eb091ded288&#34;</span>
+<span class="nv">DEVICE</span><span class="o">=</span><span class="s2">&#34;ens33&#34;</span>
+<span class="nv">ONBOOT</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPADDR</span><span class="o">=</span><span class="s2">&#34;192.168.1.100&#34;</span>
+<span class="nv">PREFIX</span><span class="o">=</span><span class="s2">&#34;24&#34;</span>
+<span class="nv">GATEWAY</span><span class="o">=</span><span class="s2">&#34;192.168.1.1&#34;</span>
+<span class="nv">DNS1</span><span class="o">=</span><span class="s2">&#34;8.8.8.8&#34;</span>
+</code></pre></div><p>گەر لە خزمەتگوزاری DHCP سوود دەگریت بەم جۆرە کردار بکە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;Ethernet&#34;</span>
+<span class="nv">BOOTPROTO</span><span class="o">=</span><span class="s2">&#34;dhcp&#34;</span>
+<span class="nv">DEFROUTE</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV4_FAILURE_FATAL</span><span class="o">=</span><span class="s2">&#34;no&#34;</span>
+<span class="nv">IPV6INIT</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_AUTOCONF</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_DEFROUTE</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_FAILURE_FATAL</span><span class="o">=</span><span class="s2">&#34;no&#34;</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">&#34;ens33&#34;</span>
+<span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;233f2c1b-877c-4b28-b17d-1eb091ded288&#34;</span>
+<span class="nv">DEVICE</span><span class="o">=</span><span class="s2">&#34;ens33&#34;</span>
+<span class="nv">ONBOOT</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">HWADDR</span><span class="o">=</span><span class="s2">&#34;00:50:56:15:23:79&#34;</span>
+<span class="nv">PEERDNS</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">PEERROUTES</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_PEERDNS</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_PEERROUTES</span><span class="o">=</span><span class="s2">&#34;yes&#34;</span>
+<span class="nv">IPV6_PRIVACY</span><span class="o">=</span><span class="s2">&#34;no&#34;</span>
+</code></pre></div><p>گەر پێویست بوو دەستکاری بکە !</p>
+<p>ڕێکخستنی /etc/hosts :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nano /etc/hosts
+</code></pre></div><p>بەم شێوازە زانیاریکەتان بگۆڕە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+192.168.1.100   server1.example.com     server1
+
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+</code></pre></div><p>پیرۆز بێت دامەزراندنی ڕاژەکەتان لە دابەشکراوەی گنو/لینوکسیCentOS 7.3 تەواو بوو . ?</p>
+<p>سەرچاوە :<a href="https://www.howtoforge.com/tutorial/centos-7-3-server/">howtoforge</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

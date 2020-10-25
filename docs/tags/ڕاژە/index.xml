@@ -6,7 +6,17 @@
     <description>Recent content in ڕاژە on Qezwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 06 Feb 2017 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Feb 2017 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>دامەزراندنی ڕاژەیێکی بچووک بە CentOS 7.3</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C%DB%8E%DA%A9%DB%8C-%D8%A8%DA%86%D9%88%D9%88%DA%A9-%D8%A8%DB%95-centos-7.3/</link>
+      <pubDate>Fri, 24 Feb 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C%DB%8E%DA%A9%DB%8C-%D8%A8%DA%86%D9%88%D9%88%DA%A9-%D8%A8%DB%95-centos-7.3/</guid>
+      <description>پێشەکی: لەم فێرکارییە بە دامەزراندنی ڕاژەیێک بە کەمترین ئیمکانات ، ئاشنا دەبین. دابەشکراوەیێک کە ئەم ڕاژەمان لەسەری رێکخستووە CentOS 7.3ـە.ئەم فێرکارییە هەنگاوێکە بۆ قۆناغەکانی داهاتوو لە دامەزراندنی راژە یان سێرڤێرێکی تەواو کە SAMBA, LAMP وە LEMP لەسەر دامەزراوە.
+پێداویستی : بۆ دامەزراندنی ڕاژەی CentOS 7.3 نیازمان بە فایلی ئەم سیستەمی کارپێکردنەوە .بۆ ئەم مەبەستە پێشنیار دەکەین کە سوود لە فایلی ISO بگرن.کاتێک کە ئەم فایلەتان داگرت دەتوانن لەسەر فلاش یان DVD بیسووتینن بەو مەرجە کە توانایی بووتی بێت.</description>
+    </item>
+    
     <item>
       <title>دامەزراندنی بەستەری تۆڕ لە دێبیان، ئوبونتو و مینت(Network Interface)</title>
       <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A8%DB%95%D8%B3%D8%AA%DB%95%D8%B1%DB%8C-%D8%AA%DB%86%DA%95-%D9%84%DB%95-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88-%D9%88-%D9%85%DB%8C%D9%86%D8%AAnetwork-interface/</link>
