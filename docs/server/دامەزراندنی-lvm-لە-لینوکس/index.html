@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="LVM کورتکراوەی Logical Volume Manager شێوازێکی پێشکەوتوو بۆ بەڕێوەبردنی پارتیشێنەکان و بۆشایی هاردە، کە ئیمکاناتێکی فرە بە بەراوەرد لە گەڵ شێوازە کۆنەکان دەخاتە بەردەست بۆ بەڕێوەبەری ڕاژە.
+لە LVM دەتوانین کۆی هاردەکان و پارتیشێنەکان کە بە Physical Volume ناسراوەن بەشێوازی چەند دیسکی مەنتەقی، گەورەتر و یەکپارچە بە ناوی Volume Group دروست بکەین و لە سەر ئەم دیسکانە پارتیشێنی خۆمان کە بە Logical Volume ناسراوەن بخولقێنین.
+سوودی ئەم شێوازە لەوەدایە کە کاتێک کە قەبارەی ئەکێک لە پارتیشینەکان تەواو بوون دەتوانیی بۆشاییێکی بخەینە سەر واتە قەبارەی پێ زیاد بکەین بێ ئەوە کە کێشەیێک درووست بێ.">
+
+<meta property="og:title" content="دامەزراندنی LVM لە لینوکس" />
+<meta property="og:description" content="LVM کورتکراوەی Logical Volume Manager شێوازێکی پێشکەوتوو بۆ بەڕێوەبردنی پارتیشێنەکان و بۆشایی هاردە، کە ئیمکاناتێکی فرە بە بەراوەرد لە گەڵ شێوازە کۆنەکان دەخاتە بەردەست بۆ بەڕێوەبەری ڕاژە.
+لە LVM دەتوانین کۆی هاردەکان و پارتیشێنەکان کە بە Physical Volume ناسراوەن بەشێوازی چەند دیسکی مەنتەقی، گەورەتر و یەکپارچە بە ناوی Volume Group دروست بکەین و لە سەر ئەم دیسکانە پارتیشێنی خۆمان کە بە Logical Volume ناسراوەن بخولقێنین.
+سوودی ئەم شێوازە لەوەدایە کە کاتێک کە قەبارەی ئەکێک لە پارتیشینەکان تەواو بوون دەتوانیی بۆشاییێکی بخەینە سەر واتە قەبارەی پێ زیاد بکەین بێ ئەوە کە کێشەیێک درووست بێ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-lvm-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+<meta property="article:published_time" content="2017-08-15T05:35:45+00:00" />
+<meta property="article:modified_time" content="2017-08-15T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی LVM لە لینوکس 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-lvm-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2021%3a14%3a23.37675%20%2b0330%20%2b0330%20m%3d%2b0.761803601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2021%3a14%3a23.37675%20%2b0330%20%2b0330%20m%3d%2b0.761803601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2021%3a14%3a23.37675%20%2b0330%20%2b0330%20m%3d%2b0.761803601">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2021%3a14%3a23.37675%20%2b0330%20%2b0330%20m%3d%2b0.761803601">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی LVM لە لینوکس
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue Aug 15 2017 05:35:45 UTC'>Aug 15, 2017</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>628 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>LVM کورتکراوەی Logical Volume Manager شێوازێکی پێشکەوتوو بۆ بەڕێوەبردنی پارتیشێنەکان و بۆشایی هاردە، کە ئیمکاناتێکی فرە بە بەراوەرد لە گەڵ شێوازە کۆنەکان دەخاتە بەردەست بۆ بەڕێوەبەری ڕاژە.</p>
+<p>لە LVM دەتوانین کۆی هاردەکان و پارتیشێنەکان کە بە Physical Volume ناسراوەن بەشێوازی چەند دیسکی مەنتەقی، گەورەتر و یەکپارچە بە ناوی Volume Group دروست بکەین و لە سەر ئەم دیسکانە پارتیشێنی خۆمان کە بە Logical Volume ناسراوەن بخولقێنین.</p>
+<p>سوودی ئەم شێوازە لەوەدایە کە کاتێک کە قەبارەی ئەکێک لە پارتیشینەکان تەواو بوون دەتوانیی بۆشاییێکی بخەینە سەر واتە قەبارەی پێ زیاد بکەین بێ ئەوە کە کێشەیێک درووست بێ.</p>
+<p>بەداخەوە LVM هەڵەچنین و گەڕانەوەی دەیتاکانمانی نییە ئەمەش بە پێچەوانەیRAID ، ئەکامی ئەمەش ئەوەیە کاتێک یەکێک لە پارتیشێنەکانمان خراپ بێ دەیتاکان خاپوور دەبن. ?</p>
+<p>لەم فێرکارییە دامەزراندن و کانفیگی LVM لە لینوکس فێر دەبین،پێس دەستبەکار بوون چاوێک لەم وێنە بکە.</p>
+<p><img src="https://qezwan.ir/server/images/06.png" alt=""></p>
+<p>سەرەتا دەبێ پاکەتی lvm2 لە سەر لینوکس دامەزرێنین.</p>
+<p>بۆ دابەشکراوەکانی دێبیان:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install lvm2
+</code></pre></div><p>بۆ دابەشکراوەکانی ڕێدهەت:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo yum install lvm2
+</code></pre></div><p>ئێستا دەبێ بە فەرمانی pvcreate پارتیشێن یان دیسکەکان بگۆڕین بە Physical Volume .</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">pvcreate /dev/sda /dev/sdb
+</code></pre></div><p>پاش ئەنجامدانی فەرمانی سەرەوە بۆ ئاگاداری لە Physical Volume لە فەرمانی خوارەوە سوود دەگرین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">pvdisplay
+</code></pre></div><p>ئامانجی فەرمان بە شێوازی خوارەوەیە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s2">&#34;/dev/sda&#34;</span> is a new physical volume of <span class="s2">&#34;8.00 GiB&#34;</span>
+  --- NEW Physical volume ---
+  PV Name               /dev/sda
+  VG Name               
+  PV Size               8.00 GiB
+  Allocatable           NO
+  PE Size               <span class="m">0</span>   
+  Total PE              <span class="m">0</span>
+  Free PE               <span class="m">0</span>
+  Allocated PE          <span class="m">0</span>
+  PV UUID               cAwfbX-Nik0-X1iR-lAzP-GJGD-5FNS-tX5fuY
+   
+  <span class="s2">&#34;/dev/sdb&#34;</span> is a new physical volume of <span class="s2">&#34;8.00 GiB&#34;</span>
+  --- NEW Physical volume ---
+  PV Name               /dev/sdb
+  VG Name               
+  PV Size               8.00 GiB
+  Allocatable           NO
+  PE Size               <span class="m">0</span>   
+  Total PE              <span class="m">0</span>
+  Free PE               <span class="m">0</span>
+  Allocated PE          <span class="m">0</span>
+  PV UUID               VRDlaw-eeXm-p3XP-2w4t-fCZ8-92NP-2izZb3
+</code></pre></div><p>هەروا دەبینن کە دیسکەکانی sda و sdb بە قەبارەی 8گیگ ناسراوەن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">vgcreate vg_server /dev/sda /dev/sdb
+</code></pre></div><p>ئێستا دەبێ ئەو Physical Volume ـانە کە دروستمان کردووە بە Volume Group بیانناسێنین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">vgdisplay vg_server
+</code></pre></div><p>ئامانجی فەرمانەکەی سەرەوە بەم شێوەیە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> --- Volume group ---
+  VG Name               vg_server
+  System ID             
+  Format                lvm2
+  Metadata Areas        <span class="m">2</span>
+  Metadata Sequence No  <span class="m">1</span>
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                <span class="m">0</span>
+  Cur LV                <span class="m">0</span>
+  Open LV               <span class="m">0</span>
+  Max PV                <span class="m">0</span>
+  Cur PV                <span class="m">2</span>
+  Act PV                <span class="m">2</span>
+  VG Size               15.99 GiB
+  PE Size               4.00 MiB
+  Total PE              <span class="m">4094</span>
+  Alloc PE / Size       <span class="m">0</span> / <span class="m">0</span>   
+  Free  PE / Size       <span class="m">4094</span> / 15.99 GiB
+  VG UUID               udnHV5-QwGw-PkA4-zsF3-5ABo-WhOA-XI51SZ
+</code></pre></div><p>هەروا کە لەسەرەوە دەبینن کۆی ئەو بەشە کە زیادمان کردووە لە بەر ڕەستەی Free PE/ Size نیشان دراوە.
+بۆ زیادکردنی دیسکی فرەتر بە Volume Groupدەتوانن بەم شێوازە کردار بکەن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">pvcreate /dev/sdd
+vgextend vg_server /dev/sdd
+</code></pre></div><p>ئێمە لێرە دانەێێک Physical Volume بەناوی sdd بە Volume Group زیاد دەکەین.</p>
+<p>ئینجا دەتوانین بە شێوازی خوارەوە Logical Volume ـانە کە خوازمان لێیەتی و لە سەر Volume Group کە درووستکراوە بیناسێنین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">lvcreate -L 1G -n Vol01 vg_server
+</code></pre></div><p>ئێمە لێرە دانەیێک Logical Volume بە قەبارەی 1Gb و بەناوی Vol01 دەناسێنین.</p>
+<p>بۆ دیتنی ئامانجی کارەکەمان و بارودۆخەکە لە Logical Volume دروستکراوە، فەرمانی خوارەوە دەنووسین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">lvdisplay vg_server
+</code></pre></div><p>ئامانج بەم شێوەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> --- Logical volume ---
+  LV Path                /dev/vg_server/Vol01
+  LV Name                Vol01
+  VG Name                vg_server
+  LV UUID                dwdyI0-yy7l-jF9U-bPHB-QNpO-15RO-0uKlPH
+  LV Write Access        read/write
+  LV Creation host, <span class="nb">time</span> debian, 2016-08-11 11:48:48 -0400
+  LV Status              available
+  <span class="c1"># open                 0</span>
+  LV Size                1.00 GiB
+  Current LE             <span class="m">256</span>
+  Segments               <span class="m">1</span>
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently <span class="nb">set</span> to     <span class="m">256</span>
+  Block device           253:0
+</code></pre></div><p>ئێستا دەتوانین Logical Volume ـی درووستکراوە لە گەڵ فۆرماتی فایلی سیستەمی دڵخوازمان بە شیوازی خوارەوە فۆرمات یان بسڕینەوە .</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mkfs -t ext4 /dev/vg_server/vol01
+</code></pre></div><p>لە کۆتایی بە فەرمانی mount ئەو ماونت بکەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount /dev/vg_server/vol01 /mnt
+</code></pre></div><p>ئەگەر بمانهەوێ ئەندازی Logical Volume دڵخوازمان بگۆڕین بەم شێوازە کردار دەکەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">lvextend -L +800 /dev/vg_server/vol01
+</code></pre></div><p>ئینجا بەفەرمانەکەی خوارەوە ئەو گۆڕانکارییە کە لە سەر Logical Volume ئەنجامان داوە تۆماری دەکەین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">resize2fs /dev/vg_server/vol01
+</code></pre></div><p>لە نمونەی سەرەوە 800Mb لە بۆشایی چۆڵ لە Volume Group بە Logical Volume مان زیاد کرد.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">lvremove /dev/vg_server/vol01
+</code></pre></div><p>بۆ سڕینەوەی Volume Group فەرمانی خوارەوە دەنووسین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">vgremove vg_server
+</code></pre></div>
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

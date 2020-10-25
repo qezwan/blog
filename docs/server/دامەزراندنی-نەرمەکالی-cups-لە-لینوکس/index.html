@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی CUPS کورتکراوەی Common UNIX Printing System کە لە سیستەمەکانی هاوشێوەی یونیکس(ماک ، لینوکس و BSD) بۆ پرینتکردن سوودی لێوەردەگرن.زۆرتری دابەشکراوەکانی گنو/لینوکس بە شێوازی پێشگریمان ئەم نەرمەکالایان بۆ چاپکردنی دۆکیومینتەکان لەسەرە .بەڵام کاتێک کار لە سەر سێرڤێر دەکەن یان لە شوێنێک کە ئەم نەرمەکالا لە سەر دابەشکراوەکەتان نەبێت، دەتوانن بە خوێندنەوەی ئەم بابەتە ئەم نەرمەکالا دامەزرێنن.
+دامەزراندن بۆ دامەزراندن CUPS سەرەتا دەبێت دڵنیا بن کە پەیوەندیتان هەیە بە ئینتەرنێتەوە ئینجا لە دابەشکراوەی ئوبونتو ئەم فەرمانە بنووسن :">
+
+<meta property="og:title" content="دامەزراندنی نەرمەکالی CUPS لە لینوکس" />
+<meta property="og:description" content="پێشەکی CUPS کورتکراوەی Common UNIX Printing System کە لە سیستەمەکانی هاوشێوەی یونیکس(ماک ، لینوکس و BSD) بۆ پرینتکردن سوودی لێوەردەگرن.زۆرتری دابەشکراوەکانی گنو/لینوکس بە شێوازی پێشگریمان ئەم نەرمەکالایان بۆ چاپکردنی دۆکیومینتەکان لەسەرە .بەڵام کاتێک کار لە سەر سێرڤێر دەکەن یان لە شوێنێک کە ئەم نەرمەکالا لە سەر دابەشکراوەکەتان نەبێت، دەتوانن بە خوێندنەوەی ئەم بابەتە ئەم نەرمەکالا دامەزرێنن.
+دامەزراندن بۆ دامەزراندن CUPS سەرەتا دەبێت دڵنیا بن کە پەیوەندیتان هەیە بە ئینتەرنێتەوە ئینجا لە دابەشکراوەی ئوبونتو ئەم فەرمانە بنووسن :" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%DB%8C-cups-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+<meta property="article:published_time" content="2017-03-14T05:35:45+00:00" />
+<meta property="article:modified_time" content="2017-03-14T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی نەرمەکالی CUPS لە لینوکس 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%DB%8C-cups-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2021%3a14%3a23.397737%20%2b0330%20%2b0330%20m%3d%2b0.782790601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2021%3a14%3a23.397737%20%2b0330%20%2b0330%20m%3d%2b0.782790601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2021%3a14%3a23.397737%20%2b0330%20%2b0330%20m%3d%2b0.782790601">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2021%3a14%3a23.397737%20%2b0330%20%2b0330%20m%3d%2b0.782790601">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی نەرمەکالی CUPS لە لینوکس
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue Mar 14 2017 05:35:45 UTC'>Mar 14, 2017</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>2 خولەک<div class="middot"></div>234 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی</h5>
+<p>CUPS کورتکراوەی Common UNIX Printing System کە لە سیستەمەکانی هاوشێوەی یونیکس(ماک ، لینوکس و BSD) بۆ پرینتکردن سوودی لێوەردەگرن.زۆرتری دابەشکراوەکانی گنو/لینوکس بە شێوازی پێشگریمان ئەم نەرمەکالایان بۆ چاپکردنی دۆکیومینتەکان لەسەرە .بەڵام کاتێک کار لە سەر سێرڤێر دەکەن یان لە شوێنێک کە ئەم نەرمەکالا لە سەر دابەشکراوەکەتان نەبێت، دەتوانن بە خوێندنەوەی ئەم بابەتە ئەم نەرمەکالا دامەزرێنن.</p>
+<h5 id="دامەزراندن">دامەزراندن</h5>
+<p>بۆ دامەزراندن CUPS سەرەتا دەبێت دڵنیا بن کە پەیوەندیتان هەیە بە ئینتەرنێتەوە ئینجا لە دابەشکراوەی ئوبونتو ئەم فەرمانە بنووسن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install cups $
+</code></pre></div><p>پاش دامەزراندنی CUPS، ئێستا دەبێت نەرمەکالاکە وەگرخەین و بەرێوەی ببەین  و لەترمیناڵ ئەم فەرمانە دەنووسین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo /etc/init.d/cups start $
+</code></pre></div><p>بۆ Restart کردنی نەرمەکالا دەبێت لەم فەرمانە سوود بگرین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo /etc/init.d/cups restart $
+</code></pre></div><p>بۆ ئەوە کە بزانین نەرمەکالاکە بە باشی ئیش دەکات دەبێت ئەم فەرمانە بنووسین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo /etc/init.d/cups status $
+</code></pre></div><p>بۆ وێستاننی نەرمەکالا دەبێت لەم فەرمانە سوود بگرین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo /etc/init.d/cups stop $
+</code></pre></div><p>کاتێک گەرەکتانە نەرمەکالا لە کاتی بووت بوونی سیستەمەکەتان بێتە سەر لەم فەرمانە سوود بگرن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo update-rc.d cups <span class="nb">enable</span> $
+</code></pre></div><p>کاتێک گەرەکتانە کە لە کاتی بووت کردنی سیستەمەکەتان، چاپکەر نەکەوێتە کار دەبێت ئەم فەرمانە بنووسن لە ترمیناڵ‌:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> sudo update-rc.d cups disable $
+</code></pre></div><p>زۆر یەک لە دابەشکراوەکانی گنو/لینوکس بە شێوازی گرافیکی و پێشگریمان وێنۆ چکەیێک(Icon) لە بەشی رێکخستنەکانی سیستەم هەیە کە توانایی بەرێوەبردنی پرینتێر/پرینتیرەکانیان بۆ دابینکراوە. بۆ ئەم مەبەستە دەتوانن
+بڕۆنە بەشی System Settings  ئینجا لە سەر دوکمەی Printer کرتە بکەن. بۆ وێنە لە گنو/لینوکسی ئێلێمێنتری بەم شێوازەیە :</p>
+<p><img src="https://qezwan.ir/server/images/03.jpg" alt=""></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی لەم وانە فێر دەبین کە چۆن ڕاژەیێکی Apache لە سەر گنو/لینوکسی CentOS 7 (راژە) بە پاڵپشتیکردنی PHP و MySQL دامەزرێنین.LAMP کورتکراوەی Linux, Apache, MySQL, PHPـە. ئەم وانە بەڕۆژبووە لە سەر PHP وشانی (7.0 وە 7.1) لە گنو/لینوکسی CentOS 7.3سێرڤێر.دەتوانن ئەم بابەتەش بۆ فێربوونی زیادتر بخوێنن
+1- خاڵێ سەرەکی : لەم فێرکارییە من سوودم بینیوە لە ناوی ڕاژەی server1.example.com بەم IPییە 192.168.1.100. دەتوانێت ئەم ناوانە بۆ ئێوە جیاواز بێت و بیگۆڕن بە سەلیقەو حەزی خۆتان.">
+
+<meta property="og:title" content="دامەزراندنی Apache, PHP ۷.۱ و MySQL لە CentOS ۷.۳" />
+<meta property="og:description" content="پێشەکی لەم وانە فێر دەبین کە چۆن ڕاژەیێکی Apache لە سەر گنو/لینوکسی CentOS 7 (راژە) بە پاڵپشتیکردنی PHP و MySQL دامەزرێنین.LAMP کورتکراوەی Linux, Apache, MySQL, PHPـە. ئەم وانە بەڕۆژبووە لە سەر PHP وشانی (7.0 وە 7.1) لە گنو/لینوکسی CentOS 7.3سێرڤێر.دەتوانن ئەم بابەتەش بۆ فێربوونی زیادتر بخوێنن
+1- خاڵێ سەرەکی : لەم فێرکارییە من سوودم بینیوە لە ناوی ڕاژەی server1.example.com بەم IPییە 192.168.1.100. دەتوانێت ئەم ناوانە بۆ ئێوە جیاواز بێت و بیگۆڕن بە سەلیقەو حەزی خۆتان." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-apache-php-%DB%B7.%DB%B1-%D9%88-mysql-%D9%84%DB%95-centos-%DB%B7.%DB%B3/" />
+<meta property="article:published_time" content="2017-03-20T05:35:45+00:00" />
+<meta property="article:modified_time" content="2017-03-20T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی Apache, PHP ۷.۱ و MySQL لە CentOS ۷.۳ 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-apache-php-%DB%B7.%DB%B1-%D9%88-mysql-%D9%84%DB%95-centos-%DB%B7.%DB%B3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2021%3a14%3a23.3687548%20%2b0330%20%2b0330%20m%3d%2b0.753808401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2021%3a14%3a23.3687548%20%2b0330%20%2b0330%20m%3d%2b0.753808401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2021%3a14%3a23.3687548%20%2b0330%20%2b0330%20m%3d%2b0.753808401">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2021%3a14%3a23.3687548%20%2b0330%20%2b0330%20m%3d%2b0.753808401">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی Apache, PHP ۷.۱ و MySQL لە CentOS ۷.۳
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Mar 20 2017 05:35:45 UTC'>Mar 20, 2017</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>6 خولەک<div class="middot"></div>1100 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی</h5>
+<p>لەم وانە فێر دەبین کە چۆن ڕاژەیێکی Apache لە سەر گنو/لینوکسی CentOS 7 (راژە) بە پاڵپشتیکردنی PHP و MySQL دامەزرێنین.LAMP کورتکراوەی Linux, Apache, MySQL, PHPـە. ئەم وانە بەڕۆژبووە لە سەر PHP وشانی (7.0 وە 7.1) لە گنو/لینوکسی CentOS 7.3سێرڤێر.دەتوانن <a href="http://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C%DB%8E%DA%A9%DB%8C-%D8%A8%DA%86%D9%88%D9%88%DA%A9-%D8%A8%DB%95-centos-7.3/">ئەم بابەتەش</a> بۆ فێربوونی زیادتر بخوێنن</p>
+<h5 id="1--خاڵێ-سەرەکی-">1- خاڵێ سەرەکی :</h5>
+<p>لەم فێرکارییە من سوودم بینیوە لە ناوی ڕاژەی server1.example.com بەم IPییە 192.168.1.100. دەتوانێت ئەم ناوانە بۆ ئێوە جیاواز بێت و بیگۆڕن بە سەلیقەو حەزی خۆتان. من گەرەکمە کە پاکەتی EPEL زیادبکەم بۆ دوایین وشانی phpMyAdmin لەم وانە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">*rpm –import /etc/pki/rpm-gpg/RPM-GPG-KEY
+yum -y install epel-release
+</code></pre></div><p>هەروا بۆ ئەوە کە دەستکاری فایلەکان بکەم پێویستم بە ئەپێکی دەستکاریکەری دەقە کە من لێرە لە nano سوود دەبینم،بە فەرمانەکەی خوارەوە دایدەمەزرێنم:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install nano
+</code></pre></div><h5 id="2--دامەزراندنی-mysql--mariadb">2- دامەزراندنی MySQL / MariaDB</h5>
+<p>MariaDB شاخەیێکە لە MySQL کە گەشەی سەندووە هەر بۆیە من لێرە بۆ پاشکەوتی زانیاریەکان لە MariaDB سوود دەگرم:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install mariadb-server mariadb
+</code></pre></div><p>بەفەرمانەکانی خوارەوە ئێمە دەتوانین کە لە کاتی دەستپێکردنی سیستەم MySQL دەستبە ئیش بکات و ئامادە بێت:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">systemctl start mariadb.service
+systemctl <span class="nb">enable</span> mariadb.service
+</code></pre></div><p>ئێستا دەبێت وشەی نهینی بۆ MySQL لە هەژمارەی root سازبکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mysql_secure_installation
+<span class="o">[</span>root@server1 ~<span class="o">]</span><span class="c1"># mysql_secure_installation</span>
+/usr/bin/mysql_secure_installation: line 379: find_mysql_client: <span class="nb">command</span> not found
+
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+SERVERS IN PRODUCTION USE! PLEASE READ EACH STEP CAREFULLY!
+
+In order to log into MariaDB to secure it, we<span class="s1">&#39;ll need the current
+</span><span class="s1">password for the root user. If you&#39;</span>ve just installed MariaDB, and
+you haven<span class="s1">&#39;t set the root password yet, the password will be blank,
+</span><span class="s1">so you should just press enter here.
+</span><span class="s1">
+</span><span class="s1">Enter current password for root (enter for none): &lt;--ENTER
+</span><span class="s1">OK, successfully used password, moving on...
+</span><span class="s1">
+</span><span class="s1">Setting the root password ensures that nobody can log into the MariaDB
+</span><span class="s1">root user without the proper authorisation.
+</span><span class="s1">
+</span><span class="s1">Set root password? [Y/n]
+</span><span class="s1">New password: &lt;--yourmariadbpassword
+</span><span class="s1">Re-enter new password: &lt;--yourmariadbpassword
+</span><span class="s1">Password updated successfully!
+</span><span class="s1">Reloading privilege tables..
+</span><span class="s1">... Success!
+</span><span class="s1">By default, a MariaDB installation has an anonymous user, allowing anyone
+</span><span class="s1">to log into MariaDB without having to have a user account created for
+</span><span class="s1">them. This is intended only for testing, and to make the installation
+</span><span class="s1">go a bit smoother. You should remove them before moving into a
+</span><span class="s1">production environment.
+</span><span class="s1">
+</span><span class="s1">Remove anonymous users? [Y/n] &lt;--ENTER
+</span><span class="s1">... Success!
+</span><span class="s1">
+</span><span class="s1">Normally, root should only be allowed to connect from &#39;</span>localhost<span class="s1">&#39;. This
+</span><span class="s1">ensures that someone cannot guess at the root password from the network.
+</span><span class="s1">
+</span><span class="s1">Disallow root login remotely? [Y/n] &lt;--ENTER
+</span><span class="s1">... Success!
+</span><span class="s1">
+</span><span class="s1">By default, MariaDB comes with a database named &#39;</span>test<span class="s1">&#39; that anyone can
+</span><span class="s1">access. This is also intended only for testing, and should be removed
+</span><span class="s1">before moving into a production environment.
+</span><span class="s1">
+</span><span class="s1">Remove test database and access to it? [Y/n] &lt;--ENTER
+</span><span class="s1">- Dropping test database...
+</span><span class="s1">... Success!
+</span><span class="s1">- Removing privileges on test database...
+</span><span class="s1">... Success!
+</span><span class="s1">
+</span><span class="s1">Reloading the privilege tables will ensure that all changes made so far
+</span><span class="s1">will take effect immediately.
+</span><span class="s1">
+</span><span class="s1">Reload privilege tables now? [Y/n] &lt;--ENTER
+</span><span class="s1">... Success!
+</span><span class="s1">
+</span><span class="s1">Cleaning up...
+</span><span class="s1">
+</span><span class="s1">All done! If you&#39;</span>ve completed all of the above steps, your MariaDB
+installation should now be secure.
+
+Thanks <span class="k">for</span> using MariaDB!
+<span class="o">[</span>root@server1 ~<span class="o">]</span><span class="c1">#</span>
+</code></pre></div><h5 id="3--دامەزراندنی-apache">3- دامەزراندنی Apache</h5>
+<p>:
+لە گنو/لینوکسی CentOS 7 ڕاژەی apache 2.4 بوونی هەیە ،بەڵام دەتوانین بەم فەرانە دایمەزرێنین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install httpd
+</code></pre></div><p>هەڵگرساندنی Apache لە کاتی دەستپێکی سیستەم دەتوانین بەم فەرمانە بانگی بکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">systemctl start httpd.service
+
+systemctl <span class="nb">enable</span> httpd.service
+</code></pre></div><p>بۆ ئەوە کە دەستپێگەیشتنمان بێت لە دەرەوەی ڕاژە دەبێت دەرگا یان پۆرتەکانی دیواریئاگرینەکەمان()بە (HTTP (80 وە (HTTPS (443 رێکبخەین.کە دەتوانین بە فەرمانەکانی خوارەوە کانفیگی بکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">firewall-cmd --permanent --zone<span class="o">=</span>public --add-service<span class="o">=</span>http
+firewall-cmd --permanent --zone<span class="o">=</span>public --add-service<span class="o">=</span>https
+firewall-cmd --reload
+</code></pre></div><p>دەتوانن بە کردنەوەی وێبگەرەکەتان و نووسینی ئەم IP ئادرەسە واتە http://192.168.1.100 ڕاژەی Apache ببینن :</p>
+<p><img src="https://qezwan.ir/server/images/04.png" alt=""></p>
+<h5 id="4-دامەزراندنی-php-">4-دامەزراندنی PHP :</h5>
+<p>لە CentOS وشانی کۆنەی PHP بوونی هەیە واتە (PHP 5.4)، بەڵام من لێرە فێرتان دەکەم کە وشانی نوێی PHP کە بریتییە لە PHP 7.0 یا 7.1 لە کانگای Remi دامەزرێنین. بۆ زیاد کردنی Remi دەتوانین لە فەرمانەکەی خوارەوە سوود بگرین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+</code></pre></div><p>دامەزراندنی yum-utils بۆ پەیکەربەستنی yum-config-manager بە فەرمانەکەی خوارەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install yum-utils
+</code></pre></div><p>سەرەتا yum بەرۆژ بکەن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum update
+</code></pre></div><p>ئێستا سەرەتا وشانی کۆنەی PHP دادەمەزرێنین وە لە دوو بەشی جیاواز فێر دەبین کە چۆن وشانی PHP 7.0 وە PHP 7.1 دامەزرێنین :</p>
+<p>سەرەتا بۆ دامەزراندنی وشانی کۆنەی PHP 5.4 فەرمانەکەی خوارەوە دەنووسین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install php
+</code></pre></div><h6 id="1-4--دامەزراندنی-وشانی-php-70-">1-4- دامەزراندنی وشانی PHP 7.0 :</h6>
+<p>بۆ دامەزراندنی وشانی PHP 7.0 هەروا  Apache PHP 7.0 بەم فەرمانە کردار دەکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum-config-manager –enable remi-php70
+
+yum -y install php php-opcache
+</code></pre></div><h6 id="2-4--دامەزراندنی-وشانی-php-71-">2-4- دامەزراندنی وشانی PHP 7.1 :</h6>
+<p>بۆ دامەزراندنی وشانی PHP 7.1 لەم دوو فەرمانە سوود دەگرین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum-config-manager –enable remi-php71
+
+yum -y install php php-opcache
+</code></pre></div><p>پاش گۆڕانکاریەکانی سەرەوە ئێمە دەبێت Apache ریستارت بکەینەوە . فەرمانەکەی خوارەوە دەنوسین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">systemctl restart httpd.service
+</code></pre></div><h5 id="5--تاقیکردنیphp-">5- تاقیکردنیPHP :</h5>
+<p>لە مەسیری var/www/html/ ئێمە دەتوانین فایلێکی PHP درووست بکەین بە ناویinfo.php ،ئەم فایلە زانیاریەکانمان پێ پیشان دەدا. بە فەرمانەکەی خوارەوە دەچینە ناو ئەو فایلە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nano /var/www/html/info.php
+</code></pre></div><p>ئێستا لە ناو فایلەکە واتە info.php ئەم هێڵە دەنووسین و پاشکەوتی دەکین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">
+</code></pre></div><p>ئیستا دەبێت لە شریتی ناونیشانی  وێبگەرەکە ئەم مەسیرە بنووسین http://192.168.1.100/info.php</p>
+<p><img src="https://qezwan.ir/server/images/04-1.png" alt=""></p>
+<p>ێوە دەبینن زانیاری ڕاژە دەردەکەوێت و وشانی PHP 7.1 خەریکی کارکردنە و هەروا Apache 2.0 .</p>
+<h5 id="6--دامەزراندنی-mysql-بۆ-پشتیوانیphp-">6- دامەزراندنی MySQL بۆ پشتیوانیPHP :</h5>
+<p>دامەزراندنی MySQL و پشتیوانی لە PHP،ئێمە ئەتوانین پاکەتی php71w-mysql دامەزرێنین.سەرەتا بە فەرمانەکەی خوارەوە دەگەرێین بۆ ماژۆڵێ phpـەکەمان</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum search php
+</code></pre></div><p>بەفەرمانەکەی خوارەوە دایدەمەزرێنین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install php-mysql
+</code></pre></div><p>لە هەنگاوەکەی دیکە ئێمە چەندین ماژۆڵی PHP دادەمەزرێنین بۆ ئەوە کە بتوانین سیستەمەکانی بەرێوەبردنی ناوەرۆک وەک وۆردپرێس،درۆپاڵ و ژۆمڵایلە سەر دامەزرێنین…</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-soap curl curl-devel
+</code></pre></div><p>ئێستا ریستارت دەکەینەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">systemctl restart httpd.service
+</code></pre></div><p>ئێستا ناونیشانی http://192.168.1.100/info.php لە وێبگەرەکەمان دەنووسین و سکرۆڵ دینینە خوارەوە تا چاومان بە نوێکاریەکان بکەوێت وەک curl و …هتد.</p>
+<p><img src="https://qezwan.ir/server/images/04-2.png" alt=""></p>
+<p>ئیتر پێویستان بە فایلی php info نییەو دەتوانن بە فەرمانەکەی خوارەوە لە ترمیناڵ بیسڕنەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">rm /var/www/html/info.php
+</code></pre></div><h5 id="7-دامەزراندنی-phpmyadmin-">7-دامەزراندنی phpMyAdmin :</h5>
+<p>phpMyAdmin ڕووخسارێکە بۆ بەرێوەبردنی بنکەدراوەی MySQL واتە شێوازێکی گرافیکی کارکردن لە سەر ئەم داتا بەیسەیە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install phpMyAdmin
+</code></pre></div><p>ئێستا دەبێتphpMyAdmin کانفیگ بکەین کە پێویستی بە ‘Require all granted’ هێڵەیە .سەرەتا دەچینە ناو فایلی کانفیگەکەی :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nano /etc/httpd/conf.d/phpMyAdmin.conf
+</code></pre></div><p>دەستکاری دەکەین وەک نموونەی خوارەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>...<span class="o">]</span>
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+
+ AddDefaultCharset UTF-8
+
+ 
+ <span class="c1"># Apache 2.4</span>
+<span class="c1"># </span>
+<span class="c1"># Require ip 127.0.0.1</span>
+<span class="c1"># Require ip ::1</span>
+<span class="c1"># </span>
+ Require all granted
+ 
+ 
+ <span class="c1"># Apache 2.2</span>
+ Order Deny,Allow
+ Deny from All
+ Allow from 127.0.0.1
+ Allow from ::1
+ 
+
+
+
+
+
+        Options none
+        AllowOverride Limit
+        Require all granted
+
+
+<span class="o">[</span>...<span class="o">]</span> 
+</code></pre></div><p>ئێستا دەبێت بوونی phpMyAdmin لە cookie to http بگۆڕین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nano /etc/phpMyAdmin/config.inc.php
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>...<span class="o">]</span>
+<span class="nv">$cfg</span><span class="o">[</span><span class="s1">&#39;Servers&#39;</span><span class="o">][</span><span class="nv">$i</span><span class="o">][</span><span class="s1">&#39;auth_type&#39;</span><span class="o">]</span>     <span class="o">=</span> <span class="s1">&#39;http&#39;</span><span class="p">;</span>    // Authentication method <span class="o">(</span>config, http or cookie based<span class="o">)</span>?
+<span class="o">[</span>...<span class="o">]</span>
+</code></pre></div><p>Apache ریستارت دەکەینەوە بەم فەرمانە :</p>
+<blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">systemctl restart httpd.service
+</code></pre></div></blockquote>
+<p>بۆ دەستپێگەیشتن بە رووخساری بنکەی دراوە واتە دەتوانی ئادرەسی http://192.168.1.100/phpmyadmin لە وێبگەڕەکەت بنووسیت .</p>
+<p><img src="https://qezwan.ir/server/images/04-3.png" alt=""></p>
+<h5 id="بەستەرەکان-">بەستەرەکان :</h5>
+<p>Apache: <a href="http://httpd.apache.org">http://httpd.apache.org</a>
+PHP: <a href="http://www.php.net">http://www.php.net</a>
+MySQL: <a href="http://www.mysql.com">http://www.mysql.com</a>
+CentOS: <a href="http://www.centos.org">http://www.centos.org</a>
+phpMyAdmin: <a href="http://www.phpmyadmin.net">http://www.phpmyadmin.net</a></p>
+<p><a href="https://www.howtoforge.com/tutorial/centos-lamp-server-apache-mysql-php/">howtoforge</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

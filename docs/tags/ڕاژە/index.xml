@@ -6,7 +6,48 @@
     <description>Recent content in ڕاژە on Qezwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 24 Feb 2017 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Aug 2017 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>دامەزراندنی LVM لە لینوکس</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-lvm-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
+      <pubDate>Tue, 15 Aug 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-lvm-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
+      <description>LVM کورتکراوەی Logical Volume Manager شێوازێکی پێشکەوتوو بۆ بەڕێوەبردنی پارتیشێنەکان و بۆشایی هاردە، کە ئیمکاناتێکی فرە بە بەراوەرد لە گەڵ شێوازە کۆنەکان دەخاتە بەردەست بۆ بەڕێوەبەری ڕاژە.
+لە LVM دەتوانین کۆی هاردەکان و پارتیشێنەکان کە بە Physical Volume ناسراوەن بەشێوازی چەند دیسکی مەنتەقی، گەورەتر و یەکپارچە بە ناوی Volume Group دروست بکەین و لە سەر ئەم دیسکانە پارتیشێنی خۆمان کە بە Logical Volume ناسراوەن بخولقێنین.
+سوودی ئەم شێوازە لەوەدایە کە کاتێک کە قەبارەی ئەکێک لە پارتیشینەکان تەواو بوون دەتوانیی بۆشاییێکی بخەینە سەر واتە قەبارەی پێ زیاد بکەین بێ ئەوە کە کێشەیێک درووست بێ.</description>
+    </item>
+    
+    <item>
+      <title>قەپاتکردنیIP هێرشکەر بە یارمەتی htaccess</title>
+      <link>https://qezwan.ir/server/%D9%82%DB%95%D9%BE%D8%A7%D8%AA%DA%A9%D8%B1%D8%AF%D9%86%DB%8Cip-%D9%87%DB%8E%D8%B1%D8%B4%DA%A9%DB%95%D8%B1-%D8%A8%DB%95-%DB%8C%D8%A7%D8%B1%D9%85%DB%95%D8%AA%DB%8C-htaccess/</link>
+      <pubDate>Tue, 15 Aug 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D9%82%DB%95%D9%BE%D8%A7%D8%AA%DA%A9%D8%B1%D8%AF%D9%86%DB%8Cip-%D9%87%DB%8E%D8%B1%D8%B4%DA%A9%DB%95%D8%B1-%D8%A8%DB%95-%DB%8C%D8%A7%D8%B1%D9%85%DB%95%D8%AA%DB%8C-htaccess/</guid>
+      <description>زۆر جار ماڵپەڕ دەکەوێتە ژێر هێرشی پڕ کردنی ترافیک و خەوتنی خزمەتگوزاریەکانی ڕاژە.یەکێک لەم هێرشانە دەتوانێ بە شێوازی DOS یان DDOS بە ڕاژە بێ.سەرەتا دەبێ بە یارمەتی لاگی(logs) ڕاژە ئەو IPیە کە هێرشی کردووەتە سەرتان پەیدای بکەن .ئینجا لە ڕێگای فایلی htaccess. کە لە بەشی ڕووتی(بۆ وینە لە سی-پانێل شاخەی public_html) ڕاژەکەتان درووستی دەکەن IPقەپات بکەن.
+خاڵ : گەر ئەو فایلە بوونی نەبوو دەبێ خۆتان درووستی بکەن بەڵام دەبێ خاڵێک(.) لە سەرەتای ناوەکە ببێ.</description>
+    </item>
+    
+    <item>
+      <title>دامەزراندنی Apache, PHP ۷.۱ و MySQL لە CentOS ۷.۳</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-apache-php-%DB%B7.%DB%B1-%D9%88-mysql-%D9%84%DB%95-centos-%DB%B7.%DB%B3/</link>
+      <pubDate>Mon, 20 Mar 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-apache-php-%DB%B7.%DB%B1-%D9%88-mysql-%D9%84%DB%95-centos-%DB%B7.%DB%B3/</guid>
+      <description>پێشەکی لەم وانە فێر دەبین کە چۆن ڕاژەیێکی Apache لە سەر گنو/لینوکسی CentOS 7 (راژە) بە پاڵپشتیکردنی PHP و MySQL دامەزرێنین.LAMP کورتکراوەی Linux, Apache, MySQL, PHPـە. ئەم وانە بەڕۆژبووە لە سەر PHP وشانی (7.0 وە 7.1) لە گنو/لینوکسی CentOS 7.3سێرڤێر.دەتوانن ئەم بابەتەش بۆ فێربوونی زیادتر بخوێنن
+1- خاڵێ سەرەکی : لەم فێرکارییە من سوودم بینیوە لە ناوی ڕاژەی server1.example.com بەم IPییە 192.168.1.100. دەتوانێت ئەم ناوانە بۆ ئێوە جیاواز بێت و بیگۆڕن بە سەلیقەو حەزی خۆتان.</description>
+    </item>
+    
+    <item>
+      <title>دامەزراندنی نەرمەکالی CUPS لە لینوکس</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%DB%8C-cups-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
+      <pubDate>Tue, 14 Mar 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%DB%8C-cups-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
+      <description>پێشەکی CUPS کورتکراوەی Common UNIX Printing System کە لە سیستەمەکانی هاوشێوەی یونیکس(ماک ، لینوکس و BSD) بۆ پرینتکردن سوودی لێوەردەگرن.زۆرتری دابەشکراوەکانی گنو/لینوکس بە شێوازی پێشگریمان ئەم نەرمەکالایان بۆ چاپکردنی دۆکیومینتەکان لەسەرە .بەڵام کاتێک کار لە سەر سێرڤێر دەکەن یان لە شوێنێک کە ئەم نەرمەکالا لە سەر دابەشکراوەکەتان نەبێت، دەتوانن بە خوێندنەوەی ئەم بابەتە ئەم نەرمەکالا دامەزرێنن.
+دامەزراندن بۆ دامەزراندن CUPS سەرەتا دەبێت دڵنیا بن کە پەیوەندیتان هەیە بە ئینتەرنێتەوە ئینجا لە دابەشکراوەی ئوبونتو ئەم فەرمانە بنووسن :</description>
+    </item>
+    
     <item>
       <title>دامەزراندنی ڕاژەیێکی بچووک بە CentOS 7.3</title>
       <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C%DB%8E%DA%A9%DB%8C-%D8%A8%DA%86%D9%88%D9%88%DA%A9-%D8%A8%DB%95-centos-7.3/</link>
