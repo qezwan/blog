@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Relax: سیستەمی بەڕێوەبردنی ناوەرۆک لە سەر بنەمای React ،Redux و GraphQL
+title: Relax:سیستەمی بەڕێوەبردنی ناوەرۆک لە سەر بنەمای React ،Redux و GraphQL
 tags: [سەرچاوەکراوە]
 date : "2020-10-25 12:35:45"
 ---

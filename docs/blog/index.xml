@@ -8,6 +8,18 @@
     <language>en-US</language>
     <lastBuildDate>Sat, 22 Aug 2015 06:42:21 -0700</lastBuildDate><atom:link href="https://qezwan.ir/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Relax:سیستەمی بەڕێوەبردنی ناوەرۆک لە سەر بنەمای React ،Redux و GraphQL</title>
+      <link>https://qezwan.ir/blog/relax%D8%B3%DB%8C%D8%B3%D8%AA%DB%95%D9%85%DB%8C-%D8%A8%DB%95%DA%95%DB%8E%D9%88%DB%95%D8%A8%D8%B1%D8%AF%D9%86%DB%8C-%D9%86%D8%A7%D9%88%DB%95%D8%B1%DB%86%DA%A9-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%A8%D9%86%DB%95%D9%85%D8%A7%DB%8C-react-redux-%D9%88-graphql/</link>
+      <pubDate>Sun, 25 Oct 2020 12:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/blog/relax%D8%B3%DB%8C%D8%B3%D8%AA%DB%95%D9%85%DB%8C-%D8%A8%DB%95%DA%95%DB%8E%D9%88%DB%95%D8%A8%D8%B1%D8%AF%D9%86%DB%8C-%D9%86%D8%A7%D9%88%DB%95%D8%B1%DB%86%DA%A9-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%A8%D9%86%DB%95%D9%85%D8%A7%DB%8C-react-redux-%D9%88-graphql/</guid>
+      <description>Relax سیستەمێکی بەڕێوەبردنی ناوەرۆک لە سەر بنەمای React ،Redux و GraphQL؛ مەبەست لە دیزاین باشتر کردنی بۆ دروستکردنی ماڵپەڕە. Relax لە دروستکەرێکی پەڕەبۆزیادکردن سوود وەردەگرێت و ڕێگایێکی خێرا و سادە بۆ پەیوەندی یان بەستنەوەی دراوە جولاوەکانە بۆ گەشەپێدەران.
+دامەزراندنی سیستەمی ناوەڕۆکی Relax
+سەرەتا دەبێت بچین بۆ گیت‌هاب و دایبگرین؛ ئینجا کۆدەکانی خورەوەی تێدا بنووسین :
+$ yarn $ yarn build $ yarn start پێشگریمانە لە سەر دەرگای ٨٠٨٠ دەکرێتەوە؛ بەڵام دەتوانن ئەم دەرگا(پۆرتە) بگۆڕن.</description>
+    </item>
+    
+    <item>
       <title>Apache Guacamole:ئامرازێکی سەرچاوەکراوە بۆ دیتنی ڕوومێزی لە ڕێگەی دوورەوە</title>
       <link>https://qezwan.ir/blog/apache-guacamole%D8%A6%D8%A7%D9%85%D8%B1%D8%A7%D8%B2%DB%8E%DA%A9%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86-%D8%AF%DB%8C%D8%AA%D9%86%DB%8C-%DA%95%D9%88%D9%88%D9%85%DB%8E%D8%B2%DB%8C-%D9%84%DB%95-%DA%95%DB%8E%DA%AF%DB%95%DB%8C-%D8%AF%D9%88%D9%88%D8%B1%DB%95%D9%88%DB%95/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
