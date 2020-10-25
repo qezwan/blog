@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ڕاژە on Qezwan</title>
+    <link>https://qezwan.ir/server/</link>
+    <description>Recent content in ڕاژە on Qezwan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 22 May 2017 06:42:21 -0700</lastBuildDate><atom:link href="https://qezwan.ir/server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>دامەزراندنی بەستەری تۆڕ لە دێبیان، ئوبونتو و مینت(Network Interface)</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A8%DB%95%D8%B3%D8%AA%DB%95%D8%B1%DB%8C-%D8%AA%DB%86%DA%95-%D9%84%DB%95-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88-%D9%88-%D9%85%DB%8C%D9%86%D8%AAnetwork-interface/</link>
+      <pubDate>Mon, 06 Feb 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A8%DB%95%D8%B3%D8%AA%DB%95%D8%B1%DB%8C-%D8%AA%DB%86%DA%95-%D9%84%DB%95-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88-%D9%88-%D9%85%DB%8C%D9%86%D8%AAnetwork-interface/</guid>
+      <description>پێشەکی زۆر یەک لە سیستەمەکارپێکردنەکان رێدەدەن بە دامەزراندن و بەستەری تۆر (Network Interface)، بە یارمەتی هێڵی فەرمان(command line).لە لینوکس ئێمە دەتوانین زۆر بە بەر بڵاوی بۆ دامەزراندن و دەستکاری کردنی بەستەری ڕایەڵە یان تۆڕ،کردار ئەنجام بدەین.لەم بابەتە شڕۆڤە ئەکەین لە سەر بەستری ئامادەکردنی تۆڕی لە سەرسیستەمی کارپێکردنی دێبیان،ئوبونتو و مینت .
+۱- دامەزراندنی خزمەتگوزاری “Hostname” لێرە ئێوە دەتوان ناوی ڕژە یان سێرڤێر یان ڕاژەیێکی نوێ بناسێنن بە سیستەمی کارپێکردنەکەتان. ناوی ڕاژە لە ترمیناڵ بنووسن ئینجا لەسەر دوکمەی Enter کرتە بکەن.</description>
+    </item>
+    
+    <item>
+      <title>پێرستکردن و دامەزراندنی پاکەتەکان لە دێبیان و ئوبونتو</title>
+      <link>https://qezwan.ir/server/%D9%BE%DB%8E%D8%B1%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86-%D9%88-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D9%88-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/</link>
+      <pubDate>Mon, 06 Feb 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D9%BE%DB%8E%D8%B1%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86-%D9%88-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D9%88-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/</guid>
+      <description>گەر ئێوە کار بە دابەشکراوەکانی گنو/لینوکسی دێبیان و ئوبونتو دەکەن و پێتان خۆشە کە بزانن چەندە پاکەت و نەرمەکالاتان دامەزراندووە باش وایە ئەم بابەتە بخوێنن. هەروا گەر پێتان خۆشە کە پاکەتەکان لە ڕاژەی یەکەم بگوازنەوە بۆ ڕاژەی دووهەم ئەم بابەتە بەسوود دەبێت بۆتان. ئێوە پێویستان بە دامەزراندنی dpkg و چەن فەرمانە کە لێرە بە ئاسانی ئەنجامی دەدەین. -نیشاندانی ئەو پاکەتانە کە داتمەزراندووە بەم فەرماە :
+dpkg --get-selections | grep -v deinstall ئەمەش ئەنجامەکەی :(من چەند هێڵ دێنم گەر نە فرەس)</description>
+    </item>
+    
+    <item>
+      <title>دامەزراندنی خزمەتگوزاری LAMP لە لینوکس</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-lamp-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
+      <pubDate>Sat, 04 Feb 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-lamp-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
+      <description>پێشەکی وشەی LAMP کورتکراوەی Linux, Apache, MySQL, PHP ـە وشەی لینوکس بە هۆی دامەزراندی لە نێو لینوکس بەم کورتکراوە لکاوە.گەر ئێوە سیستەمی کارپیکردنەکەتان ویندۆز بێت ئەم خزمەتگوزارییە تێدا دامەزرینن دەبێتە WAMP ، گەر لە ماک کەڵک وەرگرن دەبێت بە MAMP .زۆر کەس پێیان خۆشە لە رێگایێکی سادە LAMP دامەزرێنن، ئەوەش دەکرێت و ئاسایش و پاراستنی هەیە کە بە شێوازێکی گرافیلی قۆناغەکانی دامەزراندن بۆ بەکارهێنەرانی ویندۆز،ماک و گنو.لینوکس دەخاتە بەردەست.بەڵام گەر پێتان خۆشە بە شێوازی دەستی ئەم کارە ئەنجام بدەین هاورێمان بن.</description>
+    </item>
+    
+    <item>
+      <title>دامەزراندنی خزمەتگوزاری DHCP Server لە لینوکس</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-dhcp-server-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
+      <pubDate>Wed, 01 Feb 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-dhcp-server-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
+      <description>پێشەکی هەر وا کە دەزانن دوو کۆمپیوتر لە تۆڕ بۆ پەیوەندی گرتن بە یەکەوە پێویستیان بە IP ئادرەسێکی یەکتا هەیە، کە تایبەت بە خۆیان بێت. بە گشتی لە تۆر بۆ ڕاژە بە دوو رێگا ئەم ئادرەسە بەدەست دێت :
+ سازکردن بە شێوازی دەستی: لەم رێگا دەبێ لەسەر هەموو کۆمپیوترەکانی (کلاینێتەکان) لە تۆڕ IP بە شێوازی دەسی بنووسرێت. وەرگرتنی خۆکارانە: لەم رێگا سوود لە دەروازە یان پرۆتۆکۆلی DHCP، کە کۆمپیوترەکانی تۆڕ (کلاینێتەکان) داوای IP لێ دەکەن .</description>
+    </item>
+    
+    <item>
+      <title>دامەزراندنی خزمەتگوزاری vsftpd لە لینوکسی</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-vsftpd-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C/</link>
+      <pubDate>Wed, 01 Feb 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-vsftpd-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C/</guid>
+      <description>پێشەکی FTP کورتکراوەی File Transfer Protocol یان دەرگاو پرتۆکۆلی گواستنەوەی فایلەکانە. ئیشی ئەم دەروازە یان درگا یان پۆرتە هاوبەشکردن و گواستنەوەی فایلەکانە. زۆر خزمەتگوزاری هەیە کە لە ژێر ئەم پرتۆکۆلە نووسراوەن و لەسەر ڕاژە ئیشدەکەن .یەکێک لەم نەرمەکالانە کە زۆر بەهێز و پارێزراوە لە بواری ئاسایش vsftpd ـە. لەم بابەتە فێری دامەزراندن و رێکخستنی دەبین. بۆ دامەزراندنی پاکەتی vsftpd فەرمانەکەی خوارەوە دەنووسین :
+sudo apt-get install vsftpd کانفیگ ئێستا دەبێ وەک دەقەکەی خوارەوە فایلی etc/vsftpd.</description>
+    </item>
+    
+    <item>
+      <title>دامەزرادنی خزمەتگوزاری Samba لە لینوکس</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-samba-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
+      <pubDate>Mon, 30 Jan 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-samba-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
+      <description>پێشەکی Samba ئامرازێکی بەهێزە کە بە یارمەتی،دەتوانن خزمەتگوزاری هاوبەشکردنی فایل و چاپگەر بۆ کلاینێتەکانی مایکرۆسۆفت واتە ویندۆزی ئەنجام بدەن.هەروا دەتوانن بێجگە لەمە بە جێگای دۆمەین کنترۆلێر لە تۆرەکانی سەر بنەمای Windows Server Domain سوودی لێببینن.لە وشانی 4ـی ئەم نەرمەکالا پاڵپستی لە Active Directory و دۆمەینەکانی Windows NT پێی زیاد کراوە. لەم فیرکارییە شێوازی کارکردن و هاوبەسکردنی سەرچاوەکان لە سەر خزمەتگوزاری Samba لە سەر کلاینێتەکانی مایکرۆسۆفت و لینوکس فێر دەکەین.
+دامەزراندن بۆ دامەزراندنی خزمەتگوزاری Samba فەرمانەکەی خوارەوە بنووسن:</description>
+    </item>
+    
+    <item>
+      <title>دامەزرادنی خزمەتگوزاری DNS Server لە لینوکس</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-dns-server-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
+      <pubDate>Sun, 29 Jan 2017 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-dns-server-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
+      <description>پێشەکی هەروا کە دەزانن کاتێک دەچنە نێو ماڵپەڕێک دەبێ ئادرەس یان ناونشانی ئەو ڕاژەی ماڵپەرە بزانن واتە ئای-پی ـیەکەی (IP Address) . لەبەرکردنی ئەم ناونیشانەی IPـی بۆ تەواوی ئەو ماڵپەڕانە کە سەردانیان دەکەین زۆر دشوارە.باش وایە بە جێگای لەبەرکردن و نووسینی ناونیشانی IP دۆمەینەکە، لە خزمەتگوزاری نێوی دۆمەینەکە واتە DNS سوودبگرین، واتە ناوی ماڵپەڕ بزانین و لەبەری بکەین.ئەم خزمەتگوزارییە (DNS)،ئادرەسی ئای پی ماڵپەڕەکە یان ڕاژەی ماڵپەرەکەمانبە ناوی ماڵپەڕەکە وەردەگێڕێت. لەم فێرکارییە بە دامەزرادنی نەرمەکالای bind بۆ ئەم خزمەتگوزارییە لە لینوکس ئاشنا دەبین.</description>
+    </item>
+    
+    <item>
+      <title>دامەزراندنی خزمەتگوزاری DDNS لە لینوکس</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-ddns-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-ddns-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
+      <description>پێشەکی تا ئێستا بۆاتان پێشهاتووە کە گەرەکتانە لە شوێنێکی دیکە لەگەڵ کۆمپیوتری ماڵەوە پەیوەندی بە SSH بگرن یان لە ڕاژەی ماڵەوە بەیارمەتی ftp فایلێک دابگرن.بۆ ئەم کارە بێجگە لە سازکردنی Port Forwarding دەبێت IP Public خۆتان بزانن.زۆر کەس بە مۆدێمی ADSL پەیوەندی بە ئینتەرنێت دەگرێت .مۆدێمی ADSL بە هەر بار کوژاندنەوە و هەڵگرساندن IPـی دەگۆڕێت. واتە ئەم خزمەتگوزاریانە بە شێوازی Dynamicـکە.بۆ لابردنی ئەم کێشە لە Static IP سوود وەردەگرن کە سەرئێشەی تایبەت بە خۆی هەیەو بە خۆڕاییش نییە.</description>
+    </item>
+    
+    <item>
+      <title>دامەزراندنی خزمەتگوزاری NFS لە لینوکسی دێبیان</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-nfs-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-nfs-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/</guid>
+      <description>پێشەکی فایل سیستەمیNFS فایل سیستەمی دابەشکراوە بۆ ڕایەڵەیە کە لە ساڵی 1984 لە لایەن Sun Microsystems گەشەپێدراوە .ئەم خزمەتگوزارییە بە بەکارهێنەرانی ڕایەڵە ئەم تواناییە دەدات کە بە فایلەکانی تۆڕ وەک فایلی Local خۆیان دەستپێگەیشتنیان بێت. لەم فێرکارییە بە چۆنیەتیدامەزراندنی NFS وە هەروەها Mount کردنی ئەو سیستەمانە لە سەر Client ئاماژە دەکەین.
+دامەزراندن بۆ دامەزراندنی NFS لەسەر ڕاژە بەم جۆرە کردار دەکەین :
+sudo apt-get install nfs-kernel-server ئینجا فایلی etc/exports/ دەستکاری دەکەین و ئەو دایکریکتۆرییە کە گەرەکمانە هاوبەشی بکەین دیاری دەکەین.</description>
+    </item>
+    
+  </channel>
+</rss>

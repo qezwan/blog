@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی FTP کورتکراوەی File Transfer Protocol یان دەرگاو پرتۆکۆلی گواستنەوەی فایلەکانە. ئیشی ئەم دەروازە یان درگا یان پۆرتە هاوبەشکردن و گواستنەوەی فایلەکانە. زۆر خزمەتگوزاری هەیە کە لە ژێر ئەم پرتۆکۆلە نووسراوەن و لەسەر ڕاژە ئیشدەکەن .یەکێک لەم نەرمەکالانە کە زۆر بەهێز و پارێزراوە لە بواری ئاسایش vsftpd ـە. لەم بابەتە فێری دامەزراندن و رێکخستنی دەبین. بۆ دامەزراندنی پاکەتی vsftpd فەرمانەکەی خوارەوە دەنووسین :
+sudo apt-get install vsftpd کانفیگ ئێستا دەبێ وەک دەقەکەی خوارەوە فایلی etc/vsftpd.">
+
+<meta property="og:title" content="دامەزراندنی خزمەتگوزاری vsftpd لە لینوکسی" />
+<meta property="og:description" content="پێشەکی FTP کورتکراوەی File Transfer Protocol یان دەرگاو پرتۆکۆلی گواستنەوەی فایلەکانە. ئیشی ئەم دەروازە یان درگا یان پۆرتە هاوبەشکردن و گواستنەوەی فایلەکانە. زۆر خزمەتگوزاری هەیە کە لە ژێر ئەم پرتۆکۆلە نووسراوەن و لەسەر ڕاژە ئیشدەکەن .یەکێک لەم نەرمەکالانە کە زۆر بەهێز و پارێزراوە لە بواری ئاسایش vsftpd ـە. لەم بابەتە فێری دامەزراندن و رێکخستنی دەبین. بۆ دامەزراندنی پاکەتی vsftpd فەرمانەکەی خوارەوە دەنووسین :
+sudo apt-get install vsftpd کانفیگ ئێستا دەبێ وەک دەقەکەی خوارەوە فایلی etc/vsftpd." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-vsftpd-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C/" />
+<meta property="article:published_time" content="2017-02-01T05:35:45+00:00" />
+<meta property="article:modified_time" content="2017-02-01T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی خزمەتگوزاری vsftpd لە لینوکسی 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-vsftpd-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2019%3a42%3a16.8645258%20%2b0330%20%2b0330%20m%3d%2b0.540987401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2019%3a42%3a16.8645258%20%2b0330%20%2b0330%20m%3d%2b0.540987401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2019%3a42%3a16.8645258%20%2b0330%20%2b0330%20m%3d%2b0.540987401">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2019%3a42%3a16.8645258%20%2b0330%20%2b0330%20m%3d%2b0.540987401">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+<section class="main">
+    <div class="container">
+        <div class="content">
+            <div class="page-heading">
+
+    دامەزراندنی خزمەتگوزاری vsftpd لە لینوکسی
+
+
+</div>
+
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی</h5>
+<p>FTP کورتکراوەی File Transfer Protocol یان دەرگاو پرتۆکۆلی گواستنەوەی فایلەکانە. ئیشی ئەم دەروازە یان درگا یان پۆرتە هاوبەشکردن و گواستنەوەی فایلەکانە. زۆر خزمەتگوزاری هەیە کە لە ژێر ئەم پرتۆکۆلە نووسراوەن و لەسەر ڕاژە ئیشدەکەن .یەکێک لەم نەرمەکالانە کە زۆر بەهێز و پارێزراوە لە بواری ئاسایش vsftpd ـە. لەم بابەتە فێری دامەزراندن و رێکخستنی دەبین.
+بۆ دامەزراندنی پاکەتی vsftpd فەرمانەکەی خوارەوە دەنووسین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install vsftpd 
+</code></pre></div><h5 id="کانفیگ">کانفیگ</h5>
+<p>ئێستا دەبێ وەک دەقەکەی خوارەوە فایلی etc/vsftpd.conf/ دەستکاری و گۆرانکاریەکان پاشکەوت بکەین.
+بە شێوازی پێشگریمان vsftpd ئەم نەرمەکالا بۆ خزمەتگوزاری لە سەر بنەمای دەرگای IPv6 رێکخراوە، گەر لە تۆڕەکەتان سوود لە IPv6 ناگرن وەک فەرمانەکەی خوارەوە کردار بکەن :
+یەکەم فایلەکەی خوارەوە لە شێوازی شرۆڤە دەربێنن و بیگۆرن بە وشەی YES .</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">listen</span><span class="o">=</span>YES  
+</code></pre></div><p>ئێستا وشەی NO بۆ IPv6 دابین بکەن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">listen_ipv6</span><span class="o">=</span>NO  
+</code></pre></div><p>بە شێوازی پێشگریمان ئەم خزمەتگوزارییە لە سەر Anonymous FTP رێکخراوە. لەم حاڵەتە هەر بەکارهێنەر بە ناوی بەکارهێنەری Anonymous و هەر وشەی نهێنییێک دەتوانێت لەم خزمەتگوزارییە سوود بگرێت و ئەو فایلانە کە هاوبەشکراوەن بیانبینێت. گەر گەرەکتانە ئەو بەکارهێنەرانە کە رێیانپێدراوە ئەم فایلانە کە هاوبەشکراوە بیبینن، دەبێ Anonymous ناچالاک بکەن.بەم شێوازە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">anonymous_enable</span><span class="o">=</span>NO  
+</code></pre></div><p><code>خاڵ)‌ </code>زۆرتر حاڵەتی Anonymous FTP لەو خزمەتگوزاریانە سوودیان هەیە کە Public ـن و پێویستیان بە رێپیدان نییە.
+ئێستا بۆ چالاککردنی موڵەتدانی دەستپێگەیشتن بەو بەکارهێنەرانە کە رێگاتان پێداوە ،دەبێ هیڵی خوارەوە لە حاڵەتی شرۆڤە دەربێنن و وشەی NO بە YES بگۆڕن.بەم جۆرە ؛</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">local_enable</span><span class="o">=</span>YES  
+</code></pre></div><p>بۆ رێگەدان بە نووسین لەسەر فایلەکان دەبێ هێڵەکەی خوارەوە لە حاڵەتی شرۆڤە دەربێنن و بەم شێوازە بیگۆڕن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">write_enable</span><span class="o">=</span>YES  
+</code></pre></div><p>ئێستا ئەم هێڵەش لە حاڵەتی شرۆڤە دەر دێنین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">chroot_local_user</span><span class="o">=</span>YES  
+</code></pre></div><p><code>خاڵ) </code>لە وشانی نوێ vsfptd توانایی چالاککردنی خزمەتگوزاری بە حاڵەتی chroot_local_user بوونی نییە، دەبێ بۆ چارەسەر کردنی ئەم کێشە، هێڵەکەی خوارەوەی پێ زایاد بکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">allow_writeable_chroot</span><span class="o">=</span>YES  
+</code></pre></div><h5 id="هەڵگرساندن">هەڵگرساندن</h5>
+<p>لە کۆتایی فەرمانەکەی خوارەوە بۆ هەڵگرساندنی دووبارەی خزمەتگوزاری vsftpd دەنووسین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">systemctl restart vsftpd.service
+</code></pre></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

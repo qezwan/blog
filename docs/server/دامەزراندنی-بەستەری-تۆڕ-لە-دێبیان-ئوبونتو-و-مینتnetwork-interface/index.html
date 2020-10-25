@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی زۆر یەک لە سیستەمەکارپێکردنەکان رێدەدەن بە دامەزراندن و بەستەری تۆر (Network Interface)، بە یارمەتی هێڵی فەرمان(command line).لە لینوکس ئێمە دەتوانین زۆر بە بەر بڵاوی بۆ دامەزراندن و دەستکاری کردنی بەستەری ڕایەڵە یان تۆڕ،کردار ئەنجام بدەین.لەم بابەتە شڕۆڤە ئەکەین لە سەر بەستری ئامادەکردنی تۆڕی لە سەرسیستەمی کارپێکردنی دێبیان،ئوبونتو و مینت .
+۱- دامەزراندنی خزمەتگوزاری “Hostname” لێرە ئێوە دەتوان ناوی ڕژە یان سێرڤێر یان ڕاژەیێکی نوێ بناسێنن بە سیستەمی کارپێکردنەکەتان. ناوی ڕاژە لە ترمیناڵ بنووسن ئینجا لەسەر دوکمەی Enter کرتە بکەن.">
+
+<meta property="og:title" content="دامەزراندنی بەستەری تۆڕ لە دێبیان، ئوبونتو و مینت(Network Interface)" />
+<meta property="og:description" content="پێشەکی زۆر یەک لە سیستەمەکارپێکردنەکان رێدەدەن بە دامەزراندن و بەستەری تۆر (Network Interface)، بە یارمەتی هێڵی فەرمان(command line).لە لینوکس ئێمە دەتوانین زۆر بە بەر بڵاوی بۆ دامەزراندن و دەستکاری کردنی بەستەری ڕایەڵە یان تۆڕ،کردار ئەنجام بدەین.لەم بابەتە شڕۆڤە ئەکەین لە سەر بەستری ئامادەکردنی تۆڕی لە سەرسیستەمی کارپێکردنی دێبیان،ئوبونتو و مینت .
+۱- دامەزراندنی خزمەتگوزاری “Hostname” لێرە ئێوە دەتوان ناوی ڕژە یان سێرڤێر یان ڕاژەیێکی نوێ بناسێنن بە سیستەمی کارپێکردنەکەتان. ناوی ڕاژە لە ترمیناڵ بنووسن ئینجا لەسەر دوکمەی Enter کرتە بکەن." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A8%DB%95%D8%B3%D8%AA%DB%95%D8%B1%DB%8C-%D8%AA%DB%86%DA%95-%D9%84%DB%95-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88-%D9%88-%D9%85%DB%8C%D9%86%D8%AAnetwork-interface/" />
+<meta property="article:published_time" content="2017-02-06T05:35:45+00:00" />
+<meta property="article:modified_time" content="2017-02-06T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی بەستەری تۆڕ لە دێبیان، ئوبونتو و مینت(Network Interface) 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A8%DB%95%D8%B3%D8%AA%DB%95%D8%B1%DB%8C-%D8%AA%DB%86%DA%95-%D9%84%DB%95-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88-%D9%88-%D9%85%DB%8C%D9%86%D8%AAnetwork-interface/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2019%3a42%3a16.8390641%20%2b0330%20%2b0330%20m%3d%2b0.515525701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2019%3a42%3a16.8390641%20%2b0330%20%2b0330%20m%3d%2b0.515525701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2019%3a42%3a16.8390641%20%2b0330%20%2b0330%20m%3d%2b0.515525701">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2019%3a42%3a16.8390641%20%2b0330%20%2b0330%20m%3d%2b0.515525701">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+<section class="main">
+    <div class="container">
+        <div class="content">
+            <div class="page-heading">
+
+    دامەزراندنی بەستەری تۆڕ لە دێبیان، ئوبونتو و مینت(Network Interface)
+
+
+</div>
+
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی</h5>
+<p>زۆر یەک لە سیستەمەکارپێکردنەکان رێدەدەن بە دامەزراندن و بەستەری تۆر (Network Interface)، بە یارمەتی هێڵی فەرمان(command line).لە لینوکس ئێمە دەتوانین زۆر بە بەر بڵاوی بۆ دامەزراندن و دەستکاری کردنی بەستەری ڕایەڵە یان تۆڕ،کردار ئەنجام بدەین.لەم بابەتە شڕۆڤە ئەکەین لە سەر بەستری ئامادەکردنی تۆڕی لە سەرسیستەمی کارپێکردنی دێبیان،ئوبونتو و مینت .</p>
+<h5 id="۱--دامەزراندنی-خزمەتگوزاری-hostname">۱- دامەزراندنی خزمەتگوزاری “Hostname”</h5>
+<p>لێرە ئێوە دەتوان ناوی ڕژە یان سێرڤێر یان ڕاژەیێکی نوێ بناسێنن بە سیستەمی کارپێکردنەکەتان.
+ناوی ڕاژە لە ترمیناڵ بنووسن ئینجا لەسەر دوکمەی Enter کرتە بکەن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ hostname
+</code></pre></div><h6 id="نوسینی-ناوی-ڕاژە">نوسینی ناوی ڕاژە</h6>
+<p>ناوی ڕاژەی نوێ بنووس و پێویستی بە ریستارت نییە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ hostname station1.example.com
+</code></pre></div><p>بۆ سازدانی ناوی ڕاژەی نوێ، ئێوە پێویستان بە دەستکاریکردنی فایلی /etc/hostname و نووسینی ناوی ڕاژەی نوێیە. خاڵ:پاش ده‌ستپێکردنه‌وه‌ ئەم ناوە هەر دەمینێت .</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo <span class="nb">echo</span> <span class="s2">&#34;station1.example.com&#34;</span> &gt; /etc/hostname
+</code></pre></div><p>ئێستا فایلی /etc/hosts دەستکاریدەکەین، ناوی نوێی ڕاژە لەگەڵ ناونیشانی ip خۆماڵێ( local ip) بۆ دابین دەکەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">127.0.0.1 localhost station1.example.com
+</code></pre></div><h5 id="۲--پێرستی-بەستەری-تۆڕی-لکاو-">۲- پێرستی بەستەری تۆڕی لکاو :</h5>
+<p>بەم فەرمانە پێرستێک لەو بەستەرانە کە بۆ دامەزراندنی ڕاژە پێویستمان پێیەتی دەردەکەون.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ ip addr
+1: lo:  mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN group default
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0:  mtu <span class="m">1500</span> qdisc pfifo_fast state UP group default qlen <span class="m">1000</span>
+    link/ether 00:27:0e:1d:62:ab brd ff:ff:ff:ff:ff:ff
+3: eth1:  mtu <span class="m">1500</span> qdisc pfifo_fast state UP group default qlen <span class="m">1000</span>
+    link/ether 00:e0:4d:77:8a:0e brd ff:ff:ff:ff:ff:ff
+</code></pre></div><h5 id="۳-پێکهێنانی-ip-بۆ-بەستەرەکانی-تۆڕ">۳-پێکهێنانی IP بۆ بەستەرەکانی تۆڕ:</h5>
+<p>بۆ دەستکاری فایلی پێکهێنانی بەستەری ڕایەڵە(تۆڕ) فایلی /etc/network/interfaces دەستکاری دەکەین.بۆ وێنە ئێمە بەستەری eth0 بۆ ناونیشانی ip لە DHCP server و eth1 بۆ ipـیێکی جێگیر و نەگۆڕاو(static) رێکددەخەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo vi /etc/network/interfaces
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet static
+address 192.168.1.100
+netmask 255.255.255.0
+gateway 192.168.1.1
+dns-nameservers 8.8.8.8
+</code></pre></div><h5 id="۴-دامەزراندنی-ip-خەیاڵی-لە-بەستەرvirtual-ip">۴-دامەزراندنی IP خەیاڵی لە بەستەر(Virtual IP):</h5>
+<p>گەر ئێوە گەرەکتانە کە ئادرەسی دووهەم (virtual ip) لە سەر هەر ئەو بەستەرە (eth1) زیاد بکەن،ئێوە دەبێت ناوێکی ساختە(alias) لە ناوی بەستەری تۆڕ بناسێنن ئینجا ipـیێکی دیکەشی بۆ دابین بکەن.سەرەتا بجنە ئەم شوێنە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo vi /etc/network/interfaces
+auto eth1:0
+iface eth1:0 inet static
+address 192.168.1.101
+netmask 255.255.255.0
+gateway 192.168.1.1
+dns-nameservers 8.8.8.8
+</code></pre></div><h5 id="۵--دهستپێکردنهوه-خزمەتگوزاری-تۆڕ-یان-ڕایەڵە">۵- ده‌ستپێکردنه‌وه‌ خزمەتگوزاری تۆڕ یان ڕایەڵە:</h5>
+<p>بۆ ئەوە کە تەواو گۆرانکاریەکانتان بە باشی ەنجام ببیت دەبێت تۆرەکەتان بە فەرمانەکەی خوارەوە ریستارت بکەەوە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo /etc/init.d/networking restart
+</code></pre></div><p>سەرچاوە: <a href="#">کتێبی ڕێنمایی ڕاژەی لینوکس،چ تاران،ن:حسێن بەهاری،١٣٨٧</a></p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

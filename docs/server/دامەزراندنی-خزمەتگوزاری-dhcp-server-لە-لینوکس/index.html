@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی هەر وا کە دەزانن دوو کۆمپیوتر لە تۆڕ بۆ پەیوەندی گرتن بە یەکەوە پێویستیان بە IP ئادرەسێکی یەکتا هەیە، کە تایبەت بە خۆیان بێت. بە گشتی لە تۆر بۆ ڕاژە بە دوو رێگا ئەم ئادرەسە بەدەست دێت :
+ سازکردن بە شێوازی دەستی: لەم رێگا دەبێ لەسەر هەموو کۆمپیوترەکانی (کلاینێتەکان) لە تۆڕ IP بە شێوازی دەسی بنووسرێت. وەرگرتنی خۆکارانە: لەم رێگا سوود لە دەروازە یان پرۆتۆکۆلی DHCP، کە کۆمپیوترەکانی تۆڕ (کلاینێتەکان) داوای IP لێ دەکەن .">
+
+<meta property="og:title" content="دامەزراندنی خزمەتگوزاری DHCP Server لە لینوکس" />
+<meta property="og:description" content="پێشەکی هەر وا کە دەزانن دوو کۆمپیوتر لە تۆڕ بۆ پەیوەندی گرتن بە یەکەوە پێویستیان بە IP ئادرەسێکی یەکتا هەیە، کە تایبەت بە خۆیان بێت. بە گشتی لە تۆر بۆ ڕاژە بە دوو رێگا ئەم ئادرەسە بەدەست دێت :
+ سازکردن بە شێوازی دەستی: لەم رێگا دەبێ لەسەر هەموو کۆمپیوترەکانی (کلاینێتەکان) لە تۆڕ IP بە شێوازی دەسی بنووسرێت. وەرگرتنی خۆکارانە: لەم رێگا سوود لە دەروازە یان پرۆتۆکۆلی DHCP، کە کۆمپیوترەکانی تۆڕ (کلاینێتەکان) داوای IP لێ دەکەن ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-dhcp-server-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+<meta property="article:published_time" content="2017-02-01T05:35:45+00:00" />
+<meta property="article:modified_time" content="2017-02-01T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی خزمەتگوزاری DHCP Server لە لینوکس 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-dhcp-server-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2019%3a42%3a16.8555312%20%2b0330%20%2b0330%20m%3d%2b0.531992801">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2019%3a42%3a16.8555312%20%2b0330%20%2b0330%20m%3d%2b0.531992801">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2019%3a42%3a16.8555312%20%2b0330%20%2b0330%20m%3d%2b0.531992801">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2019%3a42%3a16.8555312%20%2b0330%20%2b0330%20m%3d%2b0.531992801">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+<section class="main">
+    <div class="container">
+        <div class="content">
+            <div class="page-heading">
+
+    دامەزراندنی خزمەتگوزاری DHCP Server لە لینوکس
+
+
+</div>
+
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی</h5>
+<p>هەر وا کە دەزانن دوو کۆمپیوتر لە تۆڕ بۆ پەیوەندی گرتن بە یەکەوە پێویستیان بە IP ئادرەسێکی یەکتا هەیە، کە تایبەت بە خۆیان بێت. بە گشتی لە تۆر بۆ ڕاژە بە دوو رێگا ئەم ئادرەسە بەدەست دێت :</p>
+<ul>
+<li><strong>سازکردن بە شێوازی دەستی:</strong> لەم رێگا دەبێ لەسەر هەموو کۆمپیوترەکانی (کلاینێتەکان) لە تۆڕ IP بە شێوازی دەسی بنووسرێت.</li>
+<li><strong>وەرگرتنی خۆکارانە:</strong> لەم رێگا سوود لە دەروازە یان پرۆتۆکۆلی DHCP، کە کۆمپیوترەکانی تۆڕ (کلاینێتەکان) داوای IP لێ دەکەن .ئەم داواکارییە لە لایەن خزمەتگوزارێک بە ناوی DHCP لە تۆر وەڵام دەدرێتەوە.</li>
+</ul>
+<h5 id="ئیشی-dhcp">ئیشی DHCP</h5>
+<p>بە یارمەتی پرۆتۆکۆلی DHCP ئەم خاڵانەی خوارەوە بە شێوازی خۆکارانە لەسەر ڕاژەکەتان رێکبخەن.</p>
+<ol>
+<li>ئادرەس یان ناونیشانیIP وە Subnet.</li>
+<li>ناونیشانی خزمەتگوزاری (DNS).</li>
+<li>ناونیشانی دەروازەی تۆڕ (Gateway).</li>
+<li>ناونیشانی Wins Server (بۆ کۆمپیوترەکانی مایکرۆسۆفت)</li>
+<li>وە … .
+لەم فێرکارییە بە شیوازی دامەزراندن و رێکخستنی DHCP لە لینوکس ئاماژە دەکەین.
+بۆ  دامەزراندنی خزمەتگوزاری DHCP لە ڕاژە بە شێوازی خوارەوە کردار دەکەین:
+بۆ دابەشکراوەکانی دێبیان لەم فەرمانە:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt-get install dhcp3-server  
+</code></pre></div><h5 id="بۆ-ڕێدهەت">بۆ ڕێدهەت</h5>
+<p>بۆ دابەشکراوەکانی رێدهەت بەم فەرمانە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">yum install dhcp  
+</code></pre></div><p>بە شیوازی پێشگریمان خزمەتگوزاری DHCP هیچ رێکخستنێکی بۆ ئەنجامی ئەم خزمەتگوزارییە لە تۆڕ نییە که دەتوانین بە دەستکاری فایلی etc/dhcp/dhcpd.conf/ ئەم خزمەتگوزارییە چالاک بکەین.
+بۆ ناسندنی Subnet ،بۆ نیشاندانی ئەم خزمەتگوزارییە لە نێوی دەبیت ئەم هێڵانەی خوارەوە بە فایلی dhcpd.conf زیاد بکەین.
+بۆ وێنە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">subnet 10.1.1.0 netmask 255.255.255.0 <span class="o">{</span>    
+  range 10.1.1.3 10.1.1.254<span class="p">;</span>    
+<span class="o">}</span>  
+</code></pre></div><p>لێرە ئێمە subnet ـیکمان بە ناونیشانی 10.10.10.0 وە mask بە ئادرەسی 255.255.255.0 ناساندووە. هەروا بە وشەی range دەتوانین مەودای IP دابینکراوە لە لایەن ڕاژە دابین بکەین. لە وێنەی سەرەوە لە ئادرەسی 10.1.1.3 تاکوو 10.1.1.254 توانایی ئادرەسدانی هەیە لەم subnet ـەمان.
+ئازیزان تا ئیرە ڕاژەی ئێمە بۆ دانانی IP ئامادە بووە. بەڵام سیستەمەکانی تۆر بۆ ئادرەسی IP پێویستیا بە رێکخستنی DNS وە هەروەها ئادرەسی Gateway تۆڕ هەیە. بۆ زیادکردنی ئەم دوو ئادرەسە بە شێوازی خوارەوە کردار دەکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">subnet 10.1.1.0 netmask 255.255.255.0 <span class="o">{</span>    
+  range 10.1.1.3 10.1.1.254<span class="p">;</span>    
+  option domain-name-servers 10.1.1.1, 8.8.8.8<span class="p">;</span>    
+  option routers 10.1.1.1<span class="p">;</span>    
+<span class="o">}</span> 
+</code></pre></div><p>لە دەقەکەی سەرەوە: ڕەستەی option domain-name-servers ناونیشانی خزمەتگوزاری DNS دابین دەکات و ڕەستەی option routers ناونیشانی Gateway تۆر دابین دەکات.
+<code>خاڵ)‌</code> ئادرەسەکانی ئەم خزمەتگوزارییە بە شێوازی leased دەردەکەون پاش تەواو بوونی کاتی پێشگریمان یا ناسراوە لە ڕاژە، ئەو ئادرەسە لە کلاینێت دەسێنریتەوە و بە هۆی ماهییەتی dynamic دەرگا یان پرۆتۆکل ،ئەو ئادرەسە کە بە هاستەکەی ئێوە تایبەتکراوە بە هاستێکی دیکە دەدرێت.
+بۆ گۆڕانی کاتی پێشگریمانی موڵەتدانەکە (lease) دەتوانن بەم شێوازە کردار بکەن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">  default-lease-time 600<span class="p">;</span>    
+max-lease-time 7200<span class="p">;</span>
+
+subnet 10.1.1.0 netmask 255.255.255.0 <span class="o">{</span>    
+  range 10.1.1.3 10.1.1.254<span class="p">;</span>    
+<span class="o">}</span> 
+</code></pre></div><p>لە دەقەکەی سەرەوە، بەرابەری ڕەستەی default-lease-time مەودای کاتی ئیجارەدانی پێشگریمانی ڕێکخستنەکان و max-lease-time زۆرینەی مەودای کاتی پێشگریمانی رێکخستنەکان بە چرکە نیشان دەدرێت.
+شایەد ئێوە گەرەکتان بێت لەسەر هاستێکی تایبەت لە تۆر (بۆ وێنە: چاپکەری تۆڕ ) ئادرەسی IP یێک لە نۆبە(ڕێزێرڤ)، چاوەڕوان بکەن تا هەمیشە ئەو ئادرەسە بۆ هاستی داخوازتان دابین بکرێت.بەم جۆرەی خوارەوە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">host printer <span class="o">{</span>    
+  hardware ethernet 00:16:d3:b7:8f:86<span class="p">;</span>    
+  fixed-address 10.1.1.100<span class="p">;</span>    
+<span class="o">}</span>  
+</code></pre></div><p>لەدەقەکەی سەرەوە، host ناوی هاستی داخوزی ئێوە دابین دەکات. وشەی hardware ethernet ناونیشانی لایەری ۲ یان mac Address هاستەکەتا دابین دەکات .لە کوتایی fixed-address ئادرەسێکە کە گەرەکتانە هاستەکەتانی بۆ چاوەڕوان یان ڕێزێرڤی بکەن.(لەنۆبە دایبنن)
+لە کۆتایی خزمەتگوزاریDHCP بارێک restart بکەن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">/etc/init.d/isc-dhcp-server restart
+</code></pre></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

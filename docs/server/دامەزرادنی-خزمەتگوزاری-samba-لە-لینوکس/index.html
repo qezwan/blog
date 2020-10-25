@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی Samba ئامرازێکی بەهێزە کە بە یارمەتی،دەتوانن خزمەتگوزاری هاوبەشکردنی فایل و چاپگەر بۆ کلاینێتەکانی مایکرۆسۆفت واتە ویندۆزی ئەنجام بدەن.هەروا دەتوانن بێجگە لەمە بە جێگای دۆمەین کنترۆلێر لە تۆرەکانی سەر بنەمای Windows Server Domain سوودی لێببینن.لە وشانی 4ـی ئەم نەرمەکالا پاڵپستی لە Active Directory و دۆمەینەکانی Windows NT پێی زیاد کراوە. لەم فیرکارییە شێوازی کارکردن و هاوبەسکردنی سەرچاوەکان لە سەر خزمەتگوزاری Samba لە سەر کلاینێتەکانی مایکرۆسۆفت و لینوکس فێر دەکەین.
+دامەزراندن بۆ دامەزراندنی خزمەتگوزاری Samba فەرمانەکەی خوارەوە بنووسن:">
+
+<meta property="og:title" content="دامەزرادنی خزمەتگوزاری Samba لە لینوکس" />
+<meta property="og:description" content="پێشەکی Samba ئامرازێکی بەهێزە کە بە یارمەتی،دەتوانن خزمەتگوزاری هاوبەشکردنی فایل و چاپگەر بۆ کلاینێتەکانی مایکرۆسۆفت واتە ویندۆزی ئەنجام بدەن.هەروا دەتوانن بێجگە لەمە بە جێگای دۆمەین کنترۆلێر لە تۆرەکانی سەر بنەمای Windows Server Domain سوودی لێببینن.لە وشانی 4ـی ئەم نەرمەکالا پاڵپستی لە Active Directory و دۆمەینەکانی Windows NT پێی زیاد کراوە. لەم فیرکارییە شێوازی کارکردن و هاوبەسکردنی سەرچاوەکان لە سەر خزمەتگوزاری Samba لە سەر کلاینێتەکانی مایکرۆسۆفت و لینوکس فێر دەکەین.
+دامەزراندن بۆ دامەزراندنی خزمەتگوزاری Samba فەرمانەکەی خوارەوە بنووسن:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-samba-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+<meta property="article:published_time" content="2017-01-30T05:35:45+00:00" />
+<meta property="article:modified_time" content="2017-01-30T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزرادنی خزمەتگوزاری Samba لە لینوکس 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-samba-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2019%3a42%3a16.8390641%20%2b0330%20%2b0330%20m%3d%2b0.515525701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2019%3a42%3a16.8390641%20%2b0330%20%2b0330%20m%3d%2b0.515525701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2019%3a42%3a16.8390641%20%2b0330%20%2b0330%20m%3d%2b0.515525701">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2019%3a42%3a16.8390641%20%2b0330%20%2b0330%20m%3d%2b0.515525701">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+<section class="main">
+    <div class="container">
+        <div class="content">
+            <div class="page-heading">
+
+    دامەزرادنی خزمەتگوزاری Samba لە لینوکس
+
+
+</div>
+
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی</h5>
+<p>Samba ئامرازێکی بەهێزە کە بە یارمەتی،دەتوانن خزمەتگوزاری هاوبەشکردنی فایل و چاپگەر بۆ کلاینێتەکانی مایکرۆسۆفت واتە ویندۆزی ئەنجام بدەن.هەروا دەتوانن بێجگە لەمە بە جێگای دۆمەین کنترۆلێر لە تۆرەکانی سەر بنەمای Windows Server Domain  سوودی لێببینن.لە وشانی 4ـی ئەم نەرمەکالا پاڵپستی لە Active Directory و دۆمەینەکانی Windows NT پێی زیاد کراوە. لەم فیرکارییە شێوازی کارکردن و هاوبەسکردنی سەرچاوەکان لە سەر خزمەتگوزاری Samba لە سەر کلاینێتەکانی مایکرۆسۆفت و لینوکس فێر دەکەین.</p>
+<h5 id="دامەزراندن">دامەزراندن</h5>
+<p>بۆ دامەزراندنی خزمەتگوزاری Samba فەرمانەکەی خوارەوە بنووسن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install samba 
+</code></pre></div><h5 id="پەیکەرسازی">پەیکەرسازی</h5>
+<p>پاش دامەزراندن دەبێت رێکخستنەکان لەسەر فایلی etc/samba/smb.conf/ بە یارمەتی دەستکاریکەرێکی دەق ئەنجام بدەین.واتە بەمجۆرە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo gedit /etc/samba/smb.conf  
+</code></pre></div><p>فایلی smb.conf بریتییە لەم بەشانە کە لەسەری دەدوێین :</p>
+<ul>
+<li>[global]: لەم بەشە، کانفیگ یان پەیکەربەندی گشتی ناسراوە.</li>
+<li>[share]: لەم بەشە، هاوبەشیێک دەناسرێت.</li>
+<li>[printers]: لەم بەشە، چاپکەرەکان هاوبەش دەکرێت.</li>
+<li>[homes]: دایریکتۆری homeـی ئەو بەکارهێنەرانە کە هاوبەشکراوەن دەناسرێت.</li>
+</ul>
+<h5 id="سویچەکان">سویچەکان</h5>
+<p>لە هەر بەشێک پارامێتر یان سویچێک هەیە کە دەتوانێت بۆ وێنە true, false, yes, no وە یان مەسیرێک بێت.
+شرۆڤەی بەشێک لەم پارامێترانە یان سویچانە :</p>
+<ul>
+<li>browseable: دابینی دەکات کە ئەو بەشە کە هاوبەشمان کردووە دەتوانێت Browse بێت یان نە.</li>
+<li>comment: دەقێکی شرۆڤە لەسەر هاوبەش یان خزمەتگوزاری نیشاندەدرێت.</li>
+<li>create mask: بۆ مۆڵەتدانەکانی ویندۆز و یونیکس/لینوکس لە کاتی درووستکردنی فایل بەکاردەڕوات. ژمارەی پێشگریمان بریتییە لە 0744 .</li>
+<li>directory mask: بۆ مۆڵەتدانەکانی ویندۆز و یونیکس/لینوکس لە کاتی درووستکردنی بوخچە یان دایرێکتۆری بەکاردەڕوات ژمارەی پێشگریمان بریتییە لە 0744 .</li>
+<li>encrypt passwords: دابینی دەکات لە کاتی Authentication لە نێو کلاینێت و خزمەتگوزارییەکە وشەی نهێنی ببێت یان نە.</li>
+<li>security: دابینی دەکات بەکارهینەران چۆن پەیوەندی بە ڕاژە بگرن و خۆیان بناسێنن. ژمارەی پێشگریمان بریتییە لە user .</li>
+<li>read only: ئیمکانی دەستکاریکردنیفایل لە لایەن بەکارهێنەرەکان دابین دەکات.
+invalid users: ئەو بەکارهینەرانە کە نەناسراوەن بە سیستەم ناتوانن بچنە ژووررەوە.</li>
+<li>workgroup: دابینکراوەی ناوی تۆڕە Workgroup .</li>
+<li>server string: ناوی ڕاژە لە کلاینێت دابین دەکات.</li>
+<li>interfaces: ئەو ناونیشانە کە رییانپێدراوە لە ڕاژە خزمەتگوزاری بگرن دابینی دەکات.</li>
+<li>printable: توانایی ناردنی چاپ بۆ ڕاژە لە لایەن کلاینێت دەدرێت.</li>
+</ul>
+<h5 id="ناساندنی-بەکارهێنەر-بە-ڕاژە">ناساندنی بەکارهێنەر بە ڕاژە</h5>
+<p>پێش هاوبەشکردن ،دەبێت بەکارهێنەرەکان بە ڕاژە بناسێنین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo smbpasswd -L -a USER NAME 
+</code></pre></div><p>USER NAME ناوی بەکارهێنەرە کە گەرەکمانە بیناسێنین بە ڕاژە.
+بۆ هاوبەشی بوخچە یان دایرێکتۆری دەبێت بەم جۆرە کردار بکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>My Share<span class="o">]</span>  
+ <span class="nv">path</span> <span class="o">=</span> /home/qezwan/my_share  
+ <span class="nv">browseable</span> <span class="o">=</span> yes  
+ <span class="nb">read</span> <span class="nv">only</span> <span class="o">=</span> yes 
+</code></pre></div><p>لە فەرمانەکەی سەرەوە :دایریکتۆریێک بە ناوی My Share لە مەسیری home/reza/my_share/ وە بە دەستپێگەیشتنی(تەنها خوێندن)مان درووستکردووە.
+ئینجا ڕاژە بە فەرمانەکەی خوارەوە هەڵدەگرسێنینەوە واتە ریستارت :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">systemctl restart samba-ad-dc.service 
+</code></pre></div><p>بۆ چاودێری باروودۆخی ڕاژەو ئەو شتانە کە هاوبەشمان کردووە لە فەرمانەکەی خوارەوە سوود دەبینین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">smbclient -L SERVER 
+</code></pre></div><p>لێرە SERVER دەتوانێت ئای-پی یان ناوی ڕاژە بێت.
+<code>خاڵ:</code> بۆ سوود گرتن لە ئامرازی smbclient سەرەتا دەبێت لە سەر کلاینێتەکان دامەزرێت.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install smbclient  
+</code></pre></div><p>بۆ mountکردنی هاوبەشیێک دەتوانین لە فەرمانی خوارەوە سوود بگرین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount –t cifs //SERVER IP/SHARE /mnt –o <span class="nv">username</span><span class="o">=</span>USER NAME,workgroup<span class="o">=</span>WORKGROUP NAME  
+</code></pre></div><p>لێرە SERVER IP/SHARE// ناونیشانی هاوبەشی ئێمە mnt/ ناونیشانی ئەو شوێنە کەدەبێت ماوونت بێت وە USER NAME ناوی بەکارهێنەر و WORKGROUP NAME یس ناوی گرووپیکارپێکردنی ئێمەیە.
+<code>خاڵ)‌</code> بۆ ماونت کردنی فایل سیستەمەکانی Samba پێویستان بە ئامرازی cifs-utils هەیە که دەبێت لەسەر سیستەمی کلاینیتەکانی لینوکس دامەزرێت.بۆ دامەزراندنی cifs-utils فەرمانەکەی خوارەوە بنووسن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">cifs-utils</span>
+</code></pre></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

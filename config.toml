@@ -23,6 +23,12 @@ identifier             = "blog"
 url                    = "/blog/"
 
 [[menu.main]]
+name                   = "ڕاژە"
+weight                 = -125
+identifier             = "server"
+url                    = "/server/"
+
+[[menu.main]]
 name                   = "دەربارە"
 weight                 = -100
 identifier             = "about"

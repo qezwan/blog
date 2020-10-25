@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی فایل سیستەمیNFS فایل سیستەمی دابەشکراوە بۆ ڕایەڵەیە کە لە ساڵی 1984 لە لایەن Sun Microsystems گەشەپێدراوە .ئەم خزمەتگوزارییە بە بەکارهێنەرانی ڕایەڵە ئەم تواناییە دەدات کە بە فایلەکانی تۆڕ وەک فایلی Local خۆیان دەستپێگەیشتنیان بێت. لەم فێرکارییە بە چۆنیەتیدامەزراندنی NFS وە هەروەها Mount کردنی ئەو سیستەمانە لە سەر Client ئاماژە دەکەین.
+دامەزراندن بۆ دامەزراندنی NFS لەسەر ڕاژە بەم جۆرە کردار دەکەین :
+sudo apt-get install nfs-kernel-server ئینجا فایلی etc/exports/ دەستکاری دەکەین و ئەو دایکریکتۆرییە کە گەرەکمانە هاوبەشی بکەین دیاری دەکەین.">
+
+<meta property="og:title" content="دامەزراندنی خزمەتگوزاری NFS لە لینوکسی دێبیان" />
+<meta property="og:description" content="پێشەکی فایل سیستەمیNFS فایل سیستەمی دابەشکراوە بۆ ڕایەڵەیە کە لە ساڵی 1984 لە لایەن Sun Microsystems گەشەپێدراوە .ئەم خزمەتگوزارییە بە بەکارهێنەرانی ڕایەڵە ئەم تواناییە دەدات کە بە فایلەکانی تۆڕ وەک فایلی Local خۆیان دەستپێگەیشتنیان بێت. لەم فێرکارییە بە چۆنیەتیدامەزراندنی NFS وە هەروەها Mount کردنی ئەو سیستەمانە لە سەر Client ئاماژە دەکەین.
+دامەزراندن بۆ دامەزراندنی NFS لەسەر ڕاژە بەم جۆرە کردار دەکەین :
+sudo apt-get install nfs-kernel-server ئینجا فایلی etc/exports/ دەستکاری دەکەین و ئەو دایکریکتۆرییە کە گەرەکمانە هاوبەشی بکەین دیاری دەکەین." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-nfs-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/" />
+
+
+
+
+<title>
+
+
+     دامەزراندنی خزمەتگوزاری NFS لە لینوکسی دێبیان 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-nfs-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2019%3a42%3a16.853532%20%2b0330%20%2b0330%20m%3d%2b0.529993601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2019%3a42%3a16.853532%20%2b0330%20%2b0330%20m%3d%2b0.529993601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2019%3a42%3a16.853532%20%2b0330%20%2b0330%20m%3d%2b0.529993601">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2019%3a42%3a16.853532%20%2b0330%20%2b0330%20m%3d%2b0.529993601">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+<section class="main">
+    <div class="container">
+        <div class="content">
+            <div class="page-heading">
+
+    دامەزراندنی خزمەتگوزاری NFS لە لینوکسی دێبیان
+
+
+</div>
+
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی</h5>
+<p>فایل سیستەمیNFS فایل سیستەمی دابەشکراوە بۆ ڕایەڵەیە کە لە ساڵی 1984 لە لایەن Sun Microsystems گەشەپێدراوە .ئەم خزمەتگوزارییە بە بەکارهێنەرانی ڕایەڵە ئەم تواناییە دەدات کە بە فایلەکانی تۆڕ وەک فایلی Local خۆیان دەستپێگەیشتنیان بێت. لەم فێرکارییە بە چۆنیەتیدامەزراندنی NFS وە هەروەها Mount کردنی ئەو سیستەمانە لە سەر Client ئاماژە دەکەین.</p>
+<h5 id="دامەزراندن">دامەزراندن</h5>
+<p>بۆ دامەزراندنی NFS لەسەر ڕاژە بەم جۆرە کردار دەکەین :</p>
+<pre><code>sudo apt-get install nfs-kernel-server  
+</code></pre><p>ئینجا فایلی etc/exports/ دەستکاری دەکەین و ئەو دایکریکتۆرییە کە گەرەکمانە هاوبەشی بکەین دیاری دەکەین.</p>
+<pre><code>/home 192.168.1.0(rw, sync, no_root_squash)  
+</code></pre><h5 id="شڕۆڤەی-دەقەکەی-دەسڕینەوە">شڕۆڤەی دەقەکەی دەسڕینەوە</h5>
+<ul>
+<li>home/: ئادرەسی ئەو دایرێکتۆرییە کە گەرەکمانە هاوبەشی بکەین.</li>
+<li>192.168.1.0: ئادرەسی تۆر FQDN یان هاستێکە گەرەکمانە بەو دایرێکتۆرییە بە شێوازی Remote چوونەژوورەوەی بۆ بکەین .</li>
+<li>rw: موڵەتی دەستپێگەیشتن دابین دەکات rw بۆ نووسین و ro تەنها بۆ خوێندنە.</li>
+<li>no_root_squash: مۆڵەتی دەستپێگەیشتنی بەکارهیێنەر root بۆ دایریکتۆری دەدات.</li>
+<li>sync: شێوازی نووسینی زانیاری بۆ سینک کردنی دایریکتۆری هاوبەشی نیشان دەدات.</li>
+</ul>
+<p>پاش دەستکاری کردنی فایلی سەرەوە دەبێ ئەم دەستوورە بنووسین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">exportfs -a 
+</code></pre></div><p>ئینجا لەسەر کلاینێتەکان دەبێت ئەم پاکەتە nfs-common دامەزرێنین. بۆ ئەم کارە ئەم فەرمانە بنووسن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">sudo</span> <span class="n">apt-get</span> <span class="n">install</span> <span class="n">nfs-common</span>  
+</code></pre></div><p>بۆ mount کردنی فایل سیستەمی هاوبەشی دەبێت بە شێوازی خوارەوە کردار بکەن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mount SERVER_IP:/SHARED_DIR /LOCAL_DIR  
+</code></pre></div><p>لێرە مەبەست لە SERVER_IP ئادرەسی ئای پی کلاینێت وە NFS وە SHARED_DIR ئادرەسی دایریکتۆری هاوبەشکراوە. LOCAL_DIR ئادرەسی ئەو شوێنەیە کە گەرەکمانە ئەو فایلانە لەوێ mount ببن.
+هەر وا بۆ ئاسانی و mount بوونی خۆکاری فایل سیستەمی هاوبەشکراوە دەتوانن فایلی etc/fstab/ وەک فایلی خوارەوە دەستکاری بکەن و ئەم چەند هێڵەی تێدا بنووسن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">SERVER_IP:/SHARED_FOLDER  /LOCAL_DIR  nfs  defaults  <span class="m">0</span>  <span class="m">0</span>  
+</code></pre></div><p>ئیتر کاتێک فایلەکە بووت دەبێت ئەم فایل سیستەمە بە شیوازی خۆکارانە mount دەبێت.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

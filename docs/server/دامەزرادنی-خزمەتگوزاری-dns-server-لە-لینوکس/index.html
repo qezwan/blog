@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی هەروا کە دەزانن کاتێک دەچنە نێو ماڵپەڕێک دەبێ ئادرەس یان ناونشانی ئەو ڕاژەی ماڵپەرە بزانن واتە ئای-پی ـیەکەی (IP Address) . لەبەرکردنی ئەم ناونیشانەی IPـی بۆ تەواوی ئەو ماڵپەڕانە کە سەردانیان دەکەین زۆر دشوارە.باش وایە بە جێگای لەبەرکردن و نووسینی ناونیشانی IP دۆمەینەکە، لە خزمەتگوزاری نێوی دۆمەینەکە واتە DNS سوودبگرین، واتە ناوی ماڵپەڕ بزانین و لەبەری بکەین.ئەم خزمەتگوزارییە (DNS)،ئادرەسی ئای پی ماڵپەڕەکە یان ڕاژەی ماڵپەرەکەمانبە ناوی ماڵپەڕەکە وەردەگێڕێت. لەم فێرکارییە بە دامەزرادنی نەرمەکالای bind بۆ ئەم خزمەتگوزارییە لە لینوکس ئاشنا دەبین.">
+
+<meta property="og:title" content="دامەزرادنی خزمەتگوزاری DNS Server لە لینوکس" />
+<meta property="og:description" content="پێشەکی هەروا کە دەزانن کاتێک دەچنە نێو ماڵپەڕێک دەبێ ئادرەس یان ناونشانی ئەو ڕاژەی ماڵپەرە بزانن واتە ئای-پی ـیەکەی (IP Address) . لەبەرکردنی ئەم ناونیشانەی IPـی بۆ تەواوی ئەو ماڵپەڕانە کە سەردانیان دەکەین زۆر دشوارە.باش وایە بە جێگای لەبەرکردن و نووسینی ناونیشانی IP دۆمەینەکە، لە خزمەتگوزاری نێوی دۆمەینەکە واتە DNS سوودبگرین، واتە ناوی ماڵپەڕ بزانین و لەبەری بکەین.ئەم خزمەتگوزارییە (DNS)،ئادرەسی ئای پی ماڵپەڕەکە یان ڕاژەی ماڵپەرەکەمانبە ناوی ماڵپەڕەکە وەردەگێڕێت. لەم فێرکارییە بە دامەزرادنی نەرمەکالای bind بۆ ئەم خزمەتگوزارییە لە لینوکس ئاشنا دەبین." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-dns-server-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+<meta property="article:published_time" content="2017-01-29T05:35:45+00:00" />
+<meta property="article:modified_time" content="2017-01-29T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزرادنی خزمەتگوزاری DNS Server لە لینوکس 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D8%AF%D9%86%DB%8C-%D8%AE%D8%B2%D9%85%DB%95%D8%AA%DA%AF%D9%88%D8%B2%D8%A7%D8%B1%DB%8C-dns-server-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2019%3a42%3a16.8310695%20%2b0330%20%2b0330%20m%3d%2b0.507531101">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2019%3a42%3a16.8310695%20%2b0330%20%2b0330%20m%3d%2b0.507531101">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2019%3a42%3a16.8310695%20%2b0330%20%2b0330%20m%3d%2b0.507531101">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2019%3a42%3a16.8310695%20%2b0330%20%2b0330%20m%3d%2b0.507531101">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+<section class="main">
+    <div class="container">
+        <div class="content">
+            <div class="page-heading">
+
+    دامەزرادنی خزمەتگوزاری DNS Server لە لینوکس
+
+
+</div>
+
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی</h5>
+<p>هەروا کە دەزانن کاتێک دەچنە نێو ماڵپەڕێک دەبێ ئادرەس یان ناونشانی ئەو ڕاژەی ماڵپەرە بزانن واتە ئای-پی ـیەکەی (IP Address) . لەبەرکردنی ئەم ناونیشانەی IPـی بۆ تەواوی ئەو ماڵپەڕانە کە سەردانیان دەکەین زۆر دشوارە.باش وایە بە جێگای لەبەرکردن و نووسینی ناونیشانی IP دۆمەینەکە، لە خزمەتگوزاری نێوی دۆمەینەکە واتە DNS سوودبگرین، واتە ناوی ماڵپەڕ بزانین و لەبەری بکەین.ئەم خزمەتگوزارییە (DNS)،ئادرەسی ئای پی ماڵپەڕەکە یان ڕاژەی ماڵپەرەکەمانبە ناوی ماڵپەڕەکە وەردەگێڕێت.
+لەم فێرکارییە بە دامەزرادنی نەرمەکالای bind بۆ ئەم خزمەتگوزارییە لە لینوکس ئاشنا دەبین.
+سەرەتا بە فەرمانی خوارەوە خزمەتگوزاری bind دادەمەزرێنین.</p>
+<h5 id="دامەزراندنی-لە-دێبیان">دامەزراندنی لە دێبیان</h5>
+<p>بۆ دابەشکراوەکانی دێبیان لەم فەرمانە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install bind9 
+</code></pre></div><h5 id="دامەزراندنی-لە-ڕێدهەت">دامەزراندنی لە ڕێدهەت</h5>
+<p>بۆ دابەشکراوەکانی رێدهەت بەم فەرمانە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo yum install <span class="nb">bind</span>  
+</code></pre></div><h5 id="ناساندنی-zone">ناساندنی zone</h5>
+<p>بۆ ناساندنی zone، سەرەتا دەبێ فایلی خوارەوە دەستکاری بکەین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/bind/named.conf.local  
+</code></pre></div><p>ئینجا ئەم دەقەی خوارەوەی بۆ زیاد بکەن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">zone “qezwan.ir” <span class="o">{</span>  
+    <span class="nb">type</span> master<span class="p">;</span>  
+    file “/etc/bind/db.qezwan.ir”<span class="p">;</span>  
+<span class="o">}</span><span class="p">;</span>  
+</code></pre></div><p>لەدەقەکەی سەرەوە نێوی دۆمەینی ئێمە qezwan.ir وە لەجۆریmaster ـە.
+ئینجا دەبێ دانەیێک zone فایل بۆ دۆمەینەکەمان بنووسین. بۆ ئەم کارە وەک دەقی خوارەوە کردار دەکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /etc/bind  
+cp db.empty db.qezwan.ir  
+</code></pre></div><p>ئەو فایلە کە درووستمانکردووە بە دەستکاریکەرێکی دەق دەستکاری دەکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/bind/db.qezwan.ir  
+</code></pre></div><p>هاورێێان لەسەرەتاوە ناوەڕۆکی ئەم فایلە بەم جۆرەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$TTL</span> <span class="m">86400</span>
+
+@ IN SOA localhost. root.localhost. <span class="o">(</span>  
+    <span class="m">1</span> <span class="p">;</span> Serial  
+    <span class="m">604800</span> <span class="p">;</span> Refresh  
+    <span class="m">86400</span> <span class="p">;</span> Retry  
+    <span class="m">2419200</span> <span class="p">;</span> Expire  
+    <span class="m">86400</span> <span class="o">)</span> <span class="p">;</span> Negative Cache TTL  
+<span class="p">;</span>  
+@ IN NS localhost.  
+</code></pre></div><p>دەبێت بە جێگی localhost ناوی دۆمەینەکەی خۆمانی بۆ بنووسین ، بەم جۆرە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$TTL</span> <span class="m">86400</span>
+
+@ IN SOA qezwan.ir. admin.qezwan.ir. <span class="o">(</span>  
+    <span class="m">1</span> <span class="p">;</span> Serial  
+    <span class="m">604800</span> <span class="p">;</span> Refresh  
+    <span class="m">86400</span> <span class="p">;</span> Retry  
+    <span class="m">2419200</span> <span class="p">;</span> Expire  
+    <span class="m">86400</span> <span class="o">)</span> <span class="p">;</span> Negative Cache TTL  
+<span class="p">;</span>
+
+@ IN NS qezwan.ir. 
+</code></pre></div><p>لە دەقەکەی سەرەوە qezwan.ir. نێوی دۆمەینی ئێمە وە admin.qezwan.ir. ئادرەسی ئیمەیلی بەرێوەبەری ڕاژیە.
+پاش گۆڕانکارییەکانی سەرەوە دەبێت رکوردەکانی ڕاژەکان لە دوایین هێڵەکان وەک وێیەی خوارەوە زیاد بکەین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">ns IN A 104.28.12.99
+
+qezwan.ir. A 104.28.12.99  
+www CNAME qezwan.ir.  
+host1 A 104.28.12.199  
+host2 A 104.28.12.200
+</code></pre></div><p>لەدەقەکەی سەرەوە لە هێڵی چوارەم ناونیشانی وێبی سێرڤێرەکەمان دابینکردووە که لە ڕاستی ناوێکی ساختە بۆ qezwan.ir ـە.
+هەر وا لە هێڵەکانی پینج و شەس دوو هاست یان ڕاژە بە ناونیشانی host1.qezwan.ir و host2.qezwan.irـمان دابینکردووە.
+پاش دەستکاری و پاشکەوتکردی فایلەکەی سەروە دەبێت بە نەرمەکلای named-checkzone بدرووستی کردارەکەمان تاقی بکەینەوە.کە دەبیت فەرمانەکەی خوارەوە بەکار بهێنین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">named-checkzone qezwan.ir /etc/bind/db.qezwan.ir  
+</code></pre></div><p>ئیستا کاتێک کە فەرمانەکەی سەرەوەمان نووسی وە ئاشکرا بوو کە هیچ کێشەیێکمان نییە، دەرهاتی خوارەوەمان بۆ دیار دەکرێت:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">zone qezwan.ir/IN: loaded serial <span class="m">1</span>  
+OK 
+</code></pre></div><p>دەبێت bind هەڵگرسێنین واتە بەم فەرمانە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl restart bind9  
+</code></pre></div><p>فەرمانی dig بۆ تاقیکردنەوەی ڕاژەکانمان :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">dig @104.28.12.99 <span class="o">[</span>www.qezwan.ir<span class="o">](</span>http://www.qezwan.ir/<span class="o">)</span>  
+</code></pre></div><p><code>خاڵ </code>:بۆ سوودوەرگرتن لە فەرمانی dig دەبێت پاکەتی dnsutils دامەزرێنین.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="گەر ئێوە کار بە دابەشکراوەکانی گنو/لینوکسی دێبیان و ئوبونتو دەکەن و پێتان خۆشە کە بزانن چەندە پاکەت و نەرمەکالاتان دامەزراندووە باش وایە ئەم بابەتە بخوێنن. هەروا گەر پێتان خۆشە کە پاکەتەکان لە ڕاژەی یەکەم بگوازنەوە بۆ ڕاژەی دووهەم ئەم بابەتە بەسوود دەبێت بۆتان. ئێوە پێویستان بە دامەزراندنی dpkg و چەن فەرمانە کە لێرە بە ئاسانی ئەنجامی دەدەین. -نیشاندانی ئەو پاکەتانە کە داتمەزراندووە بەم فەرماە :
+dpkg --get-selections | grep -v deinstall ئەمەش ئەنجامەکەی :(من چەند هێڵ دێنم گەر نە فرەس)">
+
+<meta property="og:title" content="پێرستکردن و دامەزراندنی پاکەتەکان لە دێبیان و ئوبونتو" />
+<meta property="og:description" content="گەر ئێوە کار بە دابەشکراوەکانی گنو/لینوکسی دێبیان و ئوبونتو دەکەن و پێتان خۆشە کە بزانن چەندە پاکەت و نەرمەکالاتان دامەزراندووە باش وایە ئەم بابەتە بخوێنن. هەروا گەر پێتان خۆشە کە پاکەتەکان لە ڕاژەی یەکەم بگوازنەوە بۆ ڕاژەی دووهەم ئەم بابەتە بەسوود دەبێت بۆتان. ئێوە پێویستان بە دامەزراندنی dpkg و چەن فەرمانە کە لێرە بە ئاسانی ئەنجامی دەدەین. -نیشاندانی ئەو پاکەتانە کە داتمەزراندووە بەم فەرماە :
+dpkg --get-selections | grep -v deinstall ئەمەش ئەنجامەکەی :(من چەند هێڵ دێنم گەر نە فرەس)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D9%BE%DB%8E%D8%B1%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86-%D9%88-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D9%88-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/" />
+<meta property="article:published_time" content="2017-02-06T05:35:45+00:00" />
+<meta property="article:modified_time" content="2017-02-06T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     پێرستکردن و دامەزراندنی پاکەتەکان لە دێبیان و ئوبونتو 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D9%BE%DB%8E%D8%B1%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86-%D9%88-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86-%D9%88-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2019%3a42%3a16.8735201%20%2b0330%20%2b0330%20m%3d%2b0.549981701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2019%3a42%3a16.8735201%20%2b0330%20%2b0330%20m%3d%2b0.549981701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2019%3a42%3a16.8735201%20%2b0330%20%2b0330%20m%3d%2b0.549981701">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2019%3a42%3a16.8735201%20%2b0330%20%2b0330%20m%3d%2b0.549981701">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+<section class="main">
+    <div class="container">
+        <div class="content">
+            <div class="page-heading">
+
+    پێرستکردن و دامەزراندنی پاکەتەکان لە دێبیان و ئوبونتو
+
+
+</div>
+
+            <div class="markdown">
+                <p>گەر ئێوە کار بە دابەشکراوەکانی گنو/لینوکسی دێبیان و ئوبونتو دەکەن و پێتان خۆشە کە بزانن چەندە پاکەت و نەرمەکالاتان دامەزراندووە باش وایە ئەم بابەتە بخوێنن. هەروا گەر پێتان خۆشە کە پاکەتەکان لە ڕاژەی یەکەم بگوازنەوە بۆ ڕاژەی دووهەم ئەم بابەتە بەسوود دەبێت بۆتان.
+ئێوە پێویستان بە دامەزراندنی dpkg و چەن فەرمانە کە لێرە بە ئاسانی ئەنجامی دەدەین.
+-نیشاندانی ئەو پاکەتانە کە داتمەزراندووە بەم فەرماە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">dpkg --get-selections <span class="p">|</span> grep -v deinstall
+</code></pre></div><p>ئەمەش ئەنجامەکەی :(من چەند هێڵ دێنم گەر نە فرەس)</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">qezwan@eos:~$ dpkg --get-selections <span class="p">|</span> grep -v deinstall
+accountsservice					install
+acl						install
+acpi-support					install
+acpid						install
+adduser						install
+adwaita-icon-theme				install
+alsa-base					install
+alsa-utils					install
+anacron						install
+apg						install
+app-install-data				install
+apparmor					install
+appcenter					install
+apport						install
+apport-gtk					install
+apport-symptoms					install
+appstream					install
+appstream-data-pantheon-loki-stable		install
+appstream-data-pantheon-loki-stable-icons	install
+apt						install
+apt-transport-https				install
+apt-utils					install
+aptdaemon					install
+aptdaemon-data					install
+aspell						install
+aspell-en					install
+... .
+</code></pre></div><p>رێگایێکی دیکە :
+هەروا ئێوە دەتوانن لە سوێچەکان یان ئۆپشێنی apt سوود بگرن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ apt list --installed
+$ apt list --installed <span class="p">|</span> grep php
+</code></pre></div><p>-ئێستا دەبێت پێرستی نەرمەکالاکان پاشکەوت بکەین لە نێو فایلیکی دەق :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">dpkg --get-selections <span class="p">|</span> grep -v deinstall &gt; mylist.txt
+</code></pre></div><p>بڕۆ نێو مەسیری /home/qezwan/ (قەزوان ناوی بەکارهێنەرەکەمە)، فایلێک دەبینی بەناوی mylist.txt .
+رێگای دووهەم بۆ پاشکەوت بەم فەرمانە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ dpkg -l <span class="p">|</span> grep ^ii <span class="p">|</span> awk ‘<span class="o">{</span> print <span class="nv">$2</span><span class="o">}</span>’ &gt; mylist.txt
+</code></pre></div><p>ڕوونووسگرتن(کۆپی) بۆ ڕاژە یان سێرڤێری دووهەم بەم فەرمانە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ scp mylist.txt user@server2:~/
+</code></pre></div><p>گەڕانەوە یان restore بۆ سێرڤێری دووهەم ؛</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ dpkg --clear-selections
+$ sudo dpkg --set-selections &lt; mylist.txt
+</code></pre></div><p>یان لە رێگای ئەم فەرمانە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install -y <span class="k">$(</span>&lt; mylist.txt<span class="k">)</span>
+</code></pre></div><p>لە کۆتایی دەتوانن بەم فەرمانە ئەو پاکەتانە کە گەرەکتان نییە بیسڕنەوە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get autoremove
+</code></pre></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
