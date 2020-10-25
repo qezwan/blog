@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی : پەیکەرسازی و ئامادەکردنی چاپکەرەکان(Printers) لە گنو/لینوکس بە بەراوەرد لەگەڵ سیستەمەکانی وەگڕخەری دیکە، کەمێ دژوارە .هۆی ئەمەش نەبوونی درایڤی دامەزراندن بۆ جۆرەکانی چاپکەرەکانە.بێجگە لەمە هەر ڕومێزیێک بە جۆرێک چاپکەرەکان ڕیز دەکا.خوشبەختانە، ڕێگایێکی ئاسان بۆ پەیکەرسازی چاپکەرەکان لەسەر گنو/لینوس هەڵبژێردراوە،ئەمەش سیستەمی چاپکەرەی کاپسە(Cups).ئەم ئامێرە سەرچاوەکراوەیەو لە لایەن پەرەپێدەرانی ئەپڵ گەشە دەدرێت.بە کاپس زیادکردنی چاپکەرەکان بە گنو/لینوکس، وەک ئاسانی خواردنی کەیکێک(کیک) وایە!
+دەتوانی ئەم بابەتەی دیکە لێرە بخوێنی : دامەزراندنی نەرمەکالی CUPS لە لینوکس بۆ چاپکردن">
+
+<meta property="og:title" content="پەیکەرسازی چاپکەرەکان بۆ گنو/لینوکس بە Cups" />
+<meta property="og:description" content="پێشەکی : پەیکەرسازی و ئامادەکردنی چاپکەرەکان(Printers) لە گنو/لینوکس بە بەراوەرد لەگەڵ سیستەمەکانی وەگڕخەری دیکە، کەمێ دژوارە .هۆی ئەمەش نەبوونی درایڤی دامەزراندن بۆ جۆرەکانی چاپکەرەکانە.بێجگە لەمە هەر ڕومێزیێک بە جۆرێک چاپکەرەکان ڕیز دەکا.خوشبەختانە، ڕێگایێکی ئاسان بۆ پەیکەرسازی چاپکەرەکان لەسەر گنو/لینوس هەڵبژێردراوە،ئەمەش سیستەمی چاپکەرەی کاپسە(Cups).ئەم ئامێرە سەرچاوەکراوەیەو لە لایەن پەرەپێدەرانی ئەپڵ گەشە دەدرێت.بە کاپس زیادکردنی چاپکەرەکان بە گنو/لینوکس، وەک ئاسانی خواردنی کەیکێک(کیک) وایە!
+دەتوانی ئەم بابەتەی دیکە لێرە بخوێنی : دامەزراندنی نەرمەکالی CUPS لە لینوکس بۆ چاپکردن" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D9%BE%DB%95%DB%8C%DA%A9%DB%95%D8%B1%D8%B3%D8%A7%D8%B2%DB%8C-%DA%86%D8%A7%D9%BE%DA%A9%DB%95%D8%B1%DB%95%DA%A9%D8%A7%D9%86-%D8%A8%DB%86-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D8%A8%DB%95-cups/" />
+<meta property="article:published_time" content="2018-09-07T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-09-07T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     پەیکەرسازی چاپکەرەکان بۆ گنو/لینوکس بە Cups 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D9%BE%DB%95%DB%8C%DA%A9%DB%95%D8%B1%D8%B3%D8%A7%D8%B2%DB%8C-%DA%86%D8%A7%D9%BE%DA%A9%DB%95%D8%B1%DB%95%DA%A9%D8%A7%D9%86-%D8%A8%DB%86-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D8%A8%DB%95-cups/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2023%3a16%3a12.3170212%20%2b0330%20%2b0330%20m%3d%2b1.053324901">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2023%3a16%3a12.3170212%20%2b0330%20%2b0330%20m%3d%2b1.053324901">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2023%3a16%3a12.3170212%20%2b0330%20%2b0330%20m%3d%2b1.053324901">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2023%3a16%3a12.3170212%20%2b0330%20%2b0330%20m%3d%2b1.053324901">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    پەیکەرسازی چاپکەرەکان بۆ گنو/لینوکس بە Cups
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Fri Sep 7 2018 05:35:45 UTC'>Sep 7, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>4 خولەک<div class="middot"></div>659 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی-"><strong>پێشەکی :</strong></h5>
+<p>پەیکەرسازی و ئامادەکردنی چاپکەرەکان(Printers) لە گنو/لینوکس بە بەراوەرد لەگەڵ سیستەمەکانی وەگڕخەری دیکە، کەمێ دژوارە .هۆی ئەمەش نەبوونی درایڤی دامەزراندن بۆ جۆرەکانی چاپکەرەکانە.بێجگە لەمە هەر ڕومێزیێک بە جۆرێک چاپکەرەکان ڕیز دەکا.خوشبەختانە، ڕێگایێکی ئاسان بۆ پەیکەرسازی چاپکەرەکان لەسەر گنو/لینوس هەڵبژێردراوە،ئەمەش سیستەمی چاپکەرەی کاپسە(Cups).ئەم ئامێرە سەرچاوەکراوەیەو لە لایەن پەرەپێدەرانی ئەپڵ گەشە دەدرێت.بە کاپس زیادکردنی چاپکەرەکان بە گنو/لینوکس، وەک ئاسانی خواردنی کەیکێک(کیک) وایە!</p>
+<p>دەتوانی ئەم بابەتەی دیکە لێرە بخوێنی :
+<a href="http://qezwan.ir/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%DB%8C-cups-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">دامەزراندنی نەرمەکالی CUPS لە لینوکس بۆ چاپکردن</a></p>
+<h5 id="دامەزراندنی-کاپسcups">دامەزراندنی کاپس(Cups)</h5>
+<p>زۆربەی هەرەزۆری چاپکردنییەکان لە گنو/لینوکس بە کاپس ئەنجام دەبێت.شایەت ئێوە ئەم نەرمەکالاتان لە سەر سیستەمەکەی خۆتان دامەزراندبێ.گەر ئەمەش ۱۰۰٪ درووست نەبێ دەتوانین قۆناغەکانی دامەزراندن بە شیوازێکی پاراو ئەنجام بدەین.ترمیناڵ بکەنەوە ئینجا لە سەر بنەمای دابەشکراوەکەتان فەرمانەکانی خوارەوە بنووسن .</p>
+<h6 id="ئوبونتو">ئوبونتو</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install cups
+</code></pre></div><h6 id="دێبیان">دێبیان</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install cups
+</code></pre></div><h6 id="ئارچئاچ">ئارچ(ئاچ)</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo pacman -S cups
+</code></pre></div><h6 id="فێدۆرا">فێدۆرا</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo dnf install cups -y
+</code></pre></div><h6 id="سوسەسووزە">سوسە(سووزە)</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo zypper install cups
+</code></pre></div><h5 id="لینوکس-بە-گشتی">لینوکس بە گشتی</h5>
+<p>پێویستان بە نەرمەکالای کاپس هەیە، بەڵام ناتوانن بە ئاسانی لە سەر سیستەمی کارپێکردنەکانتان دایمەزرێنن ؟نگەرانی ناوێ! بۆ ئەوە کە سەرچاوەی کۆدەکانی لە گیتهاب (Github) هەیە.بۆ دامەزراندنی و زانیاری فرەتر سەردانی <a href="https://github.com/apple/cups">ئەم پەڕە</a>بکەن.پێداویستیەکانی چارەسەر بکەن.کاتێک پێداویستیەکانی دامەزراندن چارەسەر دەکەن، ترمیناڵ بکەنەوە و بە فەرمانی گیت(Git) دوایین وشانی دامەزرێنن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">git clone https://github.com/apple/cups.git
+</code></pre></div><p>بە یارمەتی فەرمانی<code>CD</code>بچنە نێو بوخچەی <code>cups</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> cups
+</code></pre></div><p>ئێستا فەرمانی پەیکەرسازی (configure) لەترمیناڵ بنووسن.ئەم قۆناغە بێ سەرنجدان و ئەنجامدان تێپەڕ مەکەن!</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">./configure
+</code></pre></div><p>ڕێبدەن کە سکریپتی پەیکەرسازییەکان جێبەجێ بکرێت. وە ژینگەی گەشەپێدان بکەوێتە ئیش.لە ترمیناڵ ئەم فەرمانی make بنووسن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">make
+</code></pre></div><p>ئێستا کاپس کامپایڵ(وه‌رگێڕان) دەبێ ، ئەم فەرمانە لە گنو/لینوکس کەمێ کات دەگرێ .کاتێک کە وەرگێڕان تەواو بوو کاپس تاقی بکەنەوە،بەم فەرمانە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">make <span class="nb">test</span>
+</code></pre></div><p>پاش جێبەجێکردن، کاپس لە سەر سیستەمەکەتان دامەزرێنن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo make install
+</code></pre></div><h5 id="چاپکەرەکان-زیاد-بکەن">چاپکەرەکان زیاد بکەن</h5>
+<p>سیستەمی چاپی کاپس لە گنو/لینوکس بە تەواوی خۆکارانەیە.گەر ئێوە چاپکەرێکتان هەیە کە پاڵپستی لە لینوکس ناکا، یان ئێوە چاپکەرێکی خۆماڵیتان هەیەو بەڵام سیستەمی کارپێکردنەکەتان پشتیوانی لە لینوکس ناکا،کاپس ئیش ناکا.بە گشتی، باشترین ڕێگا ئەوەیە کە بزانن کە چاپکەرەکەی ئێوە لە سەر تۆڕ ئیشدەکا.گەر کۆمپانی دروستکەری چاپکەر لە لینوکس پاڵپشتی نەکا کێشەیێک نییە.ئێوە دەتوانن لە رێگای کاپس کاری خۆتان ئەنجام بدەن.
+بۆ زیادکردنی چاپکەر،وێبگەرێک بکەنەوە ئینجا ناونیشانەکەی خوارەوەی تێدا بنووسن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">localhost:631/
+</code></pre></div><p>لە نێو روخساری وێب ئێوە کرتەیێک لە سەر، سەرخشتی “Administration” لە سەرەوەی پەڕەکە بکەن.ئینجا بگەڕێن بۆ “Cups for Administrators” ،پاشان دوکمەی “Adding Printers and Classes” هەڵبژێرن تا بڕۆن بۆ بەشی بەڕێوەبەرایەتی چاپکەر.</p>
+<p><img src="https://qezwan.ir/server/images/11.png" alt=""></p>
+<h5 id="چاپکەرە-خۆماڵیەکان">چاپکەرە خۆماڵیەکان</h5>
+<p>بە نیازن کە چاپکەری خۆماڵی زیاد بکەن ؟دڵنیا بە کە لینوکس بە عینوانی ئامێرێک دەیناسێ.</p>
+<p>lsusb
+گەر بە فەرمانەکەی سەرەوە چاپکەرەکە نیشان درا.سیستەمی کارپێکردنی ئێوە ئیمکانی هەیە پاڵپشتی لێ بکا.بگەڕێنەوە بۆ بەشی بەڕێوەبردنی کاپس و لە سەر دوکمەی “find new printers” کرتە بکەن.ئەم کردارە باشترین ڕێگایە بۆ پشکنینی کاپسە بۆ چاپکەرەکەتان لە سەر سیستەم.(هەم بۆ تۆر هەم بۆ زیادکردنی خۆماڵی(بێ تۆڕ))</p>
+<p><img src="https://qezwan.ir/server/images/11-1.png" alt=""></p>
+<p>کە کاپس پشکنین بۆ چاپکەرەکان بکا.کاتێک پشکنین تەواو بوو، چاپکەر لە نێو پێرست ئاشکرا دەبێ.لە لای هەر چاپکەرێک کرتە لە سەر دوکمەی “Add This Printer” بکەن.تاکو چاپکەر زیاد بکرێ بە کاپس.</p>
+<h5 id="چاپکەرەکانی-تۆڕ">چاپکەرەکانی تۆڕ</h5>
+<p>کاپس لە ناساندنی چاپکەرەکان زۆر توانایە،تەنانەت لە تۆڕیش.گەر ئێوە بە باشی ناونیشانی ڕاژەی چاپکەرەکەتان دەزانن لە سەر دوکمەی زیادکردنی چاپکەر”Add Printer” کرتە بکەن.کێشان(scroll) بێنە خوارەوە تاکو دەگەیێن بە “Other Network Printers” ئینجا ناونیشانی دیاری بکەن.گەر نە ! دوکمەی پەیداکردنی چاپکەر “Find New Printers” لێبدەن، بێڵن تا نەرمەکالا بە شێوازی خۆکارانە چاپکەر پەیدا بکا.
+پاش پەیداکردنی چاپکەر لە سەر دوکمەی زیادکردنی چاپکەر”“Add This Printer” کرتە بکەن.</p>
+<h5 id="چاپکردنی-پەڕەێک-بۆ-تاقیکردن">چاپکردنی پەڕەێک بۆ تاقیکردن</h5>
+<p>ئێستا چاپکەرەکەتان بە یارمەتی نەرمەکالای کاپس ئیشدەکا. فەرمانی تاقیکردن بە چاپکەرەکە دەدەین.بەرنامەکەی خۆتان بکەنەوە ئینجا فەرمانی چاپی پێبدەن.
+فەرماننامە لە سەر Gnome/GTK
+گەر لە ڕۆمێزی گنوم سود دەگرن لە قۆناغەکانی خوارەوە پەیڕەوی بکەن بۆ تاقیکردنی چاپکەر:</p>
+<ol>
+<li>نەرمەکالای چاپکەر بکەنەوە،بەشوێن”printers” بگەڕێن وچالاکی بکەن.</li>
+<li>چاو لە چاپکەر بکەن بۆ زایاد کردن بە کاپس و لە مێنیۆ هەڵیبژێرن.</li>
+<li>دوکمەی “print test page” چاپکردنی پەڕەی تاقیکردن لێبدەن بۆ چاپکردنی پەڕە.</li>
+</ol>
+<p><strong>فەرماننامەی KDE</strong>
+گەر ئێوە بەکارهێنەری KDE پلاسمان ؟ باشە، لەم فەرمانانە پەیڕەوی بکەن تا فێر بن چۆن پەڕەی تاقیکراو لە سەر چاپکەرەکەتان ،تاقی بکەنەوە.</p>
+<ol>
+<li>پرۆگرامی پلاسما بکەنەوە لە مێنیۆ بگەڕێن بۆ “Printers” .</li>
+<li>لە نەرمەکالاکانی چاپکەر،چاپکەر هەڵبژێرن و زیادی بکەن بە کاپس.</li>
+<li>لە سەر دوکمەی “maintenance” کرتە بکەن،ئینجا “print test page” هەڵبژێرن.</li>
+</ol>
+<p>سەرچاوە: <a href="https://www.addictivetips.com/ubuntu-linux-tips/configure-printers-on-linux/">addictivetips</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

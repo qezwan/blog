@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێناسە: یەکێک لە یەکەمین هێڵەکانی بەرگیری لە ئاسایشی ڕاژەی هەوری دامەزراندنی دیواری ئاگرە(firewall).لە ڕابردوو ئەم کارە زۆر بە ئاڵۆزی و دژواری ئەنجام دەبوو.زۆر کردار پێویست بوو. iptables ئێستا بە عینوانی نەرمەکالایێکی بەرگیری ڕاژە لە ئەمڕۆدا زۆر خوازیاری هەیە.بەڵام نیازی بە هەوڵێکی گونجا و عاقڵانە لە لایەن بەکارهێنەر بۆ فێر بوون و فام هەیە.ڕۆڵ(نەخش)ەکانی دیواری ئاگر شتیک نییە کە لە چەند چرکە فێر ببن. بەم مەبەستە،UFW بە شیوەیێکی بەرچاو زۆر ئاسانتر و جێگیرترە .">
+
+<meta property="og:title" content="دامەزراندنی فایرواڵی UFW بۆ ئوبونتو و ڕاژەی هەوری دێبیان" />
+<meta property="og:description" content="پێناسە: یەکێک لە یەکەمین هێڵەکانی بەرگیری لە ئاسایشی ڕاژەی هەوری دامەزراندنی دیواری ئاگرە(firewall).لە ڕابردوو ئەم کارە زۆر بە ئاڵۆزی و دژواری ئەنجام دەبوو.زۆر کردار پێویست بوو. iptables ئێستا بە عینوانی نەرمەکالایێکی بەرگیری ڕاژە لە ئەمڕۆدا زۆر خوازیاری هەیە.بەڵام نیازی بە هەوڵێکی گونجا و عاقڵانە لە لایەن بەکارهێنەر بۆ فێر بوون و فام هەیە.ڕۆڵ(نەخش)ەکانی دیواری ئاگر شتیک نییە کە لە چەند چرکە فێر ببن. بەم مەبەستە،UFW بە شیوەیێکی بەرچاو زۆر ئاسانتر و جێگیرترە ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%81%D8%A7%DB%8C%D8%B1%D9%88%D8%A7%DA%B5%DB%8C-ufw-%D8%A8%DB%86-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88-%D9%88-%DA%95%D8%A7%DA%98%DB%95%DB%8C-%D9%87%DB%95%D9%88%D8%B1%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/" />
+<meta property="article:published_time" content="2018-08-17T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-08-17T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی فایرواڵی UFW بۆ ئوبونتو و ڕاژەی هەوری دێبیان 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%81%D8%A7%DB%8C%D8%B1%D9%88%D8%A7%DA%B5%DB%8C-ufw-%D8%A8%DB%86-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88-%D9%88-%DA%95%D8%A7%DA%98%DB%95%DB%8C-%D9%87%DB%95%D9%88%D8%B1%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2023%3a16%3a12.2950346%20%2b0330%20%2b0330%20m%3d%2b1.031338301">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2023%3a16%3a12.2950346%20%2b0330%20%2b0330%20m%3d%2b1.031338301">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2023%3a16%3a12.2950346%20%2b0330%20%2b0330%20m%3d%2b1.031338301">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2023%3a16%3a12.2950346%20%2b0330%20%2b0330%20m%3d%2b1.031338301">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی فایرواڵی UFW بۆ ئوبونتو و ڕاژەی هەوری دێبیان
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Fri Aug 17 2018 05:35:45 UTC'>Aug 17, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>5 خولەک<div class="middot"></div>995 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێناسە">پێناسە:</h5>
+<p>یەکێک لە یەکەمین هێڵەکانی بەرگیری لە ئاسایشی ڕاژەی هەوری دامەزراندنی دیواری ئاگرە(firewall).لە ڕابردوو ئەم کارە زۆر بە ئاڵۆزی و دژواری ئەنجام دەبوو.زۆر کردار پێویست بوو. iptables ئێستا بە عینوانی نەرمەکالایێکی بەرگیری ڕاژە لە ئەمڕۆدا زۆر خوازیاری هەیە.بەڵام نیازی بە هەوڵێکی گونجا و عاقڵانە لە لایەن بەکارهێنەر بۆ فێر بوون و فام هەیە.ڕۆڵ(نەخش)ەکانی دیواری ئاگر شتیک نییە کە لە چەند چرکە فێر ببن.
+بەم مەبەستە،UFW بە شیوەیێکی بەرچاو زۆر ئاسانتر و جێگیرترە .</p>
+<h5 id="ufw-جییە-">UFW جییە ؟</h5>
+<p>UFW کورتکراوەی دیواریکی ئاگرینی بێ ئاڵۆزە(Uncomplicated Firewall)،کە لە نەرمەکالای iptables زۆر سادەتر و قەشەنگترە.ئامانجی ئەوەیە کە بەڕیوەبردنی دیواری ئاگر زۆر سادەتر بکات و ڕووخسارێکی بەکارهێنەر پەسەندی بێ بۆ سوودگرتن.هەروەها لە لایەن کۆمەڵگای گشتی بەکارهێنەرانی لینوکس زۆر بە باشی پاڵپشتی دەکرێت و لە سەر زۆر یەک لە دابەشکراوەکان لینوکس سوودی لێوەرگیراوە.هەروا هەڵبژاردەیێکی بەهێزە بۆ پاراستنی ئاسایشی ڕاژەکەتان.</p>
+<h5 id="پێش-دەستپێکردن">پێش دەستپێکردن</h5>
+<p>سەرەتا، دەبێ دڵنیا ببین لەوە کە UFW دامەزراوە.لە ئوبونتو بە شێوازی پێش گریمان بوونی هەیە.بەڵام گەر دانەمەزرابوو بە هەر هۆکاریک، ئێوە دەتوانن بە فەرمانی خوارەوە دایمەزرێنن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo aptitude install ufw
+</code></pre></div><p>یا</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install ufw
+</code></pre></div><h5 id="پشکنینی-بارودۆخ">پشکنینی بارودۆخ</h5>
+<p>ئێوە دەتوانن بارودۆخی UFW بە فەرمانەکەی خوارەوە ببینن</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw status
+</code></pre></div><p>ئێستا، شایەت پێتان بڵێ ناچالاکە.بەهەرحاڵ کاتێک کە ufw چالاکە ئێوە ڕۆڵی دیواری ئاگرەکەتان شتێکە لەم شێوازە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Status: active
+
+To Action From
+-- ------ ----
+<span class="m">22</span> ALLOW Anywhere
+</code></pre></div><p>سوودلە IPv6 لە دیواری ئاگری UFW :
+گەر ئێوە ڕاژەی خەیاڵیتان لە سەر IPv6 کانفیگ کردووە.دڵنیا بن کە UFW کانفیگکراوە بۆ پشتیوانی IPv6 ئینجا بۆ هەر دوو جۆری ئایپی واتە IPv4 وە IPv6 ڕۆڵەکانی بۆ کانفیگ بکەن.بۆ ئەم کارە فایلی کانفیگی UFW بەم فەرمانە بکەنەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo vi /etc/default/ufw
+</code></pre></div><p>دڵنیا بن لە “IPV6” کە بەرابەرە لەگەڵ “yes”،هاوشێوەی ئەمەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">IPV6</span><span class="o">=</span>yes
+</code></pre></div><p>پاشکەوتی بکەن و بێنەدەرەوە.بۆ وەگڕخستنی UFW پەیڕەوی بکەن لەم فەرمانە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw disable
+sudo ufw <span class="nb">enable</span>
+</code></pre></div><p>ئێستا بۆ دوو جۆر ئایپییەکە واتە IPv4 وە IPv6 کانفیگکراوە.</p>
+<h5 id="ڕێکخستنی-پێشگریمان">ڕێکخستنی پێشگریمان</h5>
+<p>یەکێ لەو شتانە کە هەر نەرمەکالای دیواری ئاگر ڕێکدەخات،سادەکردنی ناساندنی ڕۆڵەکان بۆ ئەنجامدانی یاساکانی پێش گریمان بۆ ڕێپێدان بە بەرگیری لە پەیویندیەکان و بەستنەوەی ڕاژەو تۆڕە.پێشگریمانەکانی UFW هەر هەمووی پەیوەندیەکانی هاتنەژوور قەپاتدەکەن و پەیوەندیەکانی چوونەدەرەیان کراوەکردووە.ئەمەش مانای وایە کە هەر کەسێک کە گەرەکی بێ بگەیێ بە ڕاژەی هەوریەکەتان توانای بەستنەوەو پەیوەندی نییە.لە کاتێکدا هەر بەرنامە لە ڕاژە دەتوانێ پەیوەندی بە جیهانی دەرەوە بگرێ. بۆ ڕێکخستنی ئەم پێشگریمانانە لەUFW ،لە فەرمانەکەی خوارەوە سوود دەگرین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw default deny incoming
+</code></pre></div><p>وە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw default allow outgoing
+</code></pre></div><p>گەر هەرەکتانە کە مێ سنووردا بێ، دەتوانن داواکان بۆ دەرەوەش قەپات بکەن.هەر چەند پێویستی ئەم کردارە قسەی لەسەرە.بەڵام گەر ئێوە ڕاژەیێکی هەوری گشتیتان هەیە دەتوانن لە هەر جۆر پەیوەندی SSHبەرگیری بکەن.ئەمەش هۆکارێک بۆ بەڕێوەبردنی ئاسانە چوونکە دەبێ یاساکان بۆ تەواو پەیوەندیەکان ڕێکبخەن.ئێوە دەتوانن ئەمە بە شێوازی پێشگریمان بەم فەرمانە ڕێکبخەن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw default deny outgoing
+</code></pre></div><h5 id="ڕێگەدان-بە-پەیوەندی-لە-ڕاژە">ڕێگەدان بە پەیوەندی لە ڕاژە:</h5>
+<p>هەروا کە دەبینن پێکهاتەی ڕەستە(syntax) .ئێوە لە ترمیناڵ بە فەرمان دەتوانن یاساکانی دیواری ئاگر بگۆڕن.گەر ئێوە دیواری ئاگرتان چالاک کردووە. تەواو پەیوەندیەکان قەپاتدەکا.گەر ئیوە پەیوەندیتان گرتووە لە سەر SSH بۆ ڕاژەی هەوری.ئەمەش کێشەیێکە بۆ ئەوە کە ئێوە لە ڕاژەکەتاب قوفڵ دەبن بێڵن پەیوەندی SSH بە ڕاژەکەمان چالاک بکەین تا لەم قوفڵ بوونە بەرگیری بکەین.بەم فەرمانە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw allow ssh
+</code></pre></div><p>بۆ زیادکردنی خزمەتگوزاریەکان زۆر سادەیە.UFW هاتووە بە فەرمانەکانی پێشگریمان بۆ سوودبینینی بەکارهێنەر . SSH ئێمە لە سەرەوە نمونەیێکە.لە ئەساسە بە شێوازیکی کورتە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw allow 22/tcp
+</code></pre></div><p>ئەم فەرمانە ڕێمان پێدەدا بۆ پەیوەندی بە دەرگای ۲۲ کە لە پرۆتۆکۆلی TCP سوودی لێدەگرین.گەر SSH ڕاژە لە پۆرتی ۲۲۲۲ ڕێکخراوە ئێمە دەتوانین بەم فەرمانەی خوارەوە توانای بکەین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw allow 2222/tcp
+</code></pre></div><h5 id="پەیوەندیانە-کە-شایەت-نیازمان-پێیان-بێ">پەیوەندیانە کە شایەت نیازمان پێیان بێ.</h5>
+<p>ئێستا کاتێکی باشە بۆ ئەو پەیوەندیانە کە ئیمکانەن پێویستیمان پێیان ببێ. گەر ئێمە دەستپێگەیشتنی ئاسایشی بۆ ڕاژەی وێبمان بە FTP بێ ،ئیمە پێویستمان بە یەکێک لەم فەرمانانەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw allow www
+sudo ufw allow 80/tcp sudo ufw allow ftp
+sudo ufw allow 21/tcp
+</code></pre></div><p>باوڕی ئێوە بۆ ئەوە کە چ دەروازەیێکی پۆرت بکەنەوە، بە پێی نیازەکەتان جیاوازە.بەڵام کەمێ تاقیکردنەوەی پێویستە. بێجگە لەمانە گەر هەرەکتانە بزانن کە پەیوەندی ئێوە بە SSH ڕێیپێدراوە دەبێ لەم بابەتە دڵنیا بنەوە.</p>
+<h5 id="سنووری-دەرگاکانport">سنووری دەرگاکان(Port):</h5>
+<p>ئێوە دەتوانن لە UFW سنوور بخەنە سەر پۆرتێکی تایبەت.بۆ ڕێپێدان بەم دەرگاکان 1000 وە 2000 لەم فەرمانە سوود بگرن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw allow 1000:2000/tcp
+</code></pre></div><p>گەر ئێوە نیازتان بە UDP هەیە.لەم فەرمانە سوود بگرن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw allow 1000:2000/udp
+</code></pre></div><h5 id="ناونیشانی-ئای-پی">ناونیشانی ئای پی</h5>
+<p>ئێوە دەتوانن ئای پیێکی تایبەت دیاری بکەن.بۆ نمونە ،گەر من گەرەکم بە پەیوەندیەکان لە ئای پیێکی تایبەت دیاری بکەم(بۆ وێنە دەڵێن ناونیشانی ماڵەوە یان شوێنی ئیشکردن).لەم فەرمانە سوود دەگرم</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw allow from 192.168.255.255
+</code></pre></div><h5 id="ڕێگانەدان-بە-پەیوەندیێک-">ڕێگانەدان بە پەیوەندیێک :</h5>
+<p>بە شێوازی پێشگریمانی هەر هاتنەژوورەیێکی پەیوەندییەکان قەپاتکراوە.ئەمەش هۆکارێکە کە یاساکانی دیواری ئاگرەکەمان، سادەتر بێ. بۆ ئەوە کە ئێمە لە کاتی هەڵبژاردن ڕێپێدراوین کە بەشێک لە پۆرت و دەرگاکانی ئای پی بۆ پەیوەندی بە ڕاژە پەسەند بکەین.گەر هەرەکتانە قۆسمە بن و تەواو دەرگاو پۆرتەکانی ڕاژەکەتان بکەنەوە یا ئاوەڵای بکەن(پێسنیار ناکرێ) دەتوانن ڕێبدەن بە تەواو پەیوەندیەکان وە ئینجا ئەو سنوورانە کە گەرەکتان نییە دەستانپێیبگەیێ ئاستی”allow”(ڕێپێدان) بگۆڕن بە”deny”(ڕێگانەدان یان نکول).وەک ئەم نمونە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw allow 80/tcp
+</code></pre></div><p>لە سەرەوە ڕێگەمان داوە بە پۆرتی 80</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw deny 80/tcp
+</code></pre></div><p>بە فەرمانی سەرەوە بە پۆرتی 80 ڕێگامان نەداوە.</p>
+<h5 id="سڕینەوەیە-یاساکانrules">سڕینەوەیە یاساکان(Rules)</h5>
+<p>دوو هەڵبژاردە هەیە بۆ سڕینەوە یاساکان.سادەترین ڕێگا ئەوەیە لەم فەرمانە سوود بگرن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw delete allow ssh
+</code></pre></div><p>ئێوە دەبینن کە ئێمە تەنها پێش یاساکە وشەی “delete”ـمان نووسی.نمونەیێکی دیکە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw delete allow 80/tcp
+</code></pre></div><p>یان نمونەیێکی دیکە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw delete allow 1000:2000/tcp
+</code></pre></div><p>ئەمە کەمێ دژوارە کاتێک کە ئێوە پێرستێکی زۆرتان لەبەردەستە.ڕیگایێکی سادە.لە دوو قۆناغ، لەبابەتی ئەم فەرمانانە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw status numbered
+</code></pre></div><p>گەر ئێمە گەرکمان بێ لیستێک لە تەواو یاساکان لە لیستێکی ژمارەیی کۆ کەینەوە لەم فەرمانە سوود دەگرین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw delete <span class="o">[</span>number<span class="o">]</span>
+</code></pre></div><p>[number] هێڵێکە لە فەرمانەکەی پێش.</p>
+<h5 id="وەگڕخستنەوە">وەگڕخستنەوە</h5>
+<p>پاش ئەو شتە کە ئێمە چاوەڕوانیمان دەکرد لە UFW و ڕێکخستنەکانمان ئەنجام دا،دەبێ UFW چالاک بکەین</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw <span class="nb">enable</span>
+</code></pre></div><p>بۆ دیتنی بارودۆخی یاساکان کە بە دەرگاکانمان داوە، لەم فەرمانە بەهرە دەبەین</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw status
+</code></pre></div><p>یان ئەمە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw status verbose
+</code></pre></div><p>بۆ زانیاری فرەتر.
+گەر هەرەکمانە UFW بکوژێنینەوە واتە ناچالاکی بکەین لەم فەرمانە سوود دەبینین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw disable
+</code></pre></div><h5 id="ڕیکخستنەوەی-هەموو-شتێک-">ڕیکخستنەوەی هەموو شتێک :</h5>
+<p>بە هەر هۆکارێک ئەگەر ئێوە گەرەکتانە یاساکانی ڕاژەی هەوری بۆ پێشگریمان ڕێکبخەنەوە.بۆ ئەم مەبەستە تەنها ئەم فەرمانە بنووسن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw reset
+</code></pre></div><p>سەرچاوە: <a href="https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server#before-we-get-started">digitalocean</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
