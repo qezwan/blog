@@ -6,7 +6,18 @@
     <description>Recent content in ڕاژە on Qezwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 16 Aug 2018 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Aug 2018 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>دامەزراندنی ڕاژەی Nginx لەسەر ئوبونتوی۱۸.۰۴</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C-nginx-%D9%84%DB%95%D8%B3%DB%95%D8%B1-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88%DB%8C%DB%B1%DB%B8.%DB%B0%DB%B4/</link>
+      <pubDate>Fri, 17 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C-nginx-%D9%84%DB%95%D8%B3%DB%95%D8%B1-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88%DB%8C%DB%B1%DB%B8.%DB%B0%DB%B4/</guid>
+      <description>پێناسە: Nginx یەکێک لە سیستەمەکانی خزمەتگوزاری ڕاژەی وێب لە جیهانە کە بۆ ئەو ماڵپەڕانە کە ترافێکی زۆریان بە سەرەوەیە بەکار دێ.هاورێیەتیێکی باشی لەگەڵ خزمەتگوزاری Apache هەیە و زۆر جار بە جیاتی ڕاژەی وێب یان پرۆکسی پێچەوانە(reverse proxy) بەکاردەبرێ. لەم نووسینە ئێمە باسێک لە سەر دامەزراندنی Nginx لە سەر ڕاژەی ئوبونتوی۱۸.۰۴ دەکەین.
+پێداویستی: دامەزراندنی ڕاژەیێک ، دەتوانێ سوود لە ڕاژەی خەیاڵێ(VPS) یان ڕاستەقینە (Dedicated Servers)بگرن.دەستپێگەیشتنیroot بە ڕاژە یا سێرڤێرەکەتان پێویستە.
+قۆناغی یەکەم :دامەزراندنی Nginx : بە هۆی ئەوە Nginx لە نێو کانگاکانی(repositories) ئوبونتو بوونی هەیە.</description>
+    </item>
+    
     <item>
       <title>دامەزراندنی XAMPP لە سەر گنو/لینوکس</title>
       <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-xampp-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
@@ -15,6 +26,17 @@
       <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-xampp-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
       <description>ئێمە لەم فێرکارییە فێر بووین کە دەتوانین MySQL ،Apache و PHP جیا جیا دامەزرێنین.بڵام بە جیاتی دامەزراندن بە شیوازی تاک و کانفیگکردنیان دەتوانین لە پاکەتێک بەیەکەوە هەر هەمووی دامەزرێنین.ئەم پاکەتە ناوی زەمپە.
 خاڵ : وشەی X لە سەرەتای ئەم پاکەتە (XAMPP) ئاماژە بە کراس پڵەتفۆرم بوونی دەکا، واتە دەتوانرێت لە سەر هەر سێ سیستەمی کارپێکردنی ماک،ویندۆز و گنو/لینوکس دامەزرێ. سەرەتا دەبێ لە ماڵپەڕی فەرمی Apache Friends بە پێی سیستەمی وەگرخەڕەکەمان(ماک،ویندۆس و گنو/لینوکس)و ئاندازیاریە ڕێکخەر لە جۆری 32بیت و 64 بیت پاکەتی گونجاو دابگرین.</description>
+    </item>
+    
+    <item>
+      <title>دامەزراندنی پاکەتی LAMP لە سەر دابەشکراوەکانی دێبیان</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%8C-lamp-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%AF%D8%A7%D8%A8%DB%95%D8%B4%DA%A9%D8%B1%D8%A7%D9%88%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/</link>
+      <pubDate>Sat, 11 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%8C-lamp-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%AF%D8%A7%D8%A8%DB%95%D8%B4%DA%A9%D8%B1%D8%A7%D9%88%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/</guid>
+      <description>پێشەکی لەم فێرکارییە فێر دەبین چۆن دەتوانین پاکەتی LAMP لە سەر دابەشکراوەکانی بنەمای دێبیان دامەزرێنین.وشەی LAMP کورتکراوەی وشەکانی Linux ،Apache ،MySQL ،PHP یە. بە پێچەوانەی ماک و ویندۆس پاکەتێکی یەکگرتوو بە شێوازی پەرگەیێک نییە کە بتوانین تەواو خزمەتگوزارییەکانی لێ دامەزرینین.دەبێ هەر کامێکیان جودا جودا دامەزرێنین.
+ لەو ڕوانگەوە لە زۆربەی دابەشکراوەکانی گنو/لینوکس ڕاژەیێکی خەیاڵی پێشتر دامەزراوە،پێویست نییە کە ئێمە ڕاژە دامەزرێنین تەنها ئەو ئەپانە(نەرمەکالانە) کە پێویستمان پێیەتی دایدەمەزرێنین.
+ دامەزراندنی خزمەتگوزاری Apache ئاپاچی خزمەتگوزارێکی ڕاژەی خۆڕایی و سەرچاوەکراوەیە،سەرەتا ترمیناڵ دەکەینەوە ئینجا فەرمانەکەی خوارەوەی لێ دەنوسین.</description>
     </item>
     
     <item>

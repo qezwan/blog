@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی لەم فێرکارییە فێر دەبین چۆن دەتوانین پاکەتی LAMP لە سەر دابەشکراوەکانی بنەمای دێبیان دامەزرێنین.وشەی LAMP کورتکراوەی وشەکانی Linux ،Apache ،MySQL ،PHP یە. بە پێچەوانەی ماک و ویندۆس پاکەتێکی یەکگرتوو بە شێوازی پەرگەیێک نییە کە بتوانین تەواو خزمەتگوزارییەکانی لێ دامەزرینین.دەبێ هەر کامێکیان جودا جودا دامەزرێنین.
+ لەو ڕوانگەوە لە زۆربەی دابەشکراوەکانی گنو/لینوکس ڕاژەیێکی خەیاڵی پێشتر دامەزراوە،پێویست نییە کە ئێمە ڕاژە دامەزرێنین تەنها ئەو ئەپانە(نەرمەکالانە) کە پێویستمان پێیەتی دایدەمەزرێنین.
+ دامەزراندنی خزمەتگوزاری Apache ئاپاچی خزمەتگوزارێکی ڕاژەی خۆڕایی و سەرچاوەکراوەیە،سەرەتا ترمیناڵ دەکەینەوە ئینجا فەرمانەکەی خوارەوەی لێ دەنوسین.">
+
+<meta property="og:title" content="دامەزراندنی پاکەتی LAMP لە سەر دابەشکراوەکانی دێبیان" />
+<meta property="og:description" content="پێشەکی لەم فێرکارییە فێر دەبین چۆن دەتوانین پاکەتی LAMP لە سەر دابەشکراوەکانی بنەمای دێبیان دامەزرێنین.وشەی LAMP کورتکراوەی وشەکانی Linux ،Apache ،MySQL ،PHP یە. بە پێچەوانەی ماک و ویندۆس پاکەتێکی یەکگرتوو بە شێوازی پەرگەیێک نییە کە بتوانین تەواو خزمەتگوزارییەکانی لێ دامەزرینین.دەبێ هەر کامێکیان جودا جودا دامەزرێنین.
+ لەو ڕوانگەوە لە زۆربەی دابەشکراوەکانی گنو/لینوکس ڕاژەیێکی خەیاڵی پێشتر دامەزراوە،پێویست نییە کە ئێمە ڕاژە دامەزرێنین تەنها ئەو ئەپانە(نەرمەکالانە) کە پێویستمان پێیەتی دایدەمەزرێنین.
+ دامەزراندنی خزمەتگوزاری Apache ئاپاچی خزمەتگوزارێکی ڕاژەی خۆڕایی و سەرچاوەکراوەیە،سەرەتا ترمیناڵ دەکەینەوە ئینجا فەرمانەکەی خوارەوەی لێ دەنوسین." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%8C-lamp-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%AF%D8%A7%D8%A8%DB%95%D8%B4%DA%A9%D8%B1%D8%A7%D9%88%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/" />
+<meta property="article:published_time" content="2018-08-11T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-08-11T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی پاکەتی LAMP لە سەر دابەشکراوەکانی دێبیان 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%8C-lamp-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%D8%AF%D8%A7%D8%A8%DB%95%D8%B4%DA%A9%D8%B1%D8%A7%D9%88%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%AF%DB%8E%D8%A8%DB%8C%D8%A7%D9%86/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2021%3a43%3a59.3526866%20%2b0330%20%2b0330%20m%3d%2b0.864465101">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2021%3a43%3a59.3526866%20%2b0330%20%2b0330%20m%3d%2b0.864465101">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2021%3a43%3a59.3526866%20%2b0330%20%2b0330%20m%3d%2b0.864465101">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2021%3a43%3a59.3526866%20%2b0330%20%2b0330%20m%3d%2b0.864465101">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی پاکەتی LAMP لە سەر دابەشکراوەکانی دێبیان
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sat Aug 11 2018 05:35:45 UTC'>Aug 11, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>2 خولەک<div class="middot"></div>360 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی">پێشەکی</h5>
+<p>لەم فێرکارییە فێر دەبین چۆن دەتوانین پاکەتی LAMP لە سەر دابەشکراوەکانی بنەمای دێبیان دامەزرێنین.وشەی LAMP کورتکراوەی وشەکانی <strong>L</strong>inux ،<strong>A</strong>pache ،<strong>M</strong>ySQL ،<strong>P</strong>HP یە. بە پێچەوانەی ماک و ویندۆس پاکەتێکی یەکگرتوو بە شێوازی پەرگەیێک نییە کە بتوانین تەواو خزمەتگوزارییەکانی لێ دامەزرینین.دەبێ هەر کامێکیان جودا جودا دامەزرێنین.</p>
+<blockquote>
+<p>لەو ڕوانگەوە لە زۆربەی دابەشکراوەکانی گنو/لینوکس ڕاژەیێکی خەیاڵی پێشتر دامەزراوە،پێویست نییە کە ئێمە ڕاژە دامەزرێنین تەنها ئەو ئەپانە(نەرمەکالانە) کە پێویستمان پێیەتی دایدەمەزرێنین.</p>
+</blockquote>
+<h5 id="دامەزراندنی-خزمەتگوزاری-apache">دامەزراندنی خزمەتگوزاری Apache</h5>
+<p>ئاپاچی خزمەتگوزارێکی ڕاژەی خۆڕایی و سەرچاوەکراوەیە،سەرەتا ترمیناڵ دەکەینەوە ئینجا فەرمانەکەی خوارەوەی لێ دەنوسین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get update
+$ sudo apt-get install apache2
+</code></pre></div><p><code>خاڵ :</code> ئاگادار بن بۆ دامەزراندن پێویستمان بە root ئاستی هەیە( root : بەهێزترین و بەرزترین ئاستی دەستپێگەیشتن لە لینوکسە)</p>
+<p>فەرمانی یەکەم ڕیپۆزیتۆریەکان سیستەم بەڕۆژ دەکاتەوە.پاشان لە فەرمانی دووەم <strong>A</strong>pache دادەمەزرێنین.پاش دامەزراندنی بە سەرکەوتوویی، فەرمانەکەی خوارەوە بۆ نیشاندانی بارودۆخی دامەزراندنەکە دەنووسین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo service apache2 status
+</code></pre></div><p>ئێسا بە پەیامی خوارەوە ڕووبەرو دەبین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apache2.service - LSB: Apache2 web server
+   Loaded: loaded <span class="o">(</span>/etc/init.d/apache2<span class="o">)</span>
+   Active: active <span class="o">(</span>running<span class="o">)</span> since Sat 2016-04-02 01:13:24 IRDT<span class="p">;</span> 23h ago
+     Docs: man:systemd-sysv-generator<span class="o">(</span>8<span class="o">)</span>
+  Process: <span class="m">7290</span> <span class="nv">ExecReload</span><span class="o">=</span>/etc/init.d/apache2 reload <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span>0/SUCCESS<span class="o">)</span>
+  Process: <span class="m">1635</span> <span class="nv">ExecStart</span><span class="o">=</span>/etc/init.d/apache2 start <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span>0/SUCCESS<span class="o">)</span>
+   CGroup: /system.slice/apache2.service
+           ├─1898 /usr/sbin/apache2 -k start
+           ├─7309 /usr/sbin/apache2 -k start
+           ├─7310 /usr/sbin/apache2 -k start
+           ├─7311 /usr/sbin/apache2 -k start
+           ├─7312 /usr/sbin/apache2 -k start
+           ├─7318 /usr/sbin/apache2 -k start
+           ├─8268 /usr/sbin/apache2 -k start
+           ├─8276 /usr/sbin/apache2 -k start
+           ├─8278 /usr/sbin/apache2 -k start
+           └─8280 /usr/sbin/apache2 -k start
+</code></pre></div><h5 id="دامەزراندنی-بەڕێوەبەری-بنکەدراوەی-mysql-">دامەزراندنی بەڕێوەبەری بنکەدراوەی <strong>MySQL</strong> :</h5>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install mysql-server
+</code></pre></div><p>بۆ دامەزراندنی MySQL، دەبێ فەرمانەکانی خوارەوە لە ترمیناڵ بنووسین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install phpmyadmin
+</code></pre></div><p>لێرە! لەکاتی بەردەوامی لە دامەزراندنی داوای وشەی نهێنی بۆ root دەکا.لە بەردەوامی قۆناغەکان پێویستمان بە دامەزراندنی phpmyadmin هەیە.phpmyadmin نەرمەکالایە سەرچاوەکراوەو خۆڕاییە بۆ بەڕێوەبردنی بنکەدراوەیMySQLـە.ئەم ئامرازە ئێمە توانا دەکا کە بتوانین بنکەدراوە بە شێوەیێکی گرافیکی بەڕێوە ببەین.</p>
+<p>بۆ دامەزراندنی ،phpmyadmin دەبێ سەرەتا MySQL دامەزرێنین،هەروا لە کاتی دامەزراندن هەنێ پرسیارمان لێدەکرێت وەک ناوی بەڕێوەبەر و وشەی نهێنی و …هتد.</p>
+<h5 id="دامەزراندنی-وەرگێڕیphp">دامەزراندنی وەرگێڕیPHP</h5>
+<p>بۆ ئەوەکە توانایی خوێندنی کۆدەکانیPHPـیمان بێ پێویستمان بە وەرگێڕە(interpreter).بۆ دامەزراندنی ئەم وەرگێڕە دەبێ کۆدەکانی خوارەوە لە ترمیناڵ بنووسین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install php7.0
+</code></pre></div><p>ئێستا پاش دامەزراندنی ئەم خزمەتگوزاریانە دەبێ خزمەتگوزاریەکان ڕیبووت بکەین.بۆ ئەم مەبەستە دەبێ فەرمانی خوارەوە بنووسین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo service apache2 restart
+</code></pre></div><p>ئێستا خزمەتگوزاری ڕاژەی بە سەرکەوتووی دامەزراو دەبێ بەرنامە داڕشتن دەستپێبکەین یان ماڵپەڕەکەمان ڕێ بخەین.</p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

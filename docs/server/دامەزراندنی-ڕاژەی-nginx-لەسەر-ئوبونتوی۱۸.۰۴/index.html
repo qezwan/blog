@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێناسە: Nginx یەکێک لە سیستەمەکانی خزمەتگوزاری ڕاژەی وێب لە جیهانە کە بۆ ئەو ماڵپەڕانە کە ترافێکی زۆریان بە سەرەوەیە بەکار دێ.هاورێیەتیێکی باشی لەگەڵ خزمەتگوزاری Apache هەیە و زۆر جار بە جیاتی ڕاژەی وێب یان پرۆکسی پێچەوانە(reverse proxy) بەکاردەبرێ. لەم نووسینە ئێمە باسێک لە سەر دامەزراندنی Nginx لە سەر ڕاژەی ئوبونتوی۱۸.۰۴ دەکەین.
+پێداویستی: دامەزراندنی ڕاژەیێک ، دەتوانێ سوود لە ڕاژەی خەیاڵێ(VPS) یان ڕاستەقینە (Dedicated Servers)بگرن.دەستپێگەیشتنیroot بە ڕاژە یا سێرڤێرەکەتان پێویستە.
+قۆناغی یەکەم :دامەزراندنی Nginx : بە هۆی ئەوە Nginx لە نێو کانگاکانی(repositories) ئوبونتو بوونی هەیە.">
+
+<meta property="og:title" content="دامەزراندنی ڕاژەی Nginx لەسەر ئوبونتوی۱۸.۰۴" />
+<meta property="og:description" content="پێناسە: Nginx یەکێک لە سیستەمەکانی خزمەتگوزاری ڕاژەی وێب لە جیهانە کە بۆ ئەو ماڵپەڕانە کە ترافێکی زۆریان بە سەرەوەیە بەکار دێ.هاورێیەتیێکی باشی لەگەڵ خزمەتگوزاری Apache هەیە و زۆر جار بە جیاتی ڕاژەی وێب یان پرۆکسی پێچەوانە(reverse proxy) بەکاردەبرێ. لەم نووسینە ئێمە باسێک لە سەر دامەزراندنی Nginx لە سەر ڕاژەی ئوبونتوی۱۸.۰۴ دەکەین.
+پێداویستی: دامەزراندنی ڕاژەیێک ، دەتوانێ سوود لە ڕاژەی خەیاڵێ(VPS) یان ڕاستەقینە (Dedicated Servers)بگرن.دەستپێگەیشتنیroot بە ڕاژە یا سێرڤێرەکەتان پێویستە.
+قۆناغی یەکەم :دامەزراندنی Nginx : بە هۆی ئەوە Nginx لە نێو کانگاکانی(repositories) ئوبونتو بوونی هەیە." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C-nginx-%D9%84%DB%95%D8%B3%DB%95%D8%B1-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88%DB%8C%DB%B1%DB%B8.%DB%B0%DB%B4/" />
+<meta property="article:published_time" content="2018-08-17T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-08-17T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی ڕاژەی Nginx لەسەر ئوبونتوی۱۸.۰۴ 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C-nginx-%D9%84%DB%95%D8%B3%DB%95%D8%B1-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88%DB%8C%DB%B1%DB%B8.%DB%B0%DB%B4/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2021%3a43%3a59.360681%20%2b0330%20%2b0330%20m%3d%2b0.872459501">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2021%3a43%3a59.360681%20%2b0330%20%2b0330%20m%3d%2b0.872459501">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2021%3a43%3a59.360681%20%2b0330%20%2b0330%20m%3d%2b0.872459501">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2021%3a43%3a59.360681%20%2b0330%20%2b0330%20m%3d%2b0.872459501">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی ڕاژەی Nginx لەسەر ئوبونتوی۱۸.۰۴
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Fri Aug 17 2018 05:35:45 UTC'>Aug 17, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>6 خولەک<div class="middot"></div>1094 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێناسە">پێناسە:</h5>
+<p><a href="https://www.nginx.com/">Nginx</a> یەکێک لە سیستەمەکانی خزمەتگوزاری ڕاژەی وێب لە جیهانە کە بۆ ئەو ماڵپەڕانە کە ترافێکی زۆریان بە سەرەوەیە بەکار دێ.هاورێیەتیێکی باشی لەگەڵ خزمەتگوزاری Apache هەیە و زۆر جار بە جیاتی ڕاژەی وێب یان پرۆکسی پێچەوانە(reverse proxy) بەکاردەبرێ.
+لەم نووسینە ئێمە باسێک لە سەر دامەزراندنی Nginx لە سەر ڕاژەی ئوبونتوی۱۸.۰۴ دەکەین.</p>
+<h5 id="پێداویستی">پێداویستی:</h5>
+<p>دامەزراندنی ڕاژەیێک ، دەتوانێ سوود لە ڕاژەی خەیاڵێ(VPS) یان ڕاستەقینە (Dedicated Servers)بگرن.دەستپێگەیشتنیroot بە ڕاژە یا سێرڤێرەکەتان پێویستە.</p>
+<h5 id="قۆناغی-یەکەم-دامەزراندنی-nginx-">قۆناغی یەکەم :دامەزراندنی Nginx :</h5>
+<p>بە هۆی ئەوە Nginx لە نێو کانگاکانی(repositories) ئوبونتو بوونی هەیە.ئێمە دەتوانین بە فەرمانی دامەزراندن لەسەر پاکەتی سیستەمی apt کردار ئەنجام بدەین.سەرەتا کانگاکانی سیستەم بەڕۆژ دەکینەوە ئینجا دەست دەکەین بە دامەزراندنی Nginx .</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">    sudo apt update
+    sudo apt install nginx
+</code></pre></div><p>پاش ئەمە، سیستەمی نەرمەکالای apt، بەشێک لە پێداویستیەکانی راژەی Nginx خۆکارانە دادەمەرزێنێ.</p>
+<h5 id="قۆناغی-دووهەم-ڕێکخستنی-دیواری-ئاگرfirewall">قۆناغی دووهەم: ڕێکخستنی دیواری ئاگر(Firewall):</h5>
+<p>پێش دامەزراندنی Nginx، فایرواڵەکەتان دەبێ ڕێ بدا بە ئیشەکانی ئەم خزمەتگوزارییە.Nginx لە کاتی دامەزراندن خۆی بە عینوان خزمەتگوزاریێک، دەناسێنێ بە ufw کە ئەم دیواری ئاگرەش بە سادەیی ڕێ بە چالاک بوونی Nginx دەدا.
+پێرستی ئەو ئەپانە یان نەرمەواڵانە کە رێکخراوەن لە ufw بەم فەرمانە سادە نیشان دەدرێ:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw app list
+</code></pre></div><p>دەرئەنجامی فەرمانەکەی سەرەوە بەم شێوەیە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Available applications:
+  Nginx Full
+  Nginx HTTP
+  Nginx HTTPS
+  OpenSSH
+</code></pre></div><p>ئەم پرۆفایلە بەم جۆرە شڕۆفە دەکرێ :</p>
+<p>Nginx Full:واتە لە سەر دوو دەرگا یان پۆرتی ۸۰ (ترافیکی وێب بێ نهێنیکردن)و ۴۴۳ (ترافیکی وێب بە نهێنیکردن)کراوەیە.
+Nginx HTTP: ئەم پرۆفایلە تەنها بۆ دەرگای ۸۰یە. (normal, unencrypted web traffic)
+Nginx HTTPS:ئەم پرۆفایلە تەنها بۆ کردنەوەی دەرگای۴۴۳ یە. (TLS/SSL encrypted traffic)
+گەر دەرگاکانتان نهێنی کردووە باش وایە ڕێ بە پۆرتی ۸۰ نەدەن.گەر نە ! و بە شێوازی نهێنیکردن پۆرتەکان ئامادەیە سوود لە پۆرتی ۴۴۳ بگرن بۆ ئاسایشی فرەتر(SSL).
+ئێستا ئێمە هێشتا پۆرتی SSLـمان ئامادە نییەو سوود لە دەرگای ۸۰ دەگرین.بەم فەرمانەی خوارەە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw allow <span class="s1">&#39;Nginx HTTP&#39;</span>
+</code></pre></div><p>ئێوە دەتوانن ئەم هەڵبژاردەی دەرگاکان، بە فەرمانی خوارەوە پەسەند بکەن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ufw status
+</code></pre></div><p>ئێستا ترافیک لە سەر دەرگای HTTP دەبینن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Status: active
+
+To                         Action      From
+--                         ------      ----
+OpenSSH                    ALLOW       Anywhere                  
+Nginx HTTP                 ALLOW       Anywhere                  
+OpenSSH <span class="o">(</span>v6<span class="o">)</span>               ALLOW       Anywhere <span class="o">(</span>v6<span class="o">)</span>             
+Nginx HTTP <span class="o">(</span>v6<span class="o">)</span>            ALLOW       Anywhere <span class="o">(</span>v6<span class="o">)</span>
+</code></pre></div><h5 id="قۆناغی-سێهەمپشکنینی-ڕاژە">قۆناغی سێهەم:پشکنینی ڕاژە:</h5>
+<p>پاش تەواو بوونی قۆناغەکان دامەزراندن،ئوبونتو ۱۸.۰۴(Ubuntu 18.04)دەستدەکا بە ئیشپێکردنیNginx و ئێستا ڕاژە ئامادەیە بۆ وەگڕخستن.ئێستا ئێمە پشکنین دەکەنی بە systemd بۆ دڵنیابوون لە توانایی چالاک بوونی ڕاژەکەمان:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">systemctl status nginx
+nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded <span class="o">(</span>/lib/systemd/system/nginx.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
+   Active: active <span class="o">(</span>running<span class="o">)</span> since Fri 2018-04-20 16:08:19 UTC<span class="p">;</span> <span class="m">3</span> days ago
+     Docs: man:nginx<span class="o">(</span>8<span class="o">)</span>
+ Main PID: <span class="m">2369</span> <span class="o">(</span>nginx<span class="o">)</span>
+    Tasks: <span class="m">2</span> <span class="o">(</span>limit: 1153<span class="o">)</span>
+   CGroup: /system.slice/nginx.service
+           ├─2369 nginx: master process /usr/sbin/nginx -g daemon on<span class="p">;</span> master_process on<span class="p">;</span>
+           └─2380 nginx: worker process
+</code></pre></div><p>لە دەرەنجامی سەرەوە ئێوە دەبینن کە سیستەم بە سەرکەوتوویی دامەزراوە.هەرچەندە کە باشترین کات بۆ تاقیکردنەوە ئەوەیە کە پەڕەیێکی داواکاری بۆ Nginx بنێرێ.
+ئێوە دەتوانن بۆ پەڕەی پێشگریمانی Nginx بڕۆن بە ناسینی ئای پی ڕاژەکەتان وە Nginx چالاک بێت.ئایپی ڕاژە لەکاتی دامەزراندنی سیستەمی کارپێکردنەکەتان بۆتان ناردراوە.
+ئێستا ئای پیەکەتان لە وێبگەڕێک بنووسن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">http://your_server_ip
+</code></pre></div><p>ئێوە دەبێ پەڕەی پێش گریمان Nginx ببینن :</p>
+<p><img src="https://qezwan.ir/server/images/8-1.png" alt=""></p>
+<p>ئەم پەڕە پێتان دەڵێ کە ڕاژەی Nginx بە سەرکەوتووی خەریک ئیشکردنە.</p>
+<h5 id="قۆناغی-چوارەم-ڕێکخستنەی-پرۆسەکانی-ڕاژەی-nginx">قۆناغی چوارەم :ڕێکخستنەی پرۆسەکانی ڕاژەی Nginx</h5>
+<p>ئیستا کە ڕاژەکەتان چالاک و ئێشدەکا بێڵن چەند فەرمانی بەڕێوەبردن فێر ببین.
+بۆ وێستانن یان ناچالاککردنی ڕاژە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl stop nginx
+</code></pre></div><p>پاش وێستانن بۆ چالاککردنی ڕاژە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">sudo</span> <span class="n">systemctl</span> <span class="nb">start </span><span class="n">nginx</span>
+</code></pre></div><p>بۆ وەگڕخستنەوەی ڕاژە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl restart nginx
+</code></pre></div><p>بۆ بارکردنەوە (reload)کاتێک کانفیگێکی ڕاژە دەگۆڕن بێ ئەوە کە خزمەتگوزاریەکان بوێستێنن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl reload nginx
+</code></pre></div><p>کاتێک سیستەمی وەگڕخەر بووت بێتەوە ،Nginx بە شێوازی خۆکارانە چالاک دەبێ گەر گەرەکتانە وا نەبێ:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl disable nginx
+</code></pre></div><p>بۆ چالاککردنی خۆکارانە لە کاتی بووتی سیستەمی وەگڕخەر:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl <span class="nb">enable</span> nginx
+</code></pre></div><h5 id="قۆناغی-پێنجم-دامەزراندنی-چەندین-دۆمەین">قۆناغی پێنجم :دامەزراندنی چەندین دۆمەین</h5>
+<p>کاتێک لە ڕاژەی Nginx سوود دەگرن دەتوانین بلۆکەکان(وەک ڕاژەکانی خەیاڵی لە Apache ) بۆ کانفیگ کردنی ووردەکاری و دانانی چەندین دۆمەین لە سەر ڕاژەیێک بەهرە ببەین.ئێمە لێرە بۆ نمونە لە دۆمەینێک کە ناومان ناوە example.com سوود دەگرین.بەڵام ئێوە دەبێ بیگۆڕن بە ناوی دۆمەینی خۆتان.
+Nginx لە سەر ئوبونتوی۱۸.۰۴ یەک بلۆکی هەیە یان لە یەک دایرێکتۆری(بۆخچە) بە شێوازی پێشگریمان درووست دەکرێ لە لە مەسیری var/www/html/ دەتوانین بیبینین.بەڵام ئەمە تەنها بە باشی بۆ یەک ماڵپەڕ ئیشدەکا.ئەمەش ئەتوانێ شۆکێک بێ بۆ ڕاژەیێک کە چەندین ماڵپەڕی لە سەرە.ئێمە لەم فێرکارییە کە بۆ یەک ماڵپەرە دەیگۆڕین بە چەندین ماڵپەڕ کە دەتوانین دایمەزرێنین.
+سەرەتا لەم مەسیرە var/www/ دایکێکتۆریێک بە ناوی example.com درووستدەکەین.بە فەرمانەکەی خوارەوە و بە سویچی p- کە پێداویستیەکانی بۆ دایرێکتۆرێکی باوک یا باوان(parent) ڕێکدەخات.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo mkdir -p /var/www/example.com/html
+</code></pre></div><p>ئێستا خاوەنیایەتی ئەم دایریکتۆرییە کە دروستمانکرد دەبێ بۆ USER$ بیگۆڕین بەم شێوازە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo chown -R <span class="nv">$USER</span>:<span class="nv">$USER</span> /var/www/example.com/html
+</code></pre></div><p>مۆڵەتدانەکانی(permissions) ڕووتەکان بە درووستی دابینکراوە بەڵام گەر گۆڕانکارییەکەتان لە umask نەکردووە دەتوانن بەم فەرمان دڵنیابن لە مۆڵەتدانەکان:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo chmod -R <span class="m">755</span> /var/www/example.com
+</code></pre></div><p>ئێستا فایلێکی index.html بە یارمەتی دەستکاری کەریnano دروستدەکەین .مەرج نییە هەر ئەم دەستکاریکەرە بێ گرینگ دروستکردنی ئەو فایلەیە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nano /var/www/example.com/html/index.html
+</code></pre></div><p>ئێستا ئەم کۆدە سادەیHTMLی تێدا دەخزێنین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Welcome to Example.com!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Success! The example.com server block is working!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div><p>پاشکەوتی بکەن و بێنەوەدەرەوە .
+ئێستا ئەو بلۆکە (example.com) کە درووستمانکردوە کانفیگێکی ڕاستەو خۆی بۆ ئەکەین.
+دەچینە ئەم مەسیرە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/nginx/sites-available/example.com
+</code></pre></div><p>ئەم کانفیگەی لە بە شێوازی پێشگریمان بوو بیگۆڕن بەمە و تێدای بنووسن بەم شێوە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">server
+ <span class="o">{</span>
+        listen 80<span class="p">;</span>
+        listen <span class="o">[</span>::<span class="o">]</span>:80<span class="p">;</span>
+
+        root /var/www/example.com/html<span class="p">;</span>
+        index index.html index.htm index.nginx-debian.html<span class="p">;</span>
+
+        server_name example.com www.example.com<span class="p">;</span>
+
+        location / <span class="o">{</span>
+                try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ <span class="o">=</span>404<span class="p">;</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>زۆر جوانە ئێمە کانفیگی پێشگریمانمان بەڕۆژ کردوە بۆ دایریکتۆری نوێکەمان.server_name ناوی دۆمەینەکەمانە.
+ئێستا دەبێ ماڵپەڕەکەمان بە لینکێک sites-enabled بناسێنین بە Nginx کاتێک کە چالاک دەبێ و دەیخوینێتەوە لە کاتی دەستبەکاربوون.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
+</code></pre></div><p>پیرۆزە دوو بلۆکمان لە سەر Nginx دامەزراند:
+example.com : پاڵپشتی لە داواکاریکان دەکا بۆ example.com وە <a href="http://www.example.com">www.example.com</a>.
+default:وڵامی هەر داواکارێکی لە دەرگای 80 کە هاوشێوەی دوو بلۆکەکەی دیکە نین.
+بۆ بەرگیری لە هەسکردنی بیرگە()لە زیادکردنی ناوی ڕاژە .دەبی لەم مەسیرە/etc/nginx/nginx.conf / ڕیکخستنێک بکەین.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/nginx/nginx.conf
+</code></pre></div><p>ئەم ڕەستە server_names_hash_bucket_size پەیدا دەکین ئینجا هێماک # لە پشتی دەسڕینەوە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">...
+http <span class="o">{</span>
+    ...
+    server_names_hash_bucket_size 64<span class="p">;</span>
+    ...
+<span class="o">}</span>
+...
+</code></pre></div><p>بۆ نیشاندانی هەڵی ڕەستە کۆدەکان(syntax) ئەم فەرمانە بەکار دەبەین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nginx -t
+</code></pre></div><p>ئێستا پاسکەوتی دەکەین و دەینەدەرەوە.
+گەر کێشەیێکمان نییە ڕاژەی Nginx دوبارە وەگڕدەخەینەوە بەم فەرمانە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl restart nginx
+</code></pre></div><p>ئیستا ڕاژەکەمان لە سەر ئەم دۆمەینەیە <a href="http://example.com">http://example.com</a> (ئەڵبەت ئێوە دۆمەینی خۆتان هەیە کە کانفیگتان کردووە )</p>
+<p><img src="C:%5CUsers%5Cqezwan%5CDesktop%5Co%5Coen%5Ccontent%5Cserver%5Cimages%5C8-2.png" alt=""></p>
+<h5 id="قۆناغی-شەشەم-فایل-و-دایریکتۆرییە-گرینگەکان-لە-nginx">قۆناغی شەشەم :فایل و دایریکتۆرییە گرینگەکان لە Nginx</h5>
+<p>ناوەڕۆکی مەسیری /var/www/html/ کە بە شێوازی پێشگریمان بۆ دانانی فایل و وێب سکریپتەکەتان دانراوە.بەڵام هەروا کە لە پێشتر باسمان کرد بیگۆڕی.</p>
+<h5 id="کانفیگگی-ڕاژە-">کانفیگگی ڕاژە :</h5>
+<p>/etc/nginx:/ تەواو کانفیگەکانی ڕاژەی Nginx لێرەن.
+/etc/nginx/nginx.conf/ ئەم فایلە کانفیگی گشتی تێدایەو دەتوانی بیگۆڕی.
+/etc/nginx/sites-available/ئەم دایرێکتۆرییە بلۆکی ماڵپەڕەکانی تێدایە واتەNginx ناتوانێت هیچ ڕاژەی ماڵپەڕێک ناناسێت تاکوو بەم بلووکانە نەیناسی کە پێشتر گووتمان.</p>
+<h5 id="لاگی-ڕاژە-">لاگی ڕاژە :</h5>
+<p>/var/log/nginx/access.log/ تەواو داواکاریەکانی ڕاژەی وێب لێرە پاشکەوت دەکرێن.
+/var/log/nginx/error.log/ تەواو هەڵەکانی ڕاژەیNginx لێرە تۆمار دەکرێت.
+سەرکەوتوو بن. ؛)</p>
+<p>سەرچاوە: <a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04">digitalocean</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
