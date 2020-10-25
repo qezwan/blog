@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی : “ntopng” بەرەی نوێی “ntop”ـــە ، کە دەتوانرێت بۆ مانیتۆرینگی(چاودێری) قەرەباڵغی تۆڕ بە شێوازی ئاسایشێکی بەهێز سوودی لێ ببینرێت. لە ڕاستیدا “ntopng ” خۆی لە سەر بنەمای “libpcap” ، گەشەی سەندووە. ئەم پرۆگرامە بە شیوازی هەڵگرتن نووسراوە تاکوو لە سەر تەواو سیستەمی کارپێکردن وەک ماک و ویندۆز ئیش بکا، واتە تەواو سیستەمی کارگێڕیەکانی یونیکس بەیس.
+گەر شتێک دەربارەی “ntop” نازانن! کێشە نییە، ئامرازێکی سەرچاوەکراوەیە بۆ چاودێری تۆڕ،خۆدی “Ntop” شێوازێکی بەکارهێنەر پەسەند لە سەر وێب نیشان نادا، بەڵام ئێوە دەتوانن لە ڕێگای ترمیناڵ یان هێڵ ئاگاداریێک لە سەر ڕێکخەر،بیرگە،تۆڕ و … بەدەست بێنن.">
+
+<meta property="og:title" content="دامەزراندنی(Ntop)بۆ مانیتۆرینگی تۆڕ بۆ ئوبونتو ١٨ و ١٦" />
+<meta property="og:description" content="پێشەکی : “ntopng” بەرەی نوێی “ntop”ـــە ، کە دەتوانرێت بۆ مانیتۆرینگی(چاودێری) قەرەباڵغی تۆڕ بە شێوازی ئاسایشێکی بەهێز سوودی لێ ببینرێت. لە ڕاستیدا “ntopng ” خۆی لە سەر بنەمای “libpcap” ، گەشەی سەندووە. ئەم پرۆگرامە بە شیوازی هەڵگرتن نووسراوە تاکوو لە سەر تەواو سیستەمی کارپێکردن وەک ماک و ویندۆز ئیش بکا، واتە تەواو سیستەمی کارگێڕیەکانی یونیکس بەیس.
+گەر شتێک دەربارەی “ntop” نازانن! کێشە نییە، ئامرازێکی سەرچاوەکراوەیە بۆ چاودێری تۆڕ،خۆدی “Ntop” شێوازێکی بەکارهێنەر پەسەند لە سەر وێب نیشان نادا، بەڵام ئێوە دەتوانن لە ڕێگای ترمیناڵ یان هێڵ ئاگاداریێک لە سەر ڕێکخەر،بیرگە،تۆڕ و … بەدەست بێنن." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8Cntop%D8%A8%DB%86-%D9%85%D8%A7%D9%86%DB%8C%D8%AA%DB%86%D8%B1%DB%8C%D9%86%DA%AF%DB%8C-%D8%AA%DB%86%DA%95-%D8%A8%DB%86-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88-%D9%A1%D9%A8-%D9%88-%D9%A1%D9%A6/" />
+<meta property="article:published_time" content="2020-01-08T05:35:45+00:00" />
+<meta property="article:modified_time" content="2020-01-08T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی(Ntop)بۆ مانیتۆرینگی تۆڕ بۆ ئوبونتو ١٨ و ١٦ 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8Cntop%D8%A8%DB%86-%D9%85%D8%A7%D9%86%DB%8C%D8%AA%DB%86%D8%B1%DB%8C%D9%86%DA%AF%DB%8C-%D8%AA%DB%86%DA%95-%D8%A8%DB%86-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88-%D9%A1%D9%A8-%D9%88-%D9%A1%D9%A6/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-26%2001%3a30%3a18.2123856%20%2b0330%20%2b0330%20m%3d%2b1.048370601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-26%2001%3a30%3a18.2123856%20%2b0330%20%2b0330%20m%3d%2b1.048370601">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-26%2001%3a30%3a18.2123856%20%2b0330%20%2b0330%20m%3d%2b1.048370601">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-26%2001%3a30%3a18.2123856%20%2b0330%20%2b0330%20m%3d%2b1.048370601">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی(Ntop)بۆ مانیتۆرینگی تۆڕ بۆ ئوبونتو ١٨ و ١٦
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Wed Jan 8 2020 05:35:45 UTC'>Jan 8, 2020</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>567 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی-">پێشەکی :</h5>
+<p>“ntopng” بەرەی نوێی “ntop”ـــە ، کە دەتوانرێت بۆ مانیتۆرینگی(چاودێری) قەرەباڵغی تۆڕ بە شێوازی ئاسایشێکی بەهێز سوودی لێ ببینرێت. لە ڕاستیدا “ntopng ” خۆی لە سەر بنەمای “<a href="http://www.tcpdump.org/">libpcap</a>” ، گەشەی سەندووە. ئەم پرۆگرامە بە شیوازی هەڵگرتن نووسراوە تاکوو لە سەر تەواو سیستەمی کارپێکردن وەک ماک و ویندۆز ئیش بکا، واتە تەواو سیستەمی کارگێڕیەکانی یونیکس بەیس.</p>
+<p>گەر شتێک دەربارەی “ntop” نازانن! کێشە نییە، ئامرازێکی سەرچاوەکراوەیە بۆ چاودێری تۆڕ،خۆدی “Ntop” شێوازێکی بەکارهێنەر پەسەند لە سەر وێب نیشان نادا، بەڵام ئێوە دەتوانن لە ڕێگای ترمیناڵ یان هێڵ ئاگاداریێک لە سەر ڕێکخەر،بیرگە،تۆڕ و … بەدەست بێنن.ئەمەش بۆ بەکارهێنەری نوێ کەمێ کێشەیە. بەڵام “ntopng” بە شیوازێکی باش، کار ئاسانی بۆ بەکارهێنەران کردووە کە بە شێوازی بەکارهێنەر پەسەند و لە ڕێگای وێب ئاگادار و چاودێری تۆڕ و ڕەقەکالای ڕاژە ببن.</p>
+<p>“ntopng” بە سێ وشان بڵاو دەکرێتەوە وشانی گشتی(بێ پارەیە)، وشانی پێشکەوتوو(بۆ کار و پیشەی بازرگانی بچکۆلە) وە وشانی کۆمپانیا.وشانی گشتی بە شێوازی سەرچاوەکراوە بڵاو دەبێت(دەتوانن لە <a href="https://github.com/ntop/ntopng">گیتهاب</a> دایبگرن و گەشەی پێبدەن).</p>
+<h5 id="تایبەتمەندییە-بەرچاوکراوەکانی-ntopng-">تایبەتمەندییە بەرچاوکراوەکانی “ntopng” :</h5>
+<ol>
+<li>ڕیزبەندی قەرەباڵغی تۆڕ بە پێوەری جیاواز وەک: ئای-پی، دەرگا، پۆرۆتۆکۆلی L7، تەوانی کرداری، سیستەمی سەربەخۆ(ASs).</li>
+<li>پیشاندانی کاتی ڕاستەقینەی قەرەباڵغی تۆڕ و ڕاژە چالاکەکان.</li>
+<li>درووستکردنی درێژخایەن بۆ گوزارشی ترافیکی ڕاژە بە پێوەری جورواجۆر.</li>
+<li>چالاکییەکان(نێرەر و وەرگر )، سیستەمەکانی سەر بەخۆ (ASs)، نەرمەکالاکانی L7 .</li>
+<li>چاودێری و گوزارشی زیندوو یان ئانی بە کردار، درەنگی کرداری تۆر و بەرنامەکان لە کاتی ناردن و وەرگرتن (RTT)، ئاماری TCP(پاکەتی بزر بوو لە تۆڕ،دووبارە ناردن و وەرگرتن،پاکەتەکانی دەرەوە لە داوا) و بایت و پاکەتەکانی ناردراو.</li>
+<li>پیشاندانی ئامری ڕاستەقینەو مردوو لە تۆڕ.</li>
+<li>نیشاندنای شوێنی ترافیک لە نەخشە بە شێوازی جیاواز.</li>
+<li>بە یارمەتی تەکنۆلۆژی ntop Deep Packet Inspection (DPI) پرۆتۆکۆڵی بەرنامەکانی پەیدا دەکا وەک فەیسبووک،یوتیوب،بیت تۆرێنت و…هتد.</li>
+<li>…</li>
+</ol>
+<h5 id="قۆناغەکانی-دامەزراندن">قۆناغەکانی دامەزراندن</h5>
+<p>١) دامەزراندنی ntopng (ntop) لە کانگا :</p>
+<p>“ntopng” بە شیوازی کانگا بڵاو بووە ئەوەش مانای وایە کە دەتوانرێت زۆر بە ئاسانی لە سەر ڕاژەی ئوبونتو دایمەزرێنین بە فەرمانەکانی خوارەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /tmp
+wget http://apt.ntop.org/18.04/all/apt-ntop.deb
+sudo dpkg -i apt-ntop.deb
+</code></pre></div><p>پاش دامەزراندنی لە کانگا بە فەرمانەکانی سەرەوە ،ئێوە دەتوانن بە فەرمانی خوارەوە لە سەر سیستەمەکەتان دایمەزرێنن</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt update
+sudo apt install pfring-dkms nprobe ntopng n2disk cento
+</code></pre></div><p>پاش دامەزراندنی بە فەرمانەکەی سەرەوە ،ئێستا کاتی ئەوە هاتووە کە پەیکەرسازی پەڕگەی “ntopng” دەستپێبکەین،ئەم فایلە لە ئەم شوێنەیە :</p>
+<p>/etc/ntopng/ntopng.conf:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/ntopng/ntopng.conf
+</code></pre></div><p>لەم فایلە دەبێ دەرگا یان پۆرت بگۆڕین واتە ئەو هێڵە کە قەڵەومان کردووە. واتە : 3000#</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#</span>
+-G<span class="o">=</span>/var/run/ntopng.pid
+<span class="c1">#</span>
+<span class="c1">#       -e|--daemon</span>
+<span class="c1">#        This  parameter  causes ntop to become a daemon, i.e. a task which runs in the background</span>
+..........................
+<span class="c1"># -e=</span>
+<span class="c1">#</span>
+<span class="c1">#       -i|--interface</span>
+<span class="c1">#        Specifies  the  network  interface or collector endpoint to be used by ntopng for network</span>
+.............................
+<span class="c1">#</span>
+<span class="c1"># -i=eth1</span>
+<span class="c1"># -i=eth2</span>
+<span class="c1">#</span>
+<span class="c1">#       -w|--http-port</span>
+<span class="c1">#        Sets the HTTP port of the embedded web server.</span>
+<span class="c1">#</span>
+ -w<span class="o">=</span><span class="m">3000</span>
+<span class="c1">#</span>
+</code></pre></div><p>پاش پاشکەوت کردن و هاتنەوە دەروە لە فایلی پەیکەرسازی سەرەوە ،بە فەرمانەکەی خوارەو برۆن بۆ دەستکاری کردن و دابین کردنی تۆڕی خۆماڵێ بۆ مانیتۆڕینگ یان چاودێری.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/ntopng/ntopng.start
+</code></pre></div><p>هێڵەکانی خوارە زیاد بکەن بە بەراوەرد لەگڵ تۆڕەکەتان :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">--local-networks <span class="s2">&#34;10.0.2.6/24&#34;</span>
+--interface <span class="m">1</span>
+</code></pre></div><p>ئێستا پاشکەوتی بکەن و بێنە دەرەوە لە فایلەکەی سەرەوە.دەی! چالاک و دەست بەئیش بکەن بە فەرمانەکانی خوارەوە :</p>
+<pre><code>sudo systemctl start ntopng
+sudo systemctl enable ntopng
+</code></pre><h6 id="٢-چوونەژوورەوە-لە-سەر-ڕووکاری-وێب">٢) چوونەژوورەوە لە سەر ڕووکاری وێب</h6>
+<p>بۆ چوونەژوورەوە بە دەرگای ڕاژەی خۆماڵی واتە (http://localhost:3000) کردار بکەن لە ناونیشانباری وێبگەڕ.
+ئێستا ئێوە پەڕەی چوونەژوورەوەی ntopng دەبینن :</p>
+<p><img src="https://qezwan.ir/server/images/19.jpg" alt=""></p>
+<p>ئێستا ناویبەکارهێنەر و وشەینهێنی پێشگریمان بەم جۆرە دەبن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">Username: admin
+Password: admin
+</code></pre></div><p>پاش چوونەژوور دەبێ ڕێکخستنی تایبەت بە خۆتان لە بەشی بەڕێوەبەر دەستپێبکەن.ئەمەس بەشێک لە وێنەکان و تایبەتمەندییەکانی.</p>
+<p><img src="https://qezwan.ir/server/images/19-1.png" alt=""></p>
+<p><img src="https://qezwan.ir/server/images/19-2.png" alt=""></p>
+<p><img src="https://qezwan.ir/server/images/19-3.png" alt=""></p>
+<p>سەرچاوە : <a href="https://www.ntop.org/products/traffic-analysis/ntop/">ntop</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+

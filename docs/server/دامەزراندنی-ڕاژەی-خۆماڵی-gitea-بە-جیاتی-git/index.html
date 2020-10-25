@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی : Gitea ، ڕوونووسێکی پرۆژەی سەرچاوەکراوەی Gogs کە لە لایەن چەند گەشەپێدەر بە مۆڵەتدانی MIT ،بەشێوەازی سەرچاوەکراوە بڵاو بووە. بەزمانی Go نووسراوە،بۆ ڕاژەیێکی سوکەلەی سۆرس کۆد.مەبەست لەم پرۆژە دامەزراندنی ڕاژەیێکی سادەی کەسیی “Self-hosted” وەک گیت ــە. چەند پرۆگرامێر لەسەر بەرنامەیێک ئیش دەکەن پێویستیان بە شوێنێکە کە گەشە بە پرۆگرام بدەن دەتوانن ڕاژەیێک بۆ خۆیان دامەزرێنن و ئاگاداری ئیشی یەکتر بن.
+تایبەتمەندی :  نەرمەکالای Gitea زۆر سووکە دەتوانی لەسەر رێزبێریپای، دایمەزرێنی.">
+
+<meta property="og:title" content="دامەزراندنی ڕاژەی خۆماڵی Gitea بە جیاتی Git" />
+<meta property="og:description" content="پێشەکی : Gitea ، ڕوونووسێکی پرۆژەی سەرچاوەکراوەی Gogs کە لە لایەن چەند گەشەپێدەر بە مۆڵەتدانی MIT ،بەشێوەازی سەرچاوەکراوە بڵاو بووە. بەزمانی Go نووسراوە،بۆ ڕاژەیێکی سوکەلەی سۆرس کۆد.مەبەست لەم پرۆژە دامەزراندنی ڕاژەیێکی سادەی کەسیی “Self-hosted” وەک گیت ــە. چەند پرۆگرامێر لەسەر بەرنامەیێک ئیش دەکەن پێویستیان بە شوێنێکە کە گەشە بە پرۆگرام بدەن دەتوانن ڕاژەیێک بۆ خۆیان دامەزرێنن و ئاگاداری ئیشی یەکتر بن.
+تایبەتمەندی :  نەرمەکالای Gitea زۆر سووکە دەتوانی لەسەر رێزبێریپای، دایمەزرێنی." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C-%D8%AE%DB%86%D9%85%D8%A7%DA%B5%DB%8C-gitea-%D8%A8%DB%95-%D8%AC%DB%8C%D8%A7%D8%AA%DB%8C-git/" />
+<meta property="article:published_time" content="2020-01-21T09:35:45+00:00" />
+<meta property="article:modified_time" content="2020-01-21T09:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی ڕاژەی خۆماڵی Gitea بە جیاتی Git 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C-%D8%AE%DB%86%D9%85%D8%A7%DA%B5%DB%8C-gitea-%D8%A8%DB%95-%D8%AC%DB%8C%D8%A7%D8%AA%DB%8C-git/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-26%2001%3a30%3a18.3107977%20%2b0330%20%2b0330%20m%3d%2b1.146782701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-26%2001%3a30%3a18.3107977%20%2b0330%20%2b0330%20m%3d%2b1.146782701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-26%2001%3a30%3a18.3107977%20%2b0330%20%2b0330%20m%3d%2b1.146782701">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-26%2001%3a30%3a18.3107977%20%2b0330%20%2b0330%20m%3d%2b1.146782701">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی ڕاژەی خۆماڵی Gitea بە جیاتی Git
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue Jan 21 2020 09:35:45 UTC'>Jan 21, 2020</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>4 خولەک<div class="middot"></div>824 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی-">پێشەکی :</h5>
+<p><a href="https://gitea.io/en-us/">Gitea</a> ، ڕوونووسێکی پرۆژەی سەرچاوەکراوەی <a href="https://gogs.io/">Gogs</a> کە لە لایەن چەند گەشەپێدەر بە مۆڵەتدانی MIT ،بەشێوەازی سەرچاوەکراوە بڵاو بووە. بەزمانی  Go نووسراوە،بۆ ڕاژەیێکی سوکەلەی سۆرس کۆد.مەبەست لەم پرۆژە دامەزراندنی ڕاژەیێکی سادەی کەسیی “Self-hosted” وەک گیت ــە. چەند پرۆگرامێر لەسەر بەرنامەیێک ئیش دەکەن پێویستیان بە شوێنێکە کە گەشە بە پرۆگرام بدەن دەتوانن ڕاژەیێک بۆ خۆیان دامەزرێنن و ئاگاداری ئیشی یەکتر بن.</p>
+<p><img src="https://qezwan.ir/server/images/20-4.png" alt=""></p>
+<h5 id="تایبەتمەندی-">تایبەتمەندی :</h5>
+<ol>
+<li>نەرمەکالای Gitea زۆر سووکە دەتوانی لەسەر رێزبێریپای، دایمەزرێنی.(Lightweight)</li>
+<li>سەرچاوەکراوەیە بە مۆڵەتی MIT بڵاو کراوە کە گەشەپێدەران دەتوانی تایبەتمەندی فرەتر بکەن.(Open Source)</li>
+<li>بە ئاسانی دەتوانن بە یارمەتی فایلە باینێرییەکانی خۆتان،Gitea دایمەزرێنن.(Easy to install)</li>
+<li>لە هەر شوێنێک زمانی دامەزرێ ئەم نەرمەکالاش دادەمەزرێ.واتە لەسەر هەموو سیستەمێک.(Cross-platform)</li>
+</ol>
+<h5 id="پێداویستی-">پێداویستی :</h5>
+<ol>
+<li>کەمێ زانیاری بۆ ئیشی فەرمانەکانی هێڵ لەسەر ڕاژە (command line ).</li>
+<li>دامەزراندنی nginx.</li>
+<li>ڕاژەیێکی ئوبونتو.</li>
+<li>دامەزراندنی داکێر لە سەر ڕاژە.</li>
+</ol>
+<h5 id="چی-دەکەین-">چی دەکەین :</h5>
+<p>بۆ دامەزراندنی گیتا (Gitea)،سەرەتا دەبێ داکێر لە سەر ڕاژە دامەزرێنین،هۆکار ئەوەیە کە گیتا پێویستی بە بنکەدراوەیە(databse ) بۆ پاسکەوتی زانیارییەکان،ئێمەس لە docker-compose سوود دەگرین.ئەمەش بۆ ئەوەیە کە ئێمە گەرەکمانە چەندین  container لە docker(داکێر یا دۆکێر) دروست بکەینی و بیبەستین بەیەکەوە. باش! دەبێ docker و docker-compose لەسەر ڕاژە دامەزرێنین.</p>
+<h5 id="دامەزراندنی-nginx-">دامەزراندنی nginx :</h5>
+<p>سەرەتا بەیارمەتی  ssh بە ڕاژە پەیوەندی دەگرین،ئینجا بە فەرمانەکەی خوارەوە nginx دادەمەزرێنین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt update
+$ sudo apt install nginx
+</code></pre></div><p>ئێستا بە فەرمانی خوارەوە ئاستی دەستپێگەیشتنی دەدەین بە nginx :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo ufw allow <span class="s1">&#39;Nginx Full&#39;</span>
+</code></pre></div><h5 id="docker-">docker :</h5>
+<p>بۆ دامەزراندنی gitea لەسەر ڕاژە ئیمە لە داکێر سوود دەگرین(شێوازی دیکەش هەیە بەڵام داکێر سادەترە).گەر وڵآتەکە ئای-پی قەپاتە، بەم شێوازە dnsەکانت بەفەرمانی خوارەوە بگۆڕە،سەرەتا</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   sudo nano etc/resolv.conf
+</code></pre></div><p>کاتێک چوویتە فایلەکەی سەرەوە nameserver بسڕەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nameserver 178.22.122.100
+nameserver 185.51.200.2
+</code></pre></div><p>ئێستا بەیارمەتی دوگمەکانی ctrl-x فایل پاشکەوت بکە.</p>
+<h5 id="دامەزرناندنی-docker-">دامەزرناندنی docker :</h5>
+<p>بۆ دامەزراندنی داکێر فرەرمانەکانی خوارەوە بە ڕیز ئەنجام بدەن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   sudo apt install apt-transport-https ca-certificates curl software-properties-common
+$   curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
+</code></pre></div><p>ئێستا ئەم فەرمانە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   sudo add-apt-repository <span class="s2">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable&#34;</span>
+</code></pre></div><p>لە کۆتایی ئەم چەند فەرمانەی خوارەوە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   sudo apt update
+$   apt-cache policy docker-ce
+$   sudo apt install docker-ce
+</code></pre></div><h5 id="دامەزراندنی-نصب-docker-compose-">دامەزراندنی نصب docker-compose :</h5>
+<p>بۆ دامەزراندنی docker-compose سەرەتا دەبێ دایبگرین ،فەرمانەکەی خوارەوە بنووسە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-<span class="sb">`</span>uname -s<span class="sb">`</span>-<span class="sb">`</span>uname -m<span class="sb">`</span> -o /usr/local/bin/docker-compose
+</code></pre></div><p>فەرمانەکەی خوارەوە جێبە جێبکە؛</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   sudo chmod +x /usr/local/bin/docker-compose
+</code></pre></div><p>بۆ ئەوە بزانی docker-compose بە دروستی دامەزراوە فەرمانەکەی خوارەوە تێخزێنە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   docker-compose --version
+</code></pre></div><p>دەبێ شتێک وەک ئەمە نیشان بدات :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   docker-compose version 1.21.2, build a133471
+</code></pre></div><h5 id="دامەزراندنی-gitea-بە-یارمەتی-docker-compose">دامەزراندنی Gitea بە یارمەتی docker-compose</h5>
+<p>بە فەرمانەکەی خوارەوە بوخچە یان دایرێکتۆریێک بە ناوی “gitea” دروست بکەن و بچنە نێوی :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   mkdir gitea
+$   <span class="nb">cd</span> gitea/
+</code></pre></div><p>بە فەرمانەکەی خوارەو فایلێک بەناوی docker-compose.yml لە بوخچەی گیتا دروست بکەن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   touch docker-compose.yml
+</code></pre></div><p>ئێستا ئەم فایلە کە لە سەرەوە دروستمان کرد بە یارمەتی دەستکاری کەری دەقی نانۆ بیکەنەوە ،بەم فەرمانە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   nano docker-compose.yml
+</code></pre></div><p>ئێستا دەقەکەی خوارەوە بە دروستی بیخەنە نێو فایلەکەتان :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">version: <span class="s2">&#34;3&#34;</span>
+
+networks:
+  valhalla:
+    external: <span class="nb">false</span>
+
+services:
+  server:
+    image: gitea/gitea:latest
+    environment:
+      - <span class="nv">APP_NAME</span><span class="o">=</span><span class="s2">&#34;git Hub&#34;</span>
+      - <span class="nv">USER_UID</span><span class="o">=</span><span class="m">2005</span>
+      - <span class="nv">USER_GID</span><span class="o">=</span><span class="m">2005</span>
+      - <span class="nv">DB_TYPE</span><span class="o">=</span>postgres
+      - <span class="nv">DB_HOST</span><span class="o">=</span>gitea_db:5432
+      - <span class="nv">DB_NAME</span><span class="o">=</span>gitea_db
+      - <span class="nv">DB_USER</span><span class="o">=</span>gitea
+      - <span class="nv">DB_PASSWD</span><span class="o">=</span>AbcD23324234234
+    restart: always
+    networks:
+      - valhalla
+    volumes:
+      - gitea_data:/data
+    ports:
+      - <span class="s2">&#34;3000:3000&#34;</span>
+      - <span class="s2">&#34;222:32223&#34;</span>
+    depends_on:
+      - gitea_db
+
+  gitea_db:
+    image: postgres:9.6
+    restart: always
+    environment:
+      - <span class="nv">POSTGRES_DB</span><span class="o">=</span>gitea_db
+      - <span class="nv">POSTGRES_USER</span><span class="o">=</span>gitea
+      - <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>AbcD23324234234
+    networks:
+      - valhalla
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  gitea_data:
+  postgres_data:
+</code></pre></div><p>ئێستا بە یارمەتی دوگمەکانی ctrl-x فایلەکە پاشکەوت بکەن و بێنە دەرەوە،ئێستا فەرمانەکەی خوارەوە بنووسن تا گیتا بە یارمەتی ئەو فایلە[ docker-compose.yml] کە دروستمان کرد دامەزرێ:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$   sudo docker-compose up -d
+</code></pre></div><p>پاش فەرمانەکەی سەرەوە چەند خولەکێک چاوەڕوان بن (شایەد ١٥ خولەک) تا چەند هێڵی بەم جۆرە دەبینن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">.........
+Creating gitea_gitea_db_1 ... <span class="k">done</span>
+Creating gitea_server_1   ... <span class="k">done</span>
+</code></pre></div><p>دامەزراندنی گیتا gitea تەواو بوو لە وێبگەرەکەتان ئەم ناونیشانە لێبدەن :
+<code>خاڵ : </code>بە جیاتی your_ip_addreess دەبێ ئای-پی ڕاژە بنووسن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">http://your_ip_addreess:3000
+</code></pre></div><p>دەبێ ئەم پەڕە ببینن :</p>
+<p><img src="https://qezwan.ir/server/images/20.png" alt=""></p>
+<p>لەمێنیۆی سەرەوە لەسەر بەستەری sing in کرتە بکەن تا پەڕەیێکی وا ببینن:
+<code>خاڵ :</code> ئەم پەڕە تەنها یەکبار دەکرێتەوە .ئاگادار بە بەهەڵە زانیاری نەنووسی چۆنکە دەبێ قۆناغەکانی سەرەوە دوبارە بکەیتەوە.</p>
+<p><img src="https://qezwan.ir/server/images/20-1.png" alt=""></p>
+<p>لەبەشی بنکەدرواە (database settings) پێویستمان بە گۆڕانکاری نییە ،بەڵآم لە خوارەوە دەبێ خشتەکان وەک وێنەی خوارەوە بگۆڕن .لەهەر کوێ کە ئای-پی ( ip )نووسرا بوو دەبێ ئای-پی ڕاژە بنووسن:</p>
+<p><img src="https://qezwan.ir/server/images/20-2.png" alt=""></p>
+<p>ئێستا لە خوارەوەی پەڕە دوگمەی install لێبدە خاڵۆ !</p>
+<h5 id="ڕێکخستنی-nginx">ڕێکخستنی nginx:</h5>
+<p>ئێستا دەبێ گیتا بخەینە سەر دەرگا(پۆرت)ـــی ٨٠ .بۆ ئەمەش دەبێ nginx سازبکەین.
+ئەم فەرمانە لە ترمیناڵ بنووسە :</p>
+<pre><code>$   sudo nano /etc/nginx/sites-available/gitea
+</code></pre><p>بەفەرمانەکەی سەرەوە فایلێکی config بۆ nginx بەناوی giteaـــمان دروست کرد، ئێستا بە یارمەتی دەستکاریکەری دەقی نانۆ دەبێ edit بکەین.بەم جۆرە
+<code>خاڵ : </code>بە جیاتی server_name دەبێ ئای-پی ڕاژەی خۆت بنووسن.</p>
+<pre><code>server {
+    listen 80;
+    server_name 37.152.181.14;
+  client_max_body_size 100M;
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://127.0.0.1:3000;
+    }
+}
+</code></pre><p>ئێستا بە یارمەتی دوگمەی ctrl-x ،فایلی پاشکەوت بکەن و بێنە دەرەوە.ئێستا فەرمانەکی خوارەو بنووسە:</p>
+<pre><code>$   sudo ln -s /etc/nginx/sites-available/gitea /etc/nginx/sites-enabled
+</code></pre><p>ئێستا بە فەرمانەکەی خوارە دەبێ nginx ،ریستارت بکەین تا کرداری سەرەوە جێبەجێ ببێ.</p>
+<pre><code>$   sudo systemctl restart nginx
+</code></pre><p>ئێستا دەبێ ئای-پی ڕاژە بێ دەرگا یان پۆرتی ٣٠٠٠ بنووسن دەبینن گیتا دەکرێتەوە.کاتێک چوونە بەشی پەڕەی سەرەتا لە بەستەری register دەبێ هەژمارەیێک بۆخۆتان دروستبکەن و ئینجا کانگایێک(repository ) بۆ خۆتان دابین بکەن.</p>
+<p>سەرچاوە: <a href="https://gitea.io/en-us/">gitea</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
