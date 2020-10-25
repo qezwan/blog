@@ -8,6 +8,10 @@
 - id: gnulinux
   translation: "گنولینوکس"
 
+- id: server
+  translation: "ڕاژە"
+
+
 - id: pageNotFound
   translation: "بەداخەوە، ئەم پەڕە بوونی نییە.."
 
