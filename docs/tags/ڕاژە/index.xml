@@ -6,7 +6,17 @@
     <description>Recent content in ڕاژە on Qezwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 16 Oct 2018 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Feb 2019 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>دامەزراندنی ڕاژەیPostgreSQL لە ئوبونتوی ١٦-١٨</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8Cpostgresql-%D9%84%DB%95-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88%DB%8C-%D9%A1%D9%A6-%D9%A1%D9%A8/</link>
+      <pubDate>Tue, 05 Feb 2019 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8Cpostgresql-%D9%84%DB%95-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88%DB%8C-%D9%A1%D9%A6-%D9%A1%D9%A8/</guid>
+      <description>پێشەکی :
+PostgreSQL(یان بە کورتە پۆستگرێس)، بانکێکی زانیاری یان بنکە دراوەیێکی خێرا و سیستەمێکی بەڕێوەبردنی بنکەدراوەی پەیوەندی دارە(ORDMS).لە سەر ویندۆز،لینوکس، فری بی ئێس دی،ئەریس،یونیکس و ماک بە ئاسانی دادەمەزرێ. لە ڕاژەی macOS بە شیوازی سەرەتایی بوونی هەیە.لەوانەیە پێشکەوتوترین سیستەمی بەڕێوەبردنی سەرچاوەکراوی بنکەدراوە(database) بێت.ئێوە دەتوانن فۆنکشنی دڵخوازی خۆتان بە زمانی بەرنامەنووسی تایبەت پێ زیاد بکەن، بۆ وێنەPerl,Lua .NET ,Python ,C/C++, Java وە …هتد.لە ئامازۆن ، سکایپ و ئینستاگرام بگرە تا سیستەمی کەش و هەوای بریتانیا پەنجەمۆرەی دیارە.</description>
+    </item>
+    
     <item>
       <title>دامەزراندنی درووپاڵ لە سەر ڕاژەی ئوبونتو</title>
       <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%AF%D8%B1%D9%88%D9%88%D9%BE%D8%A7%DA%B5-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-%DA%95%D8%A7%DA%98%DB%95%DB%8C-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88/</link>

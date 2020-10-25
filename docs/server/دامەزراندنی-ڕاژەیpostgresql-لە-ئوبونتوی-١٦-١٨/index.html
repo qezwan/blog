@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی :
+PostgreSQL(یان بە کورتە پۆستگرێس)، بانکێکی زانیاری یان بنکە دراوەیێکی خێرا و سیستەمێکی بەڕێوەبردنی بنکەدراوەی پەیوەندی دارە(ORDMS).لە سەر ویندۆز،لینوکس، فری بی ئێس دی،ئەریس،یونیکس و ماک بە ئاسانی دادەمەزرێ. لە ڕاژەی macOS بە شیوازی سەرەتایی بوونی هەیە.لەوانەیە پێشکەوتوترین سیستەمی بەڕێوەبردنی سەرچاوەکراوی بنکەدراوە(database) بێت.ئێوە دەتوانن فۆنکشنی دڵخوازی خۆتان بە زمانی بەرنامەنووسی تایبەت پێ زیاد بکەن، بۆ وێنەPerl,Lua .NET ,Python ,C/C&#43;&#43;, Java وە …هتد.لە ئامازۆن ، سکایپ و ئینستاگرام بگرە تا سیستەمی کەش و هەوای بریتانیا پەنجەمۆرەی دیارە.">
+
+<meta property="og:title" content="دامەزراندنی ڕاژەیPostgreSQL لە ئوبونتوی ١٦-١٨" />
+<meta property="og:description" content="پێشەکی :
+PostgreSQL(یان بە کورتە پۆستگرێس)، بانکێکی زانیاری یان بنکە دراوەیێکی خێرا و سیستەمێکی بەڕێوەبردنی بنکەدراوەی پەیوەندی دارە(ORDMS).لە سەر ویندۆز،لینوکس، فری بی ئێس دی،ئەریس،یونیکس و ماک بە ئاسانی دادەمەزرێ. لە ڕاژەی macOS بە شیوازی سەرەتایی بوونی هەیە.لەوانەیە پێشکەوتوترین سیستەمی بەڕێوەبردنی سەرچاوەکراوی بنکەدراوە(database) بێت.ئێوە دەتوانن فۆنکشنی دڵخوازی خۆتان بە زمانی بەرنامەنووسی تایبەت پێ زیاد بکەن، بۆ وێنەPerl,Lua .NET ,Python ,C/C&#43;&#43;, Java وە …هتد.لە ئامازۆن ، سکایپ و ئینستاگرام بگرە تا سیستەمی کەش و هەوای بریتانیا پەنجەمۆرەی دیارە." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8Cpostgresql-%D9%84%DB%95-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88%DB%8C-%D9%A1%D9%A6-%D9%A1%D9%A8/" />
+<meta property="article:published_time" content="2019-02-05T05:35:45+00:00" />
+<meta property="article:modified_time" content="2019-02-05T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی ڕاژەیPostgreSQL لە ئوبونتوی ١٦-١٨ 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8Cpostgresql-%D9%84%DB%95-%D8%A6%D9%88%D8%A8%D9%88%D9%86%D8%AA%D9%88%DB%8C-%D9%A1%D9%A6-%D9%A1%D9%A8/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-26%2001%3a11%3a41.0599837%20%2b0330%20%2b0330%20m%3d%2b1.034920401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-26%2001%3a11%3a41.0599837%20%2b0330%20%2b0330%20m%3d%2b1.034920401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-26%2001%3a11%3a41.0599837%20%2b0330%20%2b0330%20m%3d%2b1.034920401">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-26%2001%3a11%3a41.0599837%20%2b0330%20%2b0330%20m%3d%2b1.034920401">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی ڕاژەیPostgreSQL لە ئوبونتوی ١٦-١٨
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue Feb 5 2019 05:35:45 UTC'>Feb 5, 2019</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>564 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p><strong>پێشەکی :</strong></p>
+<p>PostgreSQL(یان بە کورتە پۆستگرێس)، بانکێکی زانیاری یان بنکە دراوەیێکی خێرا و سیستەمێکی بەڕێوەبردنی بنکەدراوەی پەیوەندی دارە(ORDMS).لە سەر ویندۆز،لینوکس، فری بی ئێس دی،ئەریس،یونیکس و ماک بە ئاسانی دادەمەزرێ. لە ڕاژەی macOS بە شیوازی سەرەتایی بوونی هەیە.لەوانەیە پێشکەوتوترین سیستەمی بەڕێوەبردنی سەرچاوەکراوی بنکەدراوە(database) بێت.ئێوە دەتوانن فۆنکشنی دڵخوازی خۆتان بە زمانی بەرنامەنووسی تایبەت پێ زیاد بکەن، بۆ وێنەPerl,Lua .NET ,Python ,C/C++, Java وە …هتد.لە ئامازۆن ، سکایپ و ئینستاگرام بگرە تا سیستەمی کەش و هەوای بریتانیا پەنجەمۆرەی دیارە.</p>
+<p>pgAdmin ڕوخسارێکی گرافیکە لە سەر بنەمای وێب بۆ بەڕێوەبردنی PostgreSQL کە زۆر سادەیە و لە ڕێگای وێبگەڕەکەت ئیشدەکا .لەم بابەتە فێر دەبین کە چۆن ڕاژەی بنکەدراوەی PostgreSQL لە سەر ئوبونتو دامەزرێنین و بە یارمەتی pgAdmin بەڕێوەی ببین.</p>
+<h5 id="قۆناغی-١--دامەزراندنی-postgresql"><strong>قۆناغی ١ )</strong> دامەزراندنی PostgreSQL</h5>
+<p>زیاد کردنی کانگای پاکەتەکانی PostgresSQL بە ئوبونتو زۆر سادەیە، بە یارمەتی هێڵەکانی خوارەوە زیادی بکەن بە کانگای ئوبونتو</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc <span class="p">|</span> sudo apt-key add -
+sudo sh -c <span class="s1">&#39;echo &#34;deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -sc)-pgdg main&#34; &gt; /etc/apt/sources.list.d/PostgreSQL.list&#39;</span>
+</code></pre></div><p>گەر تەواوبووی، قۆناغەکانی خوارەوە لە پێش بگرە…</p>
+<h5 id="قۆناغی-٢-بەڕۆژکردن-و-دامەزراندنی-postgresql"><strong>قۆناغی ٢)</strong> بەڕۆژکردن و دامەزراندنی PostgreSQL</h5>
+<p>لە ئێستا دا کانگاکان و کلیلەکان زیادکران.بە هێڵەکانی خوارەوە پاکەتەکان PostgresSQL ئامادە و دامەزراندنی دەستپێدەکەین. بۆ دامەزراندنی PostgreSQL 11 لە هێڵەکانی خوارەوە سود بگرە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt update
+sudo apt-get install postgresql-11
+</code></pre></div><p>پاش دامەزراندنی PostgresSQL ئێمە بەفەرمانەکەی خوارەوە دەتوانین لە هەر کاتێک PostgresSQL ڕاوێستێنین(stop)، دابگرسێنین(start) و توانابکەین(enable) و بارو دۆخی(status) ئاگادار بین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo systemctl stop postgresql.service
+sudo systemctl start postgresql.service
+sudo systemctl <span class="nb">enable</span> postgresql.service
+sudo systemctl status postgresql.service
+</code></pre></div><p>زانیاریێکی وا دەردەکەوێت لە کاتی چالاک بوون :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">postgresql.service - PostgreSQL RDBMS
+   Loaded: loaded <span class="o">(</span>/lib/systemd/system/postgresql.service<span class="p">;</span> enabled<span class="p">;</span> vendor prese
+   Active: active <span class="o">(</span>exited<span class="o">)</span> since Wed 2018-10-31 11:58:09 CDT<span class="p">;</span> 12s ago
+ Main PID: <span class="m">7930</span> <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span>0/SUCCESS<span class="o">)</span>
+    Tasks: <span class="m">0</span> <span class="o">(</span>limit: 4663<span class="o">)</span>
+   CGroup: /system.slice/postgresql.service
+
+Oct <span class="m">31</span> 11:58:09 ubuntu1804 systemd<span class="o">[</span>1<span class="o">]</span>: Starting PostgreSQL RDBMS...
+Oct <span class="m">31</span> 11:58:09 ubuntu1804 systemd<span class="o">[</span>1<span class="o">]</span>: Started PostgreSQL RDBMS.
+</code></pre></div><h5 id="قۆناغی-٣--دروستکردنی-وشەی-نهێنی-بەکارهێنەری-لینوکسی-postgresql"><strong>قۆناغی ٣ )</strong> دروستکردنی وشەی نهێنی بەکارهێنەری لینوکسی PostgreSQL</h5>
+<p>پاش دامەزراندنی PostgreSQL بیرۆکەیێکی باشە بۆ گۆڕین یان دروستکردنی وشەی نهێنی پێشگریمانی بنکەدراوەی PostgreSQL .بەفەرمانەکەی خوارەوە دەتوانین وشەی نهێنی دروست یان بگۆڕین لە ترمیناڵ:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo passwd postgres
+</code></pre></div><p>بە نووسینی دووبار، وشەی نهێنی نوێ، پەیامی گۆڕان بە سەرکەوتویی، پێ دەدا.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+</code></pre></div><p>پاش گۆڕینی وشەی نهێنی هەر جارێک کە بچنە نێو بنکەدراوە لە ڕێگای شێڵ داوای وشەی نهێنیتان لێ دەکا.</p>
+<h5 id="قۆناغی-٤--دەستپێگەیشتن-بە-postgresql"><strong>قۆناغی ٤ )</strong> دەستپێگەیشتن بە PostgreSQL</h5>
+<p>ئێستا بانکی زانیاری یان بنکەدراوەی PostgreSQL دامەزراوە،بۆ دەستپێگەیشتن و پەیوەندی دەبێ هێڵەکەی خوارەوە لە شێڵ بنووسن.ئێوە پێویستان بە چوونە ژوورەوە وەک بەکارهێنەرێکی postgres _ە .</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo su -l postgres
+</code></pre></div><p>لەو کاتەوە کە ئێوە لە فەرمانی psql سود دەگرن بۆ پەیوەندی لە رێگای شێڵ،کاتێکە بۆ دروستکردن و بەڕێوەبردنی بنکەدراوەی PostgreSQL</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">psql
+</code></pre></div><p>– سازدانی وشەی نهێنی بۆ بەڕێوەبەری بنکەدراوەی (postgres)</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">su - postgres
+psql
+</code></pre></div><p>لەفەرمانی psql ،بە شێوازی خوارەوە وشەی نهێنی بۆ بەڕێوەبەر ساز بکەن یان بیگۆڕن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">postgres</span><span class="o">=</span><span class="c1"># \password</span>
+یان
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># \password postgres</span>
+</code></pre></div><p>پاش تەواوکردن چوونەدەرەوڤە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="se">\q</span>
+<span class="nb">exit</span>
+</code></pre></div><h5 id="قۆناغی-٥--دامەزراندنی-pgadmin4-بۆ-ڕوخساری-وێب"><strong>قۆناغی ٥ )</strong> دامەزراندنی PgAdmin4 بۆ ڕوخساری وێب</h5>
+<p>ئێستا کە PostgreSQL دامەزرا،بەفەرمانەکەی خوارەوە pgAdmin4 دادەمەزرێنین بۆ بەڕێوەبردنی گرافیکی PostgreSQL</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install pgadmin4 pgadmin4-apache2
+</code></pre></div><p>پاش بەردەوام بوونی قۆناغەکانی دامەزراندن،وشەی نهێنی PostgreSQL ڕێکبخەن</p>
+<p><img src="https://qezwan.ir/server/images/18.png" alt=""></p>
+<p>دروستکردنی وشەی نهێنی pgAdmin4 بۆ چوونەژوور لە رێگای وێبگەڕ ؛</p>
+<p><img src="https://qezwan.ir/server/images/18-1.png" alt=""></p>
+<p>پاش دامەزراندن، وێبگەڕەکەت بکەرەوە ئینجا IP یان ناوی ڕاژە لەگەڵ pgAdmin4 بنووسە ،بەم جۆرە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">http://example.com/pgadmin4
+</code></pre></div><p>پەڕەیێک وەک وێنەی خوارەوە دەر دەکەوێت و لەو زانیاریانە کە پێش تر بۆ pgadmin4 دابینت کردووە ، بۆ چوونەژوورەوە سود بگرە</p>
+<p><img src="https://qezwan.ir/server/images/18-2.png" alt=""></p>
+<p>ئەمەش پەڕەی سەرەکی بەڕێوەبردنی ڕاژەی بنکەدراوەی PostgreSQL_ە</p>
+<p><img src="https://qezwan.ir/server/images/18-3.png" alt=""></p>
+<p><img src="https://qezwan.ir/server/images/18-4.png" alt=""></p>
+<p>ئەمەتا، هەرچەندە، ئێوە دەتوانن بۆ ئاسایشی فرەتر دەستپێگەیشتنی IP بۆ ئەم پەڕە سنوردار بکەن.</p>
+<p>سەرچاوە: <a href="https://kurd.click/?p=377">websiteforstudents</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
