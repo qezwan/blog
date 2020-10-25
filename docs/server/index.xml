@@ -8,6 +8,16 @@
     <language>en-US</language>
     <lastBuildDate>Mon, 22 May 2017 06:42:21 -0700</lastBuildDate><atom:link href="https://qezwan.ir/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>دامەزراندنی سیستەمی DokuWiki لە سەر CentOS 8</title>
+      <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%B3%DB%8C%D8%B3%D8%AA%DB%95%D9%85%DB%8C-dokuwiki-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-centos-8/</link>
+      <pubDate>Mon, 17 Feb 2020 09:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%B3%DB%8C%D8%B3%D8%AA%DB%95%D9%85%DB%8C-dokuwiki-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-centos-8/</guid>
+      <description>پێشەکی : دۆکۆ ویکی (DokuWiki) سیستەمێکی هەموو کارەیە و سەرچاوەکراوەی بەڕێوەبردنی ناوەڕۆکە بۆ دروستکردنی ویکی بێ ئەو کە بنکە دراوەیێکی هەبێت.لە لایەن بەکارهێنەر بۆ ئەوە کە خوێندنی فرە ئاسانکردووە و زۆر سادەیە بۆ کارپێکردن ، پێشوازی لێکراوە.چاودێری و پەسەندکردنی جۆری بەکارهێنەران بۆ دەستکاری بەتایبەت بۆ دانانی ئاستیان،هەروەها زۆربوونی پێوەکراوەکانی بۆ مەبەست تایبەت؛ هۆکارێک بۆ بڵاو بوونی ئیشەکانیەتی.لەم فێرکارییە ئێمە دامەزراندنی کۆکیویکی لە سەر ڕاژەی سێنت ئۆ ئێس فێر دەبین.
+پێداویستییەکان دڵنیا بن کە ڕاژەکارەکەتان لەم دوو داوا پشتیوانی دەکا:</description>
+    </item>
+    
+    <item>
       <title>دامەزراندنی ڕاژەی خۆماڵی Gitea بە جیاتی Git</title>
       <link>https://qezwan.ir/server/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%DA%95%D8%A7%DA%98%DB%95%DB%8C-%D8%AE%DB%86%D9%85%D8%A7%DA%B5%DB%8C-gitea-%D8%A8%DB%95-%D8%AC%DB%8C%D8%A7%D8%AA%DB%8C-git/</link>
       <pubDate>Tue, 21 Jan 2020 09:35:45 +0000</pubDate>
