@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی : چاودێری تۆڕ باشترین ڕێگایە بۆ پاراستنی خۆمان.بە یارمەتی چاودێری تۆڕەکەمان دەتوانین بە خێرایی کێشەکانمان چارەسەر بکەین.لەم بابەتە ئێمە بە دوو نەرمەکالای بەهێز، دەتوانین چاودێری پانایی باند یان باندبەرینی(bandwidth) لە نێو تۆڕەکەمان بکەین.
+۱- Bmon Bmon ئامرازێکی بەهێز بۆ خەمڵاندنی پانایی باندی تۆر لە لینوکسە.زۆر بە ئاسانی دەتوانێ گواستنەوەی زانیاریەکانمان لە نێو تۆر پێ نیشان بدا.ئەم بەرنامە بۆ زۆر یەک لە دابەشکراوەکانی لینوکس بوونی هەیە.تەنها ئێوە ترمیناڵ بکەنەوە ئینجا بە یارمەتی یەکێک لە فەرمانەکانی خۆوارەوە لە سەر دابەشکراوەکەتان دایمەزرێنن.">
+
+<meta property="og:title" content="چۆنیەتی چاودێری پانایی باند لە گنو/لینوکس" />
+<meta property="og:description" content="پێشەکی : چاودێری تۆڕ باشترین ڕێگایە بۆ پاراستنی خۆمان.بە یارمەتی چاودێری تۆڕەکەمان دەتوانین بە خێرایی کێشەکانمان چارەسەر بکەین.لەم بابەتە ئێمە بە دوو نەرمەکالای بەهێز، دەتوانین چاودێری پانایی باند یان باندبەرینی(bandwidth) لە نێو تۆڕەکەمان بکەین.
+۱- Bmon Bmon ئامرازێکی بەهێز بۆ خەمڵاندنی پانایی باندی تۆر لە لینوکسە.زۆر بە ئاسانی دەتوانێ گواستنەوەی زانیاریەکانمان لە نێو تۆر پێ نیشان بدا.ئەم بەرنامە بۆ زۆر یەک لە دابەشکراوەکانی لینوکس بوونی هەیە.تەنها ئێوە ترمیناڵ بکەنەوە ئینجا بە یارمەتی یەکێک لە فەرمانەکانی خۆوارەوە لە سەر دابەشکراوەکەتان دایمەزرێنن." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/server/%DA%86%DB%86%D9%86%DB%8C%DB%95%D8%AA%DB%8C-%DA%86%D8%A7%D9%88%D8%AF%DB%8E%D8%B1%DB%8C-%D9%BE%D8%A7%D9%86%D8%A7%DB%8C%DB%8C-%D8%A8%D8%A7%D9%86%D8%AF-%D9%84%DB%95-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+<meta property="article:published_time" content="2018-10-02T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-10-02T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     چۆنیەتی چاودێری پانایی باند لە گنو/لینوکس 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/server/%DA%86%DB%86%D9%86%DB%8C%DB%95%D8%AA%DB%8C-%DA%86%D8%A7%D9%88%D8%AF%DB%8E%D8%B1%DB%8C-%D9%BE%D8%A7%D9%86%D8%A7%DB%8C%DB%8C-%D8%A8%D8%A7%D9%86%D8%AF-%D9%84%DB%95-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-10-25%2023%3a36%3a22.2366465%20%2b0330%20%2b0330%20m%3d%2b0.948167701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-10-25%2023%3a36%3a22.2366465%20%2b0330%20%2b0330%20m%3d%2b0.948167701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-10-25%2023%3a36%3a22.2366465%20%2b0330%20%2b0330%20m%3d%2b0.948167701">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-10-25%2023%3a36%3a22.2366465%20%2b0330%20%2b0330%20m%3d%2b0.948167701">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://qezwan.ir/blog/"><span>بلۆگ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    چۆنیەتی چاودێری پانایی باند لە گنو/لینوکس
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue Oct 2 2018 05:35:45 UTC'>Oct 2, 2018</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>622 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95">ڕاژە</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <h5 id="پێشەکی-"><strong>پێشەکی :</strong></h5>
+<p>چاودێری تۆڕ باشترین ڕێگایە بۆ پاراستنی خۆمان.بە یارمەتی چاودێری تۆڕەکەمان دەتوانین بە خێرایی کێشەکانمان چارەسەر بکەین.لەم بابەتە ئێمە بە دوو نەرمەکالای بەهێز، دەتوانین چاودێری پانایی باند یان باندبەرینی(bandwidth) لە نێو تۆڕەکەمان بکەین.</p>
+<h5 id="۱--bmon">۱- Bmon</h5>
+<p>Bmon ئامرازێکی بەهێز بۆ خەمڵاندنی پانایی باندی تۆر لە لینوکسە.زۆر بە ئاسانی دەتوانێ گواستنەوەی زانیاریەکانمان لە نێو تۆر پێ نیشان بدا.ئەم بەرنامە بۆ زۆر یەک لە دابەشکراوەکانی لینوکس بوونی هەیە.تەنها ئێوە ترمیناڵ بکەنەوە ئینجا بە یارمەتی یەکێک لە فەرمانەکانی خۆوارەوە لە سەر دابەشکراوەکەتان دایمەزرێنن.</p>
+<h6 id="ئوبونتو-">ئوبونتو :</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install bmon
+</code></pre></div><h6 id="دێبیان">دێبیان:</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install bmon
+</code></pre></div><h6 id="ئاچ-لینوکس">ئاچ لینوکس</h6>
+<p>بەکارهێنەران دەتوانن لە ڕێگای کانگای کۆمەڵایەتی نەرمەکالا دایمەزرێنن،گەر ئاگاداری ئەم کارە نیت لە سەر ئاج لینوکس، شوێنی ئەم فەرمانانە بکەوە :</p>
+<h5 id="قۆناغی-یەکەم-">قۆناغی یەکەم :</h5>
+<p>ئەم پەڕگە بە دەستکاریکەری نانۆ بکەرەوە /etc/pacman.conf بەم جۆرە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano -w /etc/pacman.conf
+</code></pre></div><h5 id="قۆناغی-دووهەم-">قۆناغی دووهەم :</h5>
+<p>کێشان(Scroll) بێنە خوارەوە ئینجا هێمای # لە بەرابەر وشەی “Community” بسڕەوە</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano -w /etc/pacman.conf
+</code></pre></div><h5 id="قۆناغی-سێهەم-">قۆناغی سێهەم :</h5>
+<p>پاشکەوتی بکە بە Ctrl + O ئینجا بۆ هاتنەدەرەوە لە نانۆ دوکمەکانی Ctrl + X هاوکات لێبدە.</p>
+<h5 id="قۆناغی-چوارەم-">قۆناغی چوارەم :</h5>
+<p>بەڕێوەبەری پاکەتی ئاچ لەگەڵ Pacman هاوئاهەنگ بکە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo pacman -Syyu
+</code></pre></div><p>پاش ئەوە کە نەرمەکالا دامەزرا دەتوانی bmon چالاک بکەی</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo pacman -S bmon
+</code></pre></div><h6 id="فێدۆرا">فێدۆرا:</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo dnf install bmon -y
+</code></pre></div><p>ئۆپێن سوسە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo zypper install bmon
+</code></pre></div><h5 id="۱-۱-چاودێری-پانایی-باندی-تۆڕ"><strong>۱-۱ :چاودێری پانایی باندی تۆڕ</strong></h5>
+<p>ئامێری تۆڕی Bmon، لە کاتێکی ڕاستەقینەی پاشبنەمای تۆڕەکە دەتوانێ ترافیک یان قەرەباڵغی بناسێنێ.ترمیناڵ بکەنەوە، وشەی<code>bmon </code>بنووسن تاکوو چاودێری مەسرەفی پانایی باندی تۆڕ شیتاڵ بکرێتەوە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">bmon
+</code></pre></div><p>کاتێک bmon چالاک بوو بە یارمەتی دوکمەی تیرەکان ( arrow keys ) ئامێری تۆرەکەتان هەڵبژێرن واتە کارتی تۆڕ، پاش هەڵبژاردن دوکمەی Enter لێبدەن.گەر ئاگاداریتان لە ئامێری تۆڕەکەتان نییە لە سەرخشتێکی دیکەی ترمیناڵ، پەیدای بکەن بەم فەرمانە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">ip link show
+</code></pre></div><p>دەرئەنجام بەم شێوەیە ؛</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">qezwan@kurdistan:~$ ip link show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN mode DEFAULT group default qlen <span class="m">1000</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp12s0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu <span class="m">1500</span> qdisc pfifo_fast state DOWN mode DEFAULT group default qlen <span class="m">1000</span>
+    link/ether 20:1a:06:5e:7a:29 brd ff:ff:ff:ff:ff:ff
+3: wlp3s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc pfifo_fast state UP mode DORMANT group default qlen <span class="m">1000</span>
+    link/ether 0c:84:dc:d1:a8:09 brd ff:ff:ff:ff:ff:ff
+7: cscotun0: &lt;POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP&gt; mtu <span class="m">1200</span> qdisc pfifo_fast state UNKNOWN mode DEFAULT group default qlen <span class="m">500</span>
+    link/none 
+</code></pre></div><p>ئێستا کارتی تۆڕەکەت پەیدا بکەو بگەڕێوە بۆ سەرخشتی Bmon .
+<code>خاڵ : </code>ئێتێرنیت کارتەکان(ethernet cards) زۆرکات بە “enp.” یا “eth” دەستپێدەکا،گەر لە وایرلێس(بێ کەیبڵ) کەڵک دەگری بەم بەرچەسبە دەست پێدەکا “wlp” or “wlan” .</p>
+<p>کاتێک سوود لە کارتێکی تۆر بە شیوازی LAN (تۆڕی خۆماڵی ناوخۆ) دەگرن دیسان دەتوانن بە فەرماەکەی سەرەوە باندی بەرینی ببینن.</p>
+<h5 id="۱-۲-تێگەیشتن-لە-ترافیکی-تۆڕ"><strong>۱-۲ :تێگەیشتن لە ترافیکی تۆڕ</strong></h5>
+<p>ئێستا ئامرازی Bmon چالاکە، لە سەرەوە دیمان کە ئێمە چۆن دەتوانین کارتی تۆڕەکەمان هەڵبژێرین.ئەم نەرمەکالا ترافیکی تۆڕەکەمان بە دوو هێلکاری نیشان دەدا: (RX Bytes/second) وە (TX Bytes/second) ، هەر پاکەتێک ناردن(sent) و هەناردەی (receive)هەیە،ئێوە هێلکاری تۆڕ لە هەردوو هێڵەکان بە بیت بە چرکە(bytes per second)دەبینن.
+بە چاولێکردن لە هێلکاریەکان دەتوانن بزانن بە چ خێراییێک و لە چ کاتێک ناردن و هاوردەی زانیاریەکان لە تۆڕی ئینتێرنێت هەیە.
+گەر کلیلی <strong>d</strong> لێبدەن زانیاری فرەترتان دەست دەکەوێت هەروا هیمای پرسیار واتە <strong>؟</strong> پەڕەی ڕێنماییتان بۆ دەکرێتەوە.</p>
+<h5 id="۲iptraf"><strong>۲:Iptraf</strong></h5>
+<p>Bmon نەرمەکالایێکی بەهێز و بشە بۆ شیکردنەوەی ترافیکی تۆڕ.بەڵام گەر پێویستان بە نەرمەکالایێکە بۆ زانیاری فرەتر لە تۆڕەکەتان لە لینوکسئەوە پێشنیارمان Iptraf ە.ئەم نەرمەکالا بە شێوازی سەرەتایی لە لینوکس دانەمەزراوە و زۆر دابەسکراوە لە نێو سەرچاوەی کۆدەکانیان دایانناوە.بۆ دامەزرندن لە دابەشکراوەکان :</p>
+<h6 id="ئوبونتو--1">ئوبونتو :</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install iptraf
+</code></pre></div><h6 id="دێبیان-1">دێبیان:</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install iptraf
+</code></pre></div><h6 id="ئارچ-لینوکس">ئارچ لینوکس:</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo pacman -S iptraf
+</code></pre></div><p><strong>فێدۆرا :</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">Fedora sudo dnf install iptraf -y
+</code></pre></div><h6 id="ئۆپێن-سوسە">ئۆپێن سوسە:</h6>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo zypper install iptraf
+</code></pre></div><h5 id="۲-۱--چاودێری-باندبەرینی-تۆڕ"><strong>۲-۱ : چاودێری باندبەرینی تۆڕ</strong></h5>
+<p>IPtraf زۆر بە باشی پانایی باند و ئای پی و ترفیکەکەمان پێ نیشان دەدا.بۆ یشاندانی چاودێری ئای پی دەبێ “IP traffic monitor”هەڵبژیرین و ئینتێر لێبدەین.</p>
+<p><img src="https://qezwan.ir/server/images/14.jpg" alt=""></p>
+<p>بۆ زانیاری فرەتر دەتوانی کرە لەسەر دوکمەی M بکەی.هەرچەندە کارکردن بەم نەرمەکالا فەرە ئاسانە.هیوای سەرکەوتنتان بۆ دەخوازم.</p>
+<p>سەرچاوە : <a href="https://www.tecmint.com/bmon-network-bandwidth-monitoring-debugging-linux/">tecmint</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>
+
