@@ -270,7 +270,7 @@ sudo systemctl restart nginx
 
  
 
-![](C:\Users\qezwan\Desktop\o\oen\content\server\images\8-2.png)
+![](/server/images/8-2.png)
 
 
 
