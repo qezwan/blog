@@ -5,6 +5,7 @@
             {{ if .Content }}
                 <div class="markdown">
                     {{ .Content }}
+
                 </div>
             {{ end }}
             {{ $totalpostscount := len (where .Data.Pages "Section" "blog") }}

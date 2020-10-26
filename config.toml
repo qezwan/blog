@@ -91,3 +91,4 @@ avatar                 = "img/profile.jpg" # path to image in static dir e.g img
 # The following are DEPRECATED.
 gatracker              = "XYZ" # use googleAnalytics instead
 initials               = "ad"  # displayed on single post page; deprecated in v0.3.0.
+[params.mysite]
