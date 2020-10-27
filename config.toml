@@ -14,17 +14,17 @@ pluralizelisttitles = false
 googleAnalytics     = "UA-115800084-1"
 PostLimit = 5
 [permalinks]
-blog  = "blog/:slug/"
+book  = "book/:slug/"
 
 [[menu.main]]
-name                   = "بلۆگ"
-weight                 = -120
-identifier             = "blog"
-url                    = "/blog/"
+name                   = "سەرچاوەکراوە"
+weight                 = -125
+identifier             = "web"
+url                    = "/web/"
 
 [[menu.main]]
 name                   = "ڕاژە"
-weight                 = -125
+weight                 = -120
 identifier             = "server"
 url                    = "/server/"
 

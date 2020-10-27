@@ -1,9 +1,9 @@
 ---
 - id: latestPosts
-  translation: "دوایین بابەتەکان"
+  translation: "دوایین کتێب"
 
-- id: blogHeading
-  translation: "بلۆگ"
+- id: web
+  translation: "سەرچاوەکراوە"
 
 - id: gnulinux
   translation: "گنولینوکس"
