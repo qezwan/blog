@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="لەم بابەتە لە سەر ئەوە دەدوێین کە پاش دامەزراندنی ئێلیمێنتری پێویستمان بە چ کردارێکە کە باشتر سود لەم سیستەمی کارپێکردنە بگرین.
+١- چالاککردنی پێش گریمانی نەرمەکالاکان.
+sudo software-properties-gtkبەم فەرمانەپەنجێرەییک دەکرێتەوە بۆ کانفیگی سەرچاوەی نەرمەکالاکان.بچنە خشتی “Other software” ئینجا گشتی جوارچێوەکان بە ناوی “Canonical Partners” و “Independent” هەڵبژێرن .
+٢- بەڕۆژکردنی سیستەم: بۆ بەرۆژکردنی پەکەکان و بەرزکردنەوەی نەرمەکالاکان یا خود ئەپلیکەشنەکان لە فەرمانی خوارەوە سوود وەربگرن.پاش بەرۆژ کردنەوە سیستەمەکەت لەنوێ دەستپیکەرەوە (restart).">
+
+<meta property="og:title" content="٢٠ کار پاش دامەزراندنی ئێلیمینتری" />
+<meta property="og:description" content="لەم بابەتە لە سەر ئەوە دەدوێین کە پاش دامەزراندنی ئێلیمێنتری پێویستمان بە چ کردارێکە کە باشتر سود لەم سیستەمی کارپێکردنە بگرین.
+١- چالاککردنی پێش گریمانی نەرمەکالاکان.
+sudo software-properties-gtkبەم فەرمانەپەنجێرەییک دەکرێتەوە بۆ کانفیگی سەرچاوەی نەرمەکالاکان.بچنە خشتی “Other software” ئینجا گشتی جوارچێوەکان بە ناوی “Canonical Partners” و “Independent” هەڵبژێرن .
+٢- بەڕۆژکردنی سیستەم: بۆ بەرۆژکردنی پەکەکان و بەرزکردنەوەی نەرمەکالاکان یا خود ئەپلیکەشنەکان لە فەرمانی خوارەوە سوود وەربگرن.پاش بەرۆژ کردنەوە سیستەمەکەت لەنوێ دەستپیکەرەوە (restart)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D9%A2%D9%A0-%DA%A9%D8%A7%D8%B1-%D9%BE%D8%A7%D8%B4-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A6%DB%8E%D9%84%DB%8C%D9%85%DB%8C%D9%86%D8%AA%D8%B1%DB%8C/" />
+<meta property="article:published_time" content="2015-10-04T08:40:45+00:00" />
+<meta property="article:modified_time" content="2015-10-04T08:40:45+00:00" />
+
+
+
+<title>
+
+
+     ٢٠ کار پاش دامەزراندنی ئێلیمینتری 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D9%A2%D9%A0-%DA%A9%D8%A7%D8%B1-%D9%BE%D8%A7%D8%B4-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A6%DB%8E%D9%84%DB%8C%D9%85%DB%8C%D9%86%D8%AA%D8%B1%DB%8C/">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115800084-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115800084-1');
+</script>
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-04%2022%3a29%3a20.8379029%20%2b0330%20%2b0330%20m%3d%2b3.636274401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-04%2022%3a29%3a20.8379029%20%2b0330%20%2b0330%20m%3d%2b3.636274401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-04%2022%3a29%3a20.8379029%20%2b0330%20%2b0330%20m%3d%2b3.636274401">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-04%2022%3a29%3a20.8379029%20%2b0330%20%2b0330%20m%3d%2b3.636274401">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-web"><a href="https://qezwan.ir/web/"><span>سەرچاوەکراوە</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    ٢٠ کار پاش دامەزراندنی ئێلیمینتری
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sun Oct 4 2015 08:40:45 UTC'>Oct 4, 2015</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>524 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C">ئێلێمێنتری</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>لەم بابەتە لە سەر ئەوە دەدوێین کە پاش دامەزراندنی ئێلیمێنتری پێویستمان بە چ کردارێکە کە باشتر سود لەم سیستەمی کارپێکردنە بگرین.</p>
+<p>١- چالاککردنی پێش گریمانی نەرمەکالاکان.</p>
+<pre><code>sudo software-properties-gtk
+</code></pre><p>بەم فەرمانەپەنجێرەییک دەکرێتەوە بۆ کانفیگی سەرچاوەی نەرمەکالاکان.بچنە خشتی “Other software” ئینجا گشتی جوارچێوەکان بە ناوی “Canonical Partners” و “Independent” هەڵبژێرن .</p>
+<p>٢- بەڕۆژکردنی سیستەم:
+بۆ بەرۆژکردنی پەکەکان و بەرزکردنەوەی نەرمەکالاکان یا خود ئەپلیکەشنەکان لە فەرمانی خوارەوە سوود وەربگرن.پاش بەرۆژ کردنەوە سیستەمەکەت لەنوێ دەستپیکەرەوە (restart).</p>
+<pre><code>sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+</code></pre><p>٣- دامەزراندنی Aptitude, Synaptic وە Gdebi
+ئەم پەکانە بۆ خێرایی و کاری بەهێزتری ناوەندی نەرمەکالا بەکار دێن.</p>
+<pre><code>sudo apt-get install aptitude synaptic gdebi-core
+</code></pre><p>٤-دەستکاری ڕومێزی ئیلیمێنتری بە دامەزراندنی Elementary Tweaks
+Elementary Tweaks ئەبزاریکە بۆ دەستکاری و جوانکاری ڕووکاری رومێزی و کاریگەریەکانی،کە بریتییە لە وێنۆچکەکان،دوکمەکان،ستایل و..هتد .</p>
+<pre><code>sudo apt-add-repository ppa:versable/elementary-update -y
+sudo apt-get update
+sudo apt-get install elementary-tweaks
+</code></pre><p>٤-١- دامەزراندنی کاغەزدیواری و وێنۆچکەکان</p>
+<pre><code>sudo apt-get install elementary-wallpaper-collection
+</code></pre><p>٥- دامەزراندنی Synapse indicator :
+سنەیپ ئیندیکەیتۆر ئەبزاریکە بۆ گەڕانی خێرا لە پەرگەکان و ئەپەکان لە نێو ئیلێمینتری.پاش بەکاربردنی فەرمەنی خوارەوە دەبێت لە سیستەم بچنە دەرەوەو(logout) بگەرینەوە (login ).</p>
+<pre><code>sudo apt-get install indicator-synapse
+</code></pre><p>٦- دامەزراندنی وێبگەرەکان:
+هەر وا کە دەزانن وێبگەری سیستەمی کارپێکردنی ئیلێمێنتری ناوی میدرۆیە کە لەبەر سووک بوون توانایی کەمی لە چاو فایرفۆکس ە کرۆم بۆ دابین کراوە بۆ ئەم کێشەیە دەتوانن لە فەرمانەکانی خوارەوە بۆ دامەزراندنی سوود وەربگرن:</p>
+<p>٦-١- دامەزراندی وێبگەری فایفۆکسی موزیلا :</p>
+<pre><code>sudo apt-get install firefox
+</code></pre><p>٦-٢- دامەزراندنی وێبگەری کرۆمیۆم :</p>
+<pre><code>sudo apt-get install chromium-browser
+</code></pre><p>٦-٣- دامەزراندنی وێبگەری کرۆم :</p>
+<p>٦-٣-١- وشانی ٦٤ بیت :</p>
+<pre><code>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo gdebi google-chrome-stable_current_amd64.deb
+</code></pre><p>٦-٣-٢- وشانی ٣٢ بیت :</p>
+<pre><code>wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+sudo gdebi google-chrome-stable_current_i386.deb
+</code></pre><p>٧-دامەزراندی زیادکراوەی فلاش:
+زیادکراوەی فلاس بۆ فایرفۆکس و کرۆمیۆم کە پاڵپشتی فلاس ناکەن.</p>
+<pre><code>sudo apt-get install adobe-flashplugin
+</code></pre><p>٨- دامەزراندنی پەلەیری VLC :
+بە دەڵنیایەوە یەکێک لە هەرە نەرماکالا بەهێزەکانە بۆ دیتنی فیلم وگوێ دانی ئاهەنگ و موسیقا.دەتوانن لە ناوەندی نەرمەکالاس دایبمەزرینن یان لە فەرمانی خوارەوە کەلک وەربگرن</p>
+<pre><code>sudo apt-get install vlc
+</code></pre><p>٩-دامەزراندنی کودێکەکان:
+بۆ پاڵپشتی لە فۆرماتی زۆرتری فایلەکانی موسیقا و فیلم کۆدیک دادەمزرێنین.</p>
+<pre><code>sudo apt-get install ubuntu-restricted-extras libavcodec-extra-53
+</code></pre><p>٩-١- کردنەوەی dvd :</p>
+<pre><code>sudo apt-get install libdvdread4
+sudo /usr/share/doc/libdvdread4/install-css.sh
+</code></pre><p>١٠- بۆ دامەزراندن و زیاد کردنی فۆرماتی ئارشیڤ:
+بۆ ئەوە کە پاکەتی جورواجۆر کە گوشراوەن بکەینەوە دەتوانین لەم فەرمانە سوود وەر بگرین،</p>
+<pre><code>sudo apt-get install unace rar unrar p7zip-rar p7zip sharutils uudeview mpack lha arj cabextract lzip lunzip
+</code></pre><p>١١-دامەزراندنی سکایپ(Skype ) :</p>
+<pre><code>sudo apt-get install skype
+</code></pre><p>١٢-دامەزراندنی بۆشایی هەوری درۆپنۆکس(Dropbox):</p>
+<pre><code>sudo gdebi dropbox_1.6.0_amd64.deb
+</code></pre><p>١٣-دامەزراندنی Uget بۆ بەرێوەبردنی داگرتنەکان :</p>
+<pre><code>sudo apt-get install uget
+</code></pre><p>١٤-دامەزراندنی ئۆفیس(Libreoffice) :
+ئیلیمینتری ئۆفیسی لەسەر نییە .بۆ داگرتنی کۆی ئۆفیس لە فەرمانەکەی خوارەوە سوود بگرن:</p>
+<pre><code>sudo apt-get install libreoffice
+</code></pre><p>١٥- دامەزراندنی Gimp بۆ دەستکاری وێنە بە شێوەی پێشکەوتوانە:</p>
+<pre><code>sudo apt-get install gimp
+</code></pre><p>١٦-داەزراندنی Pidgin بۆ چات :</p>
+<pre><code>sudo apt-get install pidgin
+</code></pre><p>١٧-دامەزراندنی جاڤا بۆ ویبگەرەکان :</p>
+<pre><code>sudo apt-get install icedtea-plugin
+</code></pre><p>١٨-کردنەوە پارتیشنەکان بۆ نوسین :</p>
+<p>…..</p>
+<p>١٩- دامەزراندنی کارتی گرافیک :
+گەر لە کارتەکانیnvidia or ati سوودوەردەگرن یان لە کارتی وای-فایbroadcom،دەتوانن بۆ بەرۆژ کردن یان دامەزراندنی سەرەکی لە سەرچاوەکراوە بە فەرمانەکەی خوارەوە سوودوەربگرن.دەتوانن بچنە ئەم مەسیرەو بە نیسانکردنی چوارچێوەکان پێداویستی سیستەمەکەتان دیاری بکەن.</p>
+<pre><code>sudo jockey-gtk
+</code></pre><p>٢٠-دامەزراندنی تۆرینت:
+ئێلیمێنتری دەتوانێت کلاینێتی تۆرینت دامەزرینێت. کە دەتوانین بۆ دۆ ئامێری QBittorrent وە Deluge بێت.</p>
+<pre><code>sudo apt-get install transmission
+sudo apt-get install qbittorrent
+</code></pre>
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-115800084-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="هەر وا کە دەزانین لینوکس سیستەمی کارپێکردنی سەرچاوە کراوەیە و سادەو بەهێزە.بەڵام زۆر جار پیمان خۆشە کە گۆڕانکاریییک لە ڕوخساری بدەین.بەتایبەت لینوکسی ئێلێمێنتری کە سادە ترین شێواز خۆی بۆ بە کارهێنەر دەرەقسێنێت. بۆ نمونە بە یارمەتی “tweaks’ ئێمە دەتوانین گۆڕانکاری زۆر لە سەر رومێزی یان دێسکتۆپی ئێلێمێنتری بدەین. بۆ نمونە گۆڕانی جۆری فۆنتەکان،وێنۆجکەکان(ئایکۆن) و سێ رەهەندی کردنی ڕومێزی و شتی دیکە. tweaks ئیلیمینتری چییە :
+ Appearance: بۆ گۆڕانی ڕوخسار و ڕوکاری ئێلێمینتری و وێنۆچکە.">
+
+<meta property="og:title" content="دامەزراندنی ئایکۆن و رووکار لە لینوکسی ئێلێمێنتری" />
+<meta property="og:description" content="هەر وا کە دەزانین لینوکس سیستەمی کارپێکردنی سەرچاوە کراوەیە و سادەو بەهێزە.بەڵام زۆر جار پیمان خۆشە کە گۆڕانکاریییک لە ڕوخساری بدەین.بەتایبەت لینوکسی ئێلێمێنتری کە سادە ترین شێواز خۆی بۆ بە کارهێنەر دەرەقسێنێت. بۆ نمونە بە یارمەتی “tweaks’ ئێمە دەتوانین گۆڕانکاری زۆر لە سەر رومێزی یان دێسکتۆپی ئێلێمێنتری بدەین. بۆ نمونە گۆڕانی جۆری فۆنتەکان،وێنۆجکەکان(ئایکۆن) و سێ رەهەندی کردنی ڕومێزی و شتی دیکە. tweaks ئیلیمینتری چییە :
+ Appearance: بۆ گۆڕانی ڕوخسار و ڕوکاری ئێلێمینتری و وێنۆچکە." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A6%D8%A7%DB%8C%DA%A9%DB%86%D9%86-%D9%88-%D8%B1%D9%88%D9%88%DA%A9%D8%A7%D8%B1-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C-%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C/" />
+<meta property="article:published_time" content="2015-10-12T10:10:45+00:00" />
+<meta property="article:modified_time" content="2015-10-12T10:10:45+00:00" />
+
+
+
+<title>
+
+
+     دامەزراندنی ئایکۆن و رووکار لە لینوکسی ئێلێمێنتری 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A6%D8%A7%DB%8C%DA%A9%DB%86%D9%86-%D9%88-%D8%B1%D9%88%D9%88%DA%A9%D8%A7%D8%B1-%D9%84%DB%95-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%DB%8C-%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C/">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115800084-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115800084-1');
+</script>
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-04%2022%3a29%3a20.7872309%20%2b0330%20%2b0330%20m%3d%2b3.585602401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-04%2022%3a29%3a20.7872309%20%2b0330%20%2b0330%20m%3d%2b3.585602401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-04%2022%3a29%3a20.7872309%20%2b0330%20%2b0330%20m%3d%2b3.585602401">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-04%2022%3a29%3a20.7872309%20%2b0330%20%2b0330%20m%3d%2b3.585602401">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-web"><a href="https://qezwan.ir/web/"><span>سەرچاوەکراوە</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    دامەزراندنی ئایکۆن و رووکار لە لینوکسی ئێلێمێنتری
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Oct 12 2015 10:10:45 UTC'>Oct 12, 2015</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>2 خولەک<div class="middot"></div>316 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C">ئێلێمێنتری</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>هەر وا کە دەزانین لینوکس سیستەمی کارپێکردنی سەرچاوە کراوەیە و سادەو بەهێزە.بەڵام زۆر جار پیمان خۆشە کە گۆڕانکاریییک لە ڕوخساری بدەین.بەتایبەت لینوکسی ئێلێمێنتری کە سادە ترین شێواز خۆی بۆ بە کارهێنەر دەرەقسێنێت. بۆ نمونە بە یارمەتی “tweaks’ ئێمە دەتوانین گۆڕانکاری زۆر لە سەر رومێزی یان دێسکتۆپی ئێلێمێنتری بدەین. بۆ نمونە گۆڕانی جۆری فۆنتەکان،وێنۆجکەکان(ئایکۆن) و سێ رەهەندی کردنی ڕومێزی و شتی دیکە.
+<strong>tweaks ئیلیمینتری چییە :</strong></p>
+<ul>
+<li>Appearance: بۆ گۆڕانی ڕوخسار و ڕوکاری ئێلێمینتری و وێنۆچکە.</li>
+<li>Font : گۆڕانی فۆنتەکەنی سەردێر ،دەق ،مێنیۆ ، … لە پەنجێرەکانی ئێلێمینتری.</li>
+<li>Animation : بۆ داخستن،چکۆلەکردن،گەورەکردن ،خێرایی کردنەوە و جولەی تایبەت بە پەنجێرەکان لە ئێلێمینتری.</li>
+<li>Shadows : بۆ سێبەر خستن لە سەر پەنجێرەکان و مینیۆکان.</li>
+<li>Plank : بۆ گۆڕینی ئەندازەی وینۆچکە و مێنۆی دۆک و پانێلی سەرەوە بە تایبەت ڕووناکی دێسکتۆپ.</li>
+<li>Slingshot : هەڵبژاردنی ژمارەی ستوون و ڕەدیف بۆ نماییش نەرمەکالاکان.</li>
+</ul>
+<p><strong>چۆن tweaks دامەزرێنم :</strong></p>
+<p>بچنە نێو ترمیناڵ یان دوگمەکانی [CTRL]-[ALT]-[T] لێبدەن.</p>
+<pre><code>sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily
+sudo apt-get update
+sudo apt-get install elementary-tweaks
+</code></pre><p>پاش دامەزراندن بۆ دەستپێگەیشتن بەTweaks بچنە ئەم مەسیرە : Applications &gt; System Settings &gt; Tweaks</p>
+<p><strong>دامەزراندنی Numix project :</strong></p>
+<p><img src="https://qezwan.ir/gnulinux/images/000011.jpg" alt=""></p>
+<p>پاکەتێکە بۆ جوانکاری لە گۆڕینی ڕووکاری دێسکتۆپ ،وێنۆچکە و کاغەزدیواری لە ئێلێمێنتری بە فەرمانەکانی خوارەوە :</p>
+<pre><code>sudo add-apt-repository ppa:numix/ppa
+sudo apt-get update
+</code></pre><p>بۆ دامەزراندنی وێنۆجکە بۆ شێوازی بازنە لە ترمیناڵ ئەم فەرمانە بنووسن :</p>
+<pre><code>sudo apt-get install numix-icon-theme-circle
+</code></pre><p>**
+دامەزراندنی Moka project :**</p>
+<p><img src="https://qezwan.ir/gnulinux/images/000011-1.jpg" alt=""></p>
+<p>ئەمیش پڕۆژەیێکە لە بەشی گۆڕان و جوانکاری ئایکۆن و دێسکتۆپ . ترمیناڵ دەکەینەوە فەرمانەکانی خوارەوە دەنووسین</p>
+<pre><code>sudo add-apt-repository ppa:moka/stable
+sudo apt-get update
+sudo apt-get install faba-icon-theme moka-icon-theme
+</code></pre><p>ئەم مەسیرە برۆ گۆڕانکاریەکان بکە بە Moka :</p>
+<p>Syste Settings &gt; Tweaks &gt; Appearance &gt; Icon Theme</p>
+<p><strong>ڕووکاری ڕووناک :</strong></p>
+<p><img src="https://qezwan.ir/gnulinux/images/000011-2.jpg" alt=""></p>
+<p>بۆ ڕووکارێکی ڕووناک بۆ ئێلێمێنتری دەتوانن فەرمانەکانی خوارەوە لە ترمیناڵ بنووسن :</p>
+<pre><code>sudo add-apt-repository ppa:yunnxx/elementary
+
+sudo apt-get update
+
+sudo apt-get install elementary-transparent-theme
+</code></pre><p>پاشان ئەم مەسیرە بڕۆ</p>
+<p>System Settings &gt; Tweaks &gt; Appearance</p>
+<p>Window Decoration Theme و Interface Theme بکە بە هەڵبژاردەی transparent و بارێک چونەدەوە( log out) بکەو بێ ژورەوە .</p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-115800084-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+
+</body>
+</html>
+
