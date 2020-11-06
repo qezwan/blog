@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="لەم بابەتە فێری ئەوە دەبین چۆن کرتەی ڕاست لە دێسکتۆپ و ئایکۆنەکانی دێسکتۆپ لە لینوکسی ئێلێمێنتری چاڵاک بکەین.هەر وا کە دەزنن بە شێوازی پێس گریمان نە کرتەی ڕاست چالاکە لە سەر دێسکتۆپ نە ئاکۆن یان وێنۆچکەکانی سەر ڕومێزی لینوکسی ئێلێمێنتری.
+قۆناغی یەکەم :
+دامەزراندیNautilus Dconf Tools کە بە دو شێواز دەتوانن
+١- لەرێگای ترمیناڵ بەم فەرمانە :
+sudo apt-get update sudo apt-get install nautilus dconf-tools ٢- لە رێگای ناوەندی دامەزراندنی نەرمەکالاکانی لینوکس و گەڕانی وەسەی Dconf لە خشتی گەڕان.">
+
+<meta property="og:title" content="چالاک کردنی کرتەی ڕاست و ئایکۆنی دێسکتۆپ" />
+<meta property="og:description" content="لەم بابەتە فێری ئەوە دەبین چۆن کرتەی ڕاست لە دێسکتۆپ و ئایکۆنەکانی دێسکتۆپ لە لینوکسی ئێلێمێنتری چاڵاک بکەین.هەر وا کە دەزنن بە شێوازی پێس گریمان نە کرتەی ڕاست چالاکە لە سەر دێسکتۆپ نە ئاکۆن یان وێنۆچکەکانی سەر ڕومێزی لینوکسی ئێلێمێنتری.
+قۆناغی یەکەم :
+دامەزراندیNautilus Dconf Tools کە بە دو شێواز دەتوانن
+١- لەرێگای ترمیناڵ بەم فەرمانە :
+sudo apt-get update sudo apt-get install nautilus dconf-tools ٢- لە رێگای ناوەندی دامەزراندنی نەرمەکالاکانی لینوکس و گەڕانی وەسەی Dconf لە خشتی گەڕان." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%DA%86%D8%A7%D9%84%D8%A7%DA%A9-%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%DA%A9%D8%B1%D8%AA%DB%95%DB%8C-%DA%95%D8%A7%D8%B3%D8%AA-%D9%88-%D8%A6%D8%A7%DB%8C%DA%A9%DB%86%D9%86%DB%8C-%D8%AF%DB%8E%D8%B3%DA%A9%D8%AA%DB%86%D9%BE/" />
+<meta property="article:published_time" content="2015-10-12T08:40:45+00:00" />
+<meta property="article:modified_time" content="2015-10-12T08:40:45+00:00" />
+
+
+
+<title>
+
+
+     چالاک کردنی کرتەی ڕاست و ئایکۆنی دێسکتۆپ 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%DA%86%D8%A7%D9%84%D8%A7%DA%A9-%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%DA%A9%D8%B1%D8%AA%DB%95%DB%8C-%DA%95%D8%A7%D8%B3%D8%AA-%D9%88-%D8%A6%D8%A7%DB%8C%DA%A9%DB%86%D9%86%DB%8C-%D8%AF%DB%8E%D8%B3%DA%A9%D8%AA%DB%86%D9%BE/">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115800084-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115800084-1');
+</script>
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-07%2001%3a44%3a04.6203694%20%2b0330%20%2b0330%20m%3d%2b1.168276301">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-07%2001%3a44%3a04.6203694%20%2b0330%20%2b0330%20m%3d%2b1.168276301">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-07%2001%3a44%3a04.6203694%20%2b0330%20%2b0330%20m%3d%2b1.168276301">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-07%2001%3a44%3a04.6203694%20%2b0330%20%2b0330%20m%3d%2b1.168276301">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://qezwan.ir/"><img class="avatar" src="https://qezwan.ir/img/profile.jpg" srcset="https://qezwan.ir/img/profile.jpg 1x"></a>
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-gnulinux"><a href="https://qezwan.ir/gnulinux/"><span>گنو/لینوکس</span></a></li>
+                    
+                        <li class="nav-web"><a href="https://qezwan.ir/web/"><span>سەرچاوەکراوە</span></a></li>
+                    
+                        <li class="nav-server"><a href="https://qezwan.ir/server/"><span>ڕاژە</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+            <a href="//instagram.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    چالاک کردنی کرتەی ڕاست و ئایکۆنی دێسکتۆپ
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Oct 12 2015 08:40:45 UTC'>Oct 12, 2015</div>
+                    
+                    
+		     <div class="reading-time"><div class="middot"></div>١ خولەک<div class="middot"></div>163 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C">ئێلێمێنتری</a>
+                  
+                  </div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>لەم بابەتە فێری ئەوە دەبین چۆن کرتەی ڕاست لە دێسکتۆپ و ئایکۆنەکانی دێسکتۆپ لە لینوکسی ئێلێمێنتری چاڵاک بکەین.هەر وا کە دەزنن بە شێوازی پێس گریمان نە کرتەی ڕاست چالاکە لە سەر دێسکتۆپ نە ئاکۆن یان وێنۆچکەکانی سەر ڕومێزی لینوکسی ئێلێمێنتری.</p>
+<p><strong>قۆناغی یەکەم :</strong></p>
+<p>دامەزراندیNautilus Dconf Tools کە بە دو شێواز دەتوانن</p>
+<p>١- لەرێگای ترمیناڵ بەم فەرمانە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get update
+sudo apt-get install nautilus dconf-tools
+</code></pre></div><p>٢- لە رێگای ناوەندی دامەزراندنی نەرمەکالاکانی لینوکس و گەڕانی وەسەی Dconf لە خشتی گەڕان.</p>
+<p><strong>قۆناغی دووەم :</strong></p>
+<p>کردنەوەی dconf ڕۆیشتن بەم مەسیرە :</p>
+<p>org → gnome → nautilus→ desktop</p>
+<p>کرتەیێک لەو شتانە دەکەین کە پێمان خۆشە لەسەر دێسکتۆپ بیبینین.</p>
+<p><img src="https://qezwan.ir/gnulinux/images/000012.jpg" alt=""></p>
+<p><strong>قۆناغی سێهەم :</strong></p>
+<p>دەچینە ئەم مەسیرە :</p>
+<p>org → pantheon → cerbere</p>
+<p>زیادکردنی ڕەستەی ‘nautilus -n’ کە بەم شێوازەی لێدێت</p>
+<p>[&lsquo;wingpanel&rsquo;,&lsquo;plank&rsquo;,&lsquo;slingshot-launcher –silent&rsquo;,&lsquo;nautilus -n&rsquo;]</p>
+<p><img src="https://qezwan.ir/gnulinux/images/000012-1.jpg" alt="">
+<strong>قۆناغی چووارەم :</strong></p>
+<p>ترمیناڵ دەکەینەوە ئەم وەشەی تێدا دەنووسین :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nautilus -n
+</code></pre></div><p>ئەم مەسیرە پەیدا دەکەین لە dconf :</p>
+<p>org → gnome → desktop → background</p>
+<p>ئێستا لەسەر چوارچێوەی show-desktop-icons کرتەییک دەکەین.</p>
+<p><img src="https://qezwan.ir/gnulinux/images/000012-2.jpg" alt="">
+ئینجا سیستەم ریستارت دەکەین.</p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-115800084-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+
+</body>
+</html>
+
