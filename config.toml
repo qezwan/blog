@@ -17,18 +17,6 @@ PostLimit = 5
 book  = "book/:slug/"
 
 [[menu.main]]
-name                   = "سەرچاوەکراوە"
-weight                 = -125
-identifier             = "web"
-url                    = "/web/"
-
-[[menu.main]]
-name                   = "ڕاژە"
-weight                 = -120
-identifier             = "server"
-url                    = "/server/"
-
-[[menu.main]]
 name                   = "دەربارە"
 weight                 = -100
 identifier             = "about"
