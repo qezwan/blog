@@ -58,11 +58,11 @@ FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش)، سەرچاوەکرا�
 
 
     
-    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-07%2019%3a57%3a41.2500163%20%2b0330%20%2b0330%20m%3d%2b1.409369701">
-    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-07%2019%3a57%3a41.2500163%20%2b0330%20%2b0330%20m%3d%2b1.409369701">
-    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-07%2019%3a57%3a41.2500163%20%2b0330%20%2b0330%20m%3d%2b1.409369701">
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-07%2022%3a55%3a55.0399258%20%2b0330%20%2b0330%20m%3d%2b1.210281001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-07%2022%3a55%3a55.0399258%20%2b0330%20%2b0330%20m%3d%2b1.210281001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-07%2022%3a55%3a55.0399258%20%2b0330%20%2b0330%20m%3d%2b1.210281001">
     
-        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-07%2019%3a57%3a41.2500163%20%2b0330%20%2b0330%20m%3d%2b1.409369701">
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-07%2022%3a55%3a55.0399258%20%2b0330%20%2b0330%20m%3d%2b1.210281001">
     
 
 
@@ -200,7 +200,7 @@ FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش)، سەرچاوەکرا�
                     <div class="date" title='Fri Nov 6 2020 04:40:45 UTC'>Nov 6, 2020</div>
                     
                     
-		     <div class="reading-time"><div class="middot"></div>4 خولەک<div class="middot"></div>846 وشە <div class="middot"></div>
+		     <div class="reading-time"><div class="middot"></div>7 خولەک<div class="middot"></div>1336 وشە <div class="middot"></div>
                  
                     <strong>تــاگ:</strong>
                   
@@ -248,7 +248,7 @@ sudo add-apt-repository --yes ppa:jonathonf/ffmpeg-4
 sudo apt update
 sudo apt install ffmpeg
 </code></pre></div><p>هەر وەک دامەزراندن بە یارمەتی بەڕێوەبەری پاکەتی ئوبونتو لێرەش دەتوانن بە فەرمانی <code>ffmpeg -version</code> چاو لە وشانی بکەن.</p>
-<p><strong>دامەزراندن لە ڕیگای سنەپ(Snap)</strong></p>
+<p><strong>دامەزراندن لە ڕێگای سنەپ(Snap)</strong></p>
 <p>سادەترین رێگا دامەزراندن لە رێگای سیسیتەمی پاکەتی سنەپییە.بۆ زانیاری دەربارەی سنەپ دەتوانن سەردانی <a href="https://qezwan.ir/gnulinux/%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7-%D8%A8%DB%95-%D9%BE%D8%A7%DA%A9%DB%95%D8%AA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-snap/">ئەم بابەتە</a> بکەن. لە فەرمانەکەی خوارەوە سەرەتا ئێمە پاکەتی سنەپ دادەمەزرێنین ئینجا FFmpeg.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt update
 sudo apt install snapd
@@ -303,6 +303,67 @@ sudo snap install ffmpeg
 <p>پرسیار : کاتێک کە گەرەکمانە دەنگی دووهەم لە ڤیدیۆ دەربێنین چ فەرمانێک بنوسین؟</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i video.mp4 -c:a:1 aac audio2.aac
 </code></pre></div><p>سەرنج بدە ئەمە <code>c:a:1-</code> بە گشتی کاتێک دەنووسین <code>c:a:n-</code> واتە لە نێو ناوەڕۆکەکەی من بچۆ بۆ لای audio یا دەنگەکان(چونکە لە نێوەڕاست پیتی a ــمان داناوە واتە دەنگە،گەر vــمان دانایێ دەبوو بە ڤیدیۆ و گەر sــمان دانایێ دەبوو بە ژێر نووسەکان) ئینجا ژێر نووسی <code>n-1</code> ڕچاو بگرە.بۆ چی n-1 ؟ چۆنکە لە جیهانی کۆمپیوتر ژماردەن لە 0 دەستپێدەکا.</p>
+<p>نمونەی خوارەوە ئیمە ژێرنووسی دووهەمی فیلم دەردێنین:</p>
+<pre><code>ffmpeg -i input.mp4 -map 0:s:1 subs.vtt
+</code></pre><p>لێرە فەرمانی <code>map-</code>  دەبینین کە پێسنیار دەکەم زۆرتر زانیاریتان لێێ بێت. فیلمێکی هاوردەمان هەیە(input.mp4) ژمارە سفر لە پاش <code>map-</code> کە تەنها هاوردەی input.mp4ــەبۆ بۆ ژێرنووسی ١ واتە دووهەمین ژێر نووس و بیخزێنە نێو subs.vtt.</p>
+<p><strong>چەند هاوردە</strong></p>
+<p>بۆ ئەوە چەند فیلم لە فەرمانی FFMPEG تێخزێنین بەم شیوە کردار دەکەین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input1.mp4 -i input2.mp4 ...
+</code></pre></div><p>لە فەرمانەکەی سەرەوە دوو هاوردەمان بەناوی یەکەم input1.mp4  و دووهەم input2.mp4  هەیە.ئێستا هەر کات گەرەکمان بێت لەم فەرمانە بە هاوردەیەکەم ئیش بکەین واتە input1.mp4  لە</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">-map <span class="m">0</span>
+</code></pre></div><p>ئێستا گەر بە ناوەڕۆکی هاوردەی دووهەم ئیسمان بێت لە فەرمانی</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">-map <span class="m">1</span>
+</code></pre></div><p>سوود دەگرین.</p>
+<p>خاڵ: گەر لە پاس ژمارەکە جوتخاڵێک(:) بنووسین لەگەڵ نووسەکانی  v  یا s  یا a بەم مانایەیە کە ستریمەکانی ڤیدیۆ، ژێرنووس یان دەنگمنا هەرەکە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">-map 0:v
+-map 0:s
+-map 0:a
+</code></pre></div><p>گەر دوایی ئەمانە جوتخاڵ بنووسین و ژمارەیەک دابینن ئەوە دیاریی دەکەین کە بەکام یەک لە هاوردەکانمان ئیش دەکەین.لە خوارەوە من دەنگی دووهەم لە هاوردەی سێهەمم گەرەکە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">-map 2:a:1
+</code></pre></div><p><strong>زیادکردنی ستریم</strong></p>
+<p>گەر لەگەل ژێرنووس کێشەت بوو دەتوانی ژێرنووسی نوێ بەم جۆرە بلکینێت بە فیلمەکەت</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i movie.mp4 -i subtitle.srt -map <span class="m">0</span> -map <span class="m">1</span> output.mkv
+</code></pre></div><p>فەرمانی سەرەوە دەڵێت بە  ffmpeg کە، دوو دانە هاوردەت هەیە(movie.mp4 و subtitle.srt)؛بەیارمەتی:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">-map <span class="m">0</span>
+</code></pre></div><p>دەڵێم هاوردەی یەکەم ڕچاو بگرە وە بە فەرمانی</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">-map <span class="m">1</span>
+</code></pre></div><p>هاوردەی دووهەمیش ڕچاو بگرە لە کۆتایی ئەمانە تێکڵاو بگرە و بیخزێنە نێو output.mkv .</p>
+<p>بۆ نمونەیێکی دیکە،زیادکردنی دەنگی نوێ بە فیلمی(بی ئەوە کە لە map سوود بگرین)، هێڵە فەرمانی خوارەوە دەنووسین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac output.mp4
+</code></pre></div><p>دوو هەناردەمان هەیە(video.mp4 و audio.mp3) بە فەرمانی خوارەوە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">-c:v copy
+</code></pre></div><p>لێرە پێی دەڵێین برۆ بۆ لایستریمی ڤیدیۆ وە بە یارمەتی وشەی copy  فۆرماتی لە هەر جۆرێک هەیە هەر ئەوە  ڕچاو بگرە:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">-c:a aac
+</code></pre></div><p>دەڵێین برۆ بۆ لای ستریمی دەنگ و جۆرەکەی بە acc ڕچاو بگرە.</p>
+<p><strong>سڕینەوەی ستریم</strong></p>
+<p>گەر پێمان خۆش بێت کە ستریمێک لە ناورۆکێکی بسڕینەوە بەم شیوە فەرمان دەنووسین.لەم نموونە فیلم بێ دەنگ یان Mute دەکەین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mp4 -map 0:v -c copy output.mp4
+</code></pre></div><p>بەیارمەتی فەرمانی خوارەوە</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">-map 0:v
+</code></pre></div><p>دەڵێین لە ستریمی یەکەمان یان input.mp4 بێرۆ بەشی ڤیدیۆ هەڵبژێرە وە بە یارمەتی <code>c copy-</code> کە دڵخوازە فۆرماتی هەناردە وەه فۆرماتی هاوردە لێبکە.</p>
+<p><strong>چەند زانیاری دیکە</strong></p>
+<ol>
+<li>
+<p><strong>گۆڕانی ئەندازەی فیلم</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mp4 -s 640x480 -c:a copy output.mp4
+</code></pre></div></li>
+<li>
+<p><strong>سووڕاندنی فیلم</strong></p>
+<p>٩٠ پلە بۆ لای میلی کاتژێر</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mp4 -filter:v <span class="s1">&#39;transpose=1&#39;</span> rotated-video.mp4
+</code></pre></div><p>گەر transpose=1 بیکەین بە transpose=2 دەبێتە ٩٠ پلەی پێچەوانەی میلی کاتژێر.</p>
+</li>
+<li>
+<p><strong>گوشاردن و پەستانەوەی فیلم</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mp4 -vf <span class="nv">scale</span><span class="o">=</span>1280:-1 -c:v libx264 -preset veryslow -crf <span class="m">24</span> output.mp4
+</code></pre></div><p>هەر چی ژمارەی <code>crf 24-</code> کەمتر بێت واتە ژمارەی ٢٤ چکۆلەتر بێت  پەستانەکەمان کەمترە، ژمارەی ٠ واتە هیچ پەستانێکی لێ نییە.هەر چی ژمارە لە سەرتروە بێت واتە جۆنایەتی کەمتر و بە پێچەوانە.</p>
+<p>بژاردەی <code>preset </code>  خێرایی ئیشەکەمان دابین دەکا دەتوانێتultrafast، superfast، veryfast، faster، fast، medium، slow, slower، veryslow بێت.هەرچی خیڕایی بچێتە سەرەوە کواڵێتی کەمتر دەبێتوە و بە پێچەوانە.پێشگریمانە لە ffmpeg خێرایی بە شێوازی medium.</p>
+</li>
+<li>
+<p><strong>گۆڕانی فیلم بە ئاڵبۆمی وێنە</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mp4 -r <span class="m">1</span> -f image2 image-%3d.png
+</code></pre></div></li>
+</ol>
 <hr>
 <section class="footnotes" role="doc-endnotes">
 <hr>
