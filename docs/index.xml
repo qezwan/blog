@@ -6,7 +6,19 @@
     <description>Recent content on Qezwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 05 Nov 2020 06:28:15 +0000</lastBuildDate><atom:link href="https://qezwan.ir/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Nov 2020 04:40:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFmpeg:کتێبخانەیەکی سەرچاوەکراوە بۆ دەستکاریکردنی پەڕگەی دەنگ و ڤیدیۆ</title>
+      <link>https://qezwan.ir/web/ffmpeg-%DA%A9%D8%AA%DB%8E%D8%A8%D8%AE%D8%A7%D9%86%DB%95%DB%8C%DB%95%DA%A9%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86-%D8%AF%DB%95%D8%B3%D8%AA%DA%A9%D8%A7%D8%B1%DB%8C%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D9%BE%DB%95%DA%95%DA%AF%DB%95%DB%8C-%D8%AF%DB%95%D9%86%DA%AF-%D9%88-%DA%A4%DB%8C%D8%AF%DB%8C%DB%86/</link>
+      <pubDate>Fri, 06 Nov 2020 04:40:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/web/ffmpeg-%DA%A9%D8%AA%DB%8E%D8%A8%D8%AE%D8%A7%D9%86%DB%95%DB%8C%DB%95%DA%A9%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86-%D8%AF%DB%95%D8%B3%D8%AA%DA%A9%D8%A7%D8%B1%DB%8C%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D9%BE%DB%95%DA%95%DA%AF%DB%95%DB%8C-%D8%AF%DB%95%D9%86%DA%AF-%D9%88-%DA%A4%DB%8C%D8%AF%DB%8C%DB%86/</guid>
+      <description>پێشەکی :
+FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش)، سەرچاوەکراوە. چەند سەکۆیی1 کە هەموو کەسێک دەتوانێت زۆر بەسادەیی بۆ تۆمارکردن و گۆڕاندن و تەوژمی دەنگ و ڤیدیۆ لە سەر هێڵ لە رێگای هەر بەرنامەیەک بەکاری بهێنێت.
+ئەم کتێبخانە(چوارچێوە) بریتییە لە کتێبخانەکانی دیکە وەک libavcodec, libavutil, libavformat, libavfilter, libavdevice, libswscale وە libswresample . ئەپەکان و زۆربەی نەرمەکالاکان دەتوانن لە FFmpeg بۆ کارە پێشکەوتنەکانی خۆیان لە سەر فایلە دەنگییەکان و ڤیدیۆکان سوود بگرن.
+ _______ ______________| | | || input | demuxer | encoded data | decoder| file | ---------&amp;gt; | packets | -----+|_______| |______________| |v_________| || decoded || frames ||_________|________ ______________ || | | | || output | &amp;lt;-------- | encoded data | &amp;lt;----+| file | muxer | packets | encoder|________| |______________|دامەزراندن لەسەر ئوبونتو</description>
+    </item>
+    
     <item>
       <title>بیرۆکەی کۆمەڵناسی -جۆرج ریتزێر</title>
       <link>https://qezwan.ir/book/%D8%A8%DB%8C%D8%B1%DB%86%DA%A9%DB%95%DB%8C-%DA%A9%DB%86%D9%85%DB%95%DA%B5%D9%86%D8%A7%D8%B3%DB%8C-%D8%AC%DB%86%D8%B1%D8%AC-%D8%B1%DB%8C%D8%AA%D8%B2%DB%8E%D8%B1/</link>

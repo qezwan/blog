@@ -15,23 +15,21 @@
                     <div class="date" title='{{ .Date.Format "Mon Jan 2 2006 15:04:05 MST" }}'>{{ .Date.Format "Jan 2, 2006" }}</div>
                     {{ end }}
                     {{ if not .Site.Params.noshowreadtime }}
-		     <div class="reading-time"><div class="middot"></div>{{ i18n "readingTime" .ReadingTime }}<div class="middot"></div>{{.WordCount}} وشە </div>
+		     <div class="reading-time"><div class="middot"></div>{{ i18n "readingTime" .ReadingTime }}<div class="middot"></div>{{.WordCount}} وشە <div class="middot"></div>{{ if .Params.tags }}
+                 
+                    <strong>تــاگ:</strong>
+                  {{range .Params.tags}}
+                    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                  {{end}}
+                  {{end}}</div>
                     {{ end }}
                 </div>
             </div>
             <div class="markdown">
                 {{ .Content }}
                 <br>
-                {{ if .Params.tags }}
-                  <div class="tags">
-                    <strong>تــاگ:</strong>
-                  {{range .Params.tags}}
-                    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-                  {{end}}
-                  </div>
-                  <br />
-                {{end}}
-                <p class="back-to-posts"><a {{ printf "href=%q" ("/blog" | relLangURL) | safeHTMLAttr }}>{{ i18n "backToPosts" }}</a></p>
+               
+                <!--<p class="back-to-posts"><a {{ printf "href=%q" ("/gnulinux" | relLangURL) | safeHTMLAttr }}>{{ i18n "backToPosts" }}</a></p>-->
             </div>
             <br>
             <div class="disqus">
