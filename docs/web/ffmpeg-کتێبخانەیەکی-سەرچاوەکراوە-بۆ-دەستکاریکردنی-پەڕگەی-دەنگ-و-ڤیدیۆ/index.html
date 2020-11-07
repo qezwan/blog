@@ -58,11 +58,11 @@ FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش)، سەرچاوەکرا�
 
 
     
-    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-07%2023%3a17%3a56.8731712%20%2b0330%20%2b0330%20m%3d%2b1.153508401">
-    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-07%2023%3a17%3a56.8731712%20%2b0330%20%2b0330%20m%3d%2b1.153508401">
-    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-07%2023%3a17%3a56.8731712%20%2b0330%20%2b0330%20m%3d%2b1.153508401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-07%2023%3a30%3a27.5435516%20%2b0330%20%2b0330%20m%3d%2b1.164079001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-07%2023%3a30%3a27.5435516%20%2b0330%20%2b0330%20m%3d%2b1.164079001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-07%2023%3a30%3a27.5435516%20%2b0330%20%2b0330%20m%3d%2b1.164079001">
     
-        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-07%2023%3a17%3a56.8731712%20%2b0330%20%2b0330%20m%3d%2b1.153508401">
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-07%2023%3a30%3a27.5435516%20%2b0330%20%2b0330%20m%3d%2b1.164079001">
     
 
 
@@ -370,7 +370,7 @@ sudo snap install ffmpeg
 </code></pre></div><p>لە خاڵی درێژایەتی ٢٠٠ و بەرزی ١٥٠ بە ئەندازەی چوارچێوەیەک بە درێژی ٦٤٠ و بەرزی ٤٨٠ ڕچاو بگرە و پاش بڕین هەناردەی بکە نێوoutput.mp4 .</p>
 </li>
 <li>
-<p>بەرگی ئاڵبۆمی دەنگ</p>
+<p><strong>بەرگی ئاڵبۆمی دەنگ</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -stream_loop <span class="m">1</span> -i inputimage.jpg -i inputaudio.mp3 -c:v libx264 -c:a aac -b:a 192k -shortest output.mp4
 </code></pre></div><p>فەرمانی سەرەوە inputimage.jpg بە عینوانی هاوردەی یەکەم و inputaudio.mp3 بە عینوای هاوردەی دووهەم وەردەگرێت. بژاردەی <code>c:v libx264-</code> دەڵێت پیم خۆشە هەناردە ڤیدیۆ لە جۆری <code>h264</code> بێت؛ بژاردەی <code>c:a aac-</code> هەناردەم دەنگەکەی لە جۆری <code>aac</code>  بێت(واتە گەر بە فەرمانی ffprobe هەناردە تاقی بکەین ستریمیکی دەنگی لە جۆری aacــمان دەبێت).بژاردەی <code>b:a-</code> دەڵێتبیت ریت دەنگ دەبێت لە جۆری ١٩٢k بێت.</p>
 </li>
