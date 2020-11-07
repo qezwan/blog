@@ -58,11 +58,11 @@ FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش)، سەرچاوەکرا�
 
 
     
-    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-07%2022%3a55%3a55.0399258%20%2b0330%20%2b0330%20m%3d%2b1.210281001">
-    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-07%2022%3a55%3a55.0399258%20%2b0330%20%2b0330%20m%3d%2b1.210281001">
-    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-07%2022%3a55%3a55.0399258%20%2b0330%20%2b0330%20m%3d%2b1.210281001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-07%2023%3a17%3a56.8731712%20%2b0330%20%2b0330%20m%3d%2b1.153508401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-07%2023%3a17%3a56.8731712%20%2b0330%20%2b0330%20m%3d%2b1.153508401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-07%2023%3a17%3a56.8731712%20%2b0330%20%2b0330%20m%3d%2b1.153508401">
     
-        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-07%2022%3a55%3a55.0399258%20%2b0330%20%2b0330%20m%3d%2b1.210281001">
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-07%2023%3a17%3a56.8731712%20%2b0330%20%2b0330%20m%3d%2b1.153508401">
     
 
 
@@ -200,7 +200,7 @@ FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش)، سەرچاوەکرا�
                     <div class="date" title='Fri Nov 6 2020 04:40:45 UTC'>Nov 6, 2020</div>
                     
                     
-		     <div class="reading-time"><div class="middot"></div>7 خولەک<div class="middot"></div>1336 وشە <div class="middot"></div>
+		     <div class="reading-time"><div class="middot"></div>8 خولەک<div class="middot"></div>1569 وشە <div class="middot"></div>
                  
                     <strong>تــاگ:</strong>
                   
@@ -362,8 +362,29 @@ sudo snap install ffmpeg
 <li>
 <p><strong>گۆڕانی فیلم بە ئاڵبۆمی وێنە</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mp4 -r <span class="m">1</span> -f image2 image-%3d.png
+</code></pre></div><p>بژاردەی <code>r-</code> پێمان دەڵێت چەند فریم بکا بە وێنە، ئێمە گوتمان هەر ١ فریم بکات بە وێنە. پێسگریمان خۆی هەر ٢٥ فریم دەکات بە وێنە.بژاردەی <code>f-</code> فۆرماتی وینەی هەناردەمان دیاری دەکاکە ئێمە  گوتمان فۆرماتی هاوردەمان بەم جۆرە بێت image-%3d.png  کە دەرئەنجام وێنەکان بەم فۆرماتە هاوردە دەکرین image-001.png و image-002.png ؛ گەر بڵێنن image%4d.png فۆرماتەکان بەم شێوازەن image0001.png ، image0002.png ،  image0003.png و &hellip;</p>
+</li>
+<li>
+<p><strong>کراپ یان بڕینی فیلم:</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mp4 -filter:v <span class="s2">&#34;crop=640:480:200:150&#34;</span> output.mp4
+</code></pre></div><p>لە خاڵی درێژایەتی ٢٠٠ و بەرزی ١٥٠ بە ئەندازەی چوارچێوەیەک بە درێژی ٦٤٠ و بەرزی ٤٨٠ ڕچاو بگرە و پاش بڕین هەناردەی بکە نێوoutput.mp4 .</p>
+</li>
+<li>
+<p>بەرگی ئاڵبۆمی دەنگ</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -stream_loop <span class="m">1</span> -i inputimage.jpg -i inputaudio.mp3 -c:v libx264 -c:a aac -b:a 192k -shortest output.mp4
+</code></pre></div><p>فەرمانی سەرەوە inputimage.jpg بە عینوانی هاوردەی یەکەم و inputaudio.mp3 بە عینوای هاوردەی دووهەم وەردەگرێت. بژاردەی <code>c:v libx264-</code> دەڵێت پیم خۆشە هەناردە ڤیدیۆ لە جۆری <code>h264</code> بێت؛ بژاردەی <code>c:a aac-</code> هەناردەم دەنگەکەی لە جۆری <code>aac</code>  بێت(واتە گەر بە فەرمانی ffprobe هەناردە تاقی بکەین ستریمیکی دەنگی لە جۆری aacــمان دەبێت).بژاردەی <code>b:a-</code> دەڵێتبیت ریت دەنگ دەبێت لە جۆری ١٩٢k بێت.</p>
+</li>
+<li>
+<p><strong>لکاندنی وێنە و لۆگۆ بە فیلم</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i input.mp4 -i logo.png -filter_complex <span class="s2">&#34;overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2&#34;</span> -codec:a copy output.mp4
+</code></pre></div><p>فەرمانی سەرەوە لۆگۆ دەخاتە ناوەڕاست فیلم.<code>overlay=10:10</code> ئەم بژاردە لۆگۆ دەخاتە سووچی سەرەوە لای چەپ بە ئەندازەی ١٠ لە ١٠ پیکسێڵ .</p>
+<p>لە خوارەوە لای ڕاست بە ٥ پیکسێڵ مەودا</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">overlay</span><span class="o">=</span>main_w-overlay_w-5:main_h-overlay_h-5
+</code></pre></div><p>یان لای چەپ یان ٨ پیکسێڵ مەودا</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">overlay</span><span class="o">=</span>8:main_h-overlay_h
 </code></pre></div></li>
 </ol>
+<p>سەرچاوەکان : <a href="https://ffmpeg.org/ffmpeg.html">ffmpeg Documentation</a>   ~   <a href="https://websiteforstudents.com/install-ffmpeg-on-ubuntu-20-04-18-04/">websiteforstudents</a></p>
 <hr>
 <section class="footnotes" role="doc-endnotes">
 <hr>

@@ -299,9 +299,53 @@ ffmpeg -i input.mp4 -map 0:v -c copy output.mp4
    ffmpeg -i input.mp4 -r 1 -f image2 image-%3d.png
    ```
 
+   بژاردەی `r-` پێمان دەڵێت چەند فریم بکا بە وێنە، ئێمە گوتمان هەر ١ فریم بکات بە وێنە. پێسگریمان خۆی هەر ٢٥ فریم دەکات بە وێنە.بژاردەی `f-` فۆرماتی وینەی هەناردەمان دیاری دەکاکە ئێمە  گوتمان فۆرماتی هاوردەمان بەم جۆرە بێت image-%3d.png  کە دەرئەنجام وێنەکان بەم فۆرماتە هاوردە دەکرین image-001.png و image-002.png ؛ گەر بڵێنن image%4d.png فۆرماتەکان بەم شێوازەن image0001.png ، image0002.png ،  image0003.png و ...
+
+5. **کراپ یان بڕینی فیلم:**
+
+   ```bash
+   ffmpeg -i input.mp4 -filter:v "crop=640:480:200:150" output.mp4
+   ```
+
+   لە خاڵی درێژایەتی ٢٠٠ و بەرزی ١٥٠ بە ئەندازەی چوارچێوەیەک بە درێژی ٦٤٠ و بەرزی ٤٨٠ ڕچاو بگرە و پاش بڕین هەناردەی بکە نێوoutput.mp4 .
+
+   
+
+6. بەرگی ئاڵبۆمی دەنگ
+
+   ```bash
+   ffmpeg -stream_loop 1 -i inputimage.jpg -i inputaudio.mp3 -c:v libx264 -c:a aac -b:a 192k -shortest output.mp4
+   ```
+
+   فەرمانی سەرەوە inputimage.jpg بە عینوانی هاوردەی یەکەم و inputaudio.mp3 بە عینوای هاوردەی دووهەم وەردەگرێت. بژاردەی `c:v libx264-` دەڵێت پیم خۆشە هەناردە ڤیدیۆ لە جۆری `h264` بێت؛ بژاردەی `c:a aac-` هەناردەم دەنگەکەی لە جۆری `aac`  بێت(واتە گەر بە فەرمانی ffprobe هەناردە تاقی بکەین ستریمیکی دەنگی لە جۆری aacــمان دەبێت).بژاردەی `b:a-` دەڵێتبیت ریت دەنگ دەبێت لە جۆری ١٩٢k بێت.
+
+
+
+7. **لکاندنی وێنە و لۆگۆ بە فیلم**
+
+   ```bash
+   ffmpeg -i input.mp4 -i logo.png -filter_complex "overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2" -codec:a copy output.mp4
+   ```
+
+   فەرمانی سەرەوە لۆگۆ دەخاتە ناوەڕاست فیلم.`overlay=10:10` ئەم بژاردە لۆگۆ دەخاتە سووچی سەرەوە لای چەپ بە ئەندازەی ١٠ لە ١٠ پیکسێڵ .
+
+   لە خوارەوە لای ڕاست بە ٥ پیکسێڵ مەودا
+
+   ```bash
+   overlay=main_w-overlay_w-5:main_h-overlay_h-5
+   ```
+
+   یان لای چەپ یان ٨ پیکسێڵ مەودا
+
+   ```bash
+   overlay=8:main_h-overlay_h
+   ```
+
    
 
 
+
+سەرچاوەکان : [ffmpeg Documentation](https://ffmpeg.org/ffmpeg.html)   ~   [websiteforstudents](https://websiteforstudents.com/install-ffmpeg-on-ubuntu-20-04-18-04/) 
 
 ------
 
