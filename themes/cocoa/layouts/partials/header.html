@@ -45,7 +45,7 @@
         <div class="content">
 {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
                   <a style="font-size: 12px;
-    color: #000;" href="/tags/{{ $name | urlize }}" target="_blank">#‌‌‌‌{{ $name | humanize }}({{ $taxonomy.Count }})</a>
+    color: #000;" href="/tags/{{ $name | urlize }}" target="_blank">#‌{{ $name | humanize }}({{ $taxonomy.Count }})</a>
                 {{end}}
         {{ if .Site.Params.github }}
             <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
