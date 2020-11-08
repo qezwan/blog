@@ -845,3 +845,64 @@ pre {
     text-align: left;white-space: pre-wrap;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+
+.social-share {
+	position: relative;
+	top: -0.2em;right:2em;
+}
+ 
+.social-share ul {
+	margin: 0;
+}
+ 
+.social-share ul li p {
+	display: none;
+}
+ 
+.social-share .share-icons li {
+	padding: 0 !important;
+	padding-bottom: 2px !important;
+}
+ 
+
+ 
+.social-share-nav .share-btn h3{
+	color: #ffffff;
+}
+
+ul.share-icons {
+	cursor: default;
+	list-style: none;
+	padding-right: 0;
+	margin-top: -0.1em;
+}
+
+ul.share-icons li {
+	display: inline-block;
+	padding: 0em;
+}
+
+ul.share-icons li:last-child {
+	padding-right: 1em;
+}
+
+ul.share-icons li > * {
+	text-decoration: none;
+	border: 0;
+}
+
+ul.share-icons li > *:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: none !important;
+}
+
+
+ 
+ 
+
+
+

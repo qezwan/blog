@@ -1,0 +1,22 @@
+<!-- Social Share Button HTML -->
+{{ if .Param "social.share" }}
+  {{ $title := .Title }}
+  {{ $url := printf "%s" .Permalink }}
+  {{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
+
+
+  
+   
+    <ul class="share-icons">
+      <!-- Twitter -->
+      {{ if .Site.Params.social.share.twitter }}
+      <li>
+        <a href="https://twitter.com/intent/tweet?hashtags=قەزوان&amp;url={{ .Permalink }}&amp;text={{ .Title }}" target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">
+          {{ partial "svg/twitter.svg" (dict "class" "widget-social__link-icon") }}
+          
+          </a>
+      </li></ul>
+      {{ end }}
+
+
+{{ end }}

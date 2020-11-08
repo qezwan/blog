@@ -72,7 +72,9 @@ gitalk_clientSecret    = "your client secret"
 gitalk_repo            = "your repo url"
 gitalk_owner           = "the owner of this repo"
 gitalk_admin           = ['a', 'list', 'of', 'administrator']
-
+[params.social.share]  
+ twitter = true
+  
 avatar                 = "img/profile.jpg" # path to image in static dir e.g img/avatar.png (do not use in the same time as gravatar)
 # gravatar             = ""                # gravatar hash. see https://en.gravatar.com/site/implement/hash/. do not use in the same time as avatar
 
@@ -80,3 +82,6 @@ avatar                 = "img/profile.jpg" # path to image in static dir e.g img
 gatracker              = "XYZ" # use googleAnalytics instead
 initials               = "ad"  # displayed on single post page; deprecated in v0.3.0.
 [params.mysite]
+
+
+ 

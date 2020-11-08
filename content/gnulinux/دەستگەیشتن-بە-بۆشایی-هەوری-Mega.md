@@ -3,6 +3,7 @@ layout: post
 title: دەستگەیشتن بە بۆشایی هەوری Mega
 tags: [گنو/لینوکس]
 date : "2018-08-25 05:20:45"
+socialshare: true
 ---
 
 ##### پێشەکی :
