@@ -75,8 +75,8 @@ gitalk_admin           = ['a', 'list', 'of', 'administrator']
 [params.social.share]  
  twitter = true
   
-avatar                 = "img/profile.jpg" # path to image in static dir e.g img/avatar.png (do not use in the same time as gravatar)
-# gravatar             = ""                # gravatar hash. see https://en.gravatar.com/site/implement/hash/. do not use in the same time as avatar
+#avatar                 = "img/profile.jpg" # path to image in static dir e.g img/avatar.png (do not use in the same time as gravatar)
+gravatar             = "38a4cd08cd8c0de387d0a8e3086cfdc0"                # gravatar hash. see https://en.gravatar.com/site/implement/hash/. do not use in the same time as avatar
 
 # The following are DEPRECATED.
 gatracker              = "XYZ" # use googleAnalytics instead
