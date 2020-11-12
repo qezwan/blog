@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Xmysql: ئامرازێکی سەرچاوەکراوە بۆ دروستکردنی RESTful API لە سەر MySQL
+title: Xmysql:ئامرازێکی سەرچاوەکراوە بۆ دروستکردنی RESTful API لە سەر MySQL
 tags: [سەرچاوەکراوە]
 date : "2020-11-12 05:35:45"
 

@@ -6,7 +6,19 @@
     <description>Recent content on Qezwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 08 Nov 2020 01:28:15 +0000</lastBuildDate><atom:link href="https://qezwan.ir/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Nov 2020 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xmysql:ئامرازێکی سەرچاوەکراوە بۆ دروستکردنی RESTful API لە سەر MySQL</title>
+      <link>https://qezwan.ir/web/xmysql-%D8%A6%D8%A7%D9%85%D8%B1%D8%A7%D8%B2%DB%8E%DA%A9%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86-%D8%AF%D8%B1%D9%88%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-restful-api-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-mysql/</link>
+      <pubDate>Thu, 12 Nov 2020 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/web/xmysql-%D8%A6%D8%A7%D9%85%D8%B1%D8%A7%D8%B2%DB%8E%DA%A9%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86-%D8%AF%D8%B1%D9%88%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-restful-api-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-mysql/</guid>
+      <description>Xmysql ئامرازێکی سەرچاوەکراوە کە پەرەپێدەران توانادەکا کە RESTful API پەرەپێبدەن لە سەر بنکەدراوەی MySQL . بەو جۆرە کە ماڵپەڕی فەرمی نووسیویەتی، پێویستمان بە هیچ چوارچێوە یان کتێبخانەیەک وەک RoR ،Django وە یا Laravel نییە.
+Xmysql توانایێکمان دەدا کە بە یارمەتی فەرمانە سادەکانی، بنکەدراوەی MySQL، API لە جۆری RESTful دروست بکەین.
+ئەم کتێبخانە لە پاکەتەکانی Node.js بۆ وێنە Express سوودی گرتووە.بە شێک لە تواناییەکانی :
+ ئیمکانی دروستکردنی API لە سەر هەر بنکەدراوەی MYSQL.</description>
+    </item>
+    
     <item>
       <title>بیرۆکەی کۆمەڵناسی -جۆرج ریتزێر</title>
       <link>https://qezwan.ir/book/%D8%A8%DB%8C%D8%B1%DB%86%DA%A9%DB%95%DB%8C-%DA%A9%DB%86%D9%85%DB%95%DA%B5%D9%86%D8%A7%D8%B3%DB%8C-%D8%AC%DB%86%D8%B1%D8%AC-%D8%B1%DB%8C%D8%AA%D8%B2%DB%8E%D8%B1/</link>

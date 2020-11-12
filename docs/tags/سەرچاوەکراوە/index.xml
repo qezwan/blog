@@ -6,7 +6,19 @@
     <description>Recent content in سەرچاوەکراوە on Qezwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 06 Nov 2020 04:40:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Nov 2020 05:35:45 +0000</lastBuildDate><atom:link href="https://qezwan.ir/tags/%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xmysql:ئامرازێکی سەرچاوەکراوە بۆ دروستکردنی RESTful API لە سەر MySQL</title>
+      <link>https://qezwan.ir/web/xmysql-%D8%A6%D8%A7%D9%85%D8%B1%D8%A7%D8%B2%DB%8E%DA%A9%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86-%D8%AF%D8%B1%D9%88%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-restful-api-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-mysql/</link>
+      <pubDate>Thu, 12 Nov 2020 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/web/xmysql-%D8%A6%D8%A7%D9%85%D8%B1%D8%A7%D8%B2%DB%8E%DA%A9%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86-%D8%AF%D8%B1%D9%88%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-restful-api-%D9%84%DB%95-%D8%B3%DB%95%D8%B1-mysql/</guid>
+      <description>Xmysql ئامرازێکی سەرچاوەکراوە کە پەرەپێدەران توانادەکا کە RESTful API پەرەپێبدەن لە سەر بنکەدراوەی MySQL . بەو جۆرە کە ماڵپەڕی فەرمی نووسیویەتی، پێویستمان بە هیچ چوارچێوە یان کتێبخانەیەک وەک RoR ،Django وە یا Laravel نییە.
+Xmysql توانایێکمان دەدا کە بە یارمەتی فەرمانە سادەکانی، بنکەدراوەی MySQL، API لە جۆری RESTful دروست بکەین.
+ئەم کتێبخانە لە پاکەتەکانی Node.js بۆ وێنە Express سوودی گرتووە.بە شێک لە تواناییەکانی :
+ ئیمکانی دروستکردنی API لە سەر هەر بنکەدراوەی MYSQL.</description>
+    </item>
+    
     <item>
       <title>FFmpeg:کتێبخانەیەکی سەرچاوەکراوە بۆ دەستکاریکردنی پەڕگەی دەنگ و ڤیدیۆ</title>
       <link>https://qezwan.ir/web/ffmpeg-%DA%A9%D8%AA%DB%8E%D8%A8%D8%AE%D8%A7%D9%86%DB%95%DB%8C%DB%95%DA%A9%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86-%D8%AF%DB%95%D8%B3%D8%AA%DA%A9%D8%A7%D8%B1%DB%8C%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D9%BE%DB%95%DA%95%DA%AF%DB%95%DB%8C-%D8%AF%DB%95%D9%86%DA%AF-%D9%88-%DA%A4%DB%8C%D8%AF%DB%8C%DB%86/</link>
@@ -260,17 +272,6 @@ DVC بێجگە لە هاوشێوە بوون لە بواری چوارچێوە و 
       <description>ترمیناڵ لە سیستەمەکانی سەر بنەمای یونیکس وەک مەکینتاش و گنو/لینوکس توانایی فرەی هەس. گەشەپێدەرانیش ئامرازی زۆریان بۆ ئیشکردن لە ترمیناڵ دروست کردووە، یەکێک لەم نەرمەکالانە WTTRــە کە هەروا کە گوتمان بۆ چاودێری کەش‌و‌هەوا بەکاری دهێنین.
 wttr.in ماڵپەڕێکە کە ڕاستە و خۆ پاش چوونە ژوورەوە، بارودۆخی شوێنی جوگرافیاییەکەت پێ دەڵێت، ئەمەش لە نێو ترمیناڵ چالاک دەبێت و پێویست نییە سەردانی ماڵپەڕی فەرمی بکەین.دامەزراندن بەم جۆرەیە کە سەرەتا ترمیناڵ بکەرەوە:
 $ curl wttr.</description>
-    </item>
-    
-    <item>
-      <title>گۆڕینی ئەندازەی شاشە بە فەرمانی لینوکس</title>
-      <link>https://qezwan.ir/gnulinux/%DA%AF%DB%86%DA%95%DB%8C%D9%86%DB%8C-%D8%A6%DB%95%D9%86%D8%AF%D8%A7%D8%B2%DB%95%DB%8C-%D8%B4%D8%A7%D8%B4%DB%95-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
-      <pubDate>Thu, 12 Mar 2015 05:35:45 +0000</pubDate>
-      
-      <guid>https://qezwan.ir/gnulinux/%DA%AF%DB%86%DA%95%DB%8C%D9%86%DB%8C-%D8%A6%DB%95%D9%86%D8%AF%D8%A7%D8%B2%DB%95%DB%8C-%D8%B4%D8%A7%D8%B4%DB%95-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
-      <description>بۆ گۆڕینی قەبارەی شاشە لە لینوکسی-ئێلێمێنتری ئێوە دەتوانن لە مەسیری خوارەوە ئەندازەی ڕوناکی شاسەی سیستەمەکەتان بگۆڕن.
-System Settings &amp;gt;Displayesبە فەرمانی xrandr ئێوە دەتوانن زانیاریێکی فرە لە سەر پیشانگەری ئەندازەی شاشە بزانن!
-qezwan@kurd.click:~$ xrandr Screen 0: minimum 1 x 1, current 832 x 759, maximum 8192 x 8192 Virtual1 connected primary 832x759+0+0 (normal left inverted right x axis y axis) 0mm x 0mm 832x759 60.0*+ 2560x1600 60.0 1920x1440 60.0 1856x1392 60.</description>
     </item>
     
   </channel>
