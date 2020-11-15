@@ -12,6 +12,8 @@ pygmentsuseclasses  = true
 #disqusshortname     = "cocoaexamplesite" # Comment out to disable Disqus.
 pluralizelisttitles = false
 googleAnalytics     = "UA-115800084-1"
+pygmentsStyle = "tango"
+
 PostLimit = 5
 [permalinks]
 book  = "book/:slug/"
@@ -29,12 +31,12 @@ identifier             = "code"
 url                    = "/book/"
 
 [[menu.main]]
-name                   = "گنو/لینوکس"
+name                   = "مەنجەڵ"
 weight                 = -130
-identifier             = "gnulinux"
-url                    = "/gnulinux/"
-[params]
+identifier             = "learn"
+url                    = "/learn/"
 
+[params]
 include_rss            = true                          # include RSS <link> tag in <head> and show RSS icon
 latestpostscount       = 5                             # how many posts to display on the home page
 i18n_flags             = false                         # whether to display small country flags for available translations
@@ -58,8 +60,8 @@ twitter                = "//twitter.com/qezwan"
 telegram               = "//t.me/jsajjadi"
 
 highlightjs            = true
-# highlightjslanguages = ["go"]                        # additional languages not included in the "common" set
-# highlightjsStyle     = "darcula"
+#highlightjslanguages = ["go,sql,mysql,html,php,c#,csharp,css"]                        # additional languages not included in the "common" set
+#highlightjsStyle     = "Lightfair"
 
 piwik                  = false                         # If true, Piwik integration is enabled
 # piwik_url            = "//www.example.com/piwik/"    # URL to your Piwik installation. Must End with a slash
@@ -82,6 +84,7 @@ gravatar             = "38a4cd08cd8c0de387d0a8e3086cfdc0"                # grava
 gatracker              = "XYZ" # use googleAnalytics instead
 initials               = "ad"  # displayed on single post page; deprecated in v0.3.0.
 [params.mysite]
+
 
 
  

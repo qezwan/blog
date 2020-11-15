@@ -10,7 +10,9 @@
 
 - id: server
   translation: "ڕاژە"
-
+  
+- id: learn
+  translation: "مەنجەڵ"
 
 - id: pageNotFound
   translation: "بەداخەوە، ئەم پەڕە بوونی نییە.."

@@ -1,0 +1,18 @@
+  <!-- Taxonomies (default is tag and categories) -->
+  {{ range $key, $value := .Site.Taxonomies }} {{ $len := len $value }} {{ if (not ( eq $len 0 ) ) }}
+  <div class="section taxonomies">
+    <header>
+      <div class="title"><b>{{ $key | humanize }}</b></div>
+    </header>
+
+    <div class="content">
+      <ul>
+        {{ range $value.Alphabetical }}
+        <!--  range first 15 $value.ByCount -->
+        <li><a href="{{$.LanguagePrefix }}/{{ $key }}/{{ .Name | urlize }}">{{ .Name }} ({{.Count}})</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+  {{ end }} 
+  {{ end }}
