@@ -36,7 +36,9 @@
                   
                        <a href='{{ .Permalink }}'><img{{ with .Params.image }} src="{{ . }}"{{ end }} alt="{{ .Title }}"></a>
                           <h2></h2>
-                          
+                           <div class="w3-container w3-center">
+                            <p>{{ .Description | markdownify }}</p>
+                          </div>
                            
                         
                          
@@ -45,9 +47,7 @@
             </div>
         </div>                  {{ end }}
       </div>
-        <div class="w3-container w3-center">
-                            <p>{{ .Description | markdownify }}</p>
-                          </div>
+       
          
           
         </div>
