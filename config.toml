@@ -35,7 +35,7 @@ name                   = "مەنجەڵ"
 weight                 = -130
 identifier             = "learn"
 url                    = "/learn/"
-
+theme = ["hugo-video", "cocoa"]
 [params]
 include_rss            = true                          # include RSS <link> tag in <head> and show RSS icon
 latestpostscount       = 5                             # how many posts to display on the home page
@@ -85,6 +85,6 @@ gatracker              = "XYZ" # use googleAnalytics instead
 initials               = "ad"  # displayed on single post page; deprecated in v0.3.0.
 [params.mysite]
 
-
+taxonomy = "/learn/gimp/"
 
  

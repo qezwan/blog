@@ -164,6 +164,15 @@ Metabase ئامرازێکی سەرچاوەکراوەیە کە ئەم تایبە�
     </item>
     
     <item>
+      <title>فێرکاری کارکردن بە نەمەکالای گرافیکی گیمپ</title>
+      <link>https://qezwan.ir/learn/gimp/</link>
+      <pubDate>Mon, 19 Oct 2020 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/learn/gimp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Echochamber:توانایی پاشکەوتی بۆچوونی بەکارهێنەران لە بیرگەی سەرەکی ناوخۆ</title>
       <link>https://qezwan.ir/web/echochamber%D8%AA%D9%88%D8%A7%D9%86%D8%A7%DB%8C%DB%8C-%D9%BE%D8%A7%D8%B3%DA%A9%DB%95%D9%88%D8%AA%DB%8C-%D8%A8%DB%86%DA%86%D9%88%D9%88%D9%86%DB%8C-%D8%A8%DB%95%DA%A9%D8%A7%D8%B1%D9%87%DB%8C%D9%86%DB%95%D8%B1%D8%A7%D9%86-%D9%84%DB%95-%D8%A8%DB%8C%D8%B1%DA%AF%DB%95%DB%8C-%D8%B3%DB%95%D8%B1%DB%95%DA%A9%DB%8C-%D9%86%D8%A7%D9%88%D8%AE%DB%86/</link>
       <pubDate>Mon, 19 Oct 2020 00:17:45 +0000</pubDate>
@@ -175,10 +184,10 @@ Echochamber.js ئەم ئیمکانە دەخاتە بەردەستان، کە هە
     
     <item>
       <title>کارکردن بە نەرمەکالای گرافیکی هێڵی ئینکسکەیپ</title>
-      <link>https://qezwan.ir/learn/%DA%A9%D8%A7%D8%B1%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D9%87%DB%8E%DA%B5%DB%8C-%D8%A6%DB%8C%D9%86%DA%A9%D8%B3%DA%A9%DB%95%DB%8C%D9%BE/</link>
+      <link>https://qezwan.ir/learn/img/%DA%A9%D8%A7%D8%B1%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D9%87%DB%8E%DA%B5%DB%8C-%D8%A6%DB%8C%D9%86%DA%A9%D8%B3%DA%A9%DB%95%DB%8C%D9%BE/</link>
       <pubDate>Mon, 19 Oct 2020 00:17:45 +0000</pubDate>
       
-      <guid>https://qezwan.ir/learn/%DA%A9%D8%A7%D8%B1%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D9%87%DB%8E%DA%B5%DB%8C-%D8%A6%DB%8C%D9%86%DA%A9%D8%B3%DA%A9%DB%95%DB%8C%D9%BE/</guid>
+      <guid>https://qezwan.ir/learn/img/%DA%A9%D8%A7%D8%B1%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D9%87%DB%8E%DA%B5%DB%8C-%D8%A6%DB%8C%D9%86%DA%A9%D8%B3%DA%A9%DB%95%DB%8C%D9%BE/</guid>
       <description>&amp;lt;script id=&amp;#34;echochamber&amp;#34;&amp;gt; var EchoChamber = window.EchoChamber || {}; (function() { EchoChamber.discussionURL = window.location; var script = document.createElement(&amp;#39;script&amp;#39;); script.src = &amp;#39;https://s3.amazonaws.com/echochamberjs/dist/main.js&amp;#39;; script.async = true; var entry = document.getElementById(&amp;#39;echochamber&amp;#39;); entry.parentNode.insertBefore(script, entry); })(); &amp;lt;/script&amp;gt;    </description>
     </item>
     
@@ -229,12 +238,21 @@ tiii.me ئەم خزمەتگوزارییە زۆر بە ئاسانی پێتان ن
     </item>
     
     <item>
-      <title>فێرکاری کارکردن بە نەمەکالای گرافیکی گیمپ</title>
-      <link>https://qezwan.ir/learn/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%DA%A9%D8%A7%D8%B1%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%DA%AF%DB%8C%D9%85%D9%BE/</link>
+      <title>ئیشکردن بە ئامرازی ماسک و پرۆژە</title>
+      <link>https://qezwan.ir/learn/gimp/%DA%A9%D8%A7%D8%B1%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D9%87%DB%8E%DA%B5%DB%8C-%D8%A6%DB%8C%D9%86%DA%A9%D8%B3%DA%A9%DB%95%DB%8C%D9%BE/</link>
       <pubDate>Sun, 18 Oct 2020 05:35:45 +0000</pubDate>
       
-      <guid>https://qezwan.ir/learn/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%DA%A9%D8%A7%D8%B1%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%DA%AF%DB%8C%D9%85%D9%BE/</guid>
-      <description>&amp;hellip;</description>
+      <guid>https://qezwan.ir/learn/gimp/%DA%A9%D8%A7%D8%B1%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D9%87%DB%8E%DA%B5%DB%8C-%D8%A6%DB%8C%D9%86%DA%A9%D8%B3%DA%A9%DB%95%DB%8C%D9%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>فێرکاری کارکردن بە نەمەکالای گرافیکی گیمپ</title>
+      <link>https://qezwan.ir/learn/gimp/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%DA%A9%D8%A7%D8%B1%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%DA%AF%DB%8C%D9%85%D9%BE/</link>
+      <pubDate>Sun, 18 Oct 2020 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/learn/gimp/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%DA%A9%D8%A7%D8%B1%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%DA%AF%DB%8C%D9%85%D9%BE/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -305,11 +323,29 @@ Flutter: ئامرازێکی خۆڕایی و بەلاش و سەرچاوەکراو
     
     <item>
       <title>فێرکاری بە نەرمەکالای گرافیکی ئادۆبی XD</title>
+      <link>https://qezwan.ir/learn/gimp/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D8%A6%D8%A7%D8%AF%DB%86%D8%A8%DB%8C-xd/</link>
+      <pubDate>Wed, 14 Oct 2020 01:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/learn/gimp/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D8%A6%D8%A7%D8%AF%DB%86%D8%A8%DB%8C-xd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>فێرکاری بە نەرمەکالای گرافیکی ئادۆبی XD</title>
+      <link>https://qezwan.ir/learn/img/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D8%A6%D8%A7%D8%AF%DB%86%D8%A8%DB%8C-xd/</link>
+      <pubDate>Wed, 14 Oct 2020 01:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/learn/img/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D8%A6%D8%A7%D8%AF%DB%86%D8%A8%DB%8C-xd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>فێرکاری بە نەرمەکالای گرافیکی ئادۆبی XD</title>
       <link>https://qezwan.ir/learn/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D8%A6%D8%A7%D8%AF%DB%86%D8%A8%DB%8C-xd/</link>
       <pubDate>Wed, 14 Oct 2020 01:35:45 +0000</pubDate>
       
       <guid>https://qezwan.ir/learn/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D8%A6%D8%A7%D8%AF%DB%86%D8%A8%DB%8C-xd/</guid>
-      <description>  </description>
+      <description></description>
     </item>
     
     <item>
@@ -331,6 +367,24 @@ const myFunction = (x) =&amp;gt; { if (x &amp;gt; 0) { return &amp;#34;ok&amp;#3
       <guid>https://qezwan.ir/web/dvc%D8%B3%DB%8C%D8%B3%D8%AA%DB%95%D9%85%DB%8C-%DA%86%D8%A7%D9%88%D8%AF%DB%8E%D8%B1%DB%8C-%D9%88%D8%B4%D8%A7%D9%86%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86-%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D9%85%D8%A7%D8%B4%DB%8C%D9%86/</guid>
       <description>Data Science Version Control بە کورتە دەبێتە DVC ئامرازێکی سەرچاوەکراوە بۆ مەبەستی بەڕێوەبردنی وشانی جۆرواجۆری پرۆژەکانی بەستراوە بە دراوەی زانیاری و فێرکاری ماشین بەسوودە؛ گەشەپێدەرانی ئەم سنورە دەتوانن بە یارمەتی ئەم ئامرازە پڕۆژەکانی خۆیان بەڕێوەببن و هاوبەشی بکەن.
 DVC بێجگە لە هاوشێوە بوون لە بواری چوارچێوە و ئەندازیاری، لەگەڵ Git هاوئاهەنگە ،گەشەپێدەران دەتوانن پەڕگە قورسەکان، جۆرەکانی دراوە و شێوەکانی فێربوونی ماشین و&amp;hellip; بە ڕێوەببن.ئەم ئامرازە لە ژێر مۆڵەتدانی Apache 2.0 بە شێوەی سەرچاوەکراوە وشێندراوە.</description>
+    </item>
+    
+    <item>
+      <title>فێرکاری ئیشکردن بە نەرمەکالاکان لیبرەئۆفیس</title>
+      <link>https://qezwan.ir/learn/gimp/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A6%DB%8C%D8%B4%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DA%A9%D8%A7%D9%86-%D9%84%DB%8C%D8%A8%D8%B1%DB%95%D8%A6%DB%86%D9%81%DB%8C%D8%B3/</link>
+      <pubDate>Mon, 12 Oct 2020 09:12:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/learn/gimp/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A6%DB%8C%D8%B4%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DA%A9%D8%A7%D9%86-%D9%84%DB%8C%D8%A8%D8%B1%DB%95%D8%A6%DB%86%D9%81%DB%8C%D8%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>فێرکاری ئیشکردن بە نەرمەکالاکان لیبرەئۆفیس</title>
+      <link>https://qezwan.ir/learn/img/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A6%DB%8C%D8%B4%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DA%A9%D8%A7%D9%86-%D9%84%DB%8C%D8%A8%D8%B1%DB%95%D8%A6%DB%86%D9%81%DB%8C%D8%B3/</link>
+      <pubDate>Mon, 12 Oct 2020 09:12:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/learn/img/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A6%DB%8C%D8%B4%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DA%A9%D8%A7%D9%86-%D9%84%DB%8C%D8%A8%D8%B1%DB%95%D8%A6%DB%86%D9%81%DB%8C%D8%B3/</guid>
+      <description></description>
     </item>
     
     <item>
