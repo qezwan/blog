@@ -988,3 +988,8 @@ nav1 {
   outline: 0;
   width: 600px;
 }
+.timeline-comment .markdown-body {
+  padding: 16px;
+  font-size: 14px;
+  direction: rtl !important;
+}

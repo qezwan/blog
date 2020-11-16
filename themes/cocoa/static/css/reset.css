@@ -126,3 +126,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.timeline-comment .markdown-body {
+    padding: 16px;
+    font-size: 14px;
+    direction: rtl;
+}

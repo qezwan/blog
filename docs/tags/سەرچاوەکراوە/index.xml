@@ -39,7 +39,7 @@ Xmysql توانایێکمان دەدا کە بە یارمەتی فەرمانە �
       <description>پێشەکی :
 FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش) و سەرچاوەکراوە، چەند سەکۆیی1 ؛ هەموو کەسێک دەتوانێت زۆر بەسادەیی بۆ تۆمارکردن و گۆڕاندن و تەوژمی دەنگ و ڤیدیۆی سەر هێڵ ،لە رێگای هەر بەرنامەیەک بەکاری بهێنێت.
 ئەم کتێبخانە(چوارچێوە) بریتییە لە کتێبخانەکانی دیکە وەک libavcodec, libavutil, libavformat, libavfilter, libavdevice, libswscale وە libswresample . ئەپەکان و زۆربەی نەرمەکالاکان دەتوانن لە FFmpeg بۆ کارە پێشکەوتنەکانی خۆیان لە سەر فایلە دەنگییەکان و ڤیدیۆکان سوودی لێ بگرن.
- _______ ______________| | | || input | demuxer | encoded data | decoder| file | ---------&amp;gt; | packets | -----+|_______| |______________| |v_________| || decoded || frames ||_________|________ ______________ || | | | || output | &amp;lt;-------- | encoded data | &amp;lt;----+| file | muxer | packets | encoder|________| |______________|دامەزراندن لەسەر ئوبونتو</description>
+ _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &amp;lt;-------- | encoded data | &amp;lt;----+ | file | muxer | packets | encoder |________| |______________| دامەزراندن لەسەر ئوبونتو</description>
     </item>
     
     <item>
@@ -285,28 +285,10 @@ DVC بێجگە لە هاوشێوە بوون لە بواری چوارچێوە و 
     
     <item>
       <title>فێرکاری ئیشکردن بە نەرمەکالاکان لیبرەئۆفیس</title>
-      <link>https://qezwan.ir/learn/gimp/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A6%DB%8C%D8%B4%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DA%A9%D8%A7%D9%86-%D9%84%DB%8C%D8%A8%D8%B1%DB%95%D8%A6%DB%86%D9%81%DB%8C%D8%B3/</link>
-      <pubDate>Mon, 12 Oct 2020 09:12:45 +0000</pubDate>
-      
-      <guid>https://qezwan.ir/learn/gimp/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A6%DB%8C%D8%B4%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DA%A9%D8%A7%D9%86-%D9%84%DB%8C%D8%A8%D8%B1%DB%95%D8%A6%DB%86%D9%81%DB%8C%D8%B3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>فێرکاری ئیشکردن بە نەرمەکالاکان لیبرەئۆفیس</title>
       <link>https://qezwan.ir/learn/img/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A6%DB%8C%D8%B4%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DA%A9%D8%A7%D9%86-%D9%84%DB%8C%D8%A8%D8%B1%DB%95%D8%A6%DB%86%D9%81%DB%8C%D8%B3/</link>
       <pubDate>Mon, 12 Oct 2020 09:12:45 +0000</pubDate>
       
       <guid>https://qezwan.ir/learn/img/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A6%DB%8C%D8%B4%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DA%A9%D8%A7%D9%86-%D9%84%DB%8C%D8%A8%D8%B1%DB%95%D8%A6%DB%86%D9%81%DB%8C%D8%B3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>فێرکاری ئیشکردن بە نەرمەکالاکان لیبرەئۆفیس</title>
-      <link>https://qezwan.ir/learn/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A6%DB%8C%D8%B4%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DA%A9%D8%A7%D9%86-%D9%84%DB%8C%D8%A8%D8%B1%DB%95%D8%A6%DB%86%D9%81%DB%8C%D8%B3/</link>
-      <pubDate>Mon, 12 Oct 2020 09:12:45 +0000</pubDate>
-      
-      <guid>https://qezwan.ir/learn/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A6%DB%8C%D8%B4%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DA%A9%D8%A7%D9%86-%D9%84%DB%8C%D8%A8%D8%B1%DB%95%D8%A6%DB%86%D9%81%DB%8C%D8%B3/</guid>
       <description></description>
     </item>
     

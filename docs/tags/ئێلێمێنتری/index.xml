@@ -92,7 +92,7 @@ sudo apt-get update sudo apt-get install nautilus dconf-tools ٢- لە رێگا�
       <guid>https://qezwan.ir/gnulinux/%D9%A2%D9%A0-%DA%A9%D8%A7%D8%B1-%D9%BE%D8%A7%D8%B4-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A6%DB%8E%D9%84%DB%8C%D9%85%DB%8C%D9%86%D8%AA%D8%B1%DB%8C/</guid>
       <description>لەم بابەتە لە سەر ئەوە دەدوێین کە پاش دامەزراندنی ئێلیمێنتری پێویستمان بە چ کردارێکە کە باشتر سود لەم سیستەمی کارپێکردنە بگرین.
 ١- چالاککردنی پێش گریمانی نەرمەکالاکان.
-sudo software-properties-gtkبەم فەرمانەپەنجێرەییک دەکرێتەوە بۆ کانفیگی سەرچاوەی نەرمەکالاکان.بچنە خشتی “Other software” ئینجا گشتی جوارچێوەکان بە ناوی “Canonical Partners” و “Independent” هەڵبژێرن .
+sudo software-properties-gtk بەم فەرمانەپەنجێرەییک دەکرێتەوە بۆ کانفیگی سەرچاوەی نەرمەکالاکان.بچنە خشتی “Other software” ئینجا گشتی جوارچێوەکان بە ناوی “Canonical Partners” و “Independent” هەڵبژێرن .
 ٢- بەڕۆژکردنی سیستەم: بۆ بەرۆژکردنی پەکەکان و بەرزکردنەوەی نەرمەکالاکان یا خود ئەپلیکەشنەکان لە فەرمانی خوارەوە سوود وەربگرن.پاش بەرۆژ کردنەوە سیستەمەکەت لەنوێ دەستپیکەرەوە (restart).</description>
     </item>
     

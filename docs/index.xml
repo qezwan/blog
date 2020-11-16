@@ -49,7 +49,7 @@ Xmysql توانایێکمان دەدا کە بە یارمەتی فەرمانە �
       <description>پێشەکی :
 FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش) و سەرچاوەکراوە، چەند سەکۆیی1 ؛ هەموو کەسێک دەتوانێت زۆر بەسادەیی بۆ تۆمارکردن و گۆڕاندن و تەوژمی دەنگ و ڤیدیۆی سەر هێڵ ،لە رێگای هەر بەرنامەیەک بەکاری بهێنێت.
 ئەم کتێبخانە(چوارچێوە) بریتییە لە کتێبخانەکانی دیکە وەک libavcodec, libavutil, libavformat, libavfilter, libavdevice, libswscale وە libswresample . ئەپەکان و زۆربەی نەرمەکالاکان دەتوانن لە FFmpeg بۆ کارە پێشکەوتنەکانی خۆیان لە سەر فایلە دەنگییەکان و ڤیدیۆکان سوودی لێ بگرن.
- _______ ______________| | | || input | demuxer | encoded data | decoder| file | ---------&amp;gt; | packets | -----+|_______| |______________| |v_________| || decoded || frames ||_________|________ ______________ || | | | || output | &amp;lt;-------- | encoded data | &amp;lt;----+| file | muxer | packets | encoder|________| |______________|دامەزراندن لەسەر ئوبونتو</description>
+ _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &amp;lt;-------- | encoded data | &amp;lt;----+ | file | muxer | packets | encoder |________| |______________| دامەزراندن لەسەر ئوبونتو</description>
     </item>
     
     <item>
@@ -1006,7 +1006,7 @@ sudo apt-get update sudo apt-get install nautilus dconf-tools ٢- لە رێگا�
       <guid>https://qezwan.ir/gnulinux/%D9%A2%D9%A0-%DA%A9%D8%A7%D8%B1-%D9%BE%D8%A7%D8%B4-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A6%DB%8E%D9%84%DB%8C%D9%85%DB%8C%D9%86%D8%AA%D8%B1%DB%8C/</guid>
       <description>لەم بابەتە لە سەر ئەوە دەدوێین کە پاش دامەزراندنی ئێلیمێنتری پێویستمان بە چ کردارێکە کە باشتر سود لەم سیستەمی کارپێکردنە بگرین.
 ١- چالاککردنی پێش گریمانی نەرمەکالاکان.
-sudo software-properties-gtkبەم فەرمانەپەنجێرەییک دەکرێتەوە بۆ کانفیگی سەرچاوەی نەرمەکالاکان.بچنە خشتی “Other software” ئینجا گشتی جوارچێوەکان بە ناوی “Canonical Partners” و “Independent” هەڵبژێرن .
+sudo software-properties-gtk بەم فەرمانەپەنجێرەییک دەکرێتەوە بۆ کانفیگی سەرچاوەی نەرمەکالاکان.بچنە خشتی “Other software” ئینجا گشتی جوارچێوەکان بە ناوی “Canonical Partners” و “Independent” هەڵبژێرن .
 ٢- بەڕۆژکردنی سیستەم: بۆ بەرۆژکردنی پەکەکان و بەرزکردنەوەی نەرمەکالاکان یا خود ئەپلیکەشنەکان لە فەرمانی خوارەوە سوود وەربگرن.پاش بەرۆژ کردنەوە سیستەمەکەت لەنوێ دەستپیکەرەوە (restart).</description>
     </item>
     
@@ -1103,7 +1103,7 @@ Indicator Synapse کە دەتوانێت لە نێو فایلەکان و دایر
       
       <guid>https://qezwan.ir/gnulinux/%DA%AF%DB%86%DA%95%DB%8C%D9%86%DB%8C-%D8%A6%DB%95%D9%86%D8%AF%D8%A7%D8%B2%DB%95%DB%8C-%D8%B4%D8%A7%D8%B4%DB%95-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</guid>
       <description>بۆ گۆڕینی قەبارەی شاشە لە لینوکسی-ئێلێمێنتری ئێوە دەتوانن لە مەسیری خوارەوە ئەندازەی ڕوناکی شاسەی سیستەمەکەتان بگۆڕن.
-System Settings &amp;gt;Displayesبە فەرمانی xrandr ئێوە دەتوانن زانیاریێکی فرە لە سەر پیشانگەری ئەندازەی شاشە بزانن!
+System Settings &amp;gt;Displayes بە فەرمانی xrandr ئێوە دەتوانن زانیاریێکی فرە لە سەر پیشانگەری ئەندازەی شاشە بزانن!
 qezwan@kurd.click:~$ xrandr Screen 0: minimum 1 x 1, current 832 x 759, maximum 8192 x 8192 Virtual1 connected primary 832x759+0+0 (normal left inverted right x axis y axis) 0mm x 0mm 832x759 60.0*+ 2560x1600 60.0 1920x1440 60.0 1856x1392 60.</description>
     </item>
     
