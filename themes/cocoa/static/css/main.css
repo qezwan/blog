@@ -993,3 +993,11 @@ nav1 {
   font-size: 14px;
   direction: rtl !important;
 }
+.markdown-body.markdown-body-scrollable {
+  direction: rtl;
+}
+.timeline {
+  margin: 16px 0;
+  padding: 0 4px;
+  direction: rtl;
+}

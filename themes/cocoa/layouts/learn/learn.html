@@ -7,7 +7,7 @@
                 <div class="markdown">
                     {{ .Content }}
                 </div>
-                <button style="float: left;" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">قاپێک یاپراخ</snap></button>
+                
 
 <!-- The Modal -->
 <div id="id01" class="w3-modal w3-animate-opacity">
@@ -16,10 +16,13 @@
       <span onclick="document.getElementById('id01').style.display='none'"
       class="w3-button w3-display-topright">&times;</span>
       <p>یارمەتی مادی</p>
-      <p>گەر ئەم فێرکارییەکانە بەسوود بوون، شادمانم دەکەیت و پێنووسم بە هێز گەر یارمەتیێکی مادیم بدەی کە ڕەقەکالاکانی کۆمپیوترەکەم بەرز بکەمەوە.گەر تواناییت نییە چاوت ماچ دەکەم، زۆر زۆر شادمانم دەکەی ئەمانە فێر بیت و هاوبەشی بکەی لەگەڵ هاورێکانت</p>
-	<p>ژمارەی بانکی نێو دەوڵەتی :IR450190000000304059302003</p>
-	<p>ژمارەی کارتی بانکی (سادرات) :7427-4486-6915-6037</p>
-<p></p>
+      <p>.گەر ئەم فێرکارییەکانە بەسوودن، شادمانم دەکەیت و پێنووسم بە هێز، گەر یارمەتیێکی مادیت لی بێتەوە تا ڕەقەکالای کۆمپیوتر بەرز بکەمەم.گەر تواناییت نییە چاوت ماچ دەکەم، زۆر زۆر دڵگەرمم دەکەی فێربیت و هاوبەشی بکەی لەگەڵ خوازیاران</p>
+	<ul>
+	<li>ژمارەی بانکی نێو دەوڵەتی :IR450190000000304059302003</li>
+	<li>ژمارەی کارتی بانکی (سادرات) :7427-4486-6915-6037</li>
+	<li>بەڕێزم : (سید)جواد‌سجادی</li>
+	</ul>
+	<p></p>
     </div>
   </div>
 </div>
@@ -28,7 +31,7 @@
             
             
 
-<div class="page-heading">{{ i18n "learn" }}</div><p></p>
+<div class="page-heading"><span style="cursor:pointer;float: left;" onclick="document.getElementById('id01').style.display='block'" ><img src="https://img.icons8.com/cotton/40/000000/volunteering.png"/></span>{{ i18n "learn" }}</div><p></p>
             <div class="row">{{ range where .Paginator.Pages "Section" "ne" "" }}
               <div class="column">
             <div class="card" style="width:100%">
@@ -36,7 +39,7 @@
                   
                        <a href='{{ .Permalink }}'><img{{ with .Params.image }} src="{{ . }}"{{ end }} alt="{{ .Title }}"></a>
                           <h2></h2>
-                           <div class="w3-container w3-center">
+                          <div class="w3-container w3-center">
                             <p>{{ .Description | markdownify }}</p>
                           </div>
                            
@@ -47,7 +50,7 @@
             </div>
         </div>                  {{ end }}
       </div>
-       
+        
          
           
         </div>

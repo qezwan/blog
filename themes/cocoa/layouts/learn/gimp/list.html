@@ -1,24 +1,36 @@
 {{ partial "header.html" . }}
 <section class="main">
-    <div class="container">
+  <div class="w3-container">
         <div class="content">
+          
             {{ if .Content }}
                 <div class="markdown">
                     {{ .Content }}
                 </div>
+                <button style="float: left;" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">قاپێک یاپراخ</snap></button>
+
+<!-- The Modal -->
+<div id="id01" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id01').style.display='none'"
+      class="w3-button w3-display-topright">&times;</span>
+      <p>یارمەتی مادی</p>
+      <p>گەر ئەم فێرکارییەکانە بەسوود بوون، شادمانم دەکەیت و پێنووسم بە هێز گەر یارمەتیێکی مادیم بدەی کە ڕەقەکالاکانی کۆمپیوترەکەم بەرز بکەمەوە.گەر تواناییت نییە چاوت ماچ دەکەم، زۆر زۆر شادمانم دەکەی ئەمانە فێر بیت و هاوبەشی بکەی لەگەڵ هاورێکانت</p>
+	<p>ژمارەی بانکی نێو دەوڵەتی :IR450190000000304059302003</p>
+	<p>ژمارەی کارتی بانکی (سادرات) :7427-4486-6915-6037</p>
+<p></p>
+    </div>
+  </div>
+</div>
             {{ end }}
-            <div class="page-heading">{{ i18n "مەنجەڵ" }}</div>
+            <!-- Trigger/Open the Modal -->
+            
+            
+
+<div class="page-heading">{{ i18n "learn" }}</div><p></p>
             <ul>
-                {{ if eq .Site.Params.bloggroupby "month" }}
-                    {{ $.Scratch.Set "datespec" "Jan, 2006" }}
-                {{ else if eq .Site.Params.bloggroupby "year" }}
-                    {{ $.Scratch.Set "datespec" "2006" }}
-                {{ end }}
-                {{ if not ($.Scratch.Get "datespec") }}
-                    {{ range .Data.Pages.ByPublishDate.Reverse }}
-                    {{ partial "li.html" . }}
-                    {{ end }}
-                {{ else }}
+                
                     {{ range .Data.Pages.ByPublishDate.GroupByDate ($.Scratch.Get "datespec") "desc" }}
                         <li class="post-item no-bullet">
                             <span class="date">{{ .Key }}</span>
@@ -27,23 +39,14 @@
                             {{ partial "li.html" . }}
                         {{ end }}
                     {{ end }}
-                {{ end }}
+                
             </ul>
+      </div>
+       
+         
+          
         </div>
-	<!-- Begin of Chaport Live Chat code -->
-          <script type="text/javascript">
-           (function(w,d,v3){
-            w.chaportConfig = {
-            appId : '5fad689fa3357e3317fe56fa'
-            };
-
-            if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
-          </script>
-      <!-- End of Chaport Live Chat code -->
-<div class="article-container">
-{{ partial "comments.html" . }}
-</div>
+	
     </div>
 </section>
 {{ partial "footer.html" . }}
-
