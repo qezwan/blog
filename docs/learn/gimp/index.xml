@@ -31,7 +31,8 @@
       <pubDate>Wed, 14 Oct 2020 01:35:45 +0000</pubDate>
       
       <guid>https://qezwan.ir/learn/gimp/%D9%81%DB%8E%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%DB%95-%D9%86%DB%95%D8%B1%D9%85%DB%95%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9%DB%8C-%D8%A6%D8%A7%D8%AF%DB%86%D8%A8%DB%8C-xd/</guid>
-      <description></description>
+      <description>مەنجەڵ فێرگەیەکی چەور و چلیک لە نەرمەکالاکانی گرافیک، ئۆفیس و …هتد؛ کە هەم لە سەر ویندۆز، ماک و دابەشکراوەکانی لینوکس(بەشێکیان) بە ئاسانی دادەمەزرێن و ئیشدەکەن. مەبەست فێربوونێکە بۆ بازاری کار و و ئیشێکی پوخت و جوانە بەم نەرمەکالا بەهێزانە.
+&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Creating MySQL Database&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;?php $dbhost = &amp;#39;localhost:3036&amp;#39;; $dbuser = &amp;#39;root&amp;#39;; $dbpass = &amp;#39;rootpassword&amp;#39;; $conn = mysql_connect($dbhost, $dbuser, $dbpass); if(! $conn ) { die(&amp;#39;Could not connect: &amp;#39; . mysql_error()); } echo &amp;#39;Connected successfully&amp;lt;br /&amp;gt;&amp;#39;; $sql = &amp;#39;CREATE DATABASE KURDISH&amp;#39;; $retval = mysql_query( $sql, $conn ); if(!</description>
     </item>
     
     <item>

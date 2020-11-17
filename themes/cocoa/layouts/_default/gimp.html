@@ -3,27 +3,27 @@
   <div class="w3-container">
         <div class="content">
           
-            {{ if .Content }}
-                <div class="markdown">
-                    {{ .Content }}
-                </div>
-                <button style="float: left;" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">قاپێک یاپراخ</snap></button>
-
+            
+               <div class="page-heading"><span style="cursor:pointer;float: left;" onclick="document.getElementById('id01').style.display='block'" ><img src="https://img.icons8.com/cotton/40/000000/volunteering.png"/></span></div><p></p>
 <!-- The Modal -->
 <div id="id01" class="w3-modal w3-animate-opacity">
   <div class="w3-modal-content">
     <div class="w3-container">
       <span onclick="document.getElementById('id01').style.display='none'"
       class="w3-button w3-display-topright">&times;</span>
-      <p>یارمەتی مادی</p>
-      <p>گەر ئەم فێرکارییەکانە بەسوود بوون، شادمانم دەکەیت و پێنووسم بە هێز گەر یارمەتیێکی مادیم بدەی کە ڕەقەکالاکانی کۆمپیوترەکەم بەرز بکەمەوە.گەر تواناییت نییە چاوت ماچ دەکەم، زۆر زۆر شادمانم دەکەی ئەمانە فێر بیت و هاوبەشی بکەی لەگەڵ هاورێکانت</p>
-	<p>ژمارەی بانکی نێو دەوڵەتی :IR450190000000304059302003</p>
-	<p>ژمارەی کارتی بانکی (سادرات) :7427-4486-6915-6037</p>
-<p></p>
+     <p>یارمەتی مادی</p>
+      <p>.گەر ئەم فێرکارییەکانە بەسوودن، شادمانم دەکەیت و پێنووسم بە هێز، گەر یارمەتیێکی مادیت لێ بێتەوە. گەر تواناییت نییە چاوت ماچ دەکەم، زۆر زۆر دڵگەرمم دەکەی فێربیت و هاوبەشی بکەی</p>
+	
+<ul>
+	<li>ژمارەی بانکی نێو دەوڵەتی :IR450190000000304059302003</li>
+	<li>ژمارەی کارتی بانکی (سادرات) :7427-4486-6915-6037</li>
+	<li>بەڕێزم :) (سید)جواد‌سجادی</li>
+	</ul>
+	<p></p>
     </div>
   </div>
 </div>
-            {{ end }}
+            
             <!-- Trigger/Open the Modal -->
             
             
@@ -31,18 +31,22 @@
 <div class="page-heading"></div><p></p>
             
             <div class="" style="width:100%">
-                 <ul>
-               
-                    <li><a {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ default .Title .Params.heading }}</a></li>
-               
-                </ul></br>
+                </br>
                   
                        <video style="border-radius: 10px; width:100%" src="{{ .Params.videosrc }}" poster="{{ .Site.BaseURL }}{{.Section}}/{{ .Params.videoposter}}" controls autoplay>
                            
                        </video> 
-                         
-                    
-              
+  <ul class="c">
+               
+                    <li><a {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ default .Title .Params.heading }}</a></li>
+               
+               
+                      {{ if .Content }}
+                <div class="markdown">
+                    {{ .Content }}
+                </div>   
+                    {{ end }}
+               </ul>
             </div>
         </div>                 
       </div>

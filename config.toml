@@ -18,6 +18,9 @@ PostLimit = 5
 [permalinks]
 book  = "book/:slug/"
 
+[outputs]
+  home = ["html", "json"]
+
 [[menu.main]]
 name                   = "دەربارە"
 weight                 = -100

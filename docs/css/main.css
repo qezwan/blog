@@ -1001,3 +1001,19 @@ nav1 {
   padding: 0 4px;
   direction: rtl;
 }
+ul.b {
+  list-style: square;
+  color: rgb(230 230 230);
+  border-bottom: 1px #e4e4e4 dotted;
+  padding-bottom: 30px;
+} 
+ul.c {
+    margin-top: 1px;
+    margin-bottom: 1em;
+    text-align: justify;
+    border-bottom: 1px #eee dotted;
+    padding-bottom: 25px;
+    padding-top: 10px;
+    margin-right: 30px;
+    margin-left: 30px;
+}

@@ -8,7 +8,7 @@
             </div>
             {{ with .Data.Pages }}
             <nav class="section-items">
-                <ul>
+                <ul class="b">
                 {{ range .ByWeight }}
                     <li><a {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ default .Title .Params.heading }}</a></li>
                 {{ end }}
