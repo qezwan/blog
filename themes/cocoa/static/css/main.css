@@ -399,7 +399,7 @@ section.icons .content a .flag {
   }
   section.icons .content a {
     margin-left: 3px;
-    margin-right: 3px;
+    margin-right: 3px;opacity: 0.4;
   }
 }
 section.main .container {

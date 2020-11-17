@@ -12,13 +12,13 @@
 <meta name="description" content="پێشەکی :
 FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش) و سەرچاوەکراوە، چەند سەکۆیی1 ؛ هەموو کەسێک دەتوانێت زۆر بەسادەیی بۆ تۆمارکردن و گۆڕاندن و تەوژمی دەنگ و ڤیدیۆی سەر هێڵ ،لە رێگای هەر بەرنامەیەک بەکاری بهێنێت.
 ئەم کتێبخانە(چوارچێوە) بریتییە لە کتێبخانەکانی دیکە وەک libavcodec, libavutil, libavformat, libavfilter, libavdevice, libswscale وە libswresample . ئەپەکان و زۆربەی نەرمەکالاکان دەتوانن لە FFmpeg بۆ کارە پێشکەوتنەکانی خۆیان لە سەر فایلە دەنگییەکان و ڤیدیۆکان سوودی لێ بگرن.
- _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&gt; | packets | -----&#43; |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &lt;-------- | encoded data | &lt;----&#43; | file | muxer | packets | encoder |________| |______________| دامەزراندن لەسەر ئوبونتو">
+ _______ ______________| | | || input | demuxer | encoded data | decoder| file | ---------&gt; | packets | -----&#43;|_______| |______________| |v_________| || decoded || frames ||_________|________ ______________ || | | | || output | &lt;-------- | encoded data | &lt;----&#43;| file | muxer | packets | encoder|________| |______________|دامەزراندن لەسەر ئوبونتو">
 
 <meta property="og:title" content="FFmpeg:کتێبخانەیەکی سەرچاوەکراوە بۆ دەستکاریکردنی پەڕگەی دەنگ و ڤیدیۆ" />
 <meta property="og:description" content="پێشەکی :
 FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش) و سەرچاوەکراوە، چەند سەکۆیی1 ؛ هەموو کەسێک دەتوانێت زۆر بەسادەیی بۆ تۆمارکردن و گۆڕاندن و تەوژمی دەنگ و ڤیدیۆی سەر هێڵ ،لە رێگای هەر بەرنامەیەک بەکاری بهێنێت.
 ئەم کتێبخانە(چوارچێوە) بریتییە لە کتێبخانەکانی دیکە وەک libavcodec, libavutil, libavformat, libavfilter, libavdevice, libswscale وە libswresample . ئەپەکان و زۆربەی نەرمەکالاکان دەتوانن لە FFmpeg بۆ کارە پێشکەوتنەکانی خۆیان لە سەر فایلە دەنگییەکان و ڤیدیۆکان سوودی لێ بگرن.
- _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&gt; | packets | -----&#43; |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &lt;-------- | encoded data | &lt;----&#43; | file | muxer | packets | encoder |________| |______________| دامەزراندن لەسەر ئوبونتو" />
+ _______ ______________| | | || input | demuxer | encoded data | decoder| file | ---------&gt; | packets | -----&#43;|_______| |______________| |v_________| || decoded || frames ||_________|________ ______________ || | | | || output | &lt;-------- | encoded data | &lt;----&#43;| file | muxer | packets | encoder|________| |______________|دامەزراندن لەسەر ئوبونتو" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qezwan.ir/web/ffmpeg-%DA%A9%D8%AA%DB%8E%D8%A8%D8%AE%D8%A7%D9%86%DB%95%DB%8C%DB%95%DA%A9%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86-%D8%AF%DB%95%D8%B3%D8%AA%DA%A9%D8%A7%D8%B1%DB%8C%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D9%BE%DB%95%DA%95%DA%AF%DB%95%DB%8C-%D8%AF%DB%95%D9%86%DA%AF-%D9%88-%DA%A4%DB%8C%D8%AF%DB%8C%DB%86/" />
 <meta property="article:published_time" content="2020-11-06T04:40:45+00:00" />
@@ -58,11 +58,11 @@ FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش) و سەرچاوەکرا
 
 
     
-    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-17%2016%3a17%3a30.0879896%20%2b0330%20%2b0330%20m%3d%2b1.399307901">
-    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-17%2016%3a17%3a30.0879896%20%2b0330%20%2b0330%20m%3d%2b1.399307901">
-    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-17%2016%3a17%3a30.0879896%20%2b0330%20%2b0330%20m%3d%2b1.399307901">
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-17%2017%3a25%3a02.2211167%20%2b0330%20%2b0330%20m%3d%2b1.831766001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-17%2017%3a25%3a02.2211167%20%2b0330%20%2b0330%20m%3d%2b1.831766001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-17%2017%3a25%3a02.2211167%20%2b0330%20%2b0330%20m%3d%2b1.831766001">
     
-        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-17%2016%3a17%3a30.0879896%20%2b0330%20%2b0330%20m%3d%2b1.399307901">
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-17%2017%3a25%3a02.2211167%20%2b0330%20%2b0330%20m%3d%2b1.831766001">
     
 
 
@@ -447,7 +447,7 @@ if (!doNotTrack) {
         
 
         
-
+            <a href="https://bit.ly/3pEQXFA" target="_blank" rel="noopener"><img src="https://img.icons8.com/material-outlined/18/000000/copyleft.png"/></a>
         </br>
 <nav1>
 

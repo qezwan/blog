@@ -39,7 +39,7 @@ Xmysql توانایێکمان دەدا کە بە یارمەتی فەرمانە �
       <description>پێشەکی :
 FFmpeg چوارچێوەیەکی خۆڕایی(بەلاش) و سەرچاوەکراوە، چەند سەکۆیی1 ؛ هەموو کەسێک دەتوانێت زۆر بەسادەیی بۆ تۆمارکردن و گۆڕاندن و تەوژمی دەنگ و ڤیدیۆی سەر هێڵ ،لە رێگای هەر بەرنامەیەک بەکاری بهێنێت.
 ئەم کتێبخانە(چوارچێوە) بریتییە لە کتێبخانەکانی دیکە وەک libavcodec, libavutil, libavformat, libavfilter, libavdevice, libswscale وە libswresample . ئەپەکان و زۆربەی نەرمەکالاکان دەتوانن لە FFmpeg بۆ کارە پێشکەوتنەکانی خۆیان لە سەر فایلە دەنگییەکان و ڤیدیۆکان سوودی لێ بگرن.
- _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &amp;lt;-------- | encoded data | &amp;lt;----+ | file | muxer | packets | encoder |________| |______________| دامەزراندن لەسەر ئوبونتو</description>
+ _______ ______________| | | || input | demuxer | encoded data | decoder| file | ---------&amp;gt; | packets | -----+|_______| |______________| |v_________| || decoded || frames ||_________|________ ______________ || | | | || output | &amp;lt;-------- | encoded data | &amp;lt;----+| file | muxer | packets | encoder|________| |______________|دامەزراندن لەسەر ئوبونتو</description>
     </item>
     
     <item>
