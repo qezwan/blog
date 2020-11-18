@@ -8,6 +8,7 @@
 
                 </div>
             {{ end }}
+            {{ $related := .Site.RegularPages.Related . }}dfsdf
             {{ $totalpostscount := len (where .Data.Pages "Section" "book") }}
             {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
             {{ if gt $latestpostscount 0 }}
@@ -23,12 +24,13 @@
                             <li class="post-item no-bullet">
                                 <a id="see-more" {{ printf "href=%q " .URL | safeHTMLAttr }}><span>See more&hellip;</span></a>
                             </li>
+
                         {{ end }}
                     {{ end }}
+                    
                 </ul>
             {{ end }}
-  
-        </div>
+           
        <!-- Begin of Chaport Live Chat code -->
           <script type="text/javascript">
            (function(w,d,v3){

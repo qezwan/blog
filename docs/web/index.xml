@@ -8,6 +8,17 @@
     <language>en-US</language>
     <lastBuildDate>Sat, 22 Aug 2015 06:42:21 -0700</lastBuildDate><atom:link href="https://qezwan.ir/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>FBT:خشتەی جاڤاسکریپتی سەرچاوەکراوەی فەیسبوک بۆ چەند زمانەکردنی ئەپەکان</title>
+      <link>https://qezwan.ir/web/fbt%D8%AE%D8%B4%D8%AA%DB%95%DB%8C-%D8%AC%D8%A7%DA%A4%D8%A7%D8%B3%DA%A9%D8%B1%DB%8C%D9%BE%D8%AA%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95%DB%8C-%D9%81%DB%95%DB%8C%D8%B3%D8%A8%D9%88%DA%A9-%D8%A8%DB%86-%DA%86%DB%95%D9%86%D8%AF-%D8%B2%D9%85%D8%A7%D9%86%DB%95%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%A6%DB%95%D9%BE%DB%95%DA%A9%D8%A7%D9%86/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/web/fbt%D8%AE%D8%B4%D8%AA%DB%95%DB%8C-%D8%AC%D8%A7%DA%A4%D8%A7%D8%B3%DA%A9%D8%B1%DB%8C%D9%BE%D8%AA%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95%DB%8C-%D9%81%DB%95%DB%8C%D8%B3%D8%A8%D9%88%DA%A9-%D8%A8%DB%86-%DA%86%DB%95%D9%86%D8%AF-%D8%B2%D9%85%D8%A7%D9%86%DB%95%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%A6%DB%95%D9%BE%DB%95%DA%A9%D8%A7%D9%86/</guid>
+      <description>FBT خشتەیەکی جاڤاسکریپتە کە لە لایەن فەیس‌بوک بە شێوازی سەرچاوەکراوە وشێندراوە؛ کە پەرەپێدەرانی نەرمەکالا بتوانن بۆ بەرنامەکەیان چەندین زمانی زیندوی جیهان دابین بکەن.
+تایبەتمەندییەکانی ئەم خشتە، سادەیی،نەرمی و بەهێزبوونیەتی.شێوازی کار بەم جۆرەیە کە ئەم خشتە تەواو زنجیره‌نووسه‌1 کۆدی ئەپ بە خێرایی پەیدا دەکا ئینجا مانا بەرامەرەکەی، لە زمانەکانی دیکە بار دەکا.بۆ نمونە کۆدی نووسراوە بەم خشتە بەم جۆرەیە
+&amp;lt;button&amp;gt; &amp;lt;fbt desc=&amp;#34;Canonical intro text&amp;#34;&amp;gt; Hello, World! &amp;lt;/fbt&amp;gt; &amp;lt;/button&amp;gt; بۆ جێبەجیکردنی FBT پێویستمان بە NodeJS ،Yarn و Babel هەیە.</description>
+    </item>
+    
+    <item>
       <title>Sourcegraph:مەکینەیەکی سەرچاوەکراوە بۆگەڕان و شوێن پێ لە سەرچاوەی کۆدەکان</title>
       <link>https://qezwan.ir/web/sourcegraph%D9%85%DB%95%DA%A9%DB%8C%D9%86%DB%95%DB%8C%DB%95%DA%A9%DB%8C-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95-%D8%A8%DB%86%DA%AF%DB%95%DA%95%D8%A7%D9%86-%D9%88-%D8%B4%D9%88%DB%8E%D9%86-%D9%BE%DB%8C-%D9%84%DB%95-%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DB%8C-%DA%A9%DB%86%D8%AF%DB%95%DA%A9%D8%A7%D9%86/</link>
       <pubDate>Thu, 12 Nov 2020 05:35:45 +0000</pubDate>
