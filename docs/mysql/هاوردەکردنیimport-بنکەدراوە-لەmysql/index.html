@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی لە بابەتی پێش باسێکمان لە جۆرەکانی هەناردە1کردنی بنکەدراوەکەمان کرد.پاش ئەم کارە ئێوە دەبێ بزانن کە چۆن دراوەکانی بنکەدراوەیێکی دیکە چ لە نێو خشتە بێت چ لە نێو خانەیەکی تایبەت، هاوردەی بنکەدراوەی دڵخوازتان بکەن. لەم بابەتە باس لە سەر هاوردەکردنی2دراوەکان دەکەین.
+هاوردەکردنی بنکەدراوەکان لە MYSQL چەند شێواز بۆ ئەم مەبەستە دەتوانین پەیدا بکەین کە لێرە ئاماژەیان پێدەکەین:
+شێوازی یەکەم :هاوردەکردنی بنکەدراوە بە یارمەتیLOAD DATA بنکەدراوەی MySQL فەرمانی LOAD DATA بە عینوانی Loader دراوەیێیک گەورە جێبەجێ دەکا.">
+
+<meta property="og:title" content="هاوردەکردنی(Import) بنکەدراوە لەMySQL" />
+<meta property="og:description" content="پێشەکی لە بابەتی پێش باسێکمان لە جۆرەکانی هەناردە1کردنی بنکەدراوەکەمان کرد.پاش ئەم کارە ئێوە دەبێ بزانن کە چۆن دراوەکانی بنکەدراوەیێکی دیکە چ لە نێو خشتە بێت چ لە نێو خانەیەکی تایبەت، هاوردەی بنکەدراوەی دڵخوازتان بکەن. لەم بابەتە باس لە سەر هاوردەکردنی2دراوەکان دەکەین.
+هاوردەکردنی بنکەدراوەکان لە MYSQL چەند شێواز بۆ ئەم مەبەستە دەتوانین پەیدا بکەین کە لێرە ئاماژەیان پێدەکەین:
+شێوازی یەکەم :هاوردەکردنی بنکەدراوە بە یارمەتیLOAD DATA بنکەدراوەی MySQL فەرمانی LOAD DATA بە عینوانی Loader دراوەیێیک گەورە جێبەجێ دەکا." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/mysql/%D9%87%D8%A7%D9%88%D8%B1%D8%AF%DB%95%DA%A9%D8%B1%D8%AF%D9%86%DB%8Cimport-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-%D9%84%DB%95mysql/" />
+<meta property="article:published_time" content="2018-06-11T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-06-11T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     هاوردەکردنی(Import) بنکەدراوە لەMySQL 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/mysql/%D9%87%D8%A7%D9%88%D8%B1%D8%AF%DB%95%DA%A9%D8%B1%D8%AF%D9%86%DB%8Cimport-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-%D9%84%DB%95mysql/">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115800084-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115800084-1');
+</script>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-20%2000%3a24%3a44.2196605%20%2b0330%20%2b0330%20m%3d%2b1.881985001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-20%2000%3a24%3a44.2196605%20%2b0330%20%2b0330%20m%3d%2b1.881985001">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-20%2000%3a24%3a44.2196605%20%2b0330%20%2b0330%20m%3d%2b1.881985001">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-20%2000%3a24%3a44.2196605%20%2b0330%20%2b0330%20m%3d%2b1.881985001">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-learn"><a href="https://qezwan.ir/learn/"><span>مەنجەڵ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+               
+            </nav>
+
+
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+       
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    هاوردەکردنی(Import) بنکەدراوە لەMySQL
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir"></a></div>
+                </div>
+                <div class="meta">
+
+                    
+                    <div class="date" title='Mon Jun 11 2018 05:35:45 UTC'>Jun 11, 2018</div>
+                    
+                    
+		   <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>521 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/mysql">mysql</a>
+                  
+                  </div><div class="middot"></div>هاوبەشی بکە:
+
+  
+  
+  
+
+
+  
+   
+    <ul class="share-icons">
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?hashtags=قەزوان&amp;url=https%3a%2f%2fqezwan.ir%2fmysql%2f%25D9%2587%25D8%25A7%25D9%2588%25D8%25B1%25D8%25AF%25DB%2595%25DA%25A9%25D8%25B1%25D8%25AF%25D9%2586%25DB%258Cimport-%25D8%25A8%25D9%2586%25DA%25A9%25DB%2595%25D8%25AF%25D8%25B1%25D8%25A7%25D9%2588%25DB%2595-%25D9%2584%25DB%2595mysql%2f&amp;text=%d9%87%d8%a7%d9%88%d8%b1%d8%af%db%95%da%a9%d8%b1%d8%af%d9%86%db%8c%28Import%29%20%d8%a8%d9%86%da%a9%db%95%d8%af%d8%b1%d8%a7%d9%88%db%95%20%d9%84%db%95MySQL" target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 32 32" height="16px" id="Layer_1" version="1.0" viewBox="0 0 32 32" width="16px" xml:space="preserve"><path d="M31.993,6.077C30.816,6.6,29.552,6.953,28.223,7.11c1.355-0.812,2.396-2.098,2.887-3.63  c-1.269,0.751-2.673,1.299-4.168,1.592C25.744,3.797,24.038,3,22.149,3c-3.625,0-6.562,2.938-6.562,6.563  c0,0.514,0.057,1.016,0.169,1.496C10.301,10.785,5.465,8.172,2.227,4.201c-0.564,0.97-0.888,2.097-0.888,3.3  c0,2.278,1.159,4.286,2.919,5.464c-1.075-0.035-2.087-0.329-2.972-0.821c-0.001,0.027-0.001,0.056-0.001,0.082  c0,3.181,2.262,5.834,5.265,6.437c-0.55,0.149-1.13,0.23-1.729,0.23c-0.424,0-0.834-0.041-1.234-0.117  c0.834,2.606,3.259,4.504,6.13,4.558c-2.245,1.76-5.075,2.811-8.15,2.811c-0.53,0-1.053-0.031-1.566-0.092  C2.905,27.913,6.355,29,10.062,29c12.072,0,18.675-10.001,18.675-18.675c0-0.284-0.008-0.568-0.02-0.85  C30,8.55,31.112,7.395,31.993,6.077z" fill="#55ACEE"/><g/><g/><g/><g/><g/><g/></svg>
+          
+          </a>
+      </li></ul>
+      
+
+
+
+
+                    
+                </div>
+            </div>
+            <div class="content"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#پێشەکی">پێشەکی</a></li>
+        <li><a href="#هاوردەکردنی-بنکەدراوەکان-لە-mysql">هاوردەکردنی بنکەدراوەکان لە MYSQL</a></li>
+        <li><a href="#شێوازی-یەکەم-هاوردەکردنی-بنکەدراوە-بە-یارمەتیload-data">شێوازی یەکەم :هاوردەکردنی بنکەدراوە بە یارمەتیLOAD DATA</a></li>
+        <li><a href="#شێوازی-دووهەم-هاوردەکردنی-بنکەدراوە-بەیارمەتی-mysqlimport">شێوازی دووهەم: هاوردەکردنی بنکەدراوە بەیارمەتی mysqlimport</a></li>
+        <li><a href="#دەستکاری-نووسە-دەقیquote-تایبەت">دەستکاری نووسە دەقی((Quote)) تایبەت</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            <div style="width: 95%;" class="markdown">
+               
+    
+            
+                <h3 id="پێشەکی">پێشەکی</h3>
+<p>لە بابەتی پێش باسێکمان لە جۆرەکانی هەناردە<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>کردنی بنکەدراوەکەمان کرد.پاش ئەم کارە ئێوە دەبێ بزانن کە چۆن دراوەکانی بنکەدراوەیێکی دیکە چ لە نێو خشتە بێت چ لە نێو خانەیەکی تایبەت، هاوردەی بنکەدراوەی دڵخوازتان بکەن. لەم بابەتە باس لە سەر هاوردەکردنی<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>دراوەکان دەکەین.</p>
+<h3 id="هاوردەکردنی-بنکەدراوەکان-لە-mysql">هاوردەکردنی بنکەدراوەکان لە MYSQL</h3>
+<p>چەند شێواز بۆ ئەم مەبەستە دەتوانین پەیدا بکەین کە لێرە ئاماژەیان پێدەکەین:</p>
+<h3 id="شێوازی-یەکەم-هاوردەکردنی-بنکەدراوە-بە-یارمەتیload-data">شێوازی یەکەم :هاوردەکردنی بنکەدراوە بە یارمەتیLOAD DATA</h3>
+<p>بنکەدراوەی MySQL فەرمانی LOAD DATA بە عینوانی Loader دراوەیێیک گەورە جێبەجێ دەکا.
+نمونە: نمونەیێکی سادە کە پەڕگەی <strong>dump.txt</strong> لە شوێنی ئێستای ئێوە دەخوێنێت و لە خشتەی <strong>mytbl</strong> لە بنکەدراوەی ئێستای ئێوە Load دەکا:</p>
+<pre><code>mysql&gt; LOAD DATA LOCAL INFILE 'dump.txt' INTO TABLE mytbl;
+</code></pre><p>گەر کلیلی وشەی <strong>LOCAL</strong> ڕێگە نەدرابێت، MYSQL دراوەکان لە ناونیشانێکی خۆماڵی سیستەم بەدەست دێنێت. لە شێوازی گریمانە<strong>LOAD DATA</strong> وادیارە کە پەڕگەی دراوە بریتییە لە هێڵەکان کە بە linefeed کۆتایی پێ هاتووە.
+بۆ دابینکردنی فۆرماتی پەڕگەیەک، لە <strong>FIELDS</strong> بۆ شرۆڤەی نووسەکانی یەک خانە لە هێڵێک سوود دەگرین.
+هەروەها لە LINES بۆ دابین کردنی بەدووی یەک هاتنی<strong>line-ending</strong> کەڵک وەردەگرین.
+فەرمانی LOAD DATA دەست نیشانی دەکا کە بڕگەی data، بریتییە لە بڕە جیاکراوەکان بە بۆر (,) و هێڵە وێستاوەکان بە نووسەی هێڵێ نوێیە:</p>
+<pre><code>mysql&gt; LOAD DATA LOCAL INFILE 'dump.txt' INTO TABLE mytbl
+   -&gt; FIELDS TERMINATED BY ':'
+   -&gt; LINES TERMINATED BY '\r\n';
+</code></pre><p>فەرمانیLOAD DATA گریمانە دەکا کە خانەکان لە پڕگەی data هەر ئەو خانە هاوشێوەیە. ئێوە دەتوانن پێرستێک دابین بکەن تا دەست نیشان بکرێت کە کامیەک لە خانەکانی datafile دەبێ بار بکرێن.
+گریمانە کە خشتەی ئێوە بریتییە لە خانەی b , a و c بەڵام خانە پەیوەندکراوەکان لە بڕگەی data بریتین لە c, b و a .ئێوە دەتوانن پڕگەی سەرەوە بە یارمەتی کۆدی خوارەوە laod بکەن :</p>
+<pre><code>mysql&gt; LOAD DATA LOCAL INFILE 'dump.txt' 
+   -&gt; INTO TABLE mytbl (b, c, a);
+</code></pre><h3 id="شێوازی-دووهەم-هاوردەکردنی-بنکەدراوە-بەیارمەتی-mysqlimport">شێوازی دووهەم: هاوردەکردنی بنکەدراوە بەیارمەتی mysqlimport</h3>
+<p>بنکەدراوەی MYSQL بریتییە لە پرۆگرامێک بەناوی mysqlimport .ئەم بەرنامە بە عینوانی بوخچەیەک لە DATA LOAD جێبەجێ دەبێت.هەربۆیە ئێوە دەتوانن بڕگە هاوردەکان راستەوخۆ لە هێڵی فەرمان بار بکەن.
+بۆ بارکردنی<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>دراوەکان لە <strong>dump.txt</strong> در <strong>mytbl</strong> لە فەرمانی خوارەوە لە لینوکس سوود دەگرین :</p>
+<pre><code>$ mysqlimport -u root -p --local database_name dump.txt
+password *****
+</code></pre><p>گەر ئێوە لە <strong>mysqlimport</strong> سوود دەبینن، بژاردەکانی هێڵێ فەرمان چوارچێوەکان نیشاندەدەن.فەرمانەکانی <strong>mysqlimport</strong> بە دوو فەرمانەکەی پێشترهاوئاهەنگن، وادیارە لە بلۆکی کۆدی خوارەوە نیشان دراوە:</p>
+<pre><code>$ mysqlimport -u root -p --local --fields-terminated-by = &quot;:&quot; \
+   --lines-terminated-by = &quot;\r\n&quot;  database_name dump.txt
+password *****
+</code></pre><p>ئەو فەرمانە کە بژاردەکان دابین دەکا، بۆ mysqlimport گرینگ نییە، بێجگە لەوە کە هەرهەموویان دەبێ پێش ناوی بنکەدراوە بن.\فەرمانی <strong>mysqlimport</strong> بژاردەی <strong>columns-</strong> بۆ ریخکردنی خانەکان دابین بکەن:</p>
+<pre><code>$ mysqlimport -u root -p --local --columns=b,c,a \
+   database_name dump.txt
+password *****
+</code></pre><h3 id="دەستکاری-نووسە-دەقیquote-تایبەت">دەستکاری نووسە دەقی((Quote)) تایبەت</h3>
+<p>مەرجی FIELDS دەتوانێ بژاردەکانی چوارچیوە وەک TERMINATED BY دابین بکا.لە شێوازی پێسگریمانە LOAD DATA، گریمانە دەکا کە بڕەکانی بێ دەق و ()backslash بە عینوانی نووسەیەکی escape شڕۆڤە بکا.
+بۆ نیشاندانی بڕی دەق بە شێوازی دروست، لەفەرمانی ENCLOSED BY سوود دەگرین.
+بنکەدراوەی MYSQL لە کۆتایی بڕەکانی دراوە لە پرۆسەی هاوردە دەسڕێتەوە.
+بۆ گۆڕانی نووسەی پێشگریمان لە ESCAPED BY سوود دەگرین.
+بۆ نمونە گەر دەق و نووسەی escape ، ” و \ ــیە بڕی هاوردە “a””b\”c” به a”b”c دەگۆڕدرێت.
+بۆ mysqlimport ، بژاردەکانی پەیوەندکراو بە هێڵی فەرمان و دابینکردنی بڕەکانی دەقfields-enclosed-by و -fields-escaped-by هەن.</p>
+<hr>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Export <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Import <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>load <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+           <div class="article-container">
+<script src="https://utteranc.es/client.js"
+repo="qezwan/blog"
+issue-term="pathname"
+label="Qezwan.ir"
+theme="boxy-light"
+crossorigin="anonymous"
+async>
+</script>
+</div>
+	
+          <script type="text/javascript">
+           (function(w,d,v3){
+            w.chaportConfig = {
+            appId : '5fad689fa3357e3317fe56fa'
+            };
+
+            if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+          </script>
+      
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-115800084-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+<a href="https://bit.ly/3pEQXFA" target="_blank" rel="noopener"><img src="https://img.icons8.com/material-outlined/18/000000/copyleft.png"/></a>
+        
+
+            
+       
+ </br>
+<nav1>
+
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/mysql" target="_blank">#Mysql(32)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C" target="_blank">#ئێلێمێنتری(17)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95" target="_blank">#سەرچاوەکراوە(26)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95" target="_blank">#ڕاژە(31)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3" target="_blank">#گنو/لینوکس(31)</a>
+                
+</nav1>
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+

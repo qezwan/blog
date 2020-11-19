@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی کاتێک ئێوە لە فەرمانە مەرجییەکان وەک WHERE سوود دەگرن و هەرەکتانە کە دراوەکانی پێ دەرهێنن ، گەر بڕی تۆمارکراوەیێک NULL [^1 ]بێت، ئیمکانی هەیە کە دەرئەنجامی گەڕانەوە لە بنکەدراوە ڕاست دەرنەچێت.بۆ پێشگیری لەم جۆرە کێشانە دەبێ ئیشکردن و بەڕێوەبردنی بڕیکانی NULL لە MYSQL فێر بن.
+بڕەکانی NULL لە MySQL لەم بابەتە ئێوە لەگەڵ فەرمانەکانی چاودێری NULL لە MYSQL ئاشنا دەکەین.بۆ ئەم مەبەستە سێ کردەگەر لە MYSQL بوونی هەیە:
+ IS NULL :ئەم کردەگەرە کاتێک کە خانە بڕی NULLــی هەبێت، TRUE دەگەڕێنێتەوە.">
+
+<meta property="og:title" content="ژمارەکانی NULL لە MySQL" />
+<meta property="og:description" content="پێشەکی کاتێک ئێوە لە فەرمانە مەرجییەکان وەک WHERE سوود دەگرن و هەرەکتانە کە دراوەکانی پێ دەرهێنن ، گەر بڕی تۆمارکراوەیێک NULL [^1 ]بێت، ئیمکانی هەیە کە دەرئەنجامی گەڕانەوە لە بنکەدراوە ڕاست دەرنەچێت.بۆ پێشگیری لەم جۆرە کێشانە دەبێ ئیشکردن و بەڕێوەبردنی بڕیکانی NULL لە MYSQL فێر بن.
+بڕەکانی NULL لە MySQL لەم بابەتە ئێوە لەگەڵ فەرمانەکانی چاودێری NULL لە MYSQL ئاشنا دەکەین.بۆ ئەم مەبەستە سێ کردەگەر لە MYSQL بوونی هەیە:
+ IS NULL :ئەم کردەگەرە کاتێک کە خانە بڕی NULLــی هەبێت، TRUE دەگەڕێنێتەوە." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/mysql/%DA%98%D9%85%D8%A7%D8%B1%DB%95%DA%A9%D8%A7%D9%86%DB%8C-null-%D9%84%DB%95-mysql/" />
+<meta property="article:published_time" content="2018-06-25T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-06-25T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     ژمارەکانی NULL لە MySQL 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/mysql/%DA%98%D9%85%D8%A7%D8%B1%DB%95%DA%A9%D8%A7%D9%86%DB%8C-null-%D9%84%DB%95-mysql/">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115800084-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115800084-1');
+</script>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-20%2000%3a24%3a44.2706299%20%2b0330%20%2b0330%20m%3d%2b1.932954401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-20%2000%3a24%3a44.2706299%20%2b0330%20%2b0330%20m%3d%2b1.932954401">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-20%2000%3a24%3a44.2706299%20%2b0330%20%2b0330%20m%3d%2b1.932954401">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-20%2000%3a24%3a44.2706299%20%2b0330%20%2b0330%20m%3d%2b1.932954401">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-learn"><a href="https://qezwan.ir/learn/"><span>مەنجەڵ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+               
+            </nav>
+
+
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+       
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    ژمارەکانی NULL لە MySQL
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir"></a></div>
+                </div>
+                <div class="meta">
+
+                    
+                    <div class="date" title='Mon Jun 25 2018 05:35:45 UTC'>Jun 25, 2018</div>
+                    
+                    
+		   <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>547 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/mysql">mysql</a>
+                  
+                  </div><div class="middot"></div>هاوبەشی بکە:
+
+  
+  
+  
+
+
+  
+   
+    <ul class="share-icons">
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?hashtags=قەزوان&amp;url=https%3a%2f%2fqezwan.ir%2fmysql%2f%25DA%2598%25D9%2585%25D8%25A7%25D8%25B1%25DB%2595%25DA%25A9%25D8%25A7%25D9%2586%25DB%258C-null-%25D9%2584%25DB%2595-mysql%2f&amp;text=%da%98%d9%85%d8%a7%d8%b1%db%95%da%a9%d8%a7%d9%86%db%8c%20NULL%20%d9%84%db%95%20MySQL" target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 32 32" height="16px" id="Layer_1" version="1.0" viewBox="0 0 32 32" width="16px" xml:space="preserve"><path d="M31.993,6.077C30.816,6.6,29.552,6.953,28.223,7.11c1.355-0.812,2.396-2.098,2.887-3.63  c-1.269,0.751-2.673,1.299-4.168,1.592C25.744,3.797,24.038,3,22.149,3c-3.625,0-6.562,2.938-6.562,6.563  c0,0.514,0.057,1.016,0.169,1.496C10.301,10.785,5.465,8.172,2.227,4.201c-0.564,0.97-0.888,2.097-0.888,3.3  c0,2.278,1.159,4.286,2.919,5.464c-1.075-0.035-2.087-0.329-2.972-0.821c-0.001,0.027-0.001,0.056-0.001,0.082  c0,3.181,2.262,5.834,5.265,6.437c-0.55,0.149-1.13,0.23-1.729,0.23c-0.424,0-0.834-0.041-1.234-0.117  c0.834,2.606,3.259,4.504,6.13,4.558c-2.245,1.76-5.075,2.811-8.15,2.811c-0.53,0-1.053-0.031-1.566-0.092  C2.905,27.913,6.355,29,10.062,29c12.072,0,18.675-10.001,18.675-18.675c0-0.284-0.008-0.568-0.02-0.85  C30,8.55,31.112,7.395,31.993,6.077z" fill="#55ACEE"/><g/><g/><g/><g/><g/><g/></svg>
+          
+          </a>
+      </li></ul>
+      
+
+
+
+
+                    
+                </div>
+            </div>
+            <div class="content"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#پێشەکی">پێشەکی</a></li>
+        <li><a href="#بڕەکانی-null-لە-mysql">بڕەکانی NULL لە MySQL</a></li>
+        <li><a href="#بەکارهێنانی-بڕەکانی-null-لە-هێڵێ-فەرمان">بەکارهێنانی بڕەکانی NULL لە هێڵێ فەرمان</a></li>
+        <li><a href="#بەڕێوەبردنی-بڕەکانی-null-لە-زمانی-php">بەڕێوەبردنی بڕەکانی NULL لە زمانی PHP</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            <div style="width: 95%;" class="markdown">
+               
+    
+            
+                <h3 id="پێشەکی">پێشەکی</h3>
+<p>کاتێک ئێوە لە فەرمانە مەرجییەکان وەک WHERE سوود دەگرن و هەرەکتانە کە دراوەکانی پێ دەرهێنن ، گەر بڕی تۆمارکراوەیێک NULL [^1 ]بێت، ئیمکانی هەیە کە دەرئەنجامی گەڕانەوە لە بنکەدراوە ڕاست دەرنەچێت.بۆ پێشگیری لەم جۆرە کێشانە دەبێ ئیشکردن و بەڕێوەبردنی بڕیکانی NULL لە MYSQL فێر بن.</p>
+<h3 id="بڕەکانی-null-لە-mysql">بڕەکانی NULL لە MySQL</h3>
+<p>لەم بابەتە ئێوە لەگەڵ فەرمانەکانی چاودێری NULL لە MYSQL ئاشنا دەکەین.بۆ ئەم مەبەستە سێ کردەگەر لە MYSQL بوونی هەیە:</p>
+<ul>
+<li>IS NULL :ئەم کردەگەرە کاتێک کە خانە بڕی NULLــی هەبێت، TRUE دەگەڕێنێتەوە.</li>
+<li>IS NOT NULL : ئەم کردەگەرە لە کاتیک کە خانە بڕی NULLــی نەبێت، TRUE دەگەڕێنێتەوە.</li>
+<li>⇔ :بڕی دوو خانە بەیەکەوە هەڵدەگرسێنێت گەر دوو بڕەکە NULL بن، TRUE دەگەڕێنێتەوە.</li>
+</ul>
+<p>ئاگادار بن کە بۆ تاقیکردنەوەی NULL بوونی یەک خانە ناتوانرێت شێوازەکانی وەک : <strong>= NULL</strong> یا <strong>!= NULL</strong> بەکاربهێنین؛ گەر بەکاری بهێنن هەڵەتان پیشان دەدا.</p>
+<h3 id="بەکارهێنانی-بڕەکانی-null-لە-هێڵێ-فەرمان">بەکارهێنانی بڕەکانی NULL لە هێڵێ فەرمان</h3>
+<p>گریمانە کە خشتەیەکمان هەیە بە ناوی <strong>tcount_tbl</strong> کە لە بنکە دراوەی TUTORIALS جێگیرکراوە. هەروەها ئەم خشتە بریتییە لە دوو خانە بە ناوەکانی <strong>tutorial_author</strong> و <strong>tutorial_count</strong> .
+<strong>نمونەی ١ :</strong>
+ئەم نمونە ڕچاو بگرن :</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">root</span><span class="o">@</span><span class="k">host</span><span class="o">#</span> <span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span> <span class="n">password</span><span class="p">;</span>
+<span class="n">Enter</span> <span class="n">password</span><span class="p">:</span><span class="o">*******</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">use</span> <span class="n">TUTORIALS</span><span class="p">;</span>
+<span class="k">Database</span> <span class="n">changed</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">create</span> <span class="k">table</span> <span class="n">tcount_tbl</span>
+   <span class="o">-&gt;</span> <span class="p">(</span>
+   <span class="o">-&gt;</span> <span class="n">tutorial_author</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+   <span class="o">-&gt;</span> <span class="n">tutorial_count</span>  <span class="nb">INT</span>
+   <span class="o">-&gt;</span> <span class="p">);</span>
+<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">05</span> <span class="n">sec</span><span class="p">)</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">tcount_tbl</span>
+   <span class="o">-&gt;</span> <span class="p">(</span><span class="n">tutorial_author</span><span class="p">,</span> <span class="n">tutorial_count</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="s1">&#39;mahran&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">tcount_tbl</span>
+   <span class="o">-&gt;</span> <span class="p">(</span><span class="n">tutorial_author</span><span class="p">,</span> <span class="n">tutorial_count</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="s1">&#39;mahnaz&#39;</span><span class="p">,</span> <span class="k">NULL</span><span class="p">);</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">tcount_tbl</span>
+   <span class="o">-&gt;</span> <span class="p">(</span><span class="n">tutorial_author</span><span class="p">,</span> <span class="n">tutorial_count</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="s1">&#39;Jen&#39;</span><span class="p">,</span> <span class="k">NULL</span><span class="p">);</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">tcount_tbl</span>
+   <span class="o">-&gt;</span> <span class="p">(</span><span class="n">tutorial_author</span><span class="p">,</span> <span class="n">tutorial_count</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="s1">&#39;Gill&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tcount_tbl</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">-----------------+----------------+
+</span><span class="c1"></span><span class="o">|</span> <span class="n">tutorial_author</span> <span class="o">|</span> <span class="n">tutorial_count</span> <span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------------+----------------+
+</span><span class="c1"></span><span class="o">|</span>     <span class="n">mahran</span>      <span class="o">|</span>       <span class="mi">20</span>       <span class="o">|</span>
+<span class="o">|</span>     <span class="n">mahnaz</span>      <span class="o">|</span>      <span class="k">NULL</span>      <span class="o">|</span>
+<span class="o">|</span>      <span class="n">Jen</span>        <span class="o">|</span>      <span class="k">NULL</span>      <span class="o">|</span>
+<span class="o">|</span>     <span class="n">Gill</span>        <span class="o">|</span>       <span class="mi">20</span>       <span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------------+----------------+
+</span><span class="c1"></span><span class="mi">4</span> <span class="k">rows</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span>
+</code></pre></div><p>دەتوانن چاوی لێبکەن کە کردەگەرەکان <strong>=</strong> و <strong>!=</strong> بۆ تاقیکردنەوەی بڕەکانی NULL کارامە نییە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">tcount_tbl</span> <span class="k">WHERE</span> <span class="n">tutorial_count</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">;</span>
+<span class="n">Empty</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">tcount_tbl</span> <span class="k">WHERE</span> <span class="n">tutorial_count</span> <span class="o">!=</span> <span class="k">NULL</span><span class="p">;</span>
+<span class="n">Empty</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
+</code></pre></div><p>بۆ پەیداکردنی تۆمارکراوەکانی خانەی tutorial_count کە بڕی NULL ـیان هەبێ یان نە، دەتوانن بەم شێوازە کۆد بنووسن:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">tcount_tbl</span> 
+   <span class="o">-&gt;</span> <span class="k">WHERE</span> <span class="n">tutorial_count</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">-----------------+----------------+
+</span><span class="c1"></span><span class="o">|</span> <span class="n">tutorial_author</span> <span class="o">|</span> <span class="n">tutorial_count</span> <span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------------+----------------+
+</span><span class="c1"></span><span class="o">|</span>     <span class="n">mahnaz</span>      <span class="o">|</span>      <span class="k">NULL</span>      <span class="o">|</span>
+<span class="o">|</span>      <span class="n">Jen</span>        <span class="o">|</span>      <span class="k">NULL</span>      <span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------------+----------------+
+</span><span class="c1"></span><span class="mi">2</span> <span class="k">rows</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tcount_tbl</span> 
+   <span class="o">-&gt;</span> <span class="k">WHERE</span> <span class="n">tutorial_count</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">-----------------+----------------+
+</span><span class="c1"></span><span class="o">|</span> <span class="n">tutorial_author</span> <span class="o">|</span> <span class="n">tutorial_count</span> <span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------------+----------------+
+</span><span class="c1"></span><span class="o">|</span>     <span class="n">mahran</span>      <span class="o">|</span>       <span class="mi">20</span>       <span class="o">|</span>
+<span class="o">|</span>     <span class="n">Gill</span>        <span class="o">|</span>       <span class="mi">20</span>       <span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------------+----------------+
+</span><span class="c1"></span><span class="mi">2</span> <span class="k">rows</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+</code></pre></div><h3 id="بەڕێوەبردنی-بڕەکانی-null-لە-زمانی-php">بەڕێوەبردنی بڕەکانی NULL لە زمانی PHP</h3>
+<p>بۆ بەڕێوەبردنی بڕەکانی NULL لە زمانی PHP دەتوانن چوارچێوەی مەرجی if…else بەکاربێنن.
+<strong>نمونەی ٢ :</strong> نمونەی خوارەوە tutorial_count لە دەرەوە دەگرن ئینجا لەگەڵ بڕ و نرخی<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>نێو خشتەکە هەڵدەسەنگێنن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+   <span class="nv">$dbhost</span> <span class="o">=</span> <span class="s1">&#39;localhost:3036&#39;</span><span class="p">;</span>
+   <span class="nv">$dbuser</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span><span class="p">;</span>
+   <span class="nv">$dbpass</span> <span class="o">=</span> <span class="s1">&#39;rootpassword&#39;</span><span class="p">;</span>
+   <span class="nv">$conn</span> <span class="o">=</span> <span class="nx">mysql_connect</span><span class="p">(</span><span class="nv">$dbhost</span><span class="p">,</span> <span class="nv">$dbuser</span><span class="p">,</span> <span class="nv">$dbpass</span><span class="p">);</span>
+ 
+   <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="nv">$conn</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Could not connect: &#39;</span> <span class="o">.</span> <span class="nx">mysql_error</span><span class="p">());</span>
+   <span class="p">}</span>
+ 
+   <span class="k">if</span><span class="p">(</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$tutorial_count</span> <span class="p">))</span> <span class="p">{</span>
+      <span class="nv">$sql</span> <span class="o">=</span> <span class="s1">&#39;SELECT tutorial_author, tutorial_count
+</span><span class="s1">         FROM  tcount_tbl
+</span><span class="s1">         WHERE tutorial_count = $tutorial_count&#39;</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nv">$sql</span> <span class="o">=</span> <span class="s1">&#39;SELECT tutorial_author, tutorial_count
+</span><span class="s1">         FROM  tcount_tbl
+</span><span class="s1">         WHERE tutorial_count IS $tutorial_count&#39;</span><span class="p">;</span>
+   <span class="p">}</span>
+ 
+   <span class="nx">mysql_select_db</span><span class="p">(</span><span class="s1">&#39;TUTORIALS&#39;</span><span class="p">);</span>
+   <span class="nv">$retval</span> <span class="o">=</span> <span class="nx">mysql_query</span><span class="p">(</span> <span class="nv">$sql</span><span class="p">,</span> <span class="nv">$conn</span> <span class="p">);</span>
+    
+   <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="nv">$retval</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Could not get data: &#39;</span> <span class="o">.</span> <span class="nx">mysql_error</span><span class="p">());</span>
+   <span class="p">}</span>
+ 
+   <span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nx">mysql_fetch_array</span><span class="p">(</span><span class="nv">$retval</span><span class="p">,</span> <span class="nx">MYSQL_ASSOC</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">echo</span> <span class="s2">&#34;Author:</span><span class="si">{</span><span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;tutorial_author&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">  &lt;br&gt; &#34;</span><span class="o">.</span>
+         <span class="s2">&#34;Count: </span><span class="si">{</span><span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;tutorial_count&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &lt;br&gt; &#34;</span><span class="o">.</span>
+         <span class="s2">&#34;--------------------------------&lt;br&gt;&#34;</span><span class="p">;</span>
+   <span class="p">}</span> 
+   <span class="k">echo</span> <span class="s2">&#34;Fetched data successfully</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">;</span>
+   <span class="nx">mysql_close</span><span class="p">(</span><span class="nv">$conn</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="err">
+</span></code></pre></div><hr>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>value <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+           <div class="article-container">
+<script src="https://utteranc.es/client.js"
+repo="qezwan/blog"
+issue-term="pathname"
+label="Qezwan.ir"
+theme="boxy-light"
+crossorigin="anonymous"
+async>
+</script>
+</div>
+	
+          <script type="text/javascript">
+           (function(w,d,v3){
+            w.chaportConfig = {
+            appId : '5fad689fa3357e3317fe56fa'
+            };
+
+            if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+          </script>
+      
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-115800084-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+<a href="https://bit.ly/3pEQXFA" target="_blank" rel="noopener"><img src="https://img.icons8.com/material-outlined/18/000000/copyleft.png"/></a>
+        
+
+            
+       
+ </br>
+<nav1>
+
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/mysql" target="_blank">#Mysql(32)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C" target="_blank">#ئێلێمێنتری(17)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95" target="_blank">#سەرچاوەکراوە(26)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95" target="_blank">#ڕاژە(31)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3" target="_blank">#گنو/لینوکس(31)</a>
+                
+</nav1>
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+

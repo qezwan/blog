@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on Qezwan</title>
+    <link>https://qezwan.ir/mysql/</link>
+    <description>Recent content in mysql on Qezwan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 19 Aug 2020 20:29:37 -0700</lastBuildDate><atom:link href="https://qezwan.ir/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>پێشنیازێک لە سەر بنکەدراوەی MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95%DB%8C_mysql/</link>
+      <pubDate>Thu, 16 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95%DB%8C_mysql/</guid>
+      <description>پپێشەکی:
+بنکەدراوە بەرنامەیێکی جیاوازە بۆ پاشکەوتی کۆی زانیارییەکانە. هەر بنکەدراوەیێک دانەیێک یا چەندین APIـی جیاوازی بۆ دروستکردن، دەستپێگەیشتن، بەرێوەبردن، گەڕان و دووپاتکردنی زانیاری لە خۆی جێگیر کردووە.زۆر یەک لە بەرنامەکانی پاشکەوتی زانیاری دەتوانن بە شێوازی بڕگە ، زانیارییەکان وەک فایل سیستەم یا کەڵە خشتەکانی هەش لە بیرگە دابین بکەن، بەڵام کۆکردنەوەی زانیارییەکان بەم جۆرە پاشکەوتکردنە، ئیشێکی ئاسان نییە. لە ئێستا دا ئێمە لە سیستەمی بەڕێوەبردنی بنکەدراوەی پێکەوەبەستراو1 بۆ پاشکەوت و بەڕێوەبردنی قەبارەیێک فرە لە زانیارییەکان بەکاردهێنین.</description>
+    </item>
+    
+    <item>
+      <title>قۆناغەکانی دامەزراندنی mysql</title>
+      <link>https://qezwan.ir/mysql/%D9%82%DB%86%D9%86%D8%A7%D8%BA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-mysql/</link>
+      <pubDate>Wed, 15 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D9%82%DB%86%D9%86%D8%A7%D8%BA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-mysql/</guid>
+      <description>پێشەکی بنکە دراوی MySQL دەتوانرێت لە سەر سیستەمەکانی کارگێڕی وەک ویندۆز، ماک و گنو/لینۆکس دامەزرێت.لێرە دامەزراندن بە شێوازی گشتی لە سەر ویندۆز و لینوکس فێر دەبین.
+قۆناغەکانی دامەزراندنی MySQL دامەزراندن لە سەر لینوکس پێشنیار کراوە بۆ دامەزراندن لە سەر لینوکس لە رێگەی RPM کردار بکرێت. بنکە دراوەیMySQL بریتییە لەم بەشانە:
+ MySQL : ڕاژەی بنکەدراوەی MySQL کە خشتەکان و دەستپێگەیشتنی بەکارێنەران بەڕێوە دەبا MySQL-client :بەرنامەی ڕاژەخوازی بەکارهێنەر کە بۆی هەیە لەگەڵ ڕاژە پەیوەندی بگرێت MySQL-devel :MySQLسوود دەگرن کتێبخانەیێک و سەردێرەکانی پەڕگەکانن کە کاتی وەرگێڕانی بەرنامەکانی دی لە  بنکەدراوەی</description>
+    </item>
+    
+    <item>
+      <title>بەڕێوەبردن لە بنکەدراوی MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%A8%DB%95%DA%95%DB%8E%D9%88%DB%95%D8%A8%D8%B1%D8%AF%D9%86-%D9%84%DB%95-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%8C-mysql/</link>
+      <pubDate>Tue, 14 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%A8%DB%95%DA%95%DB%8E%D9%88%DB%95%D8%A8%D8%B1%D8%AF%D9%86-%D9%84%DB%95-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%8C-mysql/</guid>
+      <description>پێشەکی لەم فێرکارییە لەگەڵ چەن کردار کە بریتین لە جێبەجیکردن، چوونەدەرەوە، ریکخستنە پێویستییەکان و کردارە ئەسڵییەکان لە MySQL ئاشنا دەبین.
+جێبەجیکردن و چوونەدەرەوە لە MySQL سەرەتا دەبێ ئاگادار بین کە MySQL server چالاکە واتە خەریک ئیشکردنە یان نە؛ بۆ ئەم مە بەستە دەتوانینی لە فەرمانی خوارەوە سوود بگرین:
+ps -ef | grep mysqld گەر MySql ، چالاک بێت ئێوە دەتوانن تەواو پرۆسەی پێرستکراوی MySql لە دەرئەنجامی فەرمانەکە ببینن. بەڵام گەر ڕاژەی MySql ناچالاک بێت دەتوانن بە فەرمانی خوارەوە جێبەجێ و وەگڕی بخەن</description>
+    </item>
+    
+    <item>
+      <title>MySQL لە رەستەسازی PHP</title>
+      <link>https://qezwan.ir/mysql/mysql-%D9%84%DB%95-%D8%B1%DB%95%D8%B3%D8%AA%DB%95%D8%B3%D8%A7%D8%B2%DB%8C-php/</link>
+      <pubDate>Mon, 13 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/mysql-%D9%84%DB%95-%D8%B1%DB%95%D8%B3%D8%AA%DB%95%D8%B3%D8%A7%D8%B2%DB%8C-php/</guid>
+      <description>پێشەکی ئێمە دەبێ داڕستەکانی ئەم بنکە دراوە دڵخوازە واتە MySQL لە گەڵ زمانەکانی دیکە بەتایبەت، زمانی PHP بزانین.ئەم زمانە یەکێک لە بەرچاوکراوترین و بەهێزترین زمانەکانی وێبە کە لە MySQL ـیش پاڵپشتی دەکاهەروەها زمانێکی سەرچاوەکراوە و خۆڕاییە. هەر بۆیە لەم زنجیرە فێرکارییانە هەڵو لە سەر ئەوەیە لە زمانی PHPێش سوود بگرین.
+ئاشنایی بنکە دراوەی MySQL لە داڕستانی PHP لە فۆنکشینەکانی PHP بۆ سوود وەرگرتن لە MySQL لە چوارچێوەی گشتی خوارەوە سوود دەبینین</description>
+    </item>
+    
+    <item>
+      <title>پەیوەندی بە بنکەدراوەی mysql</title>
+      <link>https://qezwan.ir/mysql/%D9%BE%DB%95%DB%8C%D9%88%DB%95%D9%86%D8%AF%DB%8C-%D8%A8%DB%95-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95%DB%8C-mysql/</link>
+      <pubDate>Sun, 12 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D9%BE%DB%95%DB%8C%D9%88%DB%95%D9%86%D8%AF%DB%8C-%D8%A8%DB%95-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95%DB%8C-mysql/</guid>
+      <description>پێشەکی لەزنجیرە فێرکاری بنکە دراوەی MYSQL، ئێمە فێر دەبین چۆن بە ڕستەکاری ئەسڵی، پەیوەندی بە بنکەدراوەی MySQL بگرین.
+ئاشنایی بە پەیوەندی بە بنکەدراوە لە MySQL ئێوە دەتوانن بە هێڵی فەرمان لە mysql زۆر بە ئاسانی بنکەدراوەی دڵخوازتان دروست بکەن. نمونە: لەم نمونە ئێوە دەتوانن زۆر بە سادەیی پەیوەندی بە ڕاژەکاری بنکە دراوە بگرن.
+[root@host]# mysql -u root -p Enter password:****** پاش فەرمانی MYSQL ئێوە دەتوانن هەر یەک لە فەرمانەکانی SQL بنووسن و جێبەجێی بکەن،پاش نووسینی کۆدەکەی سەرەوە ئێوە دەتوانن ئاکامی خوارەوە ببینن</description>
+    </item>
+    
+    <item>
+      <title>دروستکردنی بنکەدراوە لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%AF%D8%B1%D9%88%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-%D9%84%DB%95-mysql/</link>
+      <pubDate>Sat, 11 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%AF%D8%B1%D9%88%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی لە وانەکانی دیکەلەگەڵ داڕستانی ئەسڵی و چۆنیەتی پەیوەندی بە بنکەدراوەی MYSQL ئاشنا بووین، بەڵام ئەم پەیوەندییە کاتیک سوودی دەبێت کە، بنکەدراوەیێک پێشتر بوونی هەبێت. هەر بۆ ئەم مەبەستە پێویستمان بە دروستکردنی بنکەدراوەیێکی نوێیە.دروستکردنی بنکەدراوە لە MYSQL زۆر کارێکی سادەیە تەنها نەخشەیێکی تایبەت و کۆدەکانی SQL توانایی ئەنجامان دەبێت
+دروستکردنی بنکەدراوە بەmysqladmin بۆ دروستکردنی بنکە دراوە ئێوە پێویستان بە دەستپێگەیشتنی تایبەت بۆ سڕینەوە و دروستکردنی بنکەدراوەی MySQL هەیە. بەو مەرجە کە ئێوە توانایی دەستپێگەیشتنتان بە بەکارهێنەری root هەیە دەتوانن بە یارمەتی mysqladmin بنکەدراوەی خۆتان دروست بکەن.</description>
+    </item>
+    
+    <item>
+      <title>سڕینەوەی بنکەدراوەی MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%B3%DA%95%DB%8C%D9%86%DB%95%D9%88%DB%95%DB%8C-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95%DB%8C-mysql/</link>
+      <pubDate>Fri, 10 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%B3%DA%95%DB%8C%D9%86%DB%95%D9%88%DB%95%DB%8C-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95%DB%8C-mysql/</guid>
+      <description>پێشەکی لە بەرانبەر دروستکردنی بنکەدراوە کە لە وانەی پێشوو فێری بووین ، سڕینەوەی بنکەدراوەشمان دەبێ. زۆر جار بە هۆی جیاواز وەک بێ سوود بوون، دەتوانین بنکەدراوەکە بسڕینەوە؛ هەر لەم گۆشە دەبێ فێر بین چۆن ئەم کردارە ئەنجام بدەین.
+سڕینەوەی بنکەدراوە لێرە ئێمە دە دوو شێواز دەتوانین بکەدراوە لە MYSQL بسڕینەوە.تەنها ئێوە دەبێ ئاستی ئەم کارەتان ببێت واتە لە ئاستێک بن بۆ سڕینەوە و یان دروستکردنی بنکەدراوە. گریمانە ئێوە دەستپێگەیشتنتان بە بەکارهێنەری ROOT هەیە و دەتوانن بە نەخشەی mysqladmin بنکەدراوە بسڕنەوە.</description>
+    </item>
+    
+    <item>
+      <title>هەڵبژاردنی بنکەدراوەی MySQL</title>
+      <link>https://qezwan.ir/mysql/%D9%87%DB%95%DA%B5%D8%A8%DA%98%D8%A7%D8%B1%D8%AF%D9%86%DB%8C-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95%DB%8C-mysql/</link>
+      <pubDate>Thu, 09 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D9%87%DB%95%DA%B5%D8%A8%DA%98%D8%A7%D8%B1%D8%AF%D9%86%DB%8C-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95%DB%8C-mysql/</guid>
+      <description>پێشەکی تا ئێستا ئێمە بە دروستکردن،سڕینەوەی بنکە دراوە لە MYSQL ئاشنا بووین. ئێستا گەر چەندین بنکەدراوە لە MYSQL دروست بکەین دەبێ بۆ سڕینەوە یان دەستکاریان سەرەتا بنکەدراوە هەڵبژێرین.MYSQL فەرمان و نەخشەی پێویست بۆ هەڵبژاردنی هەر یەک لە بنکەدراوەکان، بۆ دەستکاری هەیە.ئەڵبەت هەر بنکەدراوە ناوێکی هەیە کە بۆ دەستپێگەیشتن سوودی لێدەگرین.
+هەڵبژاردنی بنکەدراوەی MYSQL بە هێڵی فەرمان کاتیک کە لە گەڵ ڕاژەیMYSQL پەیوەندی دەگرین، پێویستە کە بنکەدراوەییک هەڵبژێرین. بە هێڵی فەرمان بە ئاسانی پاش فەرمانی &amp;lt;mysql ئەم ئیشە جێبەجێ دەبێ.</description>
+    </item>
+    
+    <item>
+      <title>جۆری دراوەکان لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%AC%DB%86%D8%B1%DB%8C-%D8%AF%D8%B1%D8%A7%D9%88%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-mysql/</link>
+      <pubDate>Wed, 08 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%AC%DB%86%D8%B1%DB%8C-%D8%AF%D8%B1%D8%A7%D9%88%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی هەر بنکە دراوەیێک لە خشتەکان پێک هاتوون، هەر خشتێک1لە دێڕەکان2و ئەستوونەکان(بوار، خانه)3 کە دراوەکان یان زانیارییەکان لە خۆیان پاشکەوت دەکەن. جۆری ئەم دراوانە لە یەک جیاوازن، بەشێکیان لە جۆری ژمارەیین، بەشێکیان لە جۆری بەروار و کات و بەشێکی دیکە لە جۆری زنجیره‌نووسه4هەر قەبارەیێکی بۆ پاشکەوتی ئەم جۆرانە ئەندازەیێکی جیاوازیشیان لەگەڵ یەک هەیە.هەر بۆیە MYSQL رێگەتان دەدا کە جۆری ئەم ئەستوونانە بەدڵی خۆتان دابین بکەن و لە قەبارەی پەپکە و کرداری بنکەدراوەکەتان چاکسازی ئەنجام بدەن.</description>
+    </item>
+    
+    <item>
+      <title>دروستکردنی خشتەکان لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%AF%D8%B1%D9%88%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%AE%D8%B4%D8%AA%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-mysql/</link>
+      <pubDate>Tue, 07 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%AF%D8%B1%D9%88%D8%B3%D8%AA%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%AE%D8%B4%D8%AA%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی لە بەشەکانی پێش، زانیمان داڕستانەکان1و قۆناغەکانی دروستکردنی بنکەدراوە لە MYSQL چۆنە.هەروەها زانیمان کە دراوەکان2لە چوارچێوەی خانەکان 3لە بنکەدراوە پاشکەوت دەکرێن. لەم قۆناغە دەبێ فێر بین کە چۆن خشتەکان4لە گەڵ خانەکانی پێویستی دروست بکەین.خشتەکان وەک ماتریسێکی دوو ڕەهەندین کە لە بنکە دراوە، دراو یان زانیاری پاشکەوت کراوەی خۆیان وەک، چوارچێوەی پەڕە پانەکان5نیشان دەدەن.
+دروستکردنی خشتەکان پێش هەر شتێک ئێوە دەبێ بزانن کە بۆ دروستکردنی خشتە دەبێ وردەزانیاریەکانی خوارەوە دابین بکەن:</description>
+    </item>
+    
+    <item>
+      <title>سڕینەوەی خشت لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%B3%DA%95%DB%8C%D9%86%DB%95%D9%88%DB%95%DB%8C-%D8%AE%D8%B4%D8%AA-%D9%84%DB%95-mysql/</link>
+      <pubDate>Mon, 06 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%B3%DA%95%DB%8C%D9%86%DB%95%D9%88%DB%95%DB%8C-%D8%AE%D8%B4%D8%AA-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی سڕینەوەی خشتە لە بنکەدراوەیێک زۆر سادەیە بەڵام ئێوە دەبێ زۆر هۆشیار بن کە ئەم کردارە بە باشی ئەنجام بدەن.چوونکە ئەم کردارە واتە سڕینەو ئیتر ناگەڕێتەوە.
+ئاشنایی لەگڵ سڕینەوەی خشتەکان لە MYSQL داڕستانی ئەسڵێ بۆ سڕینەوی خشتەکان لە MYSQL بەم جۆرەیە کە لە نمونەی خوارەوە دەیبینین
+DROP TABLE table_name ; سڕینەوە بە هێڵی فەرمان سڕینەوەی خشتەکان بە یارمەتی هێڵی فەرمان لە بنکەدراوە بە جێبەجیکردنی فەرمانی DROP TABLE پێش &amp;lt;mysql، ئەنجام دەبێ.</description>
+    </item>
+    
+    <item>
+      <title>ئیش بە فەرمانی INSERT لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-insert-%D9%84%DB%95-mysql/</link>
+      <pubDate>Fri, 03 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-insert-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی بۆ تێخستن یان خزاندنی1دراوە لە خشتەیەکی MySQL ، دەتوانن سوود لە فەرمانی INSERT INTO لە SQL بگرن. ئێوە دەتوانن زانیاری بخەنە نێو خشتەی MYSQL بە نووسینی فەرمانەکەی سەرەوە پاش &amp;lt;mysql.
+فرمانی تێخستن لە MYSQL داڕستانی گشتی SQL بۆ فەرمانی INSERT INTO لە MYSQL بۆ مەبەستی تێخستنی دراوە لە خشتەیەکی MYSQL بەم جۆرەیە :
+INSERT INTO table_name ( field1, field2,...fieldN )VALUES( value1, value2,...valueN );بۆ تێخستنی دراوەکان بە ڕیزبەندیەکان دەبێ نرخەکان2، لە تەقەڵ یان جووت تەقەڵ3 (وەک &amp;ldquo;value&amp;rdquo;)جێگیر بکەین.</description>
+    </item>
+    
+    <item>
+      <title>ئیش بە فەرمانی SELECT لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-select-%D9%84%DB%95-mysql/</link>
+      <pubDate>Thu, 02 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-select-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی تا ئێستا لەگەڵ تێخستنی دراوە بۆ بنکەدراوەکان ئاشنا بووین. بەڵام گەر هەرەکمانە کە دراوەێێک لە خشتەیەک یان چەندین خشتە بپاڵیوین یان گەڕانی لەسەر ئەنجام بدەین دەبێ سەرەتا دراوە دیاریبکەین یان هەڵیبژێرین ئینجا هەناردەی بکەین.بۆ ئەم کردارانە بە فەرمانی SELECT لە MYSQL ئاشنا دەبین.هەرچەندە کە کرداری دیکە وەک دەستکاری، بەڕۆژکردن و سڕینەوەش جیبەجیدەکرێت بەڵام بۆ داهاتوو.
+فەرمانی SELECT لە MYSQL فەرمانی SQL SELECT بۆ کۆ کردنەوەیدراوەکان لە MYSQL بە کەڵکە.ئێوە دەتوانن ئەم فەرمانە لە mysql&amp;gt; prompt یان سکریپتێکی PHP دابین بکەن.</description>
+    </item>
+    
+    <item>
+      <title>ئیش بە فەرمانی مەرجی WHERE لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%85%DB%95%D8%B1%D8%AC%DB%8C-where-%D9%84%DB%95-mysql/</link>
+      <pubDate>Wed, 01 Aug 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%85%DB%95%D8%B1%D8%AC%DB%8C-where-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی لە وانەی پێش لەگەڵ فەرمانی SELECT بۆ دەرهێنانی دراوە لە بنکەدراوە فێر بووین. هەروەها بە کۆدەکانیش چۆنیەتی درهێنانی دراوە لە خشتەکان ئاماژەیان پێ کرا. بەڵام ئەمە سادەترین و ساکار ترین شێواز بوو زۆر جار ئێوە پێویستان بە دەرهێنانی بەشێک لە یەک یان چەند خشتەتان دەبێت؛ لەم حاڵەتانە ئێوە پێویستان بە فەرمانێکی مەرجی لە پاش فەرمانی SELECT هەیە.لەم بابەتە فێر دەبن کە ئێوە چۆن پێویستان بە فەرمانی مەرجی WHERE لە MYSQL بۆ دەرهێنانی دراوە هەیە.</description>
+    </item>
+    
+    <item>
+      <title>ئیش بە فەرمانی UPDATE لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-update-%D9%84%DB%95-mysql/</link>
+      <pubDate>Mon, 30 Jul 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-update-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی لە وانەی پێش لەگەڵ فەرمانی مەرجی WHERE ئاشنا بووین، وە ئاماژەمان کرد کە ئەم فەرمانە لە چوارچێوەی UPDATE یش زۆر سوودی لێدەگرین. فەرمانی UPDATE لە MYSQL بۆ دەستکاری و بەڕۆژ کردنی خانەکانی بژاردە لە خشتەکان لە MYSQL سوودی دەبێت.یەکێک لە فەرمانە ئاساییەکان توانایی دەستکاری بەشێک لە زانیاریی بەکارهێنەرانە.
+فەرمانی بەڕۆژکردن لە MYSQL چوارچێوەی فەرمانی UPDATE لە MYSQL بەم جۆرەیە
+UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause]  ئێوە دەتوانن یەک یان چەند خانە بە تەواوی بەڕۆژ بکەنەوە.</description>
+    </item>
+    
+    <item>
+      <title>ئیش بە فەرمانی DELETE لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-delete-%D9%84%DB%95-mysql/</link>
+      <pubDate>Fri, 29 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-delete-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی گەر ئێوە گەرەکتان بێت تۆمارکراوەکانی خشتەیێک MYSQL ،بسڕنەوە پێویستان بە فەرمانیێک SQL هەیە بەناوی DELETE FROM .ئەم فەرمانە پاش mysql&amp;gt; دەهێنن وە یا دەتوانن لە سکریپتی PHP بەکاری بهێنن.
+فەرمانی سڕینەوە لە MYSQL چوارچیوەی گشتی فەرمانی سڕینەوە لە SQL لە بنکە دراوەی MYSQL بەم جۆرەیە:
+DELETE FROM table_name [WHERE Clause]  ئێوە دەتوانن یەک یان چەند خانە بە تەواوی بسڕنەوە.ئەمەش کاتێکە کە مەرجی WHERE لە نێو فەرمان نەنووسرابێت. ئێوە دەتوانن هەر مەرجێک کە لە فەرمانی WHERE ئەنجامتان داوە لە چوارچیوەی DELETEـیش ئەنجامی بدەن.</description>
+    </item>
+    
+    <item>
+      <title>ئیش بە فەرمانی مەرجی LIKE لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%85%DB%95%D8%B1%D8%AC%DB%8C-like-%D9%84%DB%95-mysql/</link>
+      <pubDate>Thu, 28 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%85%DB%95%D8%B1%D8%AC%DB%8C-like-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی لە وانەکانی پێشوو لە گەڵ فەرمانی WHERE بۆ دیاریکردنی بەشێک تان گشت خانە(ـکان) و خشتە(_کان) لە بنکە دراوەی MySQL ئاشنا بووین.بەڵآم جاری واهەیە کە دەبێ بژاردەیێکی وردترمان بێت لە سەر دراوەکان، بۆ نمونە گەرەکمانە تۆمارکراوەیەک کە پیتی یەکەمیان یان چەندین پیتیان هاوشێوەن پەیدایان بکەین یان بیان پاڵێوین؛ بەئەمەش لە فەرمانی مەرجی LIKE لە MySQL سوود دەگرین.
+فەرمانی LIKE بنکەدراوەی MYSQL  فەرمانی WHERE کرداری کردەگەرەکان1وەک = کارا دەکا؛ئینجا تەواو بڕەکانی خانەیەک هاوئاهەنگ دەکا.</description>
+    </item>
+    
+    <item>
+      <title>ریزکردنی ئاکامە و دەرئەنجام لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%B1%DB%8C%D8%B2%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%A6%D8%A7%DA%A9%D8%A7%D9%85%DB%95-%D9%88-%D8%AF%DB%95%D8%B1%D8%A6%DB%95%D9%86%D8%AC%D8%A7%D9%85-%D9%84%DB%95-mysql/</link>
+      <pubDate>Wed, 27 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%B1%DB%8C%D8%B2%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-%D8%A6%D8%A7%DA%A9%D8%A7%D9%85%DB%95-%D9%88-%D8%AF%DB%95%D8%B1%D8%A6%DB%95%D9%86%D8%AC%D8%A7%D9%85-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی تا ئێستا لە وانەکانی ڕابردوو فەرمانەکانی سڕینەوە، بەڕۆژکردن، هەڵبژاردن دەستکاریکردنی خشتەکانی MYSQL ـیان جیبەجێ دەکرد. دەرئەنجامی ئەم فەرمانانە بە شیوازێک دەکەونە بەرچاو کە هیچ ریزێکیان نییە.کاتێک ئێوە گەرەکتانە کە دەرئەنجامی داوایێک بە ریزبەندیێکی تایبەت وەربگرن، دەتوانن لە فەرمانی ORDER BY لە MySQL سوود بگرن.
+ریزبەندی دەرئەنجامەکان لە MYSQL داڕستانی گشتی فەرمانی ORDER BY بۆ ریزبەندی دەرئەنجامەکان1لە MYSQL بۆ دەرهێنانی دراوەکان بەم شێوەیەیە:
+SELECT field1, field2,...fieldN table_name1, table_name2... ORDER BY field1, [field2.</description>
+    </item>
+    
+    <item>
+      <title>ئیش بە فەرمانی JOIN لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-join-%D9%84%DB%95-mysql/</link>
+      <pubDate>Tue, 26 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%A6%DB%8C%D8%B4-%D8%A8%DB%95-%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-join-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی لە کاتی ئاسایی و لە فەرمانێکی SQL، ئێمە تنها دەمانتوانیی لە دراوەکانی هەبوو لە خشتەیەک ئیش بکەین. بەڵام بۆ دیاریکردن و دەستکاری هاوکاتی دراوەکانی چەند خشتە لەیەک فەرمانی SQL ریگایێکی زۆر سادەیە هەیە، ئەوەس سوود وەرگرتن لە فەرمانی JOIN لە MYSQL ــە.ئەم فەرمانە ئیمکانی هەڵبژاردنی چەندین خشتە بە هێڵێکی کۆدی SQL دەدا.
+فەرمانی JOIN لە SQL ئێوە دەتوانن لە فەرمانی JOIN لە MYSQL لە فەرمانەکانی UPDATE, SELECT و DELETE بۆ دەستکاری هاوکاتی چەندین خشتە سوود بگرن.</description>
+    </item>
+    
+    <item>
+      <title>ژمارەکانی NULL لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%DA%98%D9%85%D8%A7%D8%B1%DB%95%DA%A9%D8%A7%D9%86%DB%8C-null-%D9%84%DB%95-mysql/</link>
+      <pubDate>Mon, 25 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%DA%98%D9%85%D8%A7%D8%B1%DB%95%DA%A9%D8%A7%D9%86%DB%8C-null-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی کاتێک ئێوە لە فەرمانە مەرجییەکان وەک WHERE سوود دەگرن و هەرەکتانە کە دراوەکانی پێ دەرهێنن ، گەر بڕی تۆمارکراوەیێک NULL [^1 ]بێت، ئیمکانی هەیە کە دەرئەنجامی گەڕانەوە لە بنکەدراوە ڕاست دەرنەچێت.بۆ پێشگیری لەم جۆرە کێشانە دەبێ ئیشکردن و بەڕێوەبردنی بڕیکانی NULL لە MYSQL فێر بن.
+بڕەکانی NULL لە MySQL لەم بابەتە ئێوە لەگەڵ فەرمانەکانی چاودێری NULL لە MYSQL ئاشنا دەکەین.بۆ ئەم مەبەستە سێ کردەگەر لە MYSQL بوونی هەیە:
+ IS NULL :ئەم کردەگەرە کاتێک کە خانە بڕی NULLــی هەبێت، TRUE دەگەڕێنێتەوە.</description>
+    </item>
+    
+    <item>
+      <title>کردەگەری Regexps لە MYSQL</title>
+      <link>https://qezwan.ir/mysql/%DA%A9%D8%B1%D8%AF%DB%95%DA%AF%DB%95%D8%B1%DB%8C-regexps-%D9%84%DB%95-mysql/</link>
+      <pubDate>Sun, 24 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%DA%A9%D8%B1%D8%AF%DB%95%DA%AF%DB%95%D8%B1%DB%8C-regexps-%D9%84%DB%95-mysql/</guid>
+      <description>&amp;hellip; بەم زووانە &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>رێککەوتنەکان(transaction) لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%B1%DB%8E%DA%A9%DA%A9%DB%95%D9%88%D8%AA%D9%86%DB%95%DA%A9%D8%A7%D9%86transaction-%D9%84%DB%95-mysql/</link>
+      <pubDate>Sat, 23 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%B1%DB%8E%DA%A9%DA%A9%DB%95%D9%88%D8%AA%D9%86%DB%95%DA%A9%D8%A7%D9%86transaction-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی توانایی transaction1لە MYSQL زنجیرە هەوڵێکە بەڕیزێک ڤۆ دەستکاری بنکەدراوەکان کە بەشێوازی یەکینە ئیشدەکا.بە ڕەستەیەکی دیکە، دەبێ هەر یەک لە قۆناغەکانی دەستکاری دراوەکانی بنکەدراوە بە دروستی ئەنجام ببێت.تا لە ئاکامی گشتی و کۆتایی بێ هەڵە ئیس بکا. ئەگینا گەر هەر کامێک لە پرۆسەکان لە هاوپۆلێک لە چوارچێوەی یەک پێناسە transaction، بە ئاکام نەگەیێت یان هەڵيی بێ، کۆتایی ئاکام بە هەڵە دەست پێدەکا.
+تایبەتمەندی transaction لە MYSQL یەک transaction بریتییەل لە ٤ تایبەتمەندی پێوەر، کە بە کورتەی ACID کورتدەبێتەوە:</description>
+    </item>
+    
+    <item>
+      <title>فەرمانی ALTER لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-alter-%D9%84%DB%95-mysql/</link>
+      <pubDate>Fri, 22 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D9%81%DB%95%D8%B1%D9%85%D8%A7%D9%86%DB%8C-alter-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی زۆر جار بە هۆکارێک، پێویستە کە ناوی خشتەیەک یان خانەیەک بگۆڕن یان هەمووی خشتەکان و خانەکان.هەروەها جاری وا هەیە کە گەرەکتانە خانە یان خانەکانی خشتەیەک بسڕنەوە یان بە خشتەیەک زیادی بکەن؛ بۆ ئەم مەبەستانە فەرمانی ALTER بەکار دەهێنن.
+فەرمانی ALTER لە MYSQL فەرمانی ALTER لە بنکەدراەی MYSQL بۆ هەر جۆرە گۆڕانکاریێک لە خشتەکان و خانەکان یان زیادکردن و سڕینەوەی خانەکان کاراییە هەیە. سەرەتا خشتەیەک بە ناوی testalter_tbl دروستدەکەین:
+root@host# mysql -u root -p password; Enter password:******* mysql&amp;gt; use TUTORIALS; Database changed mysql&amp;gt; create table testalter_tbl -&amp;gt; ( -&amp;gt; i INT, -&amp;gt; c CHAR(1) -&amp;gt; ); Query OK, 0 rows affected (0.</description>
+    </item>
+    
+    <item>
+      <title>INDEXــەکان لە MySQL</title>
+      <link>https://qezwan.ir/mysql/index%D9%80%D9%80%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-mysql/</link>
+      <pubDate>Thu, 21 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/index%D9%80%D9%80%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی بنکەدراوەی MYSQL چوارچێوەیەکی دراەی هەیە بە ناوی INDEX کە خێرایی کردار لە خشتەیەک چاکتر دەکا. دروستکردنی INDEX ـەکان لە MYSQL، لە یەک یان چەند خانە ئەنجام دەبێت.بنەمای دوودوویی بۆ گەڕانی خێرا و دەستگەیشتن بە دراوەکان جێبەجێ دەکا. کاتی دروستکردنی INDEX،دەبێ سەرنج بدەین کە تەواو خانەکان بۆ دروستکردنی داوا SQL و دروستکردنی یەک یان چەند INDEX لەو خانانە بەکاردەبرێن.لە ڕاستی INDEX جۆریک خشتەیە کە خانەی INDEX هەڵدەگرێت، وە ئاماژەیەک بە هەر یەک لە تۆمارکراوەکان خشتەەکان بوونی هەیە.</description>
+    </item>
+    
+    <item>
+      <title>خشتە کاتییەکان لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%AE%D8%B4%D8%AA%DB%95-%DA%A9%D8%A7%D8%AA%DB%8C%DB%8C%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-mysql/</link>
+      <pubDate>Wed, 20 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%AE%D8%B4%D8%AA%DB%95-%DA%A9%D8%A7%D8%AA%DB%8C%DB%8C%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی تا ئێستا لەگەڵ خشتە ئاساییەکان و دەستکارییان لە بنکەدراوەی MYSQL ئاشنا بووین.بێجگە لەوان دەتوانین لە خشتە کاتییەکان1لە MYSQL بۆ هەڵگرتنی دراوە کاتییەکانیش سوود بگرین، تەنها یەک خاڵ دەبێ ڕچاو بگرن ، کە بنکەدراوە خشتە کاتییەکان پاش تەواو بوونی خولێکی کاری2بەکارهێنەرانی ئێستاکە، دەیسڕێتەوە.
+خشتەکاتییەکان چیین ؟ خشتەکاتییەکان لە وشانی ٣،٢٣ لە MYSQL زیاد کران.گەر ئێوە لە وشانی کۆنەی MYSQL سوود دەگرن، ناتوانن لە خشتەکاتییەکان سوود بگرن، بەڵام دەتوانن لە خشتەکانی Heap کەڵک ببینن.</description>
+    </item>
+    
+    <item>
+      <title>خشتی Clone لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%AE%D8%B4%D8%AA%DB%8C-clone-%D9%84%DB%95-mysql/</link>
+      <pubDate>Tue, 19 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%AE%D8%B4%D8%AA%DB%8C-clone-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی جاری واهەیە کە پێتان خۆشە کە روونووسێکی هاوشێوەتان لە خشتەیەکی بنکەدراوەکەتان هەبێت، بۆ ئەم مەبەستە سود لە CREATE TABLE … SELECT ئامانجی ئێوە ناپێکێ.لەم بابەتە رێگایێکی سادە بۆ ڕوونووسی خشتەکانتان پێ دەڵێین. بەم ڕوونووسە Clone دەڵێن.
+ئاشنایی لەگەڵ خشتەکانی Clone لە MYSQL نمونەیەکی سادە دهێنینەوە کە فامی ئێوە رووناک بکات.بۆ ڕوونووسی تەواو لە خشتەیەک قۆناغەکانی خوارەوە بەوردی جێبەجی بکەن.
+ بە یارمەتی فەرمانی SHOW CREATE TABLE تەواو خشتەکانی نێو بنکە دراوە پێرست بکەن.</description>
+    </item>
+    
+    <item>
+      <title>زانیاری بنکەدراوە لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%B2%D8%A7%D9%86%DB%8C%D8%A7%D8%B1%DB%8C-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-%D9%84%DB%95-mysql/</link>
+      <pubDate>Mon, 18 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%B2%D8%A7%D9%86%DB%8C%D8%A7%D8%B1%DB%8C-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی تەواوی خشتەکان کە ئێوەبۆ پاشکەوتکردنی زانیاری(دراوە) لەMYSQL بەکاری دهێنن، لە بنکەدراوەیێکی یەکتا بوونی هەیە.زۆر جار نیازتان هەیە کە زانیاری دەربارەی خشتەکانی بنکەدراوە، دەرئەنجامی داواکانی بنکەدراوە یان ڕاژەکاری MYSQL بەدەست بهێنن. بۆ نمونە گەر هەرەکتان لە نێوان چەند خشتە لە بنکەدراوەی پەیوەندی دروست بکەن پێویستە تەواو خشتەکان بۆ دروستکردنی باشترین پەیوەندی چاو لێبکەن.
+زانیاری بنکەدراوە لە MYSQL ئێوە دەتوانن سێ جۆر زانیاری لە نێو بنکەدراوەکەتان هەبێ:
+ زانیاریەکان لە بارەی دەرئەنجامی Queryـەکان: بریتییە لە تۆمارکراوەکان کە بە فەرمانەکانی SELECT،UPDATE یا DELETE بەدەست هێندراوە.</description>
+    </item>
+    
+    <item>
+      <title>زنجیرەکان (sequence) لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%B2%D9%86%D8%AC%DB%8C%D8%B1%DB%95%DA%A9%D8%A7%D9%86-sequence-%D9%84%DB%95-mysql/</link>
+      <pubDate>Sat, 16 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%B2%D9%86%D8%AC%DB%8C%D8%B1%DB%95%DA%A9%D8%A7%D9%86-sequence-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی زنجیرەکان1لە MYSQL ، کۆی ژماره تەواوەکانن2١،٢،٣،…، کە بە مەبەستی داوا تایبەتییەکان دروستدەبن. زنجیرەکان زۆرتر لە بنکەدراوەکان بەکاردەهێنرێن. چونکە زۆر یەک لەپرۆگرامەکان نیازیان بە هەر دێڕێک لە خشتە بۆ هەبوونی بڕێکی تایبەت و یەکتا هەیە، لەم ڕوانگە خنجیرەکان رێگایێکی هاسان بۆ بەرهەمهێنانی زنجیرەکانە.
+ئیش بە زنجیرەکان لە MYSQL سودوەرگتن لە خانەی AUTO_INCREMENT سادەترین رێگا بۆ سودوەرگرتن لە زنجیرەکان لە MYSQL، ناساندنی یەک خانە لە جۆریAUTO_INCREMENTــە. نمونەی ١ لە نمونەی خوارەەوە لەگەڵ ژمارەیەک خانەی دروستکراوە و دواتر ژمارەیەک تۆمارکراوە بەو خانەیە زیاددەبێت.</description>
+    </item>
+    
+    <item>
+      <title>بەڕێوەبردنی بەشی دووپات لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D8%A8%DB%95%DA%95%DB%8E%D9%88%DB%95%D8%A8%D8%B1%D8%AF%D9%86%DB%8C-%D8%A8%DB%95%D8%B4%DB%8C-%D8%AF%D9%88%D9%88%D9%BE%D8%A7%D8%AA-%D9%84%DB%95-mysql/</link>
+      <pubDate>Fri, 15 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D8%A8%DB%95%DA%95%DB%8E%D9%88%DB%95%D8%A8%D8%B1%D8%AF%D9%86%DB%8C-%D8%A8%DB%95%D8%B4%DB%8C-%D8%AF%D9%88%D9%88%D9%BE%D8%A7%D8%AA-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی بە گشتی کۆی دەرئەنجامەکان یان خشتەکان بریتین لە دراوەی دووجارەکان.ئەمە لە زۆربەی کاتەکان ڕێپێدراوە. بەڵام زۆر جاریش دەبێ تۆمارکراوەی دووجار بوێستێنین. یان تۆمارکراوەی دووجار بناسین و بیانسڕینەوە.
+بەڕێوەبردنی دووپاتکراوەکان لە MYSQL دەتوانرێت لە کلیلێلی ئەسڵی و INDEXــێکی یەکتا لە خشتەیەک بە خانەی گونجاو بۆ وێستاننی تۆمارکراوەکان بەکاربهێنین. خشتەی خوارەوە بریتیی لە INDEX یان کلیلی ئەسڵێ نییە. هەر بۆیە رێگەدراوە کە دراوەی دووپاتکراوە لە first_name و last_name تۆماربکرێت.
+CREATE TABLE person_tbl ( first_name CHAR(20), last_name CHAR(20), sex CHAR(10) ); بۆ بەرگیری لە تۆمارکراوەکانی دووجار لە کلیلێلی ئەسڵی بۆ ناساندنی سوود دەگرین.</description>
+    </item>
+    
+    <item>
+      <title>وشاندن بە بنکەدراوە (SQL Injection) لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D9%88%D8%B4%D8%A7%D9%86%D8%AF%D9%86-%D8%A8%DB%95-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-sql-injection-%D9%84%DB%95-mysql/</link>
+      <pubDate>Thu, 14 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D9%88%D8%B4%D8%A7%D9%86%D8%AF%D9%86-%D8%A8%DB%95-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-sql-injection-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی لە زۆر یەک لە ماڵپەڕەکان پەڕەیەک بە ناوی چوونەژوور1،بۆ دڵنیابوونی چوونەژووری بەکارهێنەران دروستدەکرێت.لەم پەڕانە زانیرای بەکارهێنەران وەردەگیرێت و لە لای ڕاژەکار لەگەڵ زانیارییەکانی بنکەدراوە هەڵدەسەنگێت.لەم کاتانە ئەگەری هێرشەکانی SQL Injection، یا وشاندنی بنکەدراوە لە لایەن هاککەرەکان هەیە.ئەکامی بڵاو بوونی دراوە پاشکەوتکراوەکانی بنکەدراوەیە.لەم بابەتە باسیک لە بەرگیری لەم جۆرە هێرشانەمان کردووە.
+ئاشنایی لە SQL Injection لە بنکەدراوەی MYSQL وشاندن بە بنکەدراوە لە MYSQL زۆرتر کاتی وەرگرتنی زانیاری لە بەکارهێنەر روودەدا.بۆ برگیری لە لە MYSQL دەبێ لە سەمبۆلێکی دڵنیایی بەرامبەری2سوود بگرین.</description>
+    </item>
+    
+    <item>
+      <title>هەناردەکردنی( Export) بنکەدراوە لە MySQL</title>
+      <link>https://qezwan.ir/mysql/%D9%87%DB%95%D9%86%D8%A7%D8%B1%D8%AF%DB%95%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-export-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-%D9%84%DB%95-mysql/</link>
+      <pubDate>Tue, 12 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D9%87%DB%95%D9%86%D8%A7%D8%B1%D8%AF%DB%95%DA%A9%D8%B1%D8%AF%D9%86%DB%8C-export-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-%D9%84%DB%95-mysql/</guid>
+      <description>پێشەکی زۆر جارئەگەریی هەیە کە گەرەکتان بێت پرۆژە یان بەرنامەی خۆتان لە سەر سیستەمێکی دیکە جێبەجی یا پەرەی پێبدەن.لەم کاتانە بێجگە لە خودی بەرنامەکە دەبێ دراوەکانی بنکەدراوەکەتان هەناردە1) بکەن ئینجا لە بنکەدراوەی دیکە هاوردەی بکەن.لەم بابەتە باس لە سەر هەناردە کردنی بنکەدراوەکان لە بنکەدراوەیێک بۆ بنکە دراوەیێکی دیکە دەکەین.
+هەناردە کردنی بنکەدراوەی MYSQL بە SELECT…INTO OUTFILE ساکارترین شێواز بۆ هەناردەکردنی دراوەکانی بنکەدراوە بە بڕگەیێکی دەقی، سوودوەرگرتن لە فەرمانی SELECT…INTO OUTFILE ــە.</description>
+    </item>
+    
+    <item>
+      <title>هاوردەکردنی(Import) بنکەدراوە لەMySQL</title>
+      <link>https://qezwan.ir/mysql/%D9%87%D8%A7%D9%88%D8%B1%D8%AF%DB%95%DA%A9%D8%B1%D8%AF%D9%86%DB%8Cimport-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-%D9%84%DB%95mysql/</link>
+      <pubDate>Mon, 11 Jun 2018 05:35:45 +0000</pubDate>
+      
+      <guid>https://qezwan.ir/mysql/%D9%87%D8%A7%D9%88%D8%B1%D8%AF%DB%95%DA%A9%D8%B1%D8%AF%D9%86%DB%8Cimport-%D8%A8%D9%86%DA%A9%DB%95%D8%AF%D8%B1%D8%A7%D9%88%DB%95-%D9%84%DB%95mysql/</guid>
+      <description>پێشەکی لە بابەتی پێش باسێکمان لە جۆرەکانی هەناردە1کردنی بنکەدراوەکەمان کرد.پاش ئەم کارە ئێوە دەبێ بزانن کە چۆن دراوەکانی بنکەدراوەیێکی دیکە چ لە نێو خشتە بێت چ لە نێو خانەیەکی تایبەت، هاوردەی بنکەدراوەی دڵخوازتان بکەن. لەم بابەتە باس لە سەر هاوردەکردنی2دراوەکان دەکەین.
+هاوردەکردنی بنکەدراوەکان لە MYSQL چەند شێواز بۆ ئەم مەبەستە دەتوانین پەیدا بکەین کە لێرە ئاماژەیان پێدەکەین:
+شێوازی یەکەم :هاوردەکردنی بنکەدراوە بە یارمەتیLOAD DATA بنکەدراوەی MySQL فەرمانی LOAD DATA بە عینوانی Loader دراوەیێیک گەورە جێبەجێ دەکا.</description>
+    </item>
+    
+  </channel>
+</rss>

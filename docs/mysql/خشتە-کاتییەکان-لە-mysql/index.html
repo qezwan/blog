@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="پێشەکی تا ئێستا لەگەڵ خشتە ئاساییەکان و دەستکارییان لە بنکەدراوەی MYSQL ئاشنا بووین.بێجگە لەوان دەتوانین لە خشتە کاتییەکان1لە MYSQL بۆ هەڵگرتنی دراوە کاتییەکانیش سوود بگرین، تەنها یەک خاڵ دەبێ ڕچاو بگرن ، کە بنکەدراوە خشتە کاتییەکان پاش تەواو بوونی خولێکی کاری2بەکارهێنەرانی ئێستاکە، دەیسڕێتەوە.
+خشتەکاتییەکان چیین ؟ خشتەکاتییەکان لە وشانی ٣،٢٣ لە MYSQL زیاد کران.گەر ئێوە لە وشانی کۆنەی MYSQL سوود دەگرن، ناتوانن لە خشتەکاتییەکان سوود بگرن، بەڵام دەتوانن لە خشتەکانی Heap کەڵک ببینن.">
+
+<meta property="og:title" content="خشتە کاتییەکان لە MySQL" />
+<meta property="og:description" content="پێشەکی تا ئێستا لەگەڵ خشتە ئاساییەکان و دەستکارییان لە بنکەدراوەی MYSQL ئاشنا بووین.بێجگە لەوان دەتوانین لە خشتە کاتییەکان1لە MYSQL بۆ هەڵگرتنی دراوە کاتییەکانیش سوود بگرین، تەنها یەک خاڵ دەبێ ڕچاو بگرن ، کە بنکەدراوە خشتە کاتییەکان پاش تەواو بوونی خولێکی کاری2بەکارهێنەرانی ئێستاکە، دەیسڕێتەوە.
+خشتەکاتییەکان چیین ؟ خشتەکاتییەکان لە وشانی ٣،٢٣ لە MYSQL زیاد کران.گەر ئێوە لە وشانی کۆنەی MYSQL سوود دەگرن، ناتوانن لە خشتەکاتییەکان سوود بگرن، بەڵام دەتوانن لە خشتەکانی Heap کەڵک ببینن." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/mysql/%D8%AE%D8%B4%D8%AA%DB%95-%DA%A9%D8%A7%D8%AA%DB%8C%DB%8C%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-mysql/" />
+<meta property="article:published_time" content="2018-06-20T05:35:45+00:00" />
+<meta property="article:modified_time" content="2018-06-20T05:35:45+00:00" />
+
+
+
+<title>
+
+
+     خشتە کاتییەکان لە MySQL 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/mysql/%D8%AE%D8%B4%D8%AA%DB%95-%DA%A9%D8%A7%D8%AA%DB%8C%DB%8C%DB%95%DA%A9%D8%A7%D9%86-%D9%84%DB%95-mysql/">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115800084-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115800084-1');
+</script>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-20%2000%3a24%3a44.1926778%20%2b0330%20%2b0330%20m%3d%2b1.855002301">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-20%2000%3a24%3a44.1926778%20%2b0330%20%2b0330%20m%3d%2b1.855002301">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-20%2000%3a24%3a44.1926778%20%2b0330%20%2b0330%20m%3d%2b1.855002301">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-20%2000%3a24%3a44.1926778%20%2b0330%20%2b0330%20m%3d%2b1.855002301">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-learn"><a href="https://qezwan.ir/learn/"><span>مەنجەڵ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+               
+            </nav>
+
+
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+       
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    خشتە کاتییەکان لە MySQL
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir"></a></div>
+                </div>
+                <div class="meta">
+
+                    
+                    <div class="date" title='Wed Jun 20 2018 05:35:45 UTC'>Jun 20, 2018</div>
+                    
+                    
+		   <div class="reading-time"><div class="middot"></div>3 خولەک<div class="middot"></div>427 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/mysql">mysql</a>
+                  
+                  </div><div class="middot"></div>هاوبەشی بکە:
+
+  
+  
+  
+
+
+  
+   
+    <ul class="share-icons">
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?hashtags=قەزوان&amp;url=https%3a%2f%2fqezwan.ir%2fmysql%2f%25D8%25AE%25D8%25B4%25D8%25AA%25DB%2595-%25DA%25A9%25D8%25A7%25D8%25AA%25DB%258C%25DB%258C%25DB%2595%25DA%25A9%25D8%25A7%25D9%2586-%25D9%2584%25DB%2595-mysql%2f&amp;text=%d8%ae%d8%b4%d8%aa%db%95%20%da%a9%d8%a7%d8%aa%db%8c%db%8c%db%95%da%a9%d8%a7%d9%86%20%d9%84%db%95%20MySQL" target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 32 32" height="16px" id="Layer_1" version="1.0" viewBox="0 0 32 32" width="16px" xml:space="preserve"><path d="M31.993,6.077C30.816,6.6,29.552,6.953,28.223,7.11c1.355-0.812,2.396-2.098,2.887-3.63  c-1.269,0.751-2.673,1.299-4.168,1.592C25.744,3.797,24.038,3,22.149,3c-3.625,0-6.562,2.938-6.562,6.563  c0,0.514,0.057,1.016,0.169,1.496C10.301,10.785,5.465,8.172,2.227,4.201c-0.564,0.97-0.888,2.097-0.888,3.3  c0,2.278,1.159,4.286,2.919,5.464c-1.075-0.035-2.087-0.329-2.972-0.821c-0.001,0.027-0.001,0.056-0.001,0.082  c0,3.181,2.262,5.834,5.265,6.437c-0.55,0.149-1.13,0.23-1.729,0.23c-0.424,0-0.834-0.041-1.234-0.117  c0.834,2.606,3.259,4.504,6.13,4.558c-2.245,1.76-5.075,2.811-8.15,2.811c-0.53,0-1.053-0.031-1.566-0.092  C2.905,27.913,6.355,29,10.062,29c12.072,0,18.675-10.001,18.675-18.675c0-0.284-0.008-0.568-0.02-0.85  C30,8.55,31.112,7.395,31.993,6.077z" fill="#55ACEE"/><g/><g/><g/><g/><g/><g/></svg>
+          
+          </a>
+      </li></ul>
+      
+
+
+
+
+                    
+                </div>
+            </div>
+            <div class="content"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#پێشەکی">پێشەکی</a></li>
+        <li><a href="#خشتەکاتییەکان-چیین-">خشتەکاتییەکان چیین ؟</a></li>
+        <li><a href="#سڕینەوەی-خشتەی-کاتی">سڕینەوەی خشتەی کاتی</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            <div style="width: 95%;" class="markdown">
+               
+    
+            
+                <h3 id="پێشەکی">پێشەکی</h3>
+<p>تا ئێستا لەگەڵ خشتە ئاساییەکان و دەستکارییان لە بنکەدراوەی MYSQL ئاشنا بووین.بێجگە لەوان دەتوانین لە خشتە کاتییەکان<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>لە MYSQL بۆ هەڵگرتنی دراوە کاتییەکانیش سوود بگرین، تەنها یەک خاڵ دەبێ ڕچاو بگرن ، کە بنکەدراوە خشتە کاتییەکان پاش تەواو بوونی خولێکی کاری<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>بەکارهێنەرانی ئێستاکە، دەیسڕێتەوە.</p>
+<h3 id="خشتەکاتییەکان-چیین-">خشتەکاتییەکان چیین ؟</h3>
+<p>خشتەکاتییەکان لە وشانی ٣،٢٣ لە MYSQL زیاد کران.گەر ئێوە لە وشانی کۆنەی MYSQL سوود دەگرن، ناتوانن لە خشتەکاتییەکان سوود بگرن، بەڵام دەتوانن لە خشتەکانی <strong>Heap</strong> کەڵک ببینن.
+هەر وا کە ئاماژەمان پێکرد خشتە کاتییەکان تەنها تا کۆتایی خولی کاری لە ئاڕادایە، بەردەوام دەبێت.کاتیک کە سکریپتەکانی PHP جێبەجێدەبێت، کاتێک کە جێبەجیکردنی PHP تەواو دەبێت، خشتەی کاتیش تەواو دەبێت.
+گەر بە ڕاژەی MYSQL لە ڕێگای ڕاژەخوازی MYSQL پەیوەندی دەگرن، دەبێ خشتە کاتییەکان دەستی بسڕنەوە.یان کاتێک کە خولی کاری تەواو دەبێت دەسڕێتەوە.
+<strong>نمونە</strong>
+بەرنامەی خوارەوە نمونەی ساکارە بۆ چۆنیەتی سوود وەرگرتن لە خشتەکانی کاتی .
+ئەم خشتە دەتوانرێت لە چوارچێوەی <strong>() mysql_query</strong> لە PHP بەکاربهێنین:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">SalesSummary</span> <span class="p">(</span>
+   <span class="o">-&gt;</span> <span class="n">product_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span>
+   <span class="o">-&gt;</span> <span class="p">,</span> <span class="n">total_sales</span> <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">.</span><span class="mi">00</span>
+   <span class="o">-&gt;</span> <span class="p">,</span> <span class="n">avg_unit_price</span> <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">.</span><span class="mi">00</span>
+   <span class="o">-&gt;</span> <span class="p">,</span> <span class="n">total_units_sold</span> <span class="nb">INT</span> <span class="n">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span>
+<span class="p">);</span>
+<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SalesSummary</span>
+   <span class="o">-&gt;</span> <span class="p">(</span><span class="n">product_name</span><span class="p">,</span> <span class="n">total_sales</span><span class="p">,</span> <span class="n">avg_unit_price</span><span class="p">,</span> <span class="n">total_units_sold</span><span class="p">)</span>
+   <span class="o">-&gt;</span> <span class="k">VALUES</span>
+   <span class="o">-&gt;</span> <span class="p">(</span><span class="s1">&#39;cucumber&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">.</span><span class="mi">25</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">SalesSummary</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">--------------+-------------+----------------+------------------+
+</span><span class="c1"></span><span class="o">|</span> <span class="n">product_name</span> <span class="o">|</span> <span class="n">total_sales</span> <span class="o">|</span> <span class="n">avg_unit_price</span> <span class="o">|</span> <span class="n">total_units_sold</span> <span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------+-------------+----------------+------------------+
+</span><span class="c1"></span><span class="o">|</span>   <span class="n">cucumber</span>   <span class="o">|</span>   <span class="mi">100</span><span class="p">.</span><span class="mi">25</span>    <span class="o">|</span>     <span class="mi">90</span><span class="p">.</span><span class="mi">00</span>      <span class="o">|</span>         <span class="mi">2</span>        <span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------+-------------+----------------+------------------+
+</span><span class="c1"></span><span class="mi">1</span> <span class="k">row</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+</code></pre></div><p>کاتێک کە فەرمانی <strong>SHOW TABLES</strong> جێبەجێی دەکەین، خشتە کاتییەکان لە چوارچێوەی پێرست جێگیر نابن.
+ئێستا گەر لە خولی کاری MYSQL بچنەدەرەوە وە فەرمانێکی <strong>SELECT</strong> جێبەجێ بکەن، خشتەی کاتی پەیدا ناکەن.</p>
+<h3 id="سڕینەوەی-خشتەی-کاتی">سڕینەوەی خشتەی کاتی</h3>
+<p>لە حاڵەتی پێشگریمانە، کاتێک بنکەدراوە تەواو دەبێت. تەواو خشتە کاتییەکان لادبرێن. بەڵام گەر بتانهەوێ بەشێک لە ئەوان خۆتان بیسڕنەوە(لای بەرن)، دەتوانن فەرمانی <strong>DROP TABLE</strong> جێبەجێ بکەن.
+بەرنامەی خوارەوە نمونەیەکی سادە لە سڕینەوە خشتەیەکی کاتییە :</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">SalesSummary</span> <span class="p">(</span>
+   <span class="o">-&gt;</span> <span class="n">product_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span>
+   <span class="o">-&gt;</span> <span class="p">,</span> <span class="n">total_sales</span> <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">.</span><span class="mi">00</span>
+   <span class="o">-&gt;</span> <span class="p">,</span> <span class="n">avg_unit_price</span> <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">.</span><span class="mi">00</span>
+   <span class="o">-&gt;</span> <span class="p">,</span> <span class="n">total_units_sold</span> <span class="nb">INT</span> <span class="n">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span>
+<span class="p">);</span>
+<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="k">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SalesSummary</span>
+   <span class="o">-&gt;</span> <span class="p">(</span><span class="n">product_name</span><span class="p">,</span> <span class="n">total_sales</span><span class="p">,</span> <span class="n">avg_unit_price</span><span class="p">,</span> <span class="n">total_units_sold</span><span class="p">)</span>
+   <span class="o">-&gt;</span> <span class="k">VALUES</span>
+   <span class="o">-&gt;</span> <span class="p">(</span><span class="s1">&#39;cucumber&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">.</span><span class="mi">25</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+ 
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">SalesSummary</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">--------------+-------------+----------------+------------------+
+</span><span class="c1"></span><span class="o">|</span> <span class="n">product_name</span> <span class="o">|</span> <span class="n">total_sales</span> <span class="o">|</span> <span class="n">avg_unit_price</span> <span class="o">|</span> <span class="n">total_units_sold</span> <span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------+-------------+----------------+------------------+
+</span><span class="c1"></span><span class="o">|</span>   <span class="n">cucumber</span>   <span class="o">|</span>   <span class="mi">100</span><span class="p">.</span><span class="mi">25</span>    <span class="o">|</span>     <span class="mi">90</span><span class="p">.</span><span class="mi">00</span>      <span class="o">|</span>         <span class="mi">2</span>        <span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------+-------------+----------------+------------------+
+</span><span class="c1"></span><span class="mi">1</span> <span class="k">row</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">SalesSummary</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span>  <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">SalesSummary</span><span class="p">;</span>
+<span class="n">ERROR</span> <span class="mi">1146</span><span class="p">:</span> <span class="k">Table</span> <span class="s1">&#39;TUTORIALS.SalesSummary&#39;</span> <span class="n">doesn</span><span class="s1">&#39;t exist
+</span></code></pre></div><hr>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>temporary tables <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>session:١-خولێکی کاری، دانیشتن، کۆڕ، ٢-کۆڕی وانه‌، وانه‌کۆڕ، پۆل <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+           <div class="article-container">
+<script src="https://utteranc.es/client.js"
+repo="qezwan/blog"
+issue-term="pathname"
+label="Qezwan.ir"
+theme="boxy-light"
+crossorigin="anonymous"
+async>
+</script>
+</div>
+	
+          <script type="text/javascript">
+           (function(w,d,v3){
+            w.chaportConfig = {
+            appId : '5fad689fa3357e3317fe56fa'
+            };
+
+            if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+          </script>
+      
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-115800084-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+<a href="https://bit.ly/3pEQXFA" target="_blank" rel="noopener"><img src="https://img.icons8.com/material-outlined/18/000000/copyleft.png"/></a>
+        
+
+            
+       
+ </br>
+<nav1>
+
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/mysql" target="_blank">#Mysql(32)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C" target="_blank">#ئێلێمێنتری(17)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95" target="_blank">#سەرچاوەکراوە(26)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95" target="_blank">#ڕاژە(31)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3" target="_blank">#گنو/لینوکس(31)</a>
+                
+</nav1>
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+{{ partial "header.html" . }}
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+       
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    {{ partial "page-heading" . }}
+                    <div class="initials"><a href="{{ .Site.BaseURL }}">{{ .Site.Params.Initials }}</a></div>
+                </div>
+                <div class="meta">
+
+                    {{ if and .Site.Params.dateformfull .Site.Params.dateform }}
+                    <div class="date" title='{{ .Date.Format .Site.Params.dateformfull }}'>{{ .Date.Format .Site.Params.dateform }}</div>
+                    {{ else }}
+                    <div class="date" title='{{ .Date.Format "Mon Jan 2 2006 15:04:05 MST" }}'>{{ .Date.Format "Jan 2, 2006" }}</div>
+                    {{ end }}
+                    {{ if not .Site.Params.noshowreadtime }}
+		   <div class="reading-time"><div class="middot"></div>{{ i18n "readingTime" .ReadingTime }}<div class="middot"></div>{{.WordCount}} وشە <div class="middot"></div>{{ if .Params.tags }}
+                 
+                    <strong>تــاگ:</strong>
+                  {{range .Params.tags}}
+                    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                  {{end}}
+                  {{end}}</div><div class="middot"></div>هاوبەشی بکە:{{ partial "socialshare.html" . }}
+
+                    {{ end }}
+                </div>
+            </div>
+            <div class="content">{{ .TableOfContents }}</div>
+            <div style="width: 95%;" class="markdown">
+               
+    
+            
+                {{ .Content }}
+                <br>
+               
+                <!--<p class="back-to-posts"><a {{ printf "href=%q" ("/gnulinux" | relLangURL) | safeHTMLAttr }}>{{ i18n "backToPosts" }}</a></p>-->
+            </div>
+            <br>
+            <div class="disqus">
+                {{ template "_internal/disqus.html" . }}
+            </div>
+           <div class="article-container">
+{{ partial "comments.html" . }}
+</div>
+	<!-- Begin of Chaport Live Chat code -->
+          <script type="text/javascript">
+           (function(w,d,v3){
+            w.chaportConfig = {
+            appId : '5fad689fa3357e3317fe56fa'
+            };
+
+            if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+          </script>
+      <!-- End of Chaport Live Chat code -->
+    </div>
+</section>
+
+{{ partial "footer.html" . }}
