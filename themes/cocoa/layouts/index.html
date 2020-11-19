@@ -8,7 +8,7 @@
 
                 </div>
             {{ end }}
-            {{ $related := .Site.RegularPages.Related . }}dfsdf
+            {{ $related := .Site.RegularPages.Related . }}
             {{ $totalpostscount := len (where .Data.Pages "Section" "book") }}
             {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
             {{ if gt $latestpostscount 0 }}
