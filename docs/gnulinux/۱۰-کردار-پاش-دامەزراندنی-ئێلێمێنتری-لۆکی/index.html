@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="قەزوان">
+<meta name="description" content="لەم بابەتە ئێمە فێردەبین کە پاش دامەزراندنی لینوکس ئێلێمێنتری لۆکی(elementary OS 0.4)کارپێکردنێکی سادەو رەوانمان بێت.گەر ئێوە وشانی لۆکی ئێلێمێنتریتان دامەزراندووە یان بەتەمان لە داهاتوویێکی نزیک دایمەزرێنن باش وایە ئەم چەند پەندە و پێشنیارە بخوێنن بۆ ئازموونێکی باشتر لە کاتی کارپێکردن بەم سیستەمی کارپێکردن. کاتێک کە ئێوە ئێلێمینتریتان دامەزراند پێتان خۆشە کە نەرمەکالی دیکەش دامەزرینن وەک نەرمەکالایێک بۆ دەستکاریکردنی پێشکەوتووی وێنەکانتان،یان فایلێکی دێب(deb.) بە ئاسانترین شێوە دابمەزرێنن…پێم خۆشە بە خوێندنەوەی ئەم چەند هێڵە زۆر بە ئاسانی بتوانن کە لۆکی ئامادەبکەن بۆ کارپێکردنی فرەتر.">
+
+<meta property="og:title" content="۱۰ کردار پاش دامەزراندنی ئێلێمێنتری لۆکی" />
+<meta property="og:description" content="لەم بابەتە ئێمە فێردەبین کە پاش دامەزراندنی لینوکس ئێلێمێنتری لۆکی(elementary OS 0.4)کارپێکردنێکی سادەو رەوانمان بێت.گەر ئێوە وشانی لۆکی ئێلێمێنتریتان دامەزراندووە یان بەتەمان لە داهاتوویێکی نزیک دایمەزرێنن باش وایە ئەم چەند پەندە و پێشنیارە بخوێنن بۆ ئازموونێکی باشتر لە کاتی کارپێکردن بەم سیستەمی کارپێکردن. کاتێک کە ئێوە ئێلێمینتریتان دامەزراند پێتان خۆشە کە نەرمەکالی دیکەش دامەزرینن وەک نەرمەکالایێک بۆ دەستکاریکردنی پێشکەوتووی وێنەکانتان،یان فایلێکی دێب(deb.) بە ئاسانترین شێوە دابمەزرێنن…پێم خۆشە بە خوێندنەوەی ئەم چەند هێڵە زۆر بە ئاسانی بتوانن کە لۆکی ئامادەبکەن بۆ کارپێکردنی فرەتر." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qezwan.ir/gnulinux/%DB%B1%DB%B0-%DA%A9%D8%B1%D8%AF%D8%A7%D8%B1-%D9%BE%D8%A7%D8%B4-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C-%D9%84%DB%86%DA%A9%DB%8C/" />
+<meta property="article:published_time" content="2016-10-02T08:40:45+00:00" />
+<meta property="article:modified_time" content="2016-10-02T08:40:45+00:00" />
+
+
+
+<title>
+
+
+     ۱۰ کردار پاش دامەزراندنی ئێلێمێنتری لۆکی 
+
+</title>
+<link rel="canonical" href="https://qezwan.ir/gnulinux/%DB%B1%DB%B0-%DA%A9%D8%B1%D8%AF%D8%A7%D8%B1-%D9%BE%D8%A7%D8%B4-%D8%AF%D8%A7%D9%85%DB%95%D8%B2%D8%B1%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C-%D9%84%DB%86%DA%A9%DB%8C/">
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115800084-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115800084-1');
+</script>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://qezwan.ir/css/reset.css?t=2020-11-19%2015%3a25%3a49.9749661%20%2b0330%20%2b0330%20m%3d%2b1.521981201">
+    <link rel="stylesheet" href="https://qezwan.ir/css/pygments.css?t=2020-11-19%2015%3a25%3a49.9749661%20%2b0330%20%2b0330%20m%3d%2b1.521981201">
+    <link rel="stylesheet" href="https://qezwan.ir/css/main.css?t=2020-11-19%2015%3a25%3a49.9749661%20%2b0330%20%2b0330%20m%3d%2b1.521981201">
+    
+        <link rel="stylesheet" href="https://qezwan.ir/css/override.css?t=2020-11-19%2015%3a25%3a49.9749661%20%2b0330%20%2b0330%20m%3d%2b1.521981201">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://qezwan.ir/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+            <a href="https://qezwan.ir/"><div class="name">قەزوان</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-learn"><a href="https://qezwan.ir/learn/"><span>مەنجەڵ</span></a></li>
+                    
+                        <li class="nav-code"><a href="https://qezwan.ir/book/"><span>کتێب</span></a></li>
+                    
+                        <li class="nav-about"><a href="https://qezwan.ir/about/"><span>دەربارە</span></a></li>
+                    
+ 
+                </ul>
+               
+            </nav>
+
+
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    ۱۰ کردار پاش دامەزراندنی ئێلێمێنتری لۆکی
+
+
+</div>
+
+                    <div class="initials"><a href="https://qezwan.ir"></a></div>
+                </div>
+                <div class="meta">
+
+                    
+                    <div class="date" title='Sun Oct 2 2016 08:40:45 UTC'>Oct 2, 2016</div>
+                    
+                    
+		   <div class="reading-time"><div class="middot"></div>4 خولەک<div class="middot"></div>655 وشە <div class="middot"></div>
+                 
+                    <strong>تــاگ:</strong>
+                  
+                    <a href="https://qezwan.ir/tags/%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C">ئێلێمێنتری</a>
+                  
+                  </div><div class="middot"></div>هاوبەشی بکە:
+
+  
+  
+  
+
+
+  
+   
+    <ul class="share-icons">
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?hashtags=قەزوان&amp;url=https%3a%2f%2fqezwan.ir%2fgnulinux%2f%25DB%25B1%25DB%25B0-%25DA%25A9%25D8%25B1%25D8%25AF%25D8%25A7%25D8%25B1-%25D9%25BE%25D8%25A7%25D8%25B4-%25D8%25AF%25D8%25A7%25D9%2585%25DB%2595%25D8%25B2%25D8%25B1%25D8%25A7%25D9%2586%25D8%25AF%25D9%2586%25DB%258C-%25D8%25A6%25DB%258E%25D9%2584%25DB%258E%25D9%2585%25DB%258E%25D9%2586%25D8%25AA%25D8%25B1%25DB%258C-%25D9%2584%25DB%2586%25DA%25A9%25DB%258C%2f&amp;text=%db%b1%db%b0%20%da%a9%d8%b1%d8%af%d8%a7%d8%b1%20%d9%be%d8%a7%d8%b4%20%d8%af%d8%a7%d9%85%db%95%d8%b2%d8%b1%d8%a7%d9%86%d8%af%d9%86%db%8c%20%d8%a6%db%8e%d9%84%db%8e%d9%85%db%8e%d9%86%d8%aa%d8%b1%db%8c%20%d9%84%db%86%da%a9%db%8c" target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 32 32" height="16px" id="Layer_1" version="1.0" viewBox="0 0 32 32" width="16px" xml:space="preserve"><path d="M31.993,6.077C30.816,6.6,29.552,6.953,28.223,7.11c1.355-0.812,2.396-2.098,2.887-3.63  c-1.269,0.751-2.673,1.299-4.168,1.592C25.744,3.797,24.038,3,22.149,3c-3.625,0-6.562,2.938-6.562,6.563  c0,0.514,0.057,1.016,0.169,1.496C10.301,10.785,5.465,8.172,2.227,4.201c-0.564,0.97-0.888,2.097-0.888,3.3  c0,2.278,1.159,4.286,2.919,5.464c-1.075-0.035-2.087-0.329-2.972-0.821c-0.001,0.027-0.001,0.056-0.001,0.082  c0,3.181,2.262,5.834,5.265,6.437c-0.55,0.149-1.13,0.23-1.729,0.23c-0.424,0-0.834-0.041-1.234-0.117  c0.834,2.606,3.259,4.504,6.13,4.558c-2.245,1.76-5.075,2.811-8.15,2.811c-0.53,0-1.053-0.031-1.566-0.092  C2.905,27.913,6.355,29,10.062,29c12.072,0,18.675-10.001,18.675-18.675c0-0.284-0.008-0.568-0.02-0.85  C30,8.55,31.112,7.395,31.993,6.077z" fill="#55ACEE"/><g/><g/><g/><g/><g/><g/></svg>
+          
+          </a>
+      </li></ul>
+      
+
+
+
+
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>لەم بابەتە ئێمە فێردەبین کە پاش دامەزراندنی لینوکس ئێلێمێنتری لۆکی(elementary OS 0.4)کارپێکردنێکی سادەو رەوانمان بێت.گەر ئێوە وشانی لۆکی ئێلێمێنتریتان دامەزراندووە یان بەتەمان لە داهاتوویێکی نزیک دایمەزرێنن باش وایە ئەم چەند پەندە و پێشنیارە بخوێنن بۆ ئازموونێکی باشتر لە کاتی کارپێکردن بەم سیستەمی کارپێکردن.
+کاتێک کە ئێوە ئێلێمینتریتان دامەزراند پێتان خۆشە کە نەرمەکالی دیکەش دامەزرینن وەک نەرمەکالایێک بۆ دەستکاریکردنی پێشکەوتووی وێنەکانتان،یان فایلێکی دێب(deb.) بە ئاسانترین شێوە دابمەزرێنن…پێم خۆشە بە خوێندنەوەی ئەم چەند هێڵە زۆر بە ئاسانی بتوانن کە لۆکی ئامادەبکەن بۆ کارپێکردنی فرەتر.</p>
+<p><strong>۱-سیستەمی کارپێکردنەکەت بەڕۆژ بکەرەوە</strong></p>
+<p>بۆ هەر دابەشکراوەیێک پاش دامەزراندن باشترین و سەرەتاییترین کار ئەوەیە کە سیستەمەکەت بەڕۆژ بکەیتەوە.گەر ناتوانیت هیچ ئەپلیکەیشێنێک یان خود نەرمەکالایێک لە لۆکی دامەزرێنیت هۆکار دەگەرێتەوە بۆ بەڕۆژ نەکردنەوەی دەستی  لۆکی. بس تەنها ترمیناڵ بکەرەوە ئینجا فەرمانەکەی خوارەوە بنووسە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade
+</code></pre></div><p>پاش ئەم کارە دەبێت سیستەمەکەت داگرسێنیتەوە(reboot) بۆ کارپێکردن، ئینجا دەبینی کە نەرمەکالاکان لە ناوەندی نەرمەکالای لۆکی دەردەکەوەن بۆ هەڵبژاردن و دامەزراندن بە سادەترین شێوە.
+<strong>۲- دامەزراندنی نەرمەکالی GDEBI بۆ بەرێوەبردنی فایلەکانی DEB.</strong>
+ئێلیمێنتری زۆر سوورە لەسەر ئەوە کە بەکارهێنەر فایلەکانی لە ناوەندی نەرمەکالا دابگرێت هەر بۆ ئەمە رێنادات کە بە ئاسانی فایلی DEB. دابەزێنیتە سەری.بەڵام نەرمەکالی واش هەیە کە لەسەر ناوەندی نەرمەکالا(App Center) دانەنراوە.بۆ زانیاریت بزانە کە فایلی DEB. هاوشێوەی فایلەکانی exe. لە ویندۆزە کە بە دووکرتە کردن لەسەری دەتوانیت دایانمەزرێنیت .بەڵام گەر کێشەیێک هەیە نگران مەبە بە سادەترین شێوە دەتوانین ئەم کارە بکەین.ئێوە دەتوانن بە یارمەتی و دامەزراندنی ئامرازێک ئەم کارە بەسادەیی ئەنجام بدەن.
+نەرمەکالای بەرچاوکراوەی من <a href="https://apps.ubuntu.com/cat/applications/precise/gdebi/">GDebi package installer</a> کە پاکەتەکانی دێب(deb.) دادەمەزرێنێت.دەتوانی لە ناوەندی نەرمەکالا (App Center) یان بەم فەرمانەی خوارەوە دایمەزرێنیت.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install gdebi
+</code></pre></div><p>پاشان گەر لەسەر فایلی (deb.) کرتە بکەیت ئەم نەرمەکالا دەکرێتەوەو بە کرتە لەسەر دوکمەی install فایلی (deb.)دادەمەزرێت.
+یان گەر لە دامەزراندن لە رێگای ترمیناڵت پێ خۆشە دەتوانی بە ئەم فەرمانەو نووسینی شوێن یان ناوی فایلی (deb.) لە ترمیناڵ دایمەزرێنیت.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install <span class="o">[</span>path to deb package<span class="o">]</span>
+</code></pre></div><p><strong>۳-دامەزراندنی پاکەتی PPA لە ئێلێمێنتری لۆکی</strong>
+هەروا بۆ بەشی ئاسایش و مەترسیەوە لۆکی ناهێلێت فایل یان پاکەتەکانی <a href="http://www.makeuseof.com/tag/ubuntu-ppa-technology-explained/">PPA</a> دامەزرێنی.ئەم پاکەتانە بە شێوازی نافەرمی بڵآو دەکرێنەوە.بۆ ئەم مەبەستە واتە بۆ چالاککردنی دامەزراندنی ئەم پاکەتانە-PPA- دەتوانن لەم فەرمانە سوود ببینن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install software-properties-common
+</code></pre></div><p><strong>۴-دامەزراندنی نەرمەکالی TWEAKS بۆ گۆڕنین ئایکۆن و رووکار</strong>
+بۆ ئەم مەبەستە دەتوانی ئەم چەند هێڵی لە ترمیناڵ بنووسیت</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo add-apt-repository ppa:philip.scott/elementary-tweaks
+sudo apt-get update
+sudo apt-get install elementary-tweaks
+</code></pre></div><p><strong>۵-دامەزراندنی TLP بۆ پاشکەوتی وزەی باتری و پێسگیری لە گەرم بوون</strong>
+کاتێک رێکخەر(CPU)گەرم دەبێت مەسرەفی باتریش زۆر دەبێت بە دامەزراندنی ئەم نەرمەکالا دەتوانن <a href="https://itsfoss.com/reduce-overheating-laptops-linux/">پلەی گەرمای رێکخەر</a>چاودێری بکەن .بۆ دامەزراندنی TLP ئەم فەرمانە بەکار بێنە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install tlp tlp-rdw
+</code></pre></div><p>یان کۆمپیوترەکەت هەڵگرسێنە یان بەم فەرمانەtlp چالاکی بکە “tlp start” .
+۶-بۆ پارزگاری لە چاوەکانت لە کاتی کارکردن لە شەو
+بۆ ئەم مەبەستە دەتوانی تیشکی کۆمپیترەکەت لە کاتی کارپێکردن لە شەو چاودێری بکەیت و تیشکی شین کەمتر بکەی با پاش کارکردن خەوێکی ئارامترت بێت.<a href="http://www.scientificamerican.com/article/q-a-why-is-blue-light-before-bedtime-bad-for-sleep/">تیشکی شین</a> لە بەرهەمەکانی ئایفۆنیش هەن کە ئەپڵ کەڵکی لێوەرگرتووە .بە یارمەتی نەرمەکالی <a href="http://jonls.dk/redshift/">Redshift</a> ودامەزراندنی، دەتوانن بەم مەبەستە بگەیێن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install redshift
+</code></pre></div><p><strong>۷-چالاککردنی کرتەی لەسەر تاچ-پەد(TAP)لاپتۆپ.</strong>
+لە ۆر یەک لە دابەسکراوەکانی لینوکس تاچپەد(touchpad) لەکاردەخەن یان ناچالاکی دەکەن.هەم ناتوانن هێمای مشک بجوولێنن هەم کرتەی چەپ بکەن.بۆ ئەم مەبەستە دەتوانن بچنە بەشی settings و لە بەشی “mouse and touchpad” دوکمەی ئەم رەستەیە چالاک بکەن “tap to click”.</p>
+<p><img src="https://qezwan.ir/gnulinux/images/000016.png" alt=""></p>
+<p><strong>۸-دامەزراندنی وێبگەری دیکە</strong>
+بۆ ئەم مەبەستە دەتوانن وێبگەری دیکە وەک فایرفۆکس دامەزرێنن تەنها دەتوانن ئەم هێلە لە ترمیناڵ بنووسن.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install firefox
+</code></pre></div><p>یان فایلی دێبەکەی دابگرن و دایمەزرێنن بۆ وێبگەری کرۆمیش دەبێت.
+<strong>۹-دامەزراندنی ئۆفیس</strong>
+بۆ ئەم مەبستە دەتوانن لە رێگای ترمیناڵ یان ناوەندی نەرمەکالا <a href="https://qezwan.ir/?p=271">لیبرە ئۆفیس</a> دابگرن.کە شێواز بەم جۆرەیە ترمیناڵ بکەنەوە ئینجا فەرمانەکەی خوارەوە بنووسن (ئەم کارە خێراترە).ئەو شتانە کە بۆ کاری ئیدارە و ئۆفیسەکەت پێویستە بۆر دادەمەزرێت.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install libreoffice
+</code></pre></div><p><strong>۱۰-دامەزراندنی چەن نەرمەکالای دیکە</strong>
+بۆ دامەزراندنی VLC بۆ دیتنی فایلی دەنگ و فیلم دەتوانی ئەم فەرمانە لە ترمیناڵ بنووسیت.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install vlc
+</code></pre></div><p>بۆ دامەزراندنی نەرمەکالاکانی <a href="https://qezwan.ir/?p=91">Gimp</a>, <a href="https://inkscape.org/en/">InkScape</a> وە <a href="http://shutter-project.org/">Shutter</a> ئەم فەرمانە بنووسە.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install gimp inkscape shutter
+</code></pre></div><p>گەر شتێکمان لە یاد چووە لە بەشی پەیوەندی ئاگادارمان بکە تا بەم پێرستە زیادی بکەین.</p>
+<p>سەرچاوە : <a href="https://itsfoss.com/things-to-do-after-installing-elementary-os-loki/">itsfoss</a></p>
+
+                <br>
+               
+                
+            </div>
+            <br>
+            <div class="article-container">
+<script src="https://utteranc.es/client.js"
+repo="qezwan/blog"
+issue-term="pathname"
+label="Qezwan.ir"
+theme="boxy-light"
+crossorigin="anonymous"
+async>
+</script>
+</div>
+	
+          <script type="text/javascript">
+           (function(w,d,v3){
+            w.chaportConfig = {
+            appId : '5fad689fa3357e3317fe56fa'
+            };
+
+            if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+          </script>
+      
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-115800084-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/qezwan/blog" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/qezwan" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="//t.me/jsajjadi" target="_blank" rel="noopener"><img class="icon" src="https://qezwan.ir/img/telegram.svg" alt="telegram" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+<a href="https://bit.ly/3pEQXFA" target="_blank" rel="noopener"><img src="https://img.icons8.com/material-outlined/18/000000/copyleft.png"/></a>
+        
+
+            
+       
+ </br>
+<nav1>
+
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%D8%A6%DB%8E%D9%84%DB%8E%D9%85%DB%8E%D9%86%D8%AA%D8%B1%DB%8C" target="_blank">#ئێلێمێنتری(14)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%D8%B3%DB%95%D8%B1%DA%86%D8%A7%D9%88%DB%95%DA%A9%D8%B1%D8%A7%D9%88%DB%95" target="_blank">#سەرچاوەکراوە(26)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%DA%95%D8%A7%DA%98%DB%95" target="_blank">#ڕاژە(31)</a>
+                
+                  <a style="font-size: 12px;
+    color: #000;" href="https://qezwan.ir/tags/%DA%AF%D9%86%D9%88/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3" target="_blank">#گنو/لینوکس(31)</a>
+                
+</nav1>
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+
