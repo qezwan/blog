@@ -16,7 +16,7 @@ pygmentsStyle = "tango"
 
 PostLimit = 5
 [permalinks]
-book  = "book/:slug/"
+book  = "web/:slug/"
 
 [outputs]
   home = ["html", "json"]

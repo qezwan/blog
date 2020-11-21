@@ -9,18 +9,18 @@
                 </div>
             {{ end }}
             {{ $related := .Site.RegularPages.Related . }}
-            {{ $totalpostscount := len (where .Data.Pages "Section" "book") }}
+            {{ $totalpostscount := len (where .Data.Pages "Section" "web") }}
             {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
             {{ if gt $latestpostscount 0 }}
                 <div class="page-heading">{{ i18n "latestPosts" }}</div>
                 <ul>
-                    {{ range (first $latestpostscount (where .Data.Pages.ByPublishDate.Reverse "Section" "book")) }}
+                    {{ range (first $latestpostscount (where .Data.Pages.ByPublishDate.Reverse "Section" "web")) }}
                         {{ range .Pages }}
                             {{ partial "li.html" . }}
                         {{ end }}
                     {{ end }}
                     {{ if gt $totalpostscount $latestpostscount }}
-                        {{ range where .Site.Menus.main "Identifier" "book" }}
+                        {{ range where .Site.Menus.main "Identifier" "web" }}
                             <li class="post-item no-bullet">
                                 <a id="see-more" {{ printf "href=%q " .URL | safeHTMLAttr }}><span>See more&hellip;</span></a>
                             </li>
