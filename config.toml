@@ -37,7 +37,7 @@ url                    = "/book/"
 name                   = "کوردکلیک"
 weight                 = -130
 identifier             = "learn"
-url                    = "https:kurd.click"
+url                    = "https://kurd.click"
 theme = ["hugo-video", "cocoa"]
 
 [params]
