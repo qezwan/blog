@@ -16,7 +16,7 @@ pygmentsStyle = "tango"
 
 PostLimit = 5
 [permalinks]
-book  = "web/:slug/"
+book  = "book/:slug/"
 
 [outputs]
   home = ["html", "json"]
@@ -34,10 +34,10 @@ identifier             = "code"
 url                    = "/book/"
 
 [[menu.main]]
-name                   = "مەنجەڵ"
+name                   = "کوردکلیک"
 weight                 = -130
 identifier             = "learn"
-url                    = "/learn/"
+url                    = "https:kurd.click"
 theme = ["hugo-video", "cocoa"]
 
 [params]
