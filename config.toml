@@ -34,10 +34,10 @@ identifier             = "code"
 url                    = "/book/"
 
 [[menu.main]]
-name                   = "کوردکلیک"
+name                   = "لینوکس"
 weight                 = -130
 identifier             = "learn"
-url                    = "https://kurd.click"
+url                    = "https://linux.krd"
 theme = ["hugo-video", "cocoa"]
 
 [params]
