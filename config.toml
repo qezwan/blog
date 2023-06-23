@@ -49,15 +49,12 @@ description            = "Don't panic"
 extracssfiles          = [ "/css/override.css" ]       # In your `static` directory, add/remove files as necessary.
 faviconfile            = "img/leaf.ico"
 github                 = "//github.com/qezwan/blog"
-#instagram              = "//instagram.com/qezwan"
-#px500                  = "//500px.com/username"
 lang                   = "en"
-#linkedin               = "//linkedin.com/in/you"
 noshowreadtime         = false                         # if true, don't show "<x> minutes read" in posts
 selfintro              = ""                            # appears in the site header when set to a non-empty string
 twitter                = "//twitter.com/qezwan"
-#mastodon               = "//example.com/@you"
-telegram               = "//t.me/jsajjadi"
+
+
 
 highlightjs            = true
 #highlightjslanguages = ["go,sql,mysql,html,php,c#,csharp,css"]                        # additional languages not included in the "common" set
