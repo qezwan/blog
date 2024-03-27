@@ -22,6 +22,10 @@ book  = "about/:slug/"
   home = ["html", "json"]
 
 [[menu.main]]
+name                   = "دەربارە"
+weight                 = -140
+identifier             = "code"
+url                    = "/about/"
 
 [[menu.main]]
 name                   = "کتێب"
