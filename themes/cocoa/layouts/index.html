@@ -14,13 +14,13 @@
             {{ if gt $latestpostscount 0 }}
                 <div class="page-heading">{{ i18n "latestPosts" }}</div>
                 <ul>
-                    {{ range (first $latestpostscount (where .Data.Pages.ByPublishDate.Reverse "Section" "book")) }}
+                    {{ range (first $latestpostscount (where .Data.Pages.ByPublishDate.Reverse "Section" "about")) }}
                         {{ range .Pages }}
                             {{ partial "li.html" . }}
                         {{ end }}
                     {{ end }}
                     {{ if gt $totalpostscount $latestpostscount }}
-                        {{ range where .Site.Menus.main "Identifier" "book" }}
+                        {{ range where .Site.Menus.main "Identifier" "about" }}
                             <li class="post-item no-bullet">
                                 <a id="see-more" {{ printf "href=%q " .URL | safeHTMLAttr }}><span>See more&hellip;</span></a>
                             </li>
