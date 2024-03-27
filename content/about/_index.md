@@ -1,7 +1,8 @@
 +++
-date = "2020-08-19T20:29:37-07:00"
+date = "2015-08-22T06:42:21-07:00"
 draft = false
-title = "دەربارە"
+title = "About"
+layout = "single"
 
 +++
  
